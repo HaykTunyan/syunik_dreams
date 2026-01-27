@@ -1,0 +1,399 @@
+{
+    "header": {
+        "home": "Home",
+        "backToHome": "Back to Home"
+    },
+    "trips": {
+        "title": "Syunik Trips",
+        "subtitle": "Befriend the mountains, temples, and nature of Syunik",
+        "cities_title": "Cities and Places of Syunik",
+        "historical_title": "Historical Trip Places",
+        "visit_city_kapan": "Visit Kapan",
+        "visit_city_goris": "Visit Goris",
+        "visit_city_meghri": "Visit Meghri",
+        "visit_city_sisian": "Visit Sisian",
+        "tatev_monastery": "Tatev Monastery",
+        "tatev_monastery_desc": "9th-century famous monastery near Goris, registered by UNESCO",
+        "meghri_church": "Meghri Mother Church",
+        "meghri_church_desc": "Famous church of Southern Armenia, preserved historical monument of the 17th century.",
+        "zorats_karer": "Zorats Karer",
+        "zorats_karer_desc": "Archaeological complex in Sisian, 3500-year-old observatory",
+        "meghri_fortress": "Meghri Fortress",
+        "meghri_fortress_desc": "State palace in Meghri, a masterpiece of Armenian architecture",
+        "shikahogh": "Shikahogh Reserve",
+        "shikahogh_desc": "Reserve located in the southernmost part of Armenia, in Kapan region of Syunik, covering 29,505.845 hectares",
+        "shake_waterfall": "Shake Waterfall",
+        "shake_waterfall_desc": "Shake Waterfall is near Sisian and famous for its beautiful natural scenery and recreation places.",
+        "nature_title": "Nature Wonders & Adventures",
+        "wings_of_tatev": "Wings of Tatev",
+        "wings_of_tatev_desc": "The world's longest reversible aerial tramway (5.7 km) leading to Tatev Monastery.",
+        "khndzoresk_bridge": "Khndzoresk Swinging Bridge",
+        "khndzoresk_bridge_desc": "160-meter long bridge connecting Old and New Khndzoresk, passing over the gorge.",
+        "devils_bridge": "Devil's Bridge",
+        "devils_bridge_desc": "Natural bridge on Vorotan river with hot mineral springs.",
+        "ughtasar": "Ughtasar",
+        "ughtasar_desc": "Mountain at 3300m height with thousands of rock carvings (petroglyphs).",
+        "sport_title": "Sport Life",
+        "syunik_fc": "Syunik FC",
+        "syunik_fc_desc": "Football club representing Syunik region, playing in the Armenian First League. The club is reviving Syunik's football traditions.",
+        "home_stadium_label": "Home Stadium:",
+        "stadiums_in_syunik": "Stadiums in Syunik",
+        "stadium_kapan_name": "Gandzasar Stadium",
+        "stadium_kapan_info": "Capacity: 3,500 | Location: Kapan, Center",
+        "stadium_goris_name": "Goris City Stadium",
+        "stadium_goris_info": "Capacity: ~3,500 | Location: Goris",
+        "stadium_sisian_name": "Sisian Football School Stadium",
+        "stadium_sisian_info": "Capacity: 500+ | Location: Sisian, South",
+        "stadium_agarak_name": "Agarak Sports Complex",
+        "stadium_agarak_info": "Capacity: 3,000 | Location: Agarak",
+        "useful_info_title": "Useful Information for Tourists",
+        "weather": "Weather",
+        "weather_desc": "Syunik has a diverse climate. Meghri is very warm (similar to subtropical), while Sisian and Goris are cooler and more humid.",
+        "transport": "Transport",
+        "transport_desc": "Distance from Yerevan to Syunik (Kapan) is about 300 km (4-5 hours by car). Regular minibuses also operate to all major cities.",
+        "cuisine": "Cuisine",
+        "cuisine_desc": "Definitely try traditional Syunik dishes: bean soups, karshm, kurkut, and mulberry vodka.",
+        "trip_info_title": "Trip Information",
+        "select_city_msg": "Select a city or place from the map for more information",
+        "kapan": "Kapan",
+        "goris": "Goris",
+        "meghri": "Meghri",
+        "sisian": "Sisian",
+        "tour_info": "Tour Information",
+        "feature_historical": "Preserved historical places",
+        "feature_guides": "Professional guides",
+        "feature_transport": "Transport included",
+        "feature_food": "Food provided",
+        "feature_insurance": "Insurance included",
+        "book_now": "Book Now"
+    },
+    "city_page": {
+        "title_prefix": "Syunik",
+        "title_suffix": "Cities",
+        "subtitle": "The Southern Gate of Armenia",
+        "city_label": "City",
+        "area": "Area",
+        "founding": "Founding",
+        "population": "Population",
+        "more": "More →"
+    },
+    "cities_data": {
+        "kapan": {
+            "name": "Kapan",
+            "description": "The regional center of Syunik, located at the foot of Mount Khustup.",
+            "founding": "10th century",
+            "size": "36 km²",
+            "population": "~42,000"
+        },
+        "goris": {
+            "name": "Goris",
+            "description": "A city with unique architectural style, famous for its caves.",
+            "founding": "1870",
+            "size": "5.03 km²",
+            "population": "~20,000"
+        },
+        "sisian": {
+            "name": "Sisian",
+            "description": "Located on the banks of the Vorotan River, with a rich history.",
+            "founding": "8th century BC",
+            "size": "9 km²",
+            "population": "~15,000"
+        },
+        "agarak": {
+            "name": "Agarak",
+            "description": "Mining city of Syunik, famous for molybdenum and copper mines.",
+            "founding": "1950",
+            "size": "2.5 km²",
+            "population": "~7,500"
+        },
+        "meghri": {
+            "name": "Meghri",
+            "description": "Armenia's southernmost city with a mild climate.",
+            "founding": "906",
+            "size": "3 km²",
+            "population": "~4,500"
+        },
+        "qajaran": {
+            "name": "Qajaran",
+            "description": "Industrial city in Eastern Syunik, known for mining.",
+            "founding": "1951",
+            "size": "4.1 km²",
+            "population": "~8,000"
+        },
+        "vayk": {
+            "name": "Vayk",
+            "description": "Small mountain settlement, famous for Mount Babadag",
+            "population": "5,000",
+            "climate": "Moderate mountain",
+            "bestVisit": "May - September"
+        }
+    },
+    "cities_data_details": {
+        "kapan": {
+            "climate": "Moderate",
+            "bestVisit": "May - October",
+            "attractions": {
+                "0": "Kapan Mining Museum - famous mining history",
+                "1": "Kapan Gorge - amazing natural view",
+                "2": "Local markets - traditional goods"
+            }
+        },
+        "goris": {
+            "climate": "Mountainous",
+            "bestVisit": "June - September",
+            "attractions": {
+                "0": "Tatev Monastery - 9th century famous monastery",
+                "1": "Basalt columns - natural sculpture",
+                "2": "Old town - traditional architecture"
+            }
+        },
+        "meghri": {
+            "climate": "Hot and dry",
+            "bestVisit": "April - May",
+            "attractions": {
+                "0": "Meghri fortress - state palace",
+                "1": "Border views - view to Iran and Azerbaijan",
+                "2": "Nature reserve - natural conservation"
+            }
+        },
+        "sisian": {
+            "climate": "Moderate",
+            "bestVisit": "April - November",
+            "attractions": {
+                "0": "Zorats stones - famous archaeological complex",
+                "1": "Selim caravanserai - medieval road palace",
+                "2": "Ancient sites - historical places"
+            }
+        },
+        "vayk": {
+            "attractions": {
+                "0": "Mount Babadag - high mountain",
+                "1": "Scenic views - scenic view",
+                "2": "Traditional villages - traditional villages"
+            }
+        }
+    },
+    "trips_data": {
+        "tatev-center": {
+            "name": "Tatev Adventure Center",
+            "city": "Goris",
+            "description": "Adventure center near historical Tatev",
+            "duration": "3-5 hours",
+            "difficulty": "Medium",
+            "price": "₽ 25,000",
+            "activities": {
+                "0": "Zipline (2km)",
+                "1": "Monastery visits",
+                "2": "Hiking tours",
+                "3": "Photography"
+            }
+        },
+        "kapan-hiking": {
+            "name": "Kapan Hiking Base",
+            "city": "Kapan",
+            "description": "Amazing nature amphitheater around Kapan hollow",
+            "duration": "4-6 hours",
+            "difficulty": "Medium to Hard",
+            "price": "₽ 20,000",
+            "activities": {
+                "0": "Mountain trails",
+                "1": "Gorge exploration",
+                "2": "Local guides",
+                "3": "Picnics"
+            }
+        },
+        "goris-cultural": {
+            "name": "Goris Cultural Center",
+            "city": "Goris",
+            "description": "Center of Goris cultural richness",
+            "duration": "3-4 hours",
+            "difficulty": "Easy",
+            "price": "₽ 15,000",
+            "activities": {
+                "0": "Museum tours",
+                "1": "Basalt columns",
+                "2": "Traditional crafts",
+                "3": "Local art"
+            }
+        },
+        "meghri-border": {
+            "name": "Meghri Border Tours",
+            "city": "Meghri",
+            "description": "Sightseeing of border landmarks",
+            "duration": "5-7 hours",
+            "difficulty": "Hard",
+            "price": "₽ 30,000",
+            "activities": {
+                "0": "Border views",
+                "1": "Fortress exploration",
+                "2": "Nature reserve",
+                "3": "Photography"
+            }
+        },
+        "sisian-exploration": {
+            "name": "Sisian Exploration Hub",
+            "city": "Sisian",
+            "description": "Hub between archaeological visits",
+            "duration": "6-8 hours",
+            "difficulty": "Medium",
+            "price": "₽ 28,000",
+            "activities": {
+                "0": "Zorats stones",
+                "1": "Ancient sites",
+                "2": "Caravanserai",
+                "3": "Historical tours"
+            }
+        }
+    },
+    "footer": {
+        "rights": "© 2026 All rights reserved",
+        "history": "History",
+        "culture": "Culture",
+        "tourism": "Tourism",
+        "cities": "Cities",
+        "product": "Your Shirt",
+        "privacy_policy": "Privacy Policy",
+        "contact": "Contact Us"
+    },
+    "trip_details": {
+        "features": "Features",
+        "duration": "Duration",
+        "difficulty": "Difficulty",
+        "price": "Price",
+        "book_now": "Book Now",
+        "population": "Population",
+        "attractions": "Attractions",
+        "climate": "Climate",
+        "best_visit": "Best Visit Time",
+        "book_tour": "Book Tour"
+    },
+    "home_page": {
+        "hero": {
+            "title": "SYUNIK",
+            "subtitle": "The world of eternal mountains and unconquerable spirit"
+        },
+        "info": {
+            "title": "Discover Syunik",
+            "description_1": "Syunik region is the southern gate of the Republic of Armenia, famous for its centuries-old history, powerful fortresses, and breathtaking nature. It is the fortress of Armenian statehood and spirit.",
+            "description_two": "Here is located the world-famous <span>Tatev Monastery</span> and 'Wings of Tatev' aerial tramway. Syunik is also rich in natural wonders, from Shake Waterfall to Khndzoresk Swinging Bridge and Vorotan Gorge.",
+            "learn_more": "Learn More",
+            "image_label": "Nature",
+            "image_caption": "Zangezur Mountains"
+        },
+        "map": {
+            "title": "Location on Map",
+            "subtitle": "Discover the treasures of Syunik"
+        }
+    },
+    "history_page": {
+        "hero": {
+            "title_prefix": "HISTORY OF",
+            "title_suffix": "SYUNIK",
+            "subtitle": "A heroic path coming from the depths of centuries, recorded on the mountains"
+        },
+        "kingdom": {
+            "title_prefix": "Kingdom of",
+            "title_suffix": "Syunik",
+            "p1": "The world of Syunik has been one of the strong pillars of Armenian statehood for centuries. Due to its strategic position and spiritual-cultural potential, Syunik played an important role in the formation of Armenian identity and state thinking.",
+            "p2": "In the second half of the 10th century, the <strong>Kingdom of Syunik</strong> (also known as the Kingdom of Kapan) was formed here as an independent and sovereign Armenian state. The kingdom existed until 1170, becoming a significant political, administrative, and cultural center of the region.",
+            "p3": "The capital of the kingdom, <strong>Kapan fortress city</strong>, served not only as a powerful defensive fortress but also as a center of state administration and cultural life. With its historical mission, the Kingdom of Syunik played an important role in preserving Armenian statehood and ensuring regional stability."
+        },
+        "war": {
+            "label": "Struggle and Victory",
+            "title_prefix": "Liberation",
+            "title_suffix": "Struggle",
+            "p1": "The history of Syunik is full of heroic episodes. The liberation struggle started in the early 18th century under the leadership of <strong>Davit Bek</strong> proved that in case of unity, it is possible to resist even the most powerful enemy.",
+            "p2": "The Battle of Halidzor and the heroic battles of Mountainous Armenia led by Garegin Nzhdeh not only defended Syunik but also ensured its remaining Armenian, becoming bright examples of patriotism and military talent."
+        },
+        "nzhdeh": {
+            "label": "MOUNTAINOUS ARMENIA",
+            "title_prefix": "Syunik's",
+            "title_suffix": "Heroic Battle",
+            "subtitle": "Garegin Nzhdeh and Immortal Spirit",
+            "p1": "In 1920-1921, when the existence of Armenia was in danger, <strong>Garegin Nzhdeh</strong> organized the self-defense of Mountainous Armenia in the mountains of Syunik. His iron will and strategic genius united the people of Syunik to wage a life-and-death struggle against the invaders.",
+            "p2": "Under Nzhdeh's leadership, Syunik became an impregnable citadel. The Republic of Mountainous Armenia was proclaimed in Tatev Monastery, which played a decisive role in preserving Syunik within Armenia.",
+            "p3": "“A people whose sons are not equal before the law and death will not have a victorious homeland.” With this ideology, Nzhdeh created one of the most glorious pages of Armenian history.",
+            "quote": "“Syunik is our backbone, without which Armenia cannot exist.”",
+            "image_caption": "Mountainous Armenia • 1921"
+        },
+        "culture": {
+            "title_prefix": "Cultural",
+            "title_suffix": "Heritage",
+            "description": "Syunik is known not only for its fortresses but also for its spiritual centers. Tatev Monastery and other monastic complexes of the region have been important centers of science, faith, and culture for centuries.",
+            "tatev": "Tatev Monastery",
+            "tatev_desc": "9th-century architectural masterpiece and spiritual center of Syunik",
+            "vahanavank": "Vahanavank",
+            "vahanavank_desc": "One of the most important medieval monastic complexes of Syunik",
+            "zorats": "Zorats Karer",
+            "zorats_desc": "Ancient observatory and unique cultural monument"
+        }
+    },
+    "map_popups": {
+        "kapan": {
+            "name": "Kapan",
+            "desc": "Regional center of Syunik"
+        },
+        "goris": {
+            "name": "Goris",
+            "desc": "Cave city"
+        },
+        "tatev": {
+            "name": "Tatev Monastery",
+            "desc": "Spiritual center"
+        },
+        "meghri": {
+            "name": "Meghri",
+            "desc": "Southern gate of Armenia"
+        },
+        "sisian": {
+            "name": "Sisian",
+            "desc": "Archaeological site"
+        },
+        "qajaran": {
+            "name": "Qajaran",
+            "desc": "Industrial city"
+        },
+        "agarak": {
+            "name": "Agarak",
+            "desc": "Southern settlement"
+        }
+    },
+    "privacy_policy": {
+        "title": "Privacy Policy",
+        "last_updated": "Last Updated: January 2026",
+        "introduction": "This Privacy Policy describes how Syunik Dreams collects, uses, and protects your information when you use our website.",
+        "collection_title": "1. Information Collection",
+        "collection_text": "We collect information that you provide directly to us, such as when you book a tour, purchase a product, or contact us. This may include your name, email address, phone number, and payment information.",
+        "usage_title": "2. Use of Information",
+        "usage_text": "We use the information we collect to provide and improve our services, process transactions, communicate with you, and ensure a safe experience on our platform.",
+        "security_title": "3. Data Security",
+        "security_text": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, or destruction.",
+        "cookies_title": "4. Cookies",
+        "cookies_text": "We use cookies and similar technologies to enhance your experience, analyze website traffic, and understand user behavior.",
+        "contact_info": "If you have any questions about this Privacy Policy, please contact us at syunikdreams@gmail.com."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "We'd love to hear from you. Send us a message and we'll get back to you as soon as possible.",
+        "form": {
+            "name": "Full Name",
+            "email": "Email Address",
+            "message": "Your Message",
+            "placeholder_name": "John Doe",
+            "placeholder_email": "john@example.com",
+            "placeholder_message": "Tell us how we can help...",
+            "submit": "Send Message",
+            "success": "Thank you! Your message has been sent."
+        },
+        "info": {
+            "title": "Get in Touch",
+            "address_label": "Address",
+            "address_value": "Syunik Region, Armenia",
+            "email_label": "Email",
+            "email_value": "syunikdreams@gmail.com",
+            "phone_label": "Phone",
+            "phone_value": "+374 99 000000",
+            "social_title": "Follow Us"
+        }
+    }
+}
