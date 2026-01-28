@@ -5,7 +5,7 @@ import React from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import syunik_kingdom from "#/images/images/syunik_kingdom.png";
+import syunik_kingdom from "#/images/syunik_kingdom.png";
 
 export const HistoryKingdomSection: React.FC = () => {
 

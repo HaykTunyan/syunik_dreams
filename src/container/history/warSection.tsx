@@ -1,7 +1,7 @@
 // War Section for History Page
 
 import Image from "next/image";
-import syunik_war from "#/images/images/syunik_war.png";
+import syunik_war from "#/images/syunik_war.png";
 import React from "react";
 import { useTranslations } from "next-intl";
 
