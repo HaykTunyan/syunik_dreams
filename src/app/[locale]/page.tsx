@@ -1,6 +1,7 @@
 // Home Page combining various sections
 
 
+import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { HomeHeroSection } from "@/container/home/heroSection";
 import { HomeInfoSection } from "@/container/home/infoSection";
@@ -18,6 +19,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col font-sans">
+
       {/* Hero Section */}
       <HomeHeroSection />
 

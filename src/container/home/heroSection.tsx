@@ -2,6 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
+
+import Landscape from "#/images/syunik_landscape.png"
+
 import { useTranslations } from "next-intl";
 
 export const HomeHeroSection: React.FC = () => {
@@ -19,7 +22,7 @@ export const HomeHeroSection: React.FC = () => {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/syunik_view.png"
+                    src={Landscape}
                     alt="Syunik Landscape"
                     fill
                     className="object-cover"
