@@ -2,6 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
+
+import SyunikView from "#/images/syunik_view.png"
+
 import { useTranslations } from "next-intl";
 
 export const HomeInfoSection: React.FC = () => {
@@ -37,18 +41,18 @@ export const HomeInfoSection: React.FC = () => {
                             })}
                         </p>
                         <div className="pt-6">
-                            <button className="group bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-full transition-all duration-300 shadow-xl hover:shadow-orange-600/40 flex items-center gap-2">
+                            <Link href="/history" className="inline-flex group bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-full transition-all duration-300 shadow-xl hover:shadow-orange-600/40 items-center gap-2">
                                 <span>{t('learn_more')}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                                 </svg>
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
                     <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl rotate-1 hover:rotate-0 transition-all duration-500 group">
                         <Image
-                            src="/syunik_view.png"
+                            src={SyunikView}
                             alt="Syunik Nature"
                             fill
                             className="object-cover group-hover:scale-110 transition-transform duration-700"

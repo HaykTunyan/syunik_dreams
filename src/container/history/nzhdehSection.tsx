@@ -1,12 +1,12 @@
 // Nzhdeh Section for History Page
 
 import Image from "next/image";
-import nzhdeh_syunik from "#/images/images/garegin_nzhdeh_syunik.png";
+import nzhdeh_syunik from "#/images/garegin_nzhdeh_syunik.png";
 import { useTranslations } from "next-intl";
 
 
 export const HistoryNzhdehSection: React.FC = () => {
-  
+
     /**
      * 
      * History Nzhdeh Section Component
@@ -15,7 +15,7 @@ export const HistoryNzhdehSection: React.FC = () => {
      * 
      */
 
-      const t = useTranslations('history_page.nzhdeh');
+    const t = useTranslations('history_page.nzhdeh');
 
     return (
         <section className="relative py-24 bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">

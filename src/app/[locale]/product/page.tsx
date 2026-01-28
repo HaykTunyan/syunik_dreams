@@ -7,8 +7,8 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 // Import images statically
-import TshirtFront from "#/images/images/Khustup-front.jpg";
-import TshirtBack from "#/images/images/Khustup_back.jpg";
+import TshirtFront from "#/images/Khustup-front.jpg";
+import TshirtBack from "#/images/Khustup_back.jpg";
 
 
 

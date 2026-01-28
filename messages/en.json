@@ -282,7 +282,8 @@
         },
         "map": {
             "title": "Location on Map",
-            "subtitle": "Discover the treasures of Syunik"
+            "subtitle": "Discover the treasures of Syunik",
+            "loading": "Loading map..."
         }
     },
     "history_page": {
