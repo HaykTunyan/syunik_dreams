@@ -1,8 +1,15 @@
 import { Resend } from 'resend';
 
-// Initialize Resend with the API key from environment variables
-if (!process.env.RESEND_API_KEY) {
-  console.warn('RESEND_API_KEY is missing in your environment variables.');
-}
+let instance: Resend | null = null;
 
-export const resend = new Resend(process.env.RESEND_API_KEY);
+export function getResend() {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error('RESEND_API_KEY is missing');
+  }
+
+  if (!instance) {
+    instance = new Resend(process.env.RESEND_API_KEY);
+  }
+
+  return instance;
+}
