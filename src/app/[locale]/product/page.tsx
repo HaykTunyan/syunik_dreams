@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
 
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -34,6 +35,8 @@ export default function ProductPage() {
      * @returns {JSX.Element}
      * 
      */
+
+    const t = useTranslations('product');
 
 
     const [selectedSize, setSelectedSize] = useState<string | null>(null);

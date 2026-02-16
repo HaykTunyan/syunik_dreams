@@ -1,7 +1,9 @@
 {
     "header": {
         "home": "Գլխավոր",
-        "backToHome": "Վերադառնալ Գլխավոր"
+        "backToHome": "Վերադառնալ Գլխավոր",
+        "history": "Պատմություն",
+        "tourism": "Տուրիզմ"
     },
     "trips": {
         "title": "Սյունիքի ճամփորդություններ",
@@ -253,7 +255,10 @@
         "cities": "Քաղաքները",
         "product": "Քո Շապիկը",
         "privacy_policy": "Գաղտնիություն",
-        "contact": "Կապ"
+        "contact": "Կապ",
+        "explore": "Բացահայտեք",
+        "support": "Աջակցություն",
+        "stay_connected": "Մնացեք կապի մեջ"
     },
     "trip_details": {
         "features": "Գործառույթներ",

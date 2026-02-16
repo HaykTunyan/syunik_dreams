@@ -68,7 +68,7 @@ export default function ContactPage() {
                         {/* Contact Form */}
                         <div className="space-y-12">
                             <div className="space-y-4">
-                                <h1 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-white tracking-tight">
+                                <h1 className="text-2xl md:text-5xl font-bold text-zinc-900 dark:text-white tracking-tight">
                                     {t('title')}
                                 </h1>
                                 <p className="text-xl text-zinc-500 dark:text-zinc-400 max-w-lg leading-relaxed">
@@ -155,7 +155,7 @@ export default function ContactPage() {
 
                         {/* Information Panel */}
                         <div className="lg:pl-20">
-                            <div className="bg-zinc-50 dark:bg-zinc-900 rounded-[40px] p-10 md:p-16 space-y-12">
+                            <div className="bg-zinc-50 dark:bg-zinc-900 rounded-[5px] md:rounded-[40px] p-4 md:p-10 md:p-16 space-y-12">
                                 <h2 className="text-3xl font-bold text-zinc-900 dark:text-white">
                                     {t('info.title')}
                                 </h2>
@@ -170,7 +170,7 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-1">{t('info.address_label')}</p>
-                                            <p className="text-lg text-zinc-900 dark:text-white font-medium">{t('info.address_value')}</p>
+                                            <p className="text-md md:text-lg text-zinc-900 dark:text-white font-medium">{t('info.address_value')}</p>
                                         </div>
                                     </div>
 
@@ -182,7 +182,7 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-1">{t('info.email_label')}</p>
-                                            <p className="text-lg text-zinc-900 dark:text-white font-medium">{t('info.email_value')}</p>
+                                            <p className="text-md md:text-lg text-zinc-900 dark:text-white font-medium">{t('info.email_value')}</p>
                                         </div>
                                     </div>
 
@@ -194,7 +194,7 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-1">{t('info.phone_label')}</p>
-                                            <p className="text-lg text-zinc-900 dark:text-white font-medium">{t('info.phone_value')}</p>
+                                            <p className="text-md md:text-lg text-zinc-900 dark:text-white font-medium">{t('info.phone_value')}</p>
                                         </div>
                                     </div>
                                 </div>

@@ -24,7 +24,7 @@ export const HomeInfoSection: React.FC = () => {
         <section className="py-24 px-6 md:px-20 bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200">
             <div className="max-w-6xl mx-auto space-y-16 animate-fade-in-up delay-500">
                 <div className="text-center">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                    <h2 className="text-2xl md:text-5xl font-bold mb-4">
                         {t('title')}
                     </h2>
                     <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
