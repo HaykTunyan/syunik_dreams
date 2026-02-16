@@ -1,7 +1,9 @@
 {
     "header": {
         "home": "Home",
-        "backToHome": "Back to Home"
+        "backToHome": "Back to Home",
+        "history": "History",
+        "tourism": "Tourism"
     },
     "trips": {
         "title": "Syunik Trips",
@@ -253,7 +255,10 @@
         "cities": "Cities",
         "product": "Your Shirt",
         "privacy_policy": "Privacy Policy",
-        "contact": "Contact Us"
+        "contact": "Contact Us",
+        "explore": "Explore",
+        "support": "Support",
+        "stay_connected": "Stay Connected"
     },
     "trip_details": {
         "features": "Features",
@@ -396,5 +401,9 @@
             "phone_value": "+374 99 000000",
             "social_title": "Follow Us"
         }
+    },
+    "product": {
+        "title": "Product",
+        "subtitle": "We'd love to hear from you. Send us a message and we'll get back to you as soon as possible."
     }
 }

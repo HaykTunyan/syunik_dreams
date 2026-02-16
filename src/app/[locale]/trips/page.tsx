@@ -34,7 +34,7 @@ export default function TripsPage() {
         {/* Header */}
         <section className="py-12 px-6 md:px-20 bg-gradient-to-r from-orange-500 to-red-600 text-white">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('title')}</h1>
+            <h1 className="text-2xl md:text-5xl font-bold mb-4">{t('title')}</h1>
             <p className="text-lg opacity-90">{t('subtitle')}</p>
           </div>
         </section>

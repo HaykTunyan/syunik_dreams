@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
             <main className="flex-grow py-24 px-6 md:px-20">
                 <div className="max-w-4xl mx-auto space-y-12">
                     <div className="text-center space-y-4">
-                        <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 dark:text-white">
+                        <h1 className="text-2xl md:text-6xl font-bold text-zinc-900 dark:text-white">
                             {t('title')}
                         </h1>
                         <p className="text-zinc-500 dark:text-zinc-400">
