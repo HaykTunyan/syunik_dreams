@@ -56,7 +56,7 @@ export const cities = [
     description: "Արևելյան Սյունիքի արդյունաբերական քաղաք, հանքարդյունաբերությամբ հայտնի։",
     population: "~8,000",
     size: "4.1 կմ²",
-    founding: "1951 թ.",
+    founding: "1958 թ.",
     coords: [39.1441, 46.2553] as [number, number],
   },
 ];

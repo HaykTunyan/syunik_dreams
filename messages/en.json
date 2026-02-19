@@ -77,7 +77,9 @@
         "area": "Area",
         "founding": "Founding",
         "population": "Population",
-        "more": "More →"
+        "more": "More →",
+        "history_title": "History & Heritage",
+        "back_to_cities": "Back to Cities"
     },
     "cities_data": {
         "kapan": {
@@ -118,7 +120,7 @@
         "qajaran": {
             "name": "Qajaran",
             "description": "Industrial city in Eastern Syunik, known for mining.",
-            "founding": "1951",
+            "founding": "1958",
             "size": "4.1 km²",
             "population": "~8,000"
         },
@@ -134,15 +136,17 @@
         "kapan": {
             "climate": "Moderate",
             "bestVisit": "May - October",
+            "history": "Kapan is one of the oldest settlements in Armenia, with roots dating back to the 5th century. It served as the capital of the Syunik Kingdom in the 10th century. Throughout history, it has been a vital defensive hub and a center for mining. The name 'Kapan' comes from the Armenian word 'kapel', meaning 'to lock', referring to its strategic position in the mountains.",
             "attractions": {
-                "0": "Kapan Mining Museum - famous mining history",
-                "1": "Kapan Gorge - amazing natural view",
-                "2": "Local markets - traditional goods"
+                "0": "Khustup Mountain - the most famous peaks in Syunik Region",
+                "1": "Vahanavank Monastery - Historic monastery",
+                "2": "Kapan Mining Museum - famous mining history"
             }
         },
         "goris": {
             "climate": "Mountainous",
             "bestVisit": "June - September",
+            "history": "Goris is known as one of the most beautiful cities in Armenia, famous for its unique 19th-century architecture and cave dwellings. The city was planned by German architects and features a distinct grid layout. Historically, Goris has been an important trade and cultural center, nestled in the heart of the Zangezur mountains. The nearby Old Goris cave city shows how people lived in the rocks for centuries.",
             "attractions": {
                 "0": "Tatev Monastery - 9th century famous monastery",
                 "1": "Basalt columns - natural sculpture",
@@ -152,6 +156,7 @@
         "meghri": {
             "climate": "Hot and dry",
             "bestVisit": "April - May",
+            "history": "Located on the border with Iran, Meghri is the warmest city in Armenia. It has a rich history dating back to the Urartian period. The city is famous for its narrow streets, 17th-century churches with unique frescoes, and the Meghri Fortress which defended the southern borders of Armenia. Meghri is often referred to as the 'Southern Gate' of the country.",
             "attractions": {
                 "0": "Meghri fortress - state palace",
                 "1": "Border views - view to Iran and Azerbaijan",
@@ -161,17 +166,31 @@
         "sisian": {
             "climate": "Moderate",
             "bestVisit": "April - November",
+            "history": "Sisian is home to some of the most ancient sites in Armenia, including the 3,500-year-old Zorats Karer (Karahunj) observatory. The region has been inhabited since the Bronze Age. In medieval times, it was a significant cultural and religious center. The city sits on the Vorotan River and is surrounded by high mountains and volcanic landscapes.",
             "attractions": {
                 "0": "Zorats stones - famous archaeological complex",
                 "1": "Selim caravanserai - medieval road palace",
                 "2": "Ancient sites - historical places"
             }
         },
-        "vayk": {
+        "agarak": {
+            "climate": "Hot and dry",
+            "bestVisit": "April - September",
+            "history": "Agarak is a southern town in Syunik, located on the left bank of the Araks River. Established in 1950 as a mining settlement, it has become a key industrial center for copper and molybdenum production. Its warm climate and strategic location near the Iranian border make it a unique crossroads of industry and nature.",
             "attractions": {
-                "0": "Mount Babadag - high mountain",
-                "1": "Scenic views - scenic view",
-                "2": "Traditional villages - traditional villages"
+                "0": "Araks River Valley - beautiful river views",
+                "1": "Copper-Molybdenum Plant - industrial landmark",
+                "2": "Border zone - unique geographical point"
+            }
+        },
+        "qajaran": {
+            "climate": "Mountainous",
+            "bestVisit": "May - October",
+            "history": "Qajaran is one of the highest cities in Armenia, situated at an altitude of about 1900-2100 meters. Founded in 1958, it is essentially built around the massive Qajaran copper-molybdenum mine. The city is surrounded by the Zangezur mountains and is known for its pure mountain air and the Voghji River passing through it.",
+            "attractions": {
+                "0": "Qajaran Mine - one of the largest in the world",
+                "1": "Zangezur Mountains - high peak hiking",
+                "2": "Voghji River - scenic mountain river"
             }
         }
     },
