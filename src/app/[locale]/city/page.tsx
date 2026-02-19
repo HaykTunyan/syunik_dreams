@@ -1,17 +1,16 @@
 "use client";
 
 import dynamic from "next/dynamic";
-
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { Link } from "@/i18n/navigation";
+import { cities } from "@/data/cities";
+import { useTranslations } from 'next-intl';
 
 const CityMap = dynamic(() => import("@/components/CityMap"), {
   ssr: false,
 });
 
-
-import { cities } from "@/data/cities";
-import { useTranslations } from 'next-intl';
 
 export default function CitiesPage() {
   const t = useTranslations('city_page');
@@ -94,9 +93,12 @@ export default function CitiesPage() {
                     <p className="font-semibold">{tData(`${city.id}.population`)}</p>
                   </div>
 
-                  <button className="text-orange-600 font-bold hover:text-orange-500">
+                  <Link
+                    href={`/city/${city.id}`}
+                    className="text-orange-600 font-bold hover:text-orange-500 transition-colors"
+                  >
                     {t('more')}
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
