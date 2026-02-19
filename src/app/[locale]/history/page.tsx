@@ -1,13 +1,24 @@
-
 import { Footer } from "@/components/footer";
-
-// Import Image
-
 import { HistoryHeroSection } from "@/container/history/heroSection";
 import { HistoryKingdomSection } from "@/container/history/kingdomSection";
 import { HistoryWarSection } from "@/container/history/warSection";
 import { HistoryNzhdehSection } from "@/container/history/nzhdehSection";
 import { HistoryCultoreSection } from "@/container/history/cultoreSection";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'header' });
+
+    return {
+        title: t('history'),
+        openGraph: {
+            title: `${t('history')} | Syunik Dreams`,
+            type: "article",
+        }
+    };
+}
 
 export default function HistoryPage() {
 

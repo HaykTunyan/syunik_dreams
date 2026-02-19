@@ -79,7 +79,8 @@
         "population": "Population",
         "more": "More →",
         "history_title": "History & Heritage",
-        "back_to_cities": "Back to Cities"
+        "back_to_cities": "Back to Cities",
+        "learn_more": "Learn More"
     },
     "cities_data": {
         "kapan": {
@@ -141,7 +142,17 @@
                 "0": "Khustup Mountain - the most famous peaks in Syunik Region",
                 "1": "Vahanavank Monastery - Historic monastery",
                 "2": "Kapan Mining Museum - famous mining history"
-            }
+            },
+            "links": [
+                {
+                    "name": "Wikipedia - Kapan",
+                    "url": "https://en.wikipedia.org/wiki/Kapan"
+                },
+                {
+                    "name": "Syunik Regional Administration",
+                    "url": "http://syunik.mtad.am/en/"
+                }
+            ]
         },
         "goris": {
             "climate": "Mountainous",
@@ -151,7 +162,17 @@
                 "0": "Tatev Monastery - 9th century famous monastery",
                 "1": "Basalt columns - natural sculpture",
                 "2": "Old town - traditional architecture"
-            }
+            },
+            "links": [
+                {
+                    "name": "Wikipedia - Goris",
+                    "url": "https://en.wikipedia.org/wiki/Goris"
+                },
+                {
+                    "name": "Visit Armenia - Goris",
+                    "url": "https://armenia.travel/en/destination/goris"
+                }
+            ]
         },
         "meghri": {
             "climate": "Hot and dry",
@@ -161,7 +182,13 @@
                 "0": "Meghri fortress - state palace",
                 "1": "Border views - view to Iran and Azerbaijan",
                 "2": "Nature reserve - natural conservation"
-            }
+            },
+            "links": [
+                {
+                    "name": "Wikipedia - Meghri",
+                    "url": "https://en.wikipedia.org/wiki/Meghri"
+                }
+            ]
         },
         "sisian": {
             "climate": "Moderate",
@@ -171,7 +198,17 @@
                 "0": "Zorats stones - famous archaeological complex",
                 "1": "Selim caravanserai - medieval road palace",
                 "2": "Ancient sites - historical places"
-            }
+            },
+            "links": [
+                {
+                    "name": "Wikipedia - Sisian",
+                    "url": "https://en.wikipedia.org/wiki/Sisian"
+                },
+                {
+                    "name": "Karahunj Observatory",
+                    "url": "http://www.karahunj.com/"
+                }
+            ]
         },
         "agarak": {
             "climate": "Hot and dry",
@@ -181,7 +218,13 @@
                 "0": "Araks River Valley - beautiful river views",
                 "1": "Copper-Molybdenum Plant - industrial landmark",
                 "2": "Border zone - unique geographical point"
-            }
+            },
+            "links": [
+                {
+                    "name": "Wikipedia - Agarak",
+                    "url": "https://en.wikipedia.org/wiki/Agarak,_Syunik"
+                }
+            ]
         },
         "qajaran": {
             "climate": "Mountainous",
@@ -191,7 +234,13 @@
                 "0": "Qajaran Mine - one of the largest in the world",
                 "1": "Zangezur Mountains - high peak hiking",
                 "2": "Voghji River - scenic mountain river"
-            }
+            },
+            "links": [
+                {
+                    "name": "Wikipedia - Qajaran",
+                    "url": "https://en.wikipedia.org/wiki/Kajaran"
+                }
+            ]
         }
     },
     "trips_data": {
