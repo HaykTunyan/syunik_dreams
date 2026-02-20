@@ -84,6 +84,47 @@ export default function TripsClient() {
                         </div>
                     </div>
                 </section>
+                <section className="py-20 border-t border-zinc-100 dark:border-zinc-800">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <div className="text-center mb-16">
+                            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-zinc-900 dark:text-white mb-4">
+                                {t('most_visited_title')}
+                            </h2>
+                            <p className="text-xl text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto">
+                                {t('most_visited_subtitle')}
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {[
+                                { id: 'tatev', icon: '⛪' },
+                                { id: 'karahunj', icon: '🏛️' },
+                                { id: 'khndzoresk', icon: '🌉' },
+                                { id: 'shake', icon: '🌊' },
+                                { id: 'khustup', icon: '🏔️' },
+                                { id: 'vorotnavank', icon: '🛕' },
+                                { id: 'goris_caves', icon: '🛖' },
+                                { id: 'halidzor', icon: '🏰' },
+                                { id: 'vahanavank', icon: '⛪' }
+                            ].map((item) => (
+                                <div
+                                    key={item.id}
+                                    className="group bg-zinc-50 dark:bg-zinc-900/50 p-8 rounded-[2.5rem] border border-transparent hover:border-orange-500/20 hover:bg-white dark:hover:bg-zinc-900 transition-all duration-500"
+                                >
+                                    <div className="text-4xl mb-6 bg-white dark:bg-zinc-800 w-16 h-16 flex items-center justify-center rounded-2xl shadow-sm group-hover:scale-110 transition-transform duration-500">
+                                        {item.icon}
+                                    </div>
+                                    <h3 className="text-2xl font-black uppercase text-zinc-900 dark:text-white mb-3 group-hover:text-orange-500 transition-colors">
+                                        {t(`attraction_${item.id}`)}
+                                    </h3>
+                                    <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                        {t(`attraction_${item.id}_desc`)}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
             </main>
             <Footer />
         </div>

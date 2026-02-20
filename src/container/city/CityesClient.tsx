@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { Link } from "@/i18n/navigation";
 import { cities } from "@/data/cities";
 import { useTranslations } from 'next-intl';
+import CityInfoCard from "./CityInfoCard";
 
 const CityMap = dynamic(() => import("@/components/CityMap"), {
     ssr: false,
@@ -13,6 +14,13 @@ const CityMap = dynamic(() => import("@/components/CityMap"), {
 
 
 export default function CitiesClient() {
+
+    /**
+     * 
+     * CityInfoCard component is used to display the information of the city.
+     *  
+     */
+
     const t = useTranslations('city_page');
     const tData = useTranslations('cities_data');
 
@@ -59,8 +67,9 @@ export default function CitiesClient() {
                                     {tData(`${city.id}.description`)}
                                 </p>
                                 <div className="grid grid-cols-2 gap-4">
-                                    <InfoCard label={t('area')} value={tData(`${city.id}.size`)} />
-                                    <InfoCard label={t('founding')} value={tData(`${city.id}.founding`)} />
+
+                                    <CityInfoCard label={t('area')} value={tData(`${city.id}.size`)} />
+                                    <CityInfoCard label={t('founding')} value={tData(`${city.id}.founding`)} />
                                 </div>
                                 <div className="flex justify-between items-center border-t pt-4">
                                     <div>
@@ -85,17 +94,17 @@ export default function CitiesClient() {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl" />
                 <div className="max-w-7xl mx-auto text-center space-y-8 relative z-10">
                     <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight">
-                        Want to know more about Syunik's rich past?
+                        {t('history_cta_title')}
                     </h2>
                     <p className="text-xl text-orange-100 max-w-2xl mx-auto">
-                        From the Kingdom of Syunik to the heroic battles for independence, discover the spirit that shaped these cities.
+                        {t('history_cta_description')}
                     </p>
                     <div className="flex justify-center">
                         <Link
                             href="/history"
                             className="bg-white text-orange-600 px-10 py-4 rounded-full font-black uppercase text-lg hover:bg-zinc-100 transition-colors shadow-2xl"
                         >
-                            Explore History
+                            {t('history_cta_button')}
                         </Link>
                     </div>
                 </div>
@@ -103,16 +112,5 @@ export default function CitiesClient() {
 
             <Footer />
         </main>
-    );
-}
-
-function InfoCard({ label, value }: { label: string; value: string }) {
-    return (
-        <div className="bg-zinc-50 dark:bg-zinc-800/50 p-4 rounded-2xl border border-zinc-100 dark:border-zinc-800">
-            <span className="text-xs uppercase text-zinc-400 font-bold">
-                {label}
-            </span>
-            <p className="text-xl font-bold mt-1">{value}</p>
-        </div>
     );
 }

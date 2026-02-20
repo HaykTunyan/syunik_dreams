@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import dynamic from "next/dynamic";
 import SyunikLandscape from "#/images/syunik_landscape.png";
+import CityStatsCard from "./CityStatsCard";
 
 const CityMap = dynamic(() => import("@/components/CityMap"), {
     ssr: false,
@@ -67,10 +68,10 @@ export default function CityDetailClient({ cityId }: Props) {
             <section className="py-12 px-6 md:px-20 -mt-24 relative z-20">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
-                        <StatsCard label={t('area')} value={tData(`${city.id}.size`)} icon="📏" />
-                        <StatsCard label={t('population')} value={tData(`${city.id}.population`)} icon="👥" />
-                        <StatsCard label={t('founding')} value={tData(`${city.id}.founding`)} icon="🏛️" />
-                        <StatsCard label={tTrip('climate')} value={tDetails(`${city.id}.climate`)} icon="⛅" />
+                        <CityStatsCard label={t('area')} value={tData(`${city.id}.size`)} icon="📏" />
+                        <CityStatsCard label={t('population')} value={tData(`${city.id}.population`)} icon="👥" />
+                        <CityStatsCard label={t('founding')} value={tData(`${city.id}.founding`)} icon="🏛️" />
+                        <CityStatsCard label={tTrip('climate')} value={tDetails(`${city.id}.climate`)} icon="⛅" />
                     </div>
                 </div>
             </section>
@@ -200,14 +201,3 @@ export default function CityDetailClient({ cityId }: Props) {
     );
 }
 
-function StatsCard({ label, value, icon }: { label: string; value: string; icon: string }) {
-    return (
-        <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-[2rem] shadow-xl border border-zinc-100 dark:border-zinc-800 group hover:border-orange-500 transition-all duration-300">
-            <span className="text-3xl mb-4 block">{icon}</span>
-            <span className="text-xs uppercase text-zinc-400 font-black tracking-widest">
-                {label}
-            </span>
-            <p className="text-xl md:text-2xl font-black mt-2 text-zinc-900 dark:text-white">{value}</p>
-        </div>
-    );
-}
