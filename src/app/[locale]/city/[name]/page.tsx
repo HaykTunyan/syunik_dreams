@@ -1,159 +1,96 @@
-"use client";
-
-import { use } from "react";
 import { cities } from "@/data/cities";
-import { useTranslations } from "next-intl";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import Image from "next/image";
-import { Link } from "@/i18n/navigation";
-import dynamic from "next/dynamic";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import SyunikLandscape from "#/images/syunik_landscape.png";
-
-const CityMap = dynamic(() => import("@/components/CityMap"), {
-    ssr: false,
-});
+import CityDetailClient from "@/container/city/CityDetailClient";
+import { getTranslations } from "next-intl/server";
 
 interface Props {
     params: Promise<{ locale: string; name: string }>;
 }
 
-export default function CityDetailPage({ params }: Props) {
-    const { locale, name: cityId } = use(params);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale, name: cityId } = await params;
+    const city = cities.find((c) => c.id === cityId);
+
+    if (!city) {
+        return {
+            title: "City Not Found",
+        };
+    }
+
+    const tData = await getTranslations({ locale, namespace: 'cities_data' });
+    const cityName = tData(`${city.id}.name`);
+    const cityDescription = tData(`${city.id}.description`);
+
+    return {
+        title: cityName,
+        description: cityDescription,
+        openGraph: {
+            title: `${cityName} | Syunik Dreams`,
+            description: cityDescription,
+            url: `https://syunikdreams.am/${locale}/city/${cityId}`,
+            siteName: "Syunik Dreams",
+            images: [
+                {
+                    url: "/images/syunik_landscape.png",
+                    width: 1200,
+                    height: 630,
+                    alt: cityName,
+                },
+            ],
+            locale: locale === 'hy' ? 'hy_AM' : 'en_US',
+            type: "article",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: cityName,
+            description: cityDescription,
+            images: ["/images/syunik_landscape.png"],
+        },
+    };
+}
+
+export default async function CityDetailPage({ params }: Props) {
+    const { locale, name: cityId } = await params;
     const city = cities.find((c) => c.id === cityId);
 
     if (!city) {
         notFound();
     }
 
-    const t = useTranslations('city_page');
-    const tData = useTranslations('cities_data');
-    const tDetails = useTranslations('cities_data_details');
-    const tTrip = useTranslations('trip_details');
+    const tData = await getTranslations({ locale, namespace: 'cities_data' });
+    const cityName = tData(`${city.id}.name`);
+    const cityDescription = tData(`${city.id}.description`);
 
-    // For attractions, we need to handle the object structure in json
-    const attractionKeys = ['0', '1', '2'];
+    // Schema.org structured data
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'City',
+        name: cityName,
+        description: cityDescription,
+        url: `https://syunikdreams.am/${locale}/city/${cityId}`,
+        geo: {
+            '@type': 'GeoCoordinates',
+            latitude: city.coords[0],
+            longitude: city.coords[1],
+        },
+        containedInPlace: {
+            '@type': 'State',
+            name: 'Syunik',
+            containedInPlace: {
+                '@type': 'Country',
+                name: 'Armenia'
+            }
+        }
+    };
 
     return (
-        <main className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
-            <Header />
-
-            {/* Hero Section */}
-            <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
-                <Image
-                    src={SyunikLandscape}
-                    alt={tData(`${city.id}.name`)}
-                    fill
-                    className="object-cover brightness-50"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
-
-                <div className="relative z-10 text-center px-4 max-w-4xl">
-                    <Link
-                        href="/city"
-                        className="inline-flex items-center gap-2 text-orange-500 font-bold mb-6 hover:text-orange-400 transition-colors uppercase tracking-widest text-sm"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                        </svg>
-                        {t('back_to_cities')}
-                    </Link>
-                    <h1 className="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter">
-                        {tData(`${city.id}.name`)}
-                    </h1>
-                    <p className="mt-6 text-xl md:text-2xl text-zinc-200 font-medium">
-                        {tData(`${city.id}.description`)}
-                    </p>
-                </div>
-            </section>
-
-            {/* Quick Info Grid */}
-            <section className="py-12 px-6 md:px-20 -mt-24 relative z-20">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                        <StatsCard label={t('area')} value={tData(`${city.id}.size`)} icon="📏" />
-                        <StatsCard label={t('population')} value={tData(`${city.id}.population`)} icon="👥" />
-                        <StatsCard label={t('founding')} value={tData(`${city.id}.founding`)} icon="🏛️" />
-                        <StatsCard label={tTrip('climate')} value={tDetails(`${city.id}.climate`)} icon="⛅" />
-                    </div>
-                </div>
-            </section>
-
-            {/* History & Content */}
-            <section className="py-20 px-6 md:px-20">
-                <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
-                    <div className="md:col-span-2 space-y-12">
-                        <div className="space-y-6">
-                            <h2 className="text-4xl font-black uppercase text-zinc-900 dark:text-white flex items-center gap-4">
-                                <span className="w-12 h-1 bg-orange-500 rounded-full"></span>
-                                {t('history_title')}
-                            </h2>
-                            <p className="text-xl leading-relaxed text-zinc-600 dark:text-zinc-400 first-letter:text-5xl first-letter:font-bold first-letter:text-orange-500 first-letter:mr-3 first-letter:float-left">
-                                {tDetails(`${city.id}.history`)}
-                            </p>
-                        </div>
-
-                        <div className="space-y-8">
-                            <h2 className="text-3xl font-black uppercase text-zinc-900 dark:text-white">
-                                {tTrip('attractions')}
-                            </h2>
-                            <div className="grid sm:grid-cols-2 gap-6">
-                                {attractionKeys.map((key) => (
-                                    <div key={key} className="bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-zinc-100 dark:border-zinc-800 shadow-sm hover:shadow-xl transition-all duration-300">
-                                        <span className="text-orange-500 font-black text-2xl mb-4 block">0{parseInt(key) + 1}</span>
-                                        <p className="text-lg text-zinc-700 dark:text-zinc-300">
-                                            {tDetails(`${city.id}.attractions.${key}`)}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="space-y-12">
-                        <div className="bg-orange-500 rounded-[2.5rem] p-10 text-white shadow-2xl shadow-orange-500/20 sticky top-24">
-                            <h3 className="text-2xl font-black uppercase mb-6">{tTrip('best_visit')}</h3>
-                            <p className="text-4xl font-bold mb-8">{tDetails(`${city.id}.bestVisit`)}</p>
-                            <div className="h-px bg-white/20 mb-8"></div>
-                            <p className="text-orange-100 leading-relaxed mb-8">
-                                Discover the seasonal beauty of {tData(`${city.id}.name`)}. Each month brings a unique atmosphere to this historical city.
-                            </p>
-                            <button className="w-full bg-white text-orange-500 font-bold py-4 rounded-2xl hover:bg-zinc-100 transition-colors">
-                                {tTrip('book_tour')}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Map Section */}
-            <section className="py-20 px-6 md:px-20 bg-zinc-100 dark:bg-zinc-900/50">
-                <div className="max-w-7xl mx-auto space-y-10">
-                    <div className="text-center space-y-4">
-                        <h2 className="text-4xl font-black uppercase">{tData(`${city.id}.name`)} on Map</h2>
-                        <p className="text-zinc-500">Explore the location and surroundings</p>
-                    </div>
-                    <div className="h-[500px] w-full rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white dark:border-zinc-800">
-                        <CityMap coords={city.coords} name={tData(`${city.id}.name`)} />
-                    </div>
-                </div>
-            </section>
-
-            <Footer />
-        </main>
-    );
-}
-
-function StatsCard({ label, value, icon }: { label: string; value: string; icon: string }) {
-    return (
-        <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-[2rem] shadow-xl border border-zinc-100 dark:border-zinc-800 group hover:border-orange-500 transition-all duration-300">
-            <span className="text-3xl mb-4 block">{icon}</span>
-            <span className="text-xs uppercase text-zinc-400 font-black tracking-widest">
-                {label}
-            </span>
-            <p className="text-xl md:text-2xl font-black mt-2 text-zinc-900 dark:text-white">{value}</p>
-        </div>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <CityDetailClient cityId={cityId} />
+        </>
     );
 }

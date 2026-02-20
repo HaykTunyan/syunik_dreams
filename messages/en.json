@@ -67,7 +67,27 @@
         "feature_transport": "Transport included",
         "feature_food": "Food provided",
         "feature_insurance": "Insurance included",
-        "book_now": "Book Now"
+        "book_now": "Book Now",
+        "most_visited_title": "Most Visited Attractions",
+        "most_visited_subtitle": "The most iconic and breathtaking places you must visit in Syunik",
+        "attraction_tatev": "Tatev Monastery",
+        "attraction_tatev_desc": "Architectural masterpiece and spiritual center with the world's longest tramway.",
+        "attraction_karahunj": "Karahunj (Zorats Karer)",
+        "attraction_karahunj_desc": "Ancient observatory often called the 'Armenian Stonehenge', dating back 7,500 years.",
+        "attraction_khndzoresk": "Khndzoresk Swinging Bridge",
+        "attraction_khndzoresk_desc": "Breathtaking bridge over a gorge leading to an ancient cave village.",
+        "attraction_shake": "Shake Waterfall",
+        "attraction_shake_desc": "The most beautiful waterfall in Armenia, located in the Vorotan gorge.",
+        "attraction_khustup": "Mount Khustup",
+        "attraction_khustup_desc": "The sacred mountain of Syunik, a symbol of freedom and strength.",
+        "attraction_vorotnavank": "Vorotnavank Monastery",
+        "attraction_vorotnavank_desc": "A significant medieval monastic complex overlooking the Vorotan River gorge.",
+        "attraction_goris_caves": "Old Goris Cave Dwellings",
+        "attraction_goris_caves_desc": "Ancient habitations carved into the volcanic rock, showcasing a unique way of life.",
+        "attraction_halidzor": "Halidzor Fortress",
+        "attraction_halidzor_desc": "The headquarters of Davit Bek's liberation movement and a symbol of military resilience.",
+        "attraction_vahanavank": "Vahanavank Monastery",
+        "attraction_vahanavank_desc": "The 10th-century pantheon of the Syunik kings and princes."
     },
     "city_page": {
         "title_prefix": "Syunik",
@@ -79,7 +99,11 @@
         "population": "Population",
         "more": "More →",
         "history_title": "History & Heritage",
-        "back_to_cities": "Back to Cities"
+        "back_to_cities": "Back to Cities",
+        "learn_more": "Learn More",
+        "history_cta_title": "Want to know more about Syunik's rich past?",
+        "history_cta_description": "From the Kingdom of Syunik to the heroic battles for independence, discover the spirit that shaped these cities.",
+        "history_cta_button": "Explore History"
     },
     "cities_data": {
         "kapan": {
@@ -141,7 +165,17 @@
                 "0": "Khustup Mountain - the most famous peaks in Syunik Region",
                 "1": "Vahanavank Monastery - Historic monastery",
                 "2": "Kapan Mining Museum - famous mining history"
-            }
+            },
+            "links": [
+                {
+                    "name": "Wikipedia - Kapan",
+                    "url": "https://en.wikipedia.org/wiki/Kapan"
+                },
+                {
+                    "name": "Syunik Regional Administration",
+                    "url": "http://syunik.mtad.am/en/"
+                }
+            ]
         },
         "goris": {
             "climate": "Mountainous",
@@ -151,7 +185,17 @@
                 "0": "Tatev Monastery - 9th century famous monastery",
                 "1": "Basalt columns - natural sculpture",
                 "2": "Old town - traditional architecture"
-            }
+            },
+            "links": [
+                {
+                    "name": "Wikipedia - Goris",
+                    "url": "https://en.wikipedia.org/wiki/Goris"
+                },
+                {
+                    "name": "Visit Armenia - Goris",
+                    "url": "https://armenia.travel/en/destination/goris"
+                }
+            ]
         },
         "meghri": {
             "climate": "Hot and dry",
@@ -161,7 +205,13 @@
                 "0": "Meghri fortress - state palace",
                 "1": "Border views - view to Iran and Azerbaijan",
                 "2": "Nature reserve - natural conservation"
-            }
+            },
+            "links": [
+                {
+                    "name": "Wikipedia - Meghri",
+                    "url": "https://en.wikipedia.org/wiki/Meghri"
+                }
+            ]
         },
         "sisian": {
             "climate": "Moderate",
@@ -171,7 +221,17 @@
                 "0": "Zorats stones - famous archaeological complex",
                 "1": "Selim caravanserai - medieval road palace",
                 "2": "Ancient sites - historical places"
-            }
+            },
+            "links": [
+                {
+                    "name": "Wikipedia - Sisian",
+                    "url": "https://en.wikipedia.org/wiki/Sisian"
+                },
+                {
+                    "name": "Karahunj Observatory",
+                    "url": "http://www.karahunj.com/"
+                }
+            ]
         },
         "agarak": {
             "climate": "Hot and dry",
@@ -181,7 +241,13 @@
                 "0": "Araks River Valley - beautiful river views",
                 "1": "Copper-Molybdenum Plant - industrial landmark",
                 "2": "Border zone - unique geographical point"
-            }
+            },
+            "links": [
+                {
+                    "name": "Wikipedia - Agarak",
+                    "url": "https://en.wikipedia.org/wiki/Agarak,_Syunik"
+                }
+            ]
         },
         "qajaran": {
             "climate": "Mountainous",
@@ -191,7 +257,13 @@
                 "0": "Qajaran Mine - one of the largest in the world",
                 "1": "Zangezur Mountains - high peak hiking",
                 "2": "Voghji River - scenic mountain river"
-            }
+            },
+            "links": [
+                {
+                    "name": "Wikipedia - Qajaran",
+                    "url": "https://en.wikipedia.org/wiki/Kajaran"
+                }
+            ]
         }
     },
     "trips_data": {
@@ -422,7 +494,26 @@
         }
     },
     "product": {
-        "title": "Product",
-        "subtitle": "We'd love to hear from you. Send us a message and we'll get back to you as soon as possible."
+        "title": "Spirit of Mount Khustup",
+        "subtitle": "Syunik Dreams Collection",
+        "description": "Experience the majestic spirit of Mount Khustup. This exclusive tee features a hand-drawn illustration of the legendary peak, created for those who carry Syunik in their hearts. Made from 100% high-quality cotton for maximum comfort and durability.",
+        "madeBy": "Designed and made by the owner in Syunik",
+        "price_label": "AMD / Piece",
+        "select_size": "Select Size",
+        "select_size_alert": "Please select a size first!",
+        "size_chart": "Size Chart",
+        "size_note": "*We have all sizes for you.",
+        "order_now": "Order Now",
+        "shipping_note": "Secure payment and fast delivery throughout Armenia",
+        "details_title": "Product Details",
+        "bullet_1": "100% high-quality cotton for comfort and durability",
+        "bullet_2": "Exclusive hand-drawn illustration of Mount Khustup",
+        "bullet_3": "Available sizes: S, M, L, XL",
+        "bullet_4": "Machine washable and easy to care for",
+        "bullet_5": "Perfect gift for nature and adventure lovers",
+        "success_modal_title": "Order Placed Successfully!",
+        "delivery_info": "Estimated Delivery: 2-3 business days within Armenia.",
+        "success_close": "Great!",
+        "added_to_cart": "item added to your selection"
     }
 }

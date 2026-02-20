@@ -6,8 +6,6 @@ import { useTranslations } from 'next-intl';
 
 import syunik_kingdom from "#/images/syunik_kingdom.png";
 
-
-
 export const HistoryHeroSection: React.FC = () => {
 
     /**

@@ -11,10 +11,46 @@ const notoArmenian = Noto_Sans_Armenian({
   variable: "--font-noto-armenian",
 });
 
-export const metadata: Metadata = {
-  title: "Syunik - Legend of Mountains",
-  description: "Discover the breathtaking beauty and history of Syunik region.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const isEn = locale === 'en';
+
+  const title = isEn ? "Syunik - Legend of Mountains" : "Սյունիք - Լեռների Լեգենդը";
+  const description = isEn
+    ? "Discover the breathtaking beauty and history of Syunik region. Explore ancient monasteries, high mountains, and heroic history."
+    : "Բացահայտեք Սյունիքի մարզի շունչ կտրող գեղեցկությունն ու պատմությունը։ Բացահայտեք հնագույն վանքերը, բարձր լեռները և հերոսական պատմությունը։";
+
+  return {
+    title: {
+      default: title,
+      template: `%s | ${isEn ? 'Syunik Dreams' : 'Սյունիքի Երազանքներ'}`
+    },
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://syunikdreams.am/${locale}`,
+      siteName: isEn ? "Syunik Dreams" : "Սյունիքի Երազանքներ",
+      images: [
+        {
+          url: "/images/syunik_landscape.png",
+          width: 1200,
+          height: 630,
+          alt: isEn ? "Syunik Landscape" : "Սյունիքի բնապատկեր",
+        },
+      ],
+      locale: isEn ? "en_US" : "hy_AM",
+      type: "website",
+    },
+    keywords: ["syunik", "mountains", "discover", "landscape", "world", "eternal", "unconquerable", "spirit"],
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/images/syunik_landscape.png"],
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -31,10 +67,40 @@ export default async function RootLayout({
 
   const messages = await getMessages();
 
+  const isEn = locale === 'en';
+  const title = isEn ? "Syunik Dreams" : "Սյունիքի Երազանքներ";
+  const description = isEn
+    ? "Befriend the mountains and history of Syunik"
+    : "Ընկերացեք Սյունիքի լեռների և պատմության հետ";
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'TravelAgency',
+    name: title,
+    description: description,
+    url: 'https://syunikdreams.am',
+    logo: 'https://syunikdreams.am/images/syunik_view.png',
+    address: {
+      '@type': 'PostalAddress',
+      addressRegion: 'Syunik',
+      addressCountry: 'AM'
+    },
+    areaServed: {
+      '@type': 'State',
+      name: 'Syunik'
+    }
+  };
+
   return (
     <html lang={locale}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${notoArmenian.variable} font-sans antialiased`}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <ErrorBoundary>
             <main>{children}</main>
           </ErrorBoundary>
