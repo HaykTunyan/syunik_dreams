@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import dynamic from "next/dynamic";
-import SyunikLandscape from "#/images/syunik_landscape.png";
+// Hero image will be dynamic per-city (uses public `/images/*` paths)
 import CityStatsCard from "./CityStatsCard";
 
 const CityMap = dynamic(() => import("@/components/CityMap"), {
@@ -19,6 +19,13 @@ interface Props {
 }
 
 export default function CityDetailClient({ cityId }: Props) {
+
+    /**
+     * 
+     * City image is not visible
+     * 
+     */
+
     const city = cities.find((c) => c.id === cityId);
 
     if (!city) return null;
@@ -27,6 +34,8 @@ export default function CityDetailClient({ cityId }: Props) {
     const tData = useTranslations('cities_data');
     const tDetails = useTranslations('cities_data_details');
     const tTrip = useTranslations('trip_details');
+
+    const heroSrc = city.image || '/images/syunik_landscape.png';
 
     const attractionKeys = ['0', '1', '2'];
 
@@ -37,7 +46,7 @@ export default function CityDetailClient({ cityId }: Props) {
             {/* Hero Section */}
             <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
                 <Image
-                    src={SyunikLandscape}
+                    src={heroSrc}
                     alt={tData(`${city.id}.name`)}
                     fill
                     className="object-cover brightness-50"

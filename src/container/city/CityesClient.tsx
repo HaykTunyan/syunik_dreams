@@ -12,7 +12,6 @@ const CityMap = dynamic(() => import("@/components/CityMap"), {
     ssr: false,
 });
 
-
 export default function CitiesClient() {
 
     /**

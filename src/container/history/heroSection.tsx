@@ -15,7 +15,6 @@ export const HistoryHeroSection: React.FC = () => {
 
     const t = useTranslations('history_page.hero');
 
-
     return (
         <section className="relative h-[80vh] w-full flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 z-0">
