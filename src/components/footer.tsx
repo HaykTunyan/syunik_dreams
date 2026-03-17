@@ -23,9 +23,9 @@ export function Footer() {
                 Dreams • Explore • Legend
               </span>
             </Link>
-            <p className="text-zinc-500 text-sm leading-relaxed text-center md:text-left max-w-xs">
+            {/* <p className="text-zinc-500 text-sm leading-relaxed text-center md:text-left max-w-xs">
               {t('rights')}
-            </p>
+            </p> */}
           </div>
 
           <div className="">

@@ -3,6 +3,13 @@ import { getTranslations } from 'next-intl/server';
 import CitiesClient from '@/container/city/CityesClient';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+
+  /**
+   * 
+   * generateMetadata function is used to generate the metadata for the city page.
+   * 
+   */
+
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'city_page' });
 

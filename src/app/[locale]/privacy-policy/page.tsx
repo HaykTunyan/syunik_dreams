@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useTranslations } from 'next-intl';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
@@ -11,7 +11,6 @@ export default function PrivacyPolicyPage() {
      * 
      * 
      */
-
 
     const t = useTranslations('privacy_policy');
 

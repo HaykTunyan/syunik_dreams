@@ -26,8 +26,6 @@ export default function CitiesClient() {
     return (
         <main className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
             <Header />
-
-            {/* Hero */}
             <section className="relative h-[80vh] w-full flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/20" />
                 <div className="relative z-10 text-center px-4">
@@ -40,7 +38,6 @@ export default function CitiesClient() {
                 </div>
             </section>
 
-            {/* Cities */}
             <section className="py-20 px-6 md:px-20 -mt-20 relative z-20">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
                     {cities.map((city) => (
@@ -48,7 +45,6 @@ export default function CitiesClient() {
                             key={city.id}
                             className="bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden shadow-xl border border-zinc-100 dark:border-zinc-800"
                         >
-                            {/* Map */}
                             <div className="relative h-72 w-full">
                                 <div className="z-10 h-full w-full relative">
                                     <CityMap coords={city.coords} name={tData(`${city.id}.name`)} />
@@ -60,7 +56,6 @@ export default function CitiesClient() {
                                 </div>
                             </div>
 
-                            {/* Info */}
                             <div className="p-8 space-y-6">
                                 <p className="text-zinc-600 dark:text-zinc-400 text-lg">
                                     {tData(`${city.id}.description`)}
@@ -88,7 +83,6 @@ export default function CitiesClient() {
                 </div>
             </section>
 
-            {/* History CTA */}
             <section className="py-20 px-6 md:px-20 bg-orange-600 text-white overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl" />
                 <div className="max-w-7xl mx-auto text-center space-y-8 relative z-10">

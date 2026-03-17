@@ -12,9 +12,18 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-    const [language, setLanguage] = useState<Language>('hy'); // Default to Armenian
 
-    // Ideally, persist preference to localStorage
+    /**
+     * 
+     * Language Provider Component
+     * 
+     * @param {ReactNode} children - The children to be rendered
+     * 
+     */
+
+
+    const [language, setLanguage] = useState<Language>('hy');
+
     useEffect(() => {
         const savedLang = localStorage.getItem('language') as Language;
         if (savedLang && (savedLang === 'en' || savedLang === 'hy')) {

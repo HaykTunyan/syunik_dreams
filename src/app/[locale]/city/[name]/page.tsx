@@ -29,9 +29,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const cityName = tData(`${city.id}.name`);
     const cityDescription = tData(`${city.id}.description`);
 
-
-    console.log("Generating metadata for city:", cityName);
-
     return {
         title: cityName,
         description: cityDescription,

@@ -2,9 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-
 import Landscape from "#/images/syunik_landscape.png"
-
 import { useTranslations } from "next-intl";
 
 export const HomeHeroSection: React.FC = () => {
@@ -19,7 +17,6 @@ export const HomeHeroSection: React.FC = () => {
 
     return (
         <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-            {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
                     src={Landscape}
@@ -29,11 +26,9 @@ export const HomeHeroSection: React.FC = () => {
                     priority
                     quality={100}
                 />
-                {/* Overlay for better text readability */}
                 <div className="absolute inset-0 bg-black/40" />
             </div>
 
-            {/* Hero Content */}
             <div className="relative z-10 text-center text-white px-4">
                 <h1 className="text-6xl md:text-9xl font-bold mb-6 animate-fade-in-up tracking-wider drop-shadow-2xl">
                     {t('title')}
@@ -42,8 +37,6 @@ export const HomeHeroSection: React.FC = () => {
                     {t('subtitle')}
                 </p>
             </div>
-
-            {/* Scroll Indicator */}
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10 text-white opacity-80">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />

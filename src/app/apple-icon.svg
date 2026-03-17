@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#18181b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0c0c0e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background (square for apple-icon) -->
+  <rect width="512" height="512" fill="url(#bgGrad)" />
+
+  <!-- Subtle glow behind mountain -->
+  <ellipse cx="256" cy="310" rx="200" ry="80" fill="#f59e0b" opacity="0.06" />
+
+  <!-- Back/secondary mountain range (muted) -->
+  <path
+    d="M 60 370 L 160 210 L 220 280 L 290 170 L 360 270 L 440 200 L 460 370 Z"
+    fill="#f59e0b"
+    opacity="0.12"
+  />
+
+  <!-- Main mountain -->
+  <path
+    d="M 256 80
+       L 155 310
+       L 195 285
+       L 230 330
+       L 256 295
+       L 282 330
+       L 317 285
+       L 357 310
+       Z"
+    fill="url(#mountainGrad)"
+  />
+
+  <!-- Snow cap -->
+  <path
+    d="M 256 80 L 228 148 L 256 132 L 284 148 Z"
+    fill="white"
+    opacity="0.35"
+  />
+
+  <!-- Ground baseline -->
+  <rect x="80" y="368" width="352" height="6" rx="3" fill="url(#mountainGrad)" opacity="0.5" />
+
+  <!-- Star above peak -->
+  <circle cx="256" cy="56" r="5" fill="#fbbf24" opacity="0.7" />
+  <circle cx="256" cy="56" r="9" fill="#fbbf24" opacity="0.2" />
+</svg>

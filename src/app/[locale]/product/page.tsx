@@ -3,21 +3,15 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
-
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-
-// Import images statically
 import TshirtFront from "#/images/Khustup-front.jpg";
 import TshirtBack from "#/images/Khustup_back.jpg";
-
-
 
 const PRODUCT = {
     id: "syunik-tee-001",
     price: 12000,
     sizes: ["S", "M", "L", "XL"],
-    // Use imported images
     images: [TshirtFront, TshirtBack]
 };
 
@@ -33,7 +27,6 @@ export default function ProductPage() {
 
     const t = useTranslations('product');
 
-
     const [selectedSize, setSelectedSize] = useState<string | null>(null);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
@@ -48,10 +41,7 @@ export default function ProductPage() {
 
             <main className="pt-24 pb-20 px-6  max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-
-                    {/* Left Column: Image Gallery */}
                     <div className="space-y-6">
-                        {/* Main Image */}
                         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-zinc-100 dark:bg-zinc-900 shadow-sm border border-zinc-100 dark:border-zinc-800 group">
                             <Image
                                 src={PRODUCT.images[currentImageIndex]}
@@ -62,8 +52,6 @@ export default function ProductPage() {
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                             />
                         </div>
-
-                        {/* Thumbnails */}
                         <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
                             {PRODUCT.images.map((img, idx) => (
                                 <button
@@ -84,8 +72,6 @@ export default function ProductPage() {
                             ))}
                         </div>
                     </div>
-
-                    {/* Right Column: Product Details */}
                     <div className="flex flex-col justify-center space-y-8 lg:py-10">
                         <div className="space-y-4">
                             <div className="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-xs font-bold tracking-wider uppercase">
@@ -116,7 +102,6 @@ export default function ProductPage() {
 
                         <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800" />
 
-                        {/* Size Selector */}
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">
                                 <span className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white">
@@ -145,8 +130,6 @@ export default function ProductPage() {
                                 {t('size_note')}
                             </p>
                         </div>
-
-                        {/* Actions */}
                         <div className="pt-4 space-y-4">
                             <button
                                 onClick={handleAddToCart}
@@ -165,17 +148,12 @@ export default function ProductPage() {
                                 </p>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
 
                 <div className="mt-20" />
 
-                {/* Product Details Section */}
-
                 <div className="mt-12 grid grid-cols-1 lg:grid-cols-[30%_70%] gap-8 items-start">
-                    {/* Left Column: Info */}
                     <div className="order-2 lg:order-1">
                         <h2 className="text-2xl font-bold mb-6 text-zinc-900 dark:text-white">
                             {t('details_title')}
@@ -192,19 +170,14 @@ export default function ProductPage() {
                 </div>
             </main>
 
-            {/* Success Modal */}
             {isSuccessModalOpen && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center px-6">
-                    {/* Backdrop */}
                     <div
                         className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 animate-in fade-in"
                         onClick={() => setIsSuccessModalOpen(false)}
                     />
-
-                    {/* Modal Content */}
                     <div className="relative bg-white dark:bg-zinc-900 rounded-[2.5rem] p-10 max-w-lg w-full shadow-2xl border border-zinc-100 dark:border-zinc-800 transition-all duration-500 animate-in zoom-in-95 fade-in slide-in-from-bottom-10">
                         <div className="flex flex-col items-center text-center">
-                            {/* Success Icon */}
                             <div className="w-20 h-20 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mb-8">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-10 h-10 text-orange-600 dark:text-orange-400">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
@@ -239,7 +212,6 @@ export default function ProductPage() {
                     </div>
                 </div>
             )}
-
 
             <Footer />
         </div>
