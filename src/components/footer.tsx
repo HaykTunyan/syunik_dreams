@@ -23,9 +23,9 @@ export function Footer() {
                 Dreams • Explore • Legend
               </span>
             </Link>
-            <p className="text-zinc-500 text-sm leading-relaxed text-center md:text-left max-w-xs">
+            {/* <p className="text-zinc-500 text-sm leading-relaxed text-center md:text-left max-w-xs">
               {t('rights')}
-            </p>
+            </p> */}
           </div>
 
           <div className="">
@@ -82,7 +82,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-10 border-t border-zinc-900/50 flex flex-col md:flex-row justify-between items-center gap-6">
+        {/* <div className="pt-10 border-t border-zinc-900/50 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-700">
             &copy; 2026 Syunik Dreams • Legendary Trails
           </div>
@@ -92,7 +92,7 @@ export function Footer() {
               Designed for the Brave
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

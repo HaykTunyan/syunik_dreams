@@ -8,6 +8,7 @@ export const cities = [
     size: "36 կմ²",
     founding: "10-րդ դար",
     coords: [39.2075, 46.4058] as [number, number],
+    image: "/images/kapan_city.png",
   },
   {
     id: "goris",
@@ -18,6 +19,7 @@ export const cities = [
     size: "5.03 կմ²",
     founding: "1870 թ.",
     coords: [39.5126, 46.3382] as [number, number],
+    image: "/images/goris_city.png",
   },
   {
     id: "sisian",
@@ -28,6 +30,7 @@ export const cities = [
     size: "9 կմ²",
     founding: "մ.թ.ա. 8 դ.",
     coords: [39.5181, 46.0306] as [number, number],
+    image: "/images/sisian_city.png",
   },
   {
     id: "agarak",
@@ -38,6 +41,7 @@ export const cities = [
     size: "2.5 կմ²",
     founding: "1950 թ.",
     coords: [38.880, 46.252] as [number, number],
+    image: "/images/agarak_city.png",
   },
   {
     id: "meghri",
@@ -48,6 +52,7 @@ export const cities = [
     size: "3 կմ²",
     founding: "906 թ.",
     coords: [38.9029, 46.2446] as [number, number],
+    image: "/images/syunik_view.png",
   },
   {
     id: "qajaran",
@@ -58,5 +63,6 @@ export const cities = [
     size: "4.1 կմ²",
     founding: "1958 թ.",
     coords: [39.1441, 46.2553] as [number, number],
+    image: "/images/syunik_view.png",
   },
 ];

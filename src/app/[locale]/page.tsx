@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { HomeHeroSection } from "@/container/home/heroSection";
 import { HomeInfoSection } from "@/container/home/infoSection";
 import { HomeMapSection } from "@/container/home/mapSection";
+import { CardNavigation } from "@/container/home/cardNavigation";
 
 export default function Home() {
 
@@ -22,6 +23,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <HomeHeroSection />
+
+      {/* Card Navigation */}
+      <CardNavigation />
 
       {/* Info Section */}
       <HomeInfoSection />

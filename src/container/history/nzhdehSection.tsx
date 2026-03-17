@@ -21,7 +21,6 @@ export const HistoryNzhdehSection: React.FC = () => {
         <section className="relative py-24 bg-zinc-100 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center px-6">
 
-                {/* Image */}
                 <div className="relative group perspective-1000">
                     <div className="relative transform transition-transform duration-700 group-hover:rotate-y-12">
                         <Image
@@ -35,11 +34,9 @@ export const HistoryNzhdehSection: React.FC = () => {
                             {t('image_caption')}
                         </div>
                     </div>
-                    {/* Decorative element behind */}
                     <div className="absolute -inset-4 bg-gradient-to-tr from-orange-500/20 to-blue-500/20 rounded-2xl -z-10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 </div>
 
-                {/* Content */}
                 <div className="space-y-8">
                     <div className="inline-block px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full text-sm font-semibold tracking-wide">
                         {t('label')}

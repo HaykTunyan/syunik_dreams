@@ -7,7 +7,6 @@ import { Footer } from "@/components/footer";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import dynamic from "next/dynamic";
-import SyunikLandscape from "#/images/syunik_landscape.png";
 import CityStatsCard from "./CityStatsCard";
 
 const CityMap = dynamic(() => import("@/components/CityMap"), {
@@ -19,6 +18,13 @@ interface Props {
 }
 
 export default function CityDetailClient({ cityId }: Props) {
+
+    /**
+     * 
+     * City image is not visible
+     * 
+     */
+
     const city = cities.find((c) => c.id === cityId);
 
     if (!city) return null;
@@ -28,16 +34,17 @@ export default function CityDetailClient({ cityId }: Props) {
     const tDetails = useTranslations('cities_data_details');
     const tTrip = useTranslations('trip_details');
 
+    const heroSrc = city.image || '/images/syunik_landscape.png';
+
     const attractionKeys = ['0', '1', '2'];
 
     return (
         <main className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
             <Header />
 
-            {/* Hero Section */}
             <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
                 <Image
-                    src={SyunikLandscape}
+                    src={heroSrc}
                     alt={tData(`${city.id}.name`)}
                     fill
                     className="object-cover brightness-50"
@@ -64,7 +71,6 @@ export default function CityDetailClient({ cityId }: Props) {
                 </div>
             </section>
 
-            {/* Quick Info Grid */}
             <section className="py-12 px-6 md:px-20 -mt-24 relative z-20">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
@@ -76,7 +82,6 @@ export default function CityDetailClient({ cityId }: Props) {
                 </div>
             </section>
 
-            {/* History & Content */}
             <section className="py-20 px-6 md:px-20">
                 <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
                     <div className="md:col-span-2 space-y-12">
@@ -120,7 +125,6 @@ export default function CityDetailClient({ cityId }: Props) {
                             </button>
                         </div>
 
-                        {/* External Resources Section */}
                         <div className="bg-white dark:bg-zinc-900 rounded-[2.5rem] p-10 border border-zinc-100 dark:border-zinc-800 shadow-xl">
                             <h3 className="text-2xl font-black uppercase mb-6 text-zinc-900 dark:text-white">{t('learn_more')}</h3>
                             <div className="space-y-4">
@@ -143,7 +147,6 @@ export default function CityDetailClient({ cityId }: Props) {
                             </div>
                         </div>
 
-                        {/* Related Exploration Section (Internal Links) */}
                         <div className="bg-zinc-900 dark:bg-zinc-800 rounded-[2.5rem] p-10 text-white shadow-xl">
                             <h3 className="text-xl font-black uppercase mb-6 tracking-tight">Explore More of Syunik</h3>
                             <div className="grid gap-3">
@@ -183,7 +186,6 @@ export default function CityDetailClient({ cityId }: Props) {
                 </div>
             </section>
 
-            {/* Map Section */}
             <section className="py-20 px-6 md:px-20 bg-zinc-100 dark:bg-zinc-900/50">
                 <div className="max-w-7xl mx-auto space-y-10">
                     <div className="text-center space-y-4">

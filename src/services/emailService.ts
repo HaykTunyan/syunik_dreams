@@ -7,10 +7,20 @@ export interface ContactFormData {
 }
 
 export const EmailService = {
+
+  /**
+   * 
+   * @param data 
+   * sends an email to the specified recipient with the provided data
+   * @returns 
+   * 
+   */
+
+
   async sendContactEmail(data: ContactFormData) {
     const { name, email, message } = data;
 
-    const resend = getResend(); // ✅ runtime-only
+    const resend = getResend(); 
 
     return await resend.emails.send({
       from: 'Syunik Dreams <onboarding@resend.dev>',

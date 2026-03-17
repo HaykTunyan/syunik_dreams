@@ -9,6 +9,13 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+
+    /**
+     * 
+     * generateMetadata function is used to generate the metadata for the city page.
+     * 
+     */
+
     const { locale, name: cityId } = await params;
     const city = cities.find((c) => c.id === cityId);
 

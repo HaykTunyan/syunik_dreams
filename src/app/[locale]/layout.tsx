@@ -12,6 +12,13 @@ const notoArmenian = Noto_Sans_Armenian({
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+
+  /**
+   * 
+   * generateMetadata function is used to generate the metadata for the root layout.
+   * 
+   */
+
   const { locale } = await params;
   const isEn = locale === 'en';
 
@@ -26,6 +33,19 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       template: `%s | ${isEn ? 'Syunik Dreams' : 'Սյունիքի Երազանքներ'}`
     },
     description,
+    icons: {
+      icon: [
+        { url: "/icon.svg", type: "image/svg+xml" },
+      ],
+      apple: [
+        { url: "/apple-icon.svg", type: "image/svg+xml" },
+      ],
+      shortcut: "/icon.svg",
+    },
+    themeColor: [
+      { media: "(prefers-color-scheme: dark)", color: "#18181b" },
+      { media: "(prefers-color-scheme: light)", color: "#f59e0b" },
+    ],
     openGraph: {
       title,
       description,
@@ -42,7 +62,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       locale: isEn ? "en_US" : "hy_AM",
       type: "website",
     },
-    keywords: ["syunik", "mountains", "discover", "landscape", "world", "eternal", "unconquerable", "spirit"],
+    keywords: ["syunik", "mountains", "discover", "landscape", "armenia", "eternal", "history", "travel"],
     twitter: {
       card: "summary_large_image",
       title,

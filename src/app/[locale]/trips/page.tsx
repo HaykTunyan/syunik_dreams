@@ -3,6 +3,14 @@ import { getTranslations } from 'next-intl/server';
 import TripsClient from '@/container/trips/TripsClient';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+
+  /**
+   * 
+   * generateMetadata function is used to generate the metadata for the trips page.
+   * 
+   */
+
+
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'trips' });
 
