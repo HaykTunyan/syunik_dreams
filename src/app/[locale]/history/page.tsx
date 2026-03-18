@@ -6,6 +6,7 @@ import { HistoryNzhdehSection } from "@/container/history/nzhdehSection";
 import { HistoryCultoreSection } from "@/container/history/cultoreSection";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { CardNavigation } from "@/container/home/cardNavigation";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
 
@@ -41,6 +42,9 @@ export default function HistoryPage() {
 
             {/* Hero Section */}
             <HistoryHeroSection />
+
+            {/* Card Navigation */}
+            <CardNavigation />
 
             {/* Kingdom Section */}
             <HistoryKingdomSection />

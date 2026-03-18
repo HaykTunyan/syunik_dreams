@@ -113,6 +113,14 @@ const cards: CardData[] = [
 
 export const CardNavigation: FC = () => {
 
+    /**
+     * 
+     * CardNavigation component renders a section with navigation cards for different sections of the website (History, Trips, Cities, Product, Contact).
+     * Each card has an icon, title, description, and a badge. The cards are styled with gradients and have hover effects for better user experience.
+     * 
+     */
+
+
     const t = useTranslations("home_page.card_navigation");
 
     return (
@@ -123,7 +131,7 @@ export const CardNavigation: FC = () => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-stone-800/20 blur-3xl" />
             </div>
 
-            <div className="relative max-w-7xl mx-auto">
+            <div className="relative max-w-7xl mx-auto ">
                 <div className="text-center mb-16 animate-fade-in-up">
                     <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-[0.2em] uppercase text-orange-400 border border-orange-500/30 bg-orange-500/10 mb-6">
                         {t("label")}
@@ -132,7 +140,7 @@ export const CardNavigation: FC = () => {
                         {t("title")}
                     </h2>
                     <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-amber-400 mx-auto rounded-full mb-5" />
-                    <p className="text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                    <p className="  text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed">
                         {t("subtitle")}
                     </p>
                 </div>
@@ -157,33 +165,29 @@ function NavigationCard({ card, t }: { card: CardData; t: TFn }) {
     return (
         <Link
             href={card.href}
-            className="group relative flex flex-col justify-between p-7 rounded-2xl border border-white/5 bg-zinc-900 hover:bg-zinc-800/80 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/50 hover:border-white/10"
+            className="group relative flex flex-col justify-between p-2 md:p-7 rounded-xl md:rounded-2xl border border-white/5 bg-zinc-900 hover:bg-zinc-800/80 overflow-hidden transition-all duration-500"
         >
-            <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-
-            <div className={`absolute top-0 left-0 h-0.5 w-0 ${card.accent} transition-all duration-500 group-hover:w-full rounded-t-2xl`} />
+            <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-0 md:group-hover:opacity-100 transition-opacity duration-500`} />
 
             <div className="relative z-10">
-
-                <div className="flex items-start justify-between mb-5">
-                    <div className={`flex items-center justify-center w-12 h-12 rounded-xl ${card.iconBg} transition-transform duration-300 group-hover:scale-110`}>
+                <div className="flex items-center justify-between md:mb-5 ">
+                    <div className={`flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl ${card.iconBg} transition-transform duration-300 group-hover:scale-110`}>
                         {card.icon}
                     </div>
-                    <span className={`text-[11px] font-semibold tracking-widest uppercase px-3 py-1 rounded-full ${card.badgeColor}`}>
+                    <span className={`inline-block text-[11px] font-semibold tracking-widest uppercase px-3 py-1 rounded-full ${card.badgeColor}`}>
                         {t(card.badgeKey as Parameters<TFn>[0])}
                     </span>
                 </div>
-
-                <h3 className="text-xl font-bold text-white mb-3 leading-snug group-hover:text-white/95 transition-colors">
-                    {t(card.titleKey as Parameters<TFn>[0])}
-                </h3>
-
-                <p className="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors">
-                    {t(card.descKey as Parameters<TFn>[0])}
-                </p>
+                <div className="hidden md:block">
+                    <h3 className="text-xl font-bold text-white mb-3 leading-snug transition-colors">
+                        {t(card.titleKey as Parameters<TFn>[0])}
+                    </h3>
+                    <p className="text-zinc-400 text-sm leading-relaxed transition-colors">
+                        {t(card.descKey as Parameters<TFn>[0])}
+                    </p>
+                </div>
             </div>
-
-            <div className="relative z-10 flex items-center gap-2 mt-6 text-sm font-semibold text-zinc-500 group-hover:text-white transition-colors duration-300">
+            <div className="relative z-10 hidden md:flex items-center gap-2 mt-6 text-sm font-semibold text-zinc-500 group-hover:text-white transition-colors duration-300">
                 <span>{t("explore")}</span>
                 <ArrowIcon />
             </div>

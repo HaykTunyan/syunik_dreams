@@ -5,6 +5,7 @@ import SyunikMap from '@/components/SyunikMap';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { useTranslations } from 'next-intl';
+import { CardNavigation } from '../home/cardNavigation';
 
 // ── Booking Modal ─────────────────────────────────────────────────────────────
 
@@ -209,6 +210,11 @@ export default function TripsClient() {
     return (
         <div className='min-h-screen bg-white dark:bg-zinc-950'>
             <Header />
+
+            
+            <CardNavigation />
+
+
             <main className=" pt-24 pb-20 px-6  max-w-7xl mx-auto">
                 <section className="py-12 px-6 md:px-20 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-3xl overflow-hidden mb-12">
                     <div className="max-w-6xl mx-auto">
