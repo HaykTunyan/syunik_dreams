@@ -5,6 +5,28 @@ import { useTranslations } from 'next-intl';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter , FaPinterest } from "react-icons/fa";
+
+
+const socialLinks = [
+  {
+    icon: <FaFacebookF />,
+    url: "https://facebook.com",
+  },
+  {
+    icon: <FaInstagram />,
+    url: "https://instagram.com",
+  },
+  {
+    icon: <FaPinterest />,
+    url: "https://pinterest.com",
+  },
+  {
+    icon: <FaTwitter />,
+    url: "https://twitter.com",
+  },
+];
+
 export default function ContactPage() {
 
     /**
@@ -58,7 +80,7 @@ export default function ContactPage() {
         <div className="min-h-screen bg-white dark:bg-zinc-950 flex flex-col font-sans">
             <Header />
 
-            <main className="flex-grow pt-32 pb-24 px-6 md:px-20">
+            <main className="grow pt-32 pb-24 px-6 md:px-20">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-20">
                         <div className="space-y-12">
@@ -194,13 +216,29 @@ export default function ContactPage() {
 
                                 <div className="pt-8 border-t border-zinc-200 dark:border-zinc-800">
                                     <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-6">{t('info.social_title')}</p>
-                                    <div className="flex gap-4">
+                                    {/* <div className="flex gap-4">
                                         {[1, 2, 3, 4].map((i) => (
                                             <div key={i} className="w-12 h-12 bg-white dark:bg-zinc-800 rounded-xl flex items-center justify-center cursor-pointer hover:bg-orange-600 hover:text-white transition-all duration-300">
                                                 <span className="font-bold">#</span>
                                             </div>
                                         ))}
-                                    </div>
+
+                                  
+                                    </div> */}
+                                     <div className="flex gap-4">
+      {socialLinks.map((item, index) => (
+        <a
+          key={index}
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-12 h-12 bg-white dark:bg-zinc-800 rounded-xl flex items-center justify-center cursor-pointer 
+                     hover:bg-orange-600 hover:text-white transition-all duration-300"
+        >
+          <span className="text-lg">{item.icon}</span>
+        </a>
+      ))}
+    </div>
                                 </div>
                             </div>
                         </div>

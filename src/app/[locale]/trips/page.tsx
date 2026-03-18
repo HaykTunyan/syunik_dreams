@@ -26,5 +26,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default function TripsPage() {
-  return <TripsClient />;
+  return (
+    <div className="">
+      <TripsClient />
+    </div>
+  );
 }
