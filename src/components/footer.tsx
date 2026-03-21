@@ -3,12 +3,22 @@ import { useTranslations } from "next-intl";
 
 
 export function Footer() {
+
+  /**
+   * 
+   * Footer Component:
+   * This component serves as the footer for the website, providing navigation links, brand identity, and contact information. It is designed to be visually appealing and responsive, with a focus on user experience. The footer includes:
+   * - A decorative top border gradient for visual separation.
+   * 
+   */
+
+
   const t = useTranslations('footer');
 
   return (
     <footer className="relative bg-black text-white pt-20 pb-10 px-6 border-t border-zinc-900 overflow-hidden">
       {/* Decorative top border gradient */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent opacity-50" />
+      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-zinc-700 to-transparent opacity-50" />
 
       <div className="max-w-7xl mx-auto relative z-10 ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
@@ -16,7 +26,7 @@ export function Footer() {
           {/* Brand Identity Section */}
           <div className="flex flex-col items-center md:items-start space-y-6 lg:col-span-1">
             <Link href="/" className="group flex flex-col items-center md:items-start">
-              <span className="text-4xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-400 group-hover:from-orange-400 group-hover:to-orange-600 transition-all duration-500">
+              <span className="text-4xl font-black tracking-tighter bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-400 group-hover:from-orange-400 group-hover:to-orange-600 transition-all duration-500">
                 ՍՅՈՒՆԻՔ
               </span>
               <span className="text-[10px] uppercase tracking-[0.4em] text-zinc-600 font-bold mt-1 group-hover:text-zinc-400 transition-colors">

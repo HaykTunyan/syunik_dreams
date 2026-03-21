@@ -18,6 +18,16 @@ export class ErrorBoundary extends Component<
   ErrorBoundaryProps,
   ErrorBoundaryState
 > {
+
+  /**
+   * 
+   * @param props 
+   *  This component is designed to catch JavaScript errors anywhere in its child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. It uses React's error boundary lifecycle methods to achieve this functionality.
+   * - `constructor`: Initializes the state to track whether an error has occurred and to store the error object.
+   * 
+   */
+
+
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false, error: null };

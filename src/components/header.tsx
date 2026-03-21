@@ -5,6 +5,16 @@ import { useTranslations, useLocale } from "next-intl";
 import { useState, useRef, useEffect } from "react";
 
 export function Header() {
+
+    /**
+     * 
+     * Header Component:
+     * This component serves as the header for the website, providing navigation links, brand identity, and a language selector. It is designed to be visually appealing and responsive, with a focus on user experience. The header includes:
+     * - A fixed position with a semi-transparent background and backdrop blur for a modern look.
+     * - A logo that combines a stylized "S" with the site name "SYUNIK." The logo has interactive hover effects for engagement.
+     * - Navigation links for "History" and "Tourism" that are hidden on smaller screens to maintain a clean layout.
+     */
+
     const t = useTranslations('header');
     const pathname = usePathname();
     const router = useRouter();
@@ -24,7 +34,7 @@ export function Header() {
         setIsLangOpen(false);
     };
 
-    // Close dropdown when clicking outside
+
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -39,7 +49,6 @@ export function Header() {
         <header className="relative">
             <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl border-b border-zinc-100 dark:border-zinc-800">
                 <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-                    {/* Logo */}
                     <Link href="/" className="group flex items-center gap-2">
                         <div className="w-10 h-10 bg-black dark:bg-white rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
                             <span className="text-white dark:text-black font-black text-xl">S</span>
@@ -50,19 +59,15 @@ export function Header() {
                     </Link>
 
                     <div className="flex items-center gap-8">
-                        {/* Navigation Links (Hidden on small mobile if needed, but keeping it simple for now) */}
                         <div className="hidden md:flex items-center gap-8">
                             <Link href="/history" className="text-sm font-bold text-zinc-500 hover:text-orange-600 transition-colors uppercase tracking-widest">{t('history')}</Link>
                             <Link href="/trips" className="text-sm font-bold text-zinc-500 hover:text-orange-600 transition-colors uppercase tracking-widest">{t('tourism')}</Link>
                         </div>
-
-                        {/* Language Selector Dropdown */}
                         <div className="relative" ref={dropdownRef}>
                             <button
                                 onClick={() => setIsLangOpen(!isLangOpen)}
                                 className="flex items-center gap-3 px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all duration-300 group"
                             >
-                                {/* <span className="text-lg leading-none">{currentLang.flag}</span> */}
                                 <span className="text-xs font-bold uppercase tracking-widest text-zinc-700 dark:text-zinc-300">
                                     {currentLang.code}
                                 </span>
@@ -76,7 +81,7 @@ export function Header() {
                                 </svg>
                             </button>
 
-                            {/* Dropdown Menu */}
+                  
                             {isLangOpen && (
                                 <div className="absolute right-0 mt-3 w-48 py-2 bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-100 dark:border-zinc-800 backdrop-blur-3xl animate-in fade-in zoom-in duration-200 origin-top-right">
                                     {/* <div className="px-4 py-2 border-b border-zinc-50 dark:border-zinc-800 mb-1">
@@ -106,7 +111,7 @@ export function Header() {
                     </div>
                 </div>
             </nav>
-            {/* Spacer to prevent content from going under the fixed header */}
+           
             <div className="h-20" />
         </header>
     );
