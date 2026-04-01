@@ -9,14 +9,18 @@ type Props = {
 };
 
 export default function CityMap({ coords, name }: Props) {
+
+  /**
+   * 
+   * City Map Components.
+   */
+
   return (
     <div className="relative h-full w-full rounded-3xl overflow-hidden">
-      {/* City Name Title */}
       <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50 bg-black/60 text-white px-4 py-1 rounded-lg text-lg font-bold">
         {name}
       </div>
 
-      {/* Map */}
       <MapContainer
         center={coords}
         zoom={11}

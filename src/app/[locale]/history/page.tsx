@@ -7,6 +7,7 @@ import { HistoryCultoreSection } from "@/container/history/cultoreSection";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { CardNavigation } from "@/container/home/cardNavigation";
+import AudioPlayer from "@/components/AudioPlayer";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
 
@@ -39,6 +40,9 @@ export default function HistoryPage() {
 
     return (
         <main className="min-h-screen bg-zinc-50 dark:bg-black font-sans selection:bg-orange-500 selection:text-white">
+            
+            {/* Soundtrack Player */}
+            <AudioPlayer />
 
             {/* Hero Section */}
             <HistoryHeroSection />
