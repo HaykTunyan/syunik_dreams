@@ -1,8 +1,6 @@
 // src/components/Map.tsx
 'use client';
 
-import { useMemo } from 'react';
-
 interface City {
   id: string;
   name: string;

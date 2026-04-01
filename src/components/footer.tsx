@@ -12,18 +12,15 @@ export function Footer() {
    * 
    */
 
-
   const t = useTranslations('footer');
 
   return (
     <footer className="relative bg-black text-white pt-20 pb-10 px-6 border-t border-zinc-900 overflow-hidden">
-      {/* Decorative top border gradient */}
       <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-zinc-700 to-transparent opacity-50" />
 
-      <div className="max-w-7xl mx-auto relative z-10 ">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
 
-          {/* Brand Identity Section */}
           <div className="flex flex-col items-center md:items-start space-y-6 lg:col-span-1">
             <Link href="/" className="group flex flex-col items-center md:items-start">
               <span className="text-4xl font-black tracking-tighter bg-clip-text text-transparent bg-linear-to-b from-white to-zinc-400 group-hover:from-orange-400 group-hover:to-orange-600 transition-all duration-500">
@@ -42,7 +39,6 @@ export function Footer() {
 
           </div>
 
-          {/* Quick Links Group 1 */}
           <div className="flex flex-col items-center md:items-start space-y-5 lg:pl-10">
             <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-500/80 mb-2">{t('explore')}</h4>
             <nav className="flex flex-col space-y-4 items-center md:items-start">
@@ -58,7 +54,6 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* Quick Links Group 2 */}
           <div className="flex flex-col items-center md:items-start space-y-5">
             <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-500/80 mb-2">{t('support')}</h4>
             <nav className="flex flex-col space-y-4 items-center md:items-start">

@@ -1,6 +1,6 @@
 // Error Bundeling Component
 
-"use client"; // Global Error Boundary must be a client component
+"use client";
 
 import { Component, ReactNode } from "react";
 
@@ -26,7 +26,6 @@ export class ErrorBoundary extends Component<
    * - `constructor`: Initializes the state to track whether an error has occurred and to store the error object.
    * 
    */
-
 
   constructor(props: ErrorBoundaryProps) {
     super(props);
