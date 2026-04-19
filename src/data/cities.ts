@@ -52,7 +52,7 @@ export const cities = [
     size: "3 կմ²",
     founding: "906 թ.",
     coords: [38.9029, 46.2446] as [number, number],
-    image: "/images/syunik_view.png",
+    image: "/images/meghri_city.png",
   },
   {
     id: "qajaran",
@@ -63,6 +63,6 @@ export const cities = [
     size: "4.1 կմ²",
     founding: "1958 թ.",
     coords: [39.1441, 46.2553] as [number, number],
-    image: "/images/syunik_view.png",
+    image: "/images/qajaran_city.png",
   },
 ];
