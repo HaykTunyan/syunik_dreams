@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import dynamic from "next/dynamic";
 import CityStatsCard from "./CityStatsCard";
+import CityAttractionsCarousel from "@/components/CityAttractionsCarousel";
 
 const CityMap = dynamic(() => import("@/components/CityMap"), {
     ssr: false,
@@ -81,6 +82,8 @@ export default function CityDetailClient({ cityId }: Props) {
                     </div>
                 </div>
             </section>
+
+            <CityAttractionsCarousel cityId={city.id} attractions={city.attractions as any} />
 
             <section className="py-20 px-6 md:px-20">
                 <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
