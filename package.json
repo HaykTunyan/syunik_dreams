@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:open": "cypress open",
+    "test:run": "cypress run"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",
@@ -25,6 +27,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cypress": "^15.14.1",
+    "cypress-real-events": "^1.15.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.2",
     "json-format": "^1.0.1",
