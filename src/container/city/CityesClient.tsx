@@ -102,7 +102,6 @@ export default function CitiesClient() {
                     </div>
                 </div>
             </section>
-
             <Footer />
         </main>
     );

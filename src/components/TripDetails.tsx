@@ -9,6 +9,13 @@ interface TripDetailsProps {
 }
 
 export default function TripDetails({ tripId, cityId }: TripDetailsProps) {
+
+  /**
+   * 
+   * This function is used to display the details of the trip.
+   * 
+   */
+
   const t = useTranslations('trip_details');
   const tTrips = useTranslations('trips_data');
   const tCities = useTranslations('cities_data');

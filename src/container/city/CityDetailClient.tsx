@@ -52,7 +52,7 @@ export default function CityDetailClient({ cityId }: Props) {
                     className="object-cover brightness-50"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
+                <div className="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-black/80" />
 
                 <div className="relative z-10 text-center px-4 max-w-4xl">
                     <Link
@@ -147,7 +147,7 @@ export default function CityDetailClient({ cityId }: Props) {
                                         <span className="font-bold text-zinc-700 dark:text-zinc-300 group-hover:text-orange-600 dark:group-hover:text-orange-400">
                                             {link.name}
                                         </span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-zinc-400 group-hover:text-orange-500 group-hover:translate-x-1 translate-y-[-1px] transition-all">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-zinc-400 group-hover:text-orange-500 group-hover:translate-x-1 -translate-y-px transition-all">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                                         </svg>
                                     </a>

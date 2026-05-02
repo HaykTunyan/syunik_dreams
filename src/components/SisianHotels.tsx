@@ -91,7 +91,7 @@ function StarRow({ count }: { count: number }) {
 
 export default function SisianHotels() {
     return (
-        <section className="py-20 px-6 md:px-20 bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-zinc-900">
+        <section className="py-20 px-6 md:px-20 bg-linear-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-zinc-900">
             <div className="max-w-7xl mx-auto space-y-14">
 
                 {/* Header */}
@@ -122,7 +122,7 @@ export default function SisianHotels() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group relative bg-white dark:bg-zinc-900 rounded-[2rem] border border-zinc-100 dark:border-zinc-800 shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                            className="group relative bg-white dark:bg-zinc-900 rounded-[32px] border border-zinc-100 dark:border-zinc-800 shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden"
                         >
                             {/* rank badge */}
                             <div className="absolute top-6 left-6 z-10 w-10 h-10 rounded-full bg-orange-500 text-white font-black flex items-center justify-center text-sm shadow-lg">
@@ -132,7 +132,7 @@ export default function SisianHotels() {
                             <div className="flex flex-col md:flex-row gap-0">
 
                                 {/* Score panel */}
-                                <div className="md:w-48 flex-shrink-0 bg-gradient-to-br from-orange-500 to-orange-600 flex flex-col items-center justify-center p-8 text-white gap-2 rounded-t-[2rem] md:rounded-l-[2rem] md:rounded-tr-none">
+                                <div className="md:w-48 shrink-0 bg-linear-to-br from-orange-500 to-orange-600 flex flex-col items-center justify-center p-8 text-white gap-2 rounded-t-[32px] md:rounded-l-[32px] md:rounded-tr-none">
                                     <span className="text-5xl font-black">{hotel.rating}</span>
                                     <span className="text-xs font-bold uppercase tracking-widest opacity-80">Score</span>
                                     <span className="text-xs opacity-70">{hotel.reviews} reviews</span>
@@ -147,14 +147,14 @@ export default function SisianHotels() {
                                             </h3>
                                             <StarRow count={hotel.stars} />
                                             <p className="text-sm text-zinc-500 dark:text-zinc-400 flex items-center gap-1 mt-1">
-                                                <svg className="w-4 h-4 text-orange-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <svg className="w-4 h-4 text-orange-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                                 </svg>
                                                 {hotel.address}
                                             </p>
                                         </div>
-                                        <div className="text-right flex-shrink-0">
+                                        <div className="text-right shrink-0">
                                             <p className="text-2xl font-black text-zinc-900 dark:text-white">{hotel.priceRange}</p>
                                             <p className="text-xs text-zinc-400 mt-0.5">per night</p>
                                         </div>
