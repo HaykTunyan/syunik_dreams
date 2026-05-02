@@ -21,6 +21,7 @@ Syunik Dreams is designed to bridge the gap between ancient history and modern t
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **State & Logic**: Framer Motion for animations, lucide-react for iconography.
 - **Localization**: [next-intl](https://next-intl-docs.vercel.app/)
+- **Testing**: [Cypress](https://www.cypress.io/) (E2E & Component Testing)
 
 ## 🚀 Getting Started
 
@@ -55,6 +56,54 @@ Syunik Dreams is designed to bridge the gap between ancient history and modern t
 - `/src/container` - Large-scale page sections and layout controllers.
 - `/messages` - Translation files (en.json, hy.json).
 - `/public` - Static assets and imagery.
+
+## 🧪 Testing
+
+This project uses **[Cypress](https://www.cypress.io/)** for both end-to-end (E2E) and component-level testing.
+
+### Configuration
+
+Cypress is configured in `cypress.config.ts` with:
+- **Base URL**: `http://localhost:3000`
+- **Component testing**: Next.js framework with Webpack bundler
+- **Project ID**: `1p9o4i` (Cypress Cloud)
+
+### Running Tests
+
+Make sure the development server is running first (`npm run dev`), then:
+
+```bash
+# Open Cypress Test Runner (interactive UI)
+npm run test:open
+
+# Run all tests headlessly (CI mode)
+npm run test:run
+```
+
+### E2E Tests (`cypress/e2e/`)
+
+End-to-end tests validate full user flows across all major pages:
+
+| Test File | Coverage |
+|---|---|
+| `home.cy.js` | Navbar links, language switcher, Hero section, Attractions grid, Footer |
+| `city.cy.js` | City detail pages, city cards, map section |
+| `history.cy.js` | History page content, timeline, media elements |
+| `contact.cy.js` | Contact form validation, submission flow |
+| `trips.cy.js` | Trips listing, filters, trip detail navigation |
+| `product.cy.js` | Product catalog, cart interactions |
+| `navigation.cy.js` | Cross-page routing and link integrity |
+
+### Component Tests (`cypress/support/`)
+
+Component-level tests are configured via `cypress/support/component.ts` and `component-index.html`, allowing isolated rendering and testing of individual React components using the Next.js + Webpack dev server.
+
+Support files:
+- `cypress/support/commands.ts` — Custom Cypress commands (e.g. `cy.realClick`)
+- `cypress/support/e2e.ts` — Global E2E hooks and setup
+- `cypress/support/component.ts` — Component test mount setup
+
+---
 
 ## ✨ Contribution
 

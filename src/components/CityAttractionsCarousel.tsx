@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
@@ -103,7 +103,7 @@ export default function CityAttractionsCarousel({ cityId, attractions }: Props) 
                                 className="object-cover"
                                 priority
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
 
                             <div className="absolute bottom-12 left-12 right-12 text-white space-y-4">
                                 <motion.span
