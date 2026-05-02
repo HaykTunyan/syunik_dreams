@@ -6,7 +6,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   /**
    * 
-   * generateMetadata function is used to generate the metadata for the city page.
+   * GenerateMetadata function is used to generate the metadata for the city page.
    * 
    */
 
@@ -25,5 +25,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default function CitiesPage() {
+
+  /**
+   * 
+   * Return the Cities Page
+   */
+
   return <CitiesClient />;
 }

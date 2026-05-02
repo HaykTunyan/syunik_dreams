@@ -9,6 +9,7 @@ import { Link } from "@/i18n/navigation";
 import dynamic from "next/dynamic";
 import CityStatsCard from "./CityStatsCard";
 import CityAttractionsCarousel from "@/components/CityAttractionsCarousel";
+import SisianHotels from "@/components/SisianHotels";
 
 const CityMap = dynamic(() => import("@/components/CityMap"), {
     ssr: false,
@@ -85,6 +86,8 @@ export default function CityDetailClient({ cityId }: Props) {
 
             <CityAttractionsCarousel cityId={city.id} attractions={city.attractions as any} />
 
+            {city.id === "sisian" && <SisianHotels />}
+
             <section className="py-20 px-6 md:px-20">
                 <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
                     <div className="md:col-span-2 space-y-12">
@@ -116,7 +119,7 @@ export default function CityDetailClient({ cityId }: Props) {
                     </div>
 
                     <div className="space-y-12">
-                        <div className="bg-orange-500 rounded-[2.5rem] p-10 text-white shadow-2xl shadow-orange-500/20 top-24">
+                        <div className="bg-orange-500 rounded-[2.5rem] p-5 lg:p-10 text-white shadow-2xl shadow-orange-500/20 top-24">
                             <h3 className="text-2xl font-black uppercase mb-6">{tTrip('best_visit')}</h3>
                             <p className="text-4xl font-bold mb-8">{tDetails(`${city.id}.bestVisit`)}</p>
                             <div className="h-px bg-white/20 mb-8"></div>
@@ -129,7 +132,9 @@ export default function CityDetailClient({ cityId }: Props) {
                         </div>
 
                         <div className="bg-white dark:bg-zinc-900 rounded-[2.5rem] p-10 border border-zinc-100 dark:border-zinc-800 shadow-xl">
-                            <h3 className="text-2xl font-black uppercase mb-6 text-zinc-900 dark:text-white">{t('learn_more')}</h3>
+                            <h3 className="text-2xl font-black uppercase mb-6 text-zinc-900 dark:text-white">
+                                {t('learn_more')}
+                            </h3>
                             <div className="space-y-4">
                                 {((tDetails.raw(`${city.id}.links`) as any[]) || []).map((link: any, index: number) => (
                                     <a

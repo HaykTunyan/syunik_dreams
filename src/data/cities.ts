@@ -43,9 +43,9 @@ export const cities = [
     coords: [39.5181, 46.0306] as [number, number],
     image: "/images/sisian_city.png",
     attractions: [
-      { id: "shaki", image: "https://upload.wikimedia.org/wikipedia/commons/8/8d/-%D5%87%D5%A1%D6%84%D5%AB_%D5%BB%D6%80%D5%BE%D5%A5%D5%AA_S-N_01.jpg" },
-      { id: "zorats", image: "https://upload.wikimedia.org/wikipedia/commons/2/25/Karahunj_-_Zorats_Karer.jpg" },
-      { id: "church", image: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Sisian_church.jpg" },
+      { id: "shaki", image: "/images/sisian/shaki-waterfall-sisian.png" },
+      { id: "zorats", image: "/images/sisian/zaorats-karer.png" },
+      { id: "church", image: "/images/sisian/st-hovhannes-church-sisian.png" },
     ]
   },
   {
