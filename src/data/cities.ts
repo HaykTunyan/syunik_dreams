@@ -26,7 +26,7 @@ export const cities = [
     coords: [39.5126, 46.3382] as [number, number],
     image: "/images/goris_city.png",
     attractions: [
-      { id: "tatev", image: "https://upload.wikimedia.org/wikipedia/commons/7/79/Monasterio_de_Tatev%2C_Armenia%2C_2016-10-01%2C_DD_89-91_HDR.jpg" },
+      { id: "tatev", image: "/images/goris/Monasterio_de_Tatev,_Armenia.jpg" },
       { id: "rock_forest", image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Stone_Pyramids_in_Goris.jpg" },
       { id: "old_town", image: "https://upload.wikimedia.org/wikipedia/commons/f/f2/2014_Prowincja_Sjunik%2C_Goris%2C_Widok_na_Stary_Goris_%28Kores%29_%2801%29.jpg" },
       { id: "khndzoresk", image: "https://upload.wikimedia.org/wikipedia/commons/b/b4/The_Swinging_Bridge_of_Khndzoresk.JPG" },
@@ -91,7 +91,7 @@ export const cities = [
     coords: [39.1441, 46.2553] as [number, number],
     image: "/images/qajaran_city.png",
     attractions: [
-      { id: "bear", image: "https://upload.wikimedia.org/wikipedia/commons/4/40/%D5%94%D5%A1%D5%BB%D5%A1%D6%80%D5%A1%D5%B6%D5%AB_%D5%A2%D5%A1%D5%AC%D5%AB%D5%B6.jpg" },
+      { id: "bear", image: "/images/qajaran/qajaran_bear_ai.png" },
       { id: "voghji", image: "https://upload.wikimedia.org/wikipedia/commons/e/ee/Mountains_of_Syunik%2C_Voghji_river_16.jpg" },
       { id: "zangezur", image: "https://upload.wikimedia.org/wikipedia/commons/2/25/Zangezur_mountains_view%2C_Syunik%2C_Armenia_-_panoramio_%281%29.jpg" },
     ]
