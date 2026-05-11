@@ -75,9 +75,9 @@ export const cities = [
     coords: [38.9029, 46.2446] as [number, number],
     image: "/images/meghri_city.png",
     attractions: [
-      { id: "fortress", image: "https://upload.wikimedia.org/wikipedia/commons/2/23/Meghri_Fortress.jpg" },
-      { id: "frescoes", image: "https://upload.wikimedia.org/wikipedia/commons/b/b5/%D5%84%D5%A5%D5%B2%D6%80%D5%B8%D6%82_%D5%AB%D6%80%D5%B4%D5%B6%D5%A1%D5%B6%D5%AF%D5%A1%D6%80%D5%B6%D5%A5%D6%80.jpg" },
-      { id: "arevik", image: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Arevik_National_Park_and_Meghri_mountains_in_winter.jpg" },
+      { id: "fortress", image: "/images/meghri/Meghri_Fortress-ai.jpg" },
+      { id: "bridge", image: "/images/meghri/old-bridge-metaqs-way-ai.png" },
+      { id: "alleyway", image: "/images/meghri/old-street-Meghri-ai.jpg" },
     ]
   },
   {
