@@ -92,8 +92,8 @@ export const cities = [
     image: "/images/qajaran_city.png",
     attractions: [
       { id: "bear", image: "/images/qajaran/qajaran_bear_ai.png" },
-      { id: "voghji", image: "https://upload.wikimedia.org/wikipedia/commons/e/ee/Mountains_of_Syunik%2C_Voghji_river_16.jpg" },
-      { id: "zangezur", image: "https://upload.wikimedia.org/wikipedia/commons/2/25/Zangezur_mountains_view%2C_Syunik%2C_Armenia_-_panoramio_%281%29.jpg" },
+      { id: "park", image: "/images/qajaran/qajaran_park_ai.png" },
+      { id: "lichk", image: "/images/qajaran/qajaran_lichk_ai.png" },
     ]
   },
 ];
