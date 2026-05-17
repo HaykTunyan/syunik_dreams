@@ -10,9 +10,9 @@ export const cities = [
     coords: [39.2075, 46.4058] as [number, number],
     image: "/images/kapan_city.png",
     attractions: [
-      { id: "khustup", image: "/images/kapan_attraction_1.png" },
-      { id: "vahanavank", image: "/images/kapan_attraction_2.png" },
-      { id: "museum", image: "/images/kapan_attraction_3.png" },
+      { id: "khustup", image: "/images/kapan/Khustup_mountain.jpg" },
+      { id: "vahanavank", image: "/images/kapan/vahanavank-monastery.jpg" },
+      { id: "museum", image: "/images/kapan/kapan_attraction_3.png" },
     ]
   },
   {
