@@ -26,10 +26,9 @@ export const cities = [
     coords: [39.5126, 46.3382] as [number, number],
     image: "/images/goris_city.png",
     attractions: [
-      { id: "tatev", image: "/images/goris/Monasterio_de_Tatev,_Armenia.jpg" },
-      { id: "rock_forest", image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Stone_Pyramids_in_Goris.jpg" },
-      { id: "old_town", image: "https://upload.wikimedia.org/wikipedia/commons/f/f2/2014_Prowincja_Sjunik%2C_Goris%2C_Widok_na_Stary_Goris_%28Kores%29_%2801%29.jpg" },
-      { id: "khndzoresk", image: "https://upload.wikimedia.org/wikipedia/commons/b/b4/The_Swinging_Bridge_of_Khndzoresk.JPG" },
+      { id: "tatev", image: "/images/goris/goris_tatev_monastery_ai.png" },
+      { id: "rock_forest", image: "/images/goris/goris_rock_forest_ai.png" },
+      { id: "khndzoresk", image: "/images/goris/goris_khndzoresk_bridge_ai.png" },
     ]
   },
   {
