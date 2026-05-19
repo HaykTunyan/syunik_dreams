@@ -61,6 +61,8 @@ export const cities = [
       { id: "araks", image: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Aras_river_at_Nurduz_05.jpg" },
       { id: "copper", image: "https://www.ecolur.org/files/news/2011/09/092748124683.jpg" },
       { id: "stgeorge", image: "https://upload.wikimedia.org/wikipedia/commons/2/23/The_Surb_Gevorg_church_of_Lor_01.jpg" },
+      { id: "ancient_site", image: "/images/agarak/agarak_ancient_site_ai.png" },
+      { id: "city_park", image: "/images/agarak/city-park.jpg" },
     ]
   },
   {

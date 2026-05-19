@@ -245,7 +245,9 @@
             "attractions": {
                 "0": "Araks River Valley - beautiful river views",
                 "1": "Copper-Molybdenum Plant - industrial landmark",
-                "2": "Border zone - unique geographical point"
+                "2": "Border zone - unique geographical point",
+                "3": "Agarak Ancient Site - Bronze Age ruins and rock-cut structures",
+                "4": "Agarak City Park - featuring the iconic local monument and mountains"
             },
             "links": [
                 {
