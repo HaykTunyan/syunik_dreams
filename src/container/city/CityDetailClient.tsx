@@ -38,7 +38,8 @@ export default function CityDetailClient({ cityId }: Props) {
 
     const heroSrc = city.image || '/images/syunik_landscape.png';
 
-    const attractionKeys = ['0', '1', '2'];
+    const attractionsRaw = tDetails.raw(`${city.id}.attractions`) as Record<string, string> | undefined;
+    const attractionKeys = attractionsRaw ? Object.keys(attractionsRaw) : ['0', '1', '2'];
 
     return (
         <main className="min-h-screen bg-zinc-50 dark:bg-black font-sans">

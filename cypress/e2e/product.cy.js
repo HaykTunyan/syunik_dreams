@@ -1,77 +1,63 @@
-
 describe('Product & Shopping Page - Syunik Dreams', () => {
     beforeEach(() => {
-        cy.visit('http://localhost:3000/en/product'); // Assuming /product path for shopping
+        cy.visit('http://localhost:3000/en/product');
     });
 
-    describe('Product Categories', () => {
-        it('should display all product categories with counts', () => {
-            const categories = ['Dried Fruits', 'Honey', 'Spices', 'Handicrafts', 'Wines'];
-
-            categories.forEach(cat => {
-                cy.contains('button', cat).should('be.visible');
-            });
+    describe('Product Details & Size Selection', () => {
+        it('should display product details correctly', () => {
+            // Check for category badge or "madeBy"
+            cy.contains('Designed and made by the owner in Syunik').should('be.visible');
+            // Check title
+            cy.contains('h1', 'Spirit of Mount Khustup').should('be.visible');
+            // Check price
+            cy.contains('12,000 ֏').should('be.visible');
         });
 
-        it('should filter products when a category is selected', () => {
-            cy.contains('Honey').click();
-            // Check that some honey products are visible
-            cy.get('.product-item').should('exist');
-        });
-    });
+        it('should require selecting a size before enabling the order button', () => {
+            // The "Order Now" button should be disabled initially since no size is selected
+            cy.contains('button', 'Order Now').should('be.disabled');
 
-    describe('Product Listings', () => {
-        it('should display all product cards', () => {
-            const productName = 'Pine Nut Honey';
-            // Check if a specific product exists
-            cy.contains(productName).should('be.visible');
+            // Select a size, e.g., 'M'
+            cy.contains('button', 'M').click();
 
-            // Verify product cards have expected structure (image, title, price)
-            cy.contains(productName).parents('.product-card, .product-item').within(() => {
-                cy.get('img').should('be.visible');
-                cy.get('.product-title').should('exist');
-                cy.get('.product-price').should('exist');
-            });
-        });
-
-        it('should have functional "Add to Cart" buttons', () => {
-            cy.contains('Pine Nut Honey').click(); // Open product details or assume direct add
-            cy.contains('button', 'Add to Cart').click();
-            // Verify cart icon updates or a success message appears
-            cy.get('.cart-icon').should('contain', '1'); // Assuming cart updates count
+            // The "Order Now" button should now be enabled
+            cy.contains('button', 'Order Now').should('not.be.disabled');
         });
     });
 
-    describe('Shopping Cart Modal', () => {
-        beforeEach(() => {
-            // Force cart to open or click cart icon
-            cy.get('.cart-icon').click();
-        });
+    describe('Order Modal Process', () => {
+        it('should open the success modal when ordering after size selection', () => {
+            // Select size 'L'
+            cy.contains('button', 'L').click();
 
-        it('should display the shopping cart with items', () => {
-            cy.get('.cart-modal').should('be.visible');
-            cy.get('.cart-item').should('exist');
-        });
+            // Click the Order Now button
+            cy.contains('button', 'Order Now').click();
 
-        it('should update cart total when quantity changes', () => {
-            cy.get('.cart-item').within(() => {
-                cy.get('button').contains('+').click();
-            });
-            // Verify total price updates
-            cy.get('.cart-total').should('exist');
+            // Success modal should be visible
+            cy.contains('Order Placed Successfully!').should('be.visible');
+            cy.contains('item added to your selection').should('be.visible');
+
+            // Click close button on success modal (translated as "Great!")
+            cy.contains('button', 'Great!').click();
+
+            // Success modal should close
+            cy.contains('Order Placed Successfully!').should('not.exist');
         });
     });
 
-    describe('Language & Currency Support', () => {
-        it('should display prices in USD', () => {
-            cy.contains('Pine Nut Honey').parents('.product-card, .product-item').within(() => {
-                cy.get('.product-price').contains('$').should('exist');
-            });
-        });
+    describe('Language Support', () => {
+        it('should support switching to Armenian language', () => {
+            // Click language switcher dropdown from header
+            cy.get('button').contains('en', { matchCase: false }).click();
+            // Select Armenian language
+            cy.contains('button', 'Հայերեն').click();
 
-        it('should allow switching to Armenian language', () => {
-            cy.contains('button', 'Հայ').click();
-            cy.contains('Այլ').should('be.visible');
+            // URL should update to /hy/product
+            cy.url().should('include', '/hy/product');
+
+            // The content should now show Armenian text
+            cy.contains('h1', 'Խուստուփ լեռան ոգին').should('be.visible');
+            cy.contains('Պատվիրել Հիմա').should('be.visible');
         });
     });
 });

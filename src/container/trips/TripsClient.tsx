@@ -1,11 +1,20 @@
 "use client";
 
 import { useState } from 'react';
-import SyunikMap from '@/components/SyunikMap';
+import dynamic from 'next/dynamic';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { useTranslations } from 'next-intl';
 import { CardNavigation } from '../home/cardNavigation';
+
+const SyunikMap = dynamic(() => import('@/components/SyunikMap'), {
+    ssr: false,
+    loading: () => (
+        <div className="h-[500px] w-full bg-zinc-100 dark:bg-zinc-800 animate-pulse rounded-2xl flex items-center justify-center text-zinc-500">
+            Loading map...
+        </div>
+    )
+});
 
 // ── Booking Modal ─────────────────────────────────────────────────────────────
 
@@ -27,12 +36,18 @@ interface BookingModalProps {
 }
 
 function BookingModal({ city, cityLabel, onClose }: BookingModalProps) {
+
+    /**
+     * 
+     * Booking Modal functionality
+     */
+
     const [selectedMonth, setSelectedMonth] = useState<number | ''>('');
-    const [selectedDay, setSelectedDay]     = useState<number | ''>('');
-    const [confirmed, setConfirmed]         = useState(false);
+    const [selectedDay, setSelectedDay] = useState<number | ''>('');
+    const [confirmed, setConfirmed] = useState(false);
 
     const daysInMonth = selectedMonth !== '' ? getDaysInMonth(selectedMonth) : 31;
-    const isComplete  = selectedMonth !== '' && selectedDay !== '';
+    const isComplete = selectedMonth !== '' && selectedDay !== '';
 
     function handleConfirm() {
         if (!isComplete) return;
@@ -197,7 +212,7 @@ export default function TripsClient() {
 
     const t = useTranslations('trips');
     const [selectedCity, setSelectedCity] = useState<string | null>(null);
-    const [modalOpen, setModalOpen]       = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
 
     // Map city id → displayed label using translations
     const cityLabel = selectedCity ? t(selectedCity) : '';
@@ -211,7 +226,7 @@ export default function TripsClient() {
         <div className='min-h-screen bg-white dark:bg-zinc-950'>
             <Header />
 
-            
+
             <CardNavigation />
 
 

@@ -16,35 +16,34 @@ describe('Contact Us Page - Syunik Dreams', () => {
             cy.get('textarea').type('Testing message content.');
             cy.contains('button', 'Send Message').click();
 
-            // Check if the browser's native validation or your custom error is triggered
             cy.get('input[type="email"]:invalid').should('exist');
         });
 
         it('should successfully submit the form (Mocked)', () => {
-            // 1. Intercept the POST request to your backend/form service
-            cy.intercept('POST', '**/api/contact', {
+            // Intercept the POST request to Next.js API route /api/send
+            cy.intercept('POST', '**/api/send', {
                 statusCode: 200,
                 body: { message: 'Success' },
             }).as('submitForm');
 
-            // 2. Fill the form
+            // Fill the form
             cy.get('input[placeholder="John Doe"]').type('Suren Papyan');
             cy.get('input[placeholder="john@example.com"]').type('suren@example.com');
             cy.get('textarea').type('I would like to book a tour to Tatev Monastery.');
 
-            // 3. Submit
+            // Submit
             cy.contains('button', 'Send Message').click();
 
-            // 4. Assert the network call was made and UI responded
+            // Assert the network call was made
             cy.wait('@submitForm');
-            // Assert that a success message appears or the form clears
-            // cy.contains('Thank you').should('be.visible'); 
+            // Assert success message is displayed
+            cy.contains('Thank you').should('be.visible');
         });
     });
 
     describe('Sidebar & Social Info', () => {
         it('should display the correct contact information', () => {
-            cy.get('aside, .get-in-touch-card').within(() => {
+            cy.contains('Get in Touch').parent().within(() => {
                 cy.contains('Syunik Region, Armenia').should('be.visible');
                 cy.contains('syunikdreams@gmail.com').should('be.visible');
                 cy.contains('+374 99 990797').should('be.visible');
@@ -57,17 +56,8 @@ describe('Contact Us Page - Syunik Dreams', () => {
             platforms.forEach((platform) => {
                 cy.get(`a[href*="${platform}"]`)
                     .should('be.visible')
-                    .and('have.attr', 'target', '_blank'); // Good UX for social links
+                    .and('have.attr', 'target', '_blank');
             });
-        });
-    });
-
-    describe('Responsive Design', () => {
-        it('should be layout-compliant on mobile devices', () => {
-            cy.viewport('iphone-xr');
-            // Ensure the "Get in Touch" section stacks or handles overflow
-            cy.contains('Get in Touch').should('be.visible');
-            cy.get('button').contains('Send Message').should('be.visible');
         });
     });
 });

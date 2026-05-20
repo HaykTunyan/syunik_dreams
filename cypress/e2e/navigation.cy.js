@@ -1,20 +1,20 @@
 describe('Website Navigation', () => {
     it('should open all main pages', () => {
-        cy.visit('/')
+        cy.visit('http://localhost:3000/en');
 
-        cy.visit('/trips')
-        cy.contains('TRIPS')
+        cy.visit('http://localhost:3000/en/trips');
+        cy.contains('Syunik Trips').should('be.visible');
 
-        cy.visit('/city')
-        cy.contains('CITY')
+        cy.visit('http://localhost:3000/en/city');
+        cy.contains('Syunik Cities').should('be.visible');
 
-        cy.visit('/history')
-        cy.contains('HISTORY')
+        cy.visit('http://localhost:3000/en/history');
+        cy.contains('History').should('be.visible');
 
-        cy.visit('/product')
-        cy.contains('PRODUCT')
+        cy.visit('http://localhost:3000/en/product');
+        cy.contains('Spirit of Mount Khustup').should('be.visible');
 
-        cy.visit('/contacts')
-        cy.contains('CONTACTS')
-    })
-})
+        cy.visit('http://localhost:3000/en/contact');
+        cy.contains('Contact Us').should('be.visible');
+    });
+});

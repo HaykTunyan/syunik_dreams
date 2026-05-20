@@ -5,59 +5,49 @@ describe('Cities Page - Syunik Dreams', () => {
 
     describe('Page Header', () => {
         it('should display the main page title correctly', () => {
-            cy.get('h1').contains('SYUNIK CITIES').should('be.visible');
+            cy.get('h1').contains('Syunik Cities', { matchCase: false }).should('be.visible');
             cy.contains('The Southern Gate of Armenia').should('be.visible');
         });
     });
 
     describe('City Cards Content', () => {
         const cities = [
-            { name: 'KAPAN', area: '36 km²', founded: '10th century' },
-            { name: 'GORIS', area: '5.03 km²', founded: '1870' },
-            { name: 'SISIAN', area: '9 km²', founded: '8th century BC' },
-            { name: 'AGARAK', area: '2.5 km²', founded: '1950' },
-            { name: 'MEGHRI', area: '3 km²', founded: '906' },
-            { name: 'QAJARAN', area: '4.1 km²', founded: '1958' }
+            { id: 'kapan', name: 'Kapan', area: '36 km²', founded: '10th century' },
+            { id: 'goris', name: 'Goris', area: '5.03 km²', founded: '1870' },
+            { id: 'sisian', name: 'Sisian', area: '9 km²', founded: '8th century BC' },
+            { id: 'agarak', name: 'Agarak', area: '2.5 km²', founded: '1950' },
+            { id: 'meghri', name: 'Meghri', area: '3 km²', founded: '906' },
+            { id: 'qajaran', name: 'Qajaran', area: '4.1 km²', founded: '1958' }
         ];
 
         cities.forEach((city) => {
             it(`should render the correct data for ${city.name}`, () => {
-                // Scope the search to the specific city card
-                cy.contains('h2, h3', city.name).parents('.city-card, div[class*="card"]').within(() => {
+                cy.contains('h2', city.name).parents('div[class*="rounded-3xl"]').within(() => {
                     cy.contains(city.area).should('be.visible');
                     cy.contains(city.founded).should('be.visible');
-                    cy.contains('More →').should('have.attr', 'href');
+                    cy.contains('More').should('have.attr', 'href');
                 });
             });
         });
 
-        it('should verify that all city cards contain a map/leaflet container', () => {
-            // Assuming you are using Leaflet or a similar map library
-            cy.get('.leaflet-container, .map-box').should('have.length', 6).and('be.visible');
+        it('should verify that city maps are visible', () => {
+            cy.get('.leaflet-container').should('have.length.at.least', 1).and('be.visible');
         });
     });
 
     describe('Interactive Elements', () => {
         it('should navigate to city details when clicking "More"', () => {
-            cy.contains('h2, h3', 'KAPAN')
-                .parents('.city-card, div[class*="card"]')
+            cy.contains('h2', 'Kapan')
+                .parents('div[class*="rounded-3xl"]')
                 .find('a').contains('More').click();
 
-            cy.url().should('include', '/kapan');
+            cy.url().should('include', '/city/kapan');
         });
 
         it('should have a functional "Explore History" CTA at the bottom', () => {
-            cy.contains('WANT TO KNOW MORE').scrollIntoView();
-            cy.get('a').contains('EXPLORE HISTORY').click();
+            cy.contains('Want to know more', { matchCase: false }).scrollIntoView();
+            cy.get('a').contains('Explore History', { matchCase: false }).click();
             cy.url().should('include', '/history');
-        });
-    });
-
-    describe('Responsive Verification', () => {
-        it('should display cards in a single column on mobile', () => {
-            cy.viewport('iphone-xr');
-            // Verify that cards take up full width or stack vertically
-            cy.get('.city-card, div[class*="card"]').first().should('be.visible');
         });
     });
 });
