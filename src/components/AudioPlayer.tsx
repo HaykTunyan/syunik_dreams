@@ -51,7 +51,7 @@ export default function AudioPlayer() {
       <audio ref={audioRef} src={currentTrack.src} loop />
 
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-        {/* Track Label */}
+
         {isPlaying && (
           <div className="bg-white/80 dark:bg-black/80 backdrop-blur-sm px-3 py-1 rounded-lg border border-zinc-200 dark:border-zinc-800 text-[10px] font-bold uppercase tracking-widest text-orange-500 animate-fade-in">
             {currentTrack.name} Music
@@ -59,7 +59,7 @@ export default function AudioPlayer() {
         )}
 
         <div className="flex gap-2">
-          {/* Switch Button */}
+
           <button
             onClick={switchTrack}
             className="p-3 rounded-full bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-orange-500 transition-colors"
@@ -68,7 +68,7 @@ export default function AudioPlayer() {
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8" /><path d="M3 16.2V21m0 0h4.8M3 21l6-6" /><path d="M21 7.8V3m0 0h-4.8M21 3l-6 6" /><path d="M3 7.8V3m0 0h4.8M3 3l6 6" /></svg>
           </button>
 
-          {/* Play/Pause Button */}
+
           <button
             onClick={togglePlay}
             className="p-4 rounded-full bg-orange-500 shadow-xl text-white hover:scale-110 active:scale-95 transition-all duration-300"

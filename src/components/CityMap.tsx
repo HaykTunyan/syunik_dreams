@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css";
 
 type Props = {
   coords: [number, number];
-  name: string; // <-- add city name prop
+  name: string;
 };
 
 export default function CityMap({ coords, name }: Props) {

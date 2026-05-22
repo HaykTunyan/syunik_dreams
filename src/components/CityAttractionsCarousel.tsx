@@ -23,7 +23,6 @@ export default function CityAttractionsCarousel({ cityId, attractions }: Props) 
      * City Attractions Caruousel Hooks.
      */
 
-
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(0);
     const t = useTranslations("cities_data_details");
@@ -126,7 +125,6 @@ export default function CityAttractionsCarousel({ cityId, attractions }: Props) 
                         </motion.div>
                     </AnimatePresence>
 
-                    {/* Navigation Buttons */}
                     <button
                         className="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-4 rounded-full transition-all opacity-0 group-hover:opacity-100 hidden md:block"
                         onClick={() => paginate(-1)}
@@ -140,7 +138,6 @@ export default function CityAttractionsCarousel({ cityId, attractions }: Props) 
                         <FiChevronRight size={32} />
                     </button>
 
-                    {/* Indicators */}
                     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
                         {attractions.map((_, index) => (
                             <button

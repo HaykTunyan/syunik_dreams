@@ -14,75 +14,74 @@ interface Hotel {
     url: string;
 }
 
-const sisianHotels: Hotel[] = [
+const gorisHotels: Hotel[] = [
     {
-        name: "Hotel Vorotan",
+        name: "Hotel Mirhav",
         stars: 4,
-        rating: 8.6,
-        reviews: 312,
-        address: "Sisian, Syunik Province, Armenia",
-        highlights: ["Mountain views", "Free parking", "Restaurant & bar", "Spa & wellness"],
-        priceRange: "~$55–$90 / night",
-        phone: "+374 285 2-34-56",
-        url: "https://www.booking.com/searchresults.html?ss=Sisian",
+        rating: 9.3,
+        reviews: 342,
+        address: "100 Mashtots St, Goris, Armenia",
+        highlights: ["Traditional Armenian design", "Lush green garden", "Handicrafts shop", "Cozy restaurant & bar"],
+        priceRange: "~$65–$110 / night",
+        phone: "+374 284 2-46-12",
+        url: "https://www.booking.com/searchresults.html?ss=Goris",
     },
     {
-        name: "Karahunj Boutique Hotel",
-        stars: 4,
-        rating: 9.1,
-        reviews: 187,
-        address: "Near Zorats Karer, Sisian, Armenia",
-        highlights: ["Panoramic highland views", "Stone terrace", "Local cuisine", "Private garden"],
-        priceRange: "~$70–$120 / night",
-        phone: "+374 285 2-21-10",
-        url: "https://www.booking.com/searchresults.html?ss=Sisian",
-    },
-    {
-        name: "Vorotan Valley Resort",
+        name: "Khoreayi Dzor Resort",
         stars: 5,
-        rating: 9.4,
-        reviews: 98,
-        address: "Vorotan River, Sisian, Armenia",
-        highlights: ["Riverside location", "Infinity pool", "Gourmet dining", "Hiking trails"],
-        priceRange: "~$110–$180 / night",
-        phone: "+374 285 2-55-00",
-        url: "https://www.booking.com/searchresults.html?ss=Sisian",
+        rating: 9.5,
+        reviews: 156,
+        address: "Old Goris Cave District, Goris, Armenia",
+        highlights: ["Cave dwelling views", "Premium dining", "Infinity pool", "Guided hiking tours"],
+        priceRange: "~$90–$150 / night",
+        phone: "+374 284 2-55-99",
+        url: "https://www.booking.com/searchresults.html?ss=Goris",
     },
     {
-        name: "Syunik Heritage Inn",
+        name: "REDROOF Country House",
         stars: 4,
-        rating: 8.9,
-        reviews: 224,
-        address: "Central Sisian, Syunik, Armenia",
-        highlights: ["Historic building", "Breakfast included", "Tour desk", "Free Wi-Fi"],
-        priceRange: "~$45–$75 / night",
-        phone: "+374 285 2-10-88",
-        url: "https://www.booking.com/searchresults.html?ss=Sisian",
+        rating: 9.4,
+        reviews: 188,
+        address: "14 Galstyan St, Goris, Armenia",
+        highlights: ["Stunning mountain view", "Orchard garden", "Warm family hospitality", "Outdoor fireplace"],
+        priceRange: "~$50–$85 / night",
+        phone: "+374 284 2-11-20",
+        url: "https://www.booking.com/searchresults.html?ss=Goris",
     },
     {
-        name: "Shaki Falls Lodge",
+        name: "Christy Hotel",
+        stars: 4,
+        rating: 8.8,
+        reviews: 215,
+        address: "1 Syunik St, Goris, Armenia",
+        highlights: ["City center location", "Modern rooms & suites", "Exceptional breakfast", "Bicycle rental"],
+        priceRange: "~$45–$75 / night",
+        phone: "+374 284 2-30-50",
+        url: "https://www.booking.com/searchresults.html?ss=Goris",
+    },
+    {
+        name: "Yeghevnut Hotel",
         stars: 4,
         rating: 8.7,
-        reviews: 143,
-        address: "Shaki Waterfall Road, Sisian, Armenia",
-        highlights: ["Waterfall proximity", "Eco-friendly", "Fireplace rooms", "Guided tours"],
-        priceRange: "~$60–$95 / night",
-        phone: "+374 285 2-67-44",
-        url: "https://www.booking.com/searchresults.html?ss=Sisian",
+        reviews: 290,
+        address: "9 Gusan Ashot St, Goris, Armenia",
+        highlights: ["Spacious rooms", "Pine forest surrounding", "On-site restaurant", "Free private parking"],
+        priceRange: "~$40–$70 / night",
+        phone: "+374 284 2-88-88",
+        url: "https://www.booking.com/searchresults.html?ss=Goris",
     },
 ];
 
 function StarRow({ count }: { count: number }) {
 
     /**
-     * 
-     * StarRow Component:
+     * Stars component:
+     * This component displays the rating of the hotel in the form of stars.
      * 
      * @param count - The rating of the hotel.
      * 
      * @returns The rating of the hotel in the form of stars.
      */
-
 
     return (
         <div className="flex gap-0.5">
@@ -100,19 +99,18 @@ function StarRow({ count }: { count: number }) {
     );
 }
 
-export default function SisianHotels() {
+export default function GorisHotels() {
 
     /**
+     * Gorsi Hotels component:
      * 
-     * SisianHotels Component:
-     * 
-     * @returns The list of hotels in Sisian.
      */
 
 
     return (
         <section className="py-20 px-6 md:px-20 bg-linear-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-zinc-900">
             <div className="max-w-7xl mx-auto space-y-14">
+
 
                 <motion.div
                     className="text-center space-y-4"
@@ -125,14 +123,16 @@ export default function SisianHotels() {
                         🏨 Where to Stay
                     </span>
                     <h2 className="text-4xl md:text-5xl font-black uppercase text-zinc-900 dark:text-white">
-                        Top <span className="text-orange-500">5 Hotels</span> in Sisian
+                        Top <span className="text-orange-500">5 Hotels</span> in Goris
                     </h2>
                     <p className="text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto text-lg">
-                        Handpicked accommodations with 4+ stars — comfort, views, and authentic Syunik hospitality.
+                        Handpicked accommodations with 4+ stars — traditional design, cave valley views, and exceptional Syunik hospitality.
                     </p>
                 </motion.div>
+
+
                 <div className="grid gap-6 md:gap-8">
-                    {sisianHotels.map((hotel, index) => (
+                    {gorisHotels.map((hotel, index) => (
                         <motion.div
                             key={hotel.name}
                             initial={{ opacity: 0, y: 40 }}

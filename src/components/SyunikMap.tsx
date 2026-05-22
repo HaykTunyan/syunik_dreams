@@ -41,7 +41,7 @@ export default function SyunikMap() {
      * 
      */
 
-    const position: [number, number] = [39.35, 46.15]; // Approximate center of Syunik
+    const position: [number, number] = [39.35, 46.15];
     const t = useTranslations('map_popups');
 
     return (

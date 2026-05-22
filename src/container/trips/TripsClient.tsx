@@ -69,7 +69,7 @@ function BookingModal({ city, cityLabel, onClose }: BookingModalProps) {
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Top accent bar */}
-                <div className="h-1 w-full bg-gradient-to-r from-orange-500 to-amber-400" />
+                <div className="h-1 w-full bg-linear-to-r from-orange-500 to-amber-400" />
 
                 {/* Close button */}
                 <button
@@ -184,7 +184,7 @@ function BookingModal({ city, cityLabel, onClose }: BookingModalProps) {
                                 disabled={!isComplete}
                                 className={`w-full py-3.5 rounded-xl font-bold text-sm tracking-wide transition-all duration-300
                                     ${isComplete
-                                        ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:shadow-lg hover:shadow-orange-500/30 hover:scale-[1.02] active:scale-100'
+                                        ? 'bg-linear-to-r from-orange-500 to-amber-500 text-white hover:shadow-lg hover:shadow-orange-500/30 hover:scale-[1.02] active:scale-100'
                                         : 'bg-zinc-700 text-zinc-500 cursor-not-allowed'
                                     }`}
                             >
@@ -231,7 +231,7 @@ export default function TripsClient() {
 
 
             <main className=" pt-24 pb-20 px-6  max-w-7xl mx-auto">
-                <section className="py-12 px-6 md:px-20 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-3xl overflow-hidden mb-12">
+                <section className="py-12 px-6 md:px-20 bg-linear-to-r from-orange-500 to-red-600 text-white rounded-3xl overflow-hidden mb-12">
                     <div className="max-w-6xl mx-auto">
                         <h1 className="text-2xl md:text-5xl font-bold mb-4">{t('title')}</h1>
                         <p className="text-lg opacity-90">{t('subtitle')}</p>

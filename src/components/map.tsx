@@ -1,4 +1,4 @@
-// src/components/Map.tsx
+
 'use client';
 
 interface City {
@@ -213,7 +213,7 @@ export default function Map({
       </h2>
 
       {/* Interactive SVG Map */}
-      <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-zinc-800 dark:to-zinc-900 rounded-lg p-4 border-2 border-blue-200 dark:border-zinc-700 overflow-x-auto">
+      <div className="bg-linear-to-br from-blue-50 to-blue-100 dark:from-zinc-800 dark:to-zinc-900 rounded-lg p-4 border-2 border-blue-200 dark:border-zinc-700 overflow-x-auto">
         <svg
           width={mapWidth}
           height={mapHeight}

@@ -14,61 +14,61 @@ interface Hotel {
     url: string;
 }
 
-const sisianHotels: Hotel[] = [
+const kapanHotels: Hotel[] = [
     {
-        name: "Hotel Vorotan",
+        name: "Syunik Hotel Kapan",
         stars: 4,
-        rating: 8.6,
-        reviews: 312,
-        address: "Sisian, Syunik Province, Armenia",
-        highlights: ["Mountain views", "Free parking", "Restaurant & bar", "Spa & wellness"],
-        priceRange: "~$55–$90 / night",
-        phone: "+374 285 2-34-56",
-        url: "https://www.booking.com/searchresults.html?ss=Sisian",
+        rating: 9.3,
+        reviews: 284,
+        address: "1A Aram Manukyan St, Kapan, Syunik Province, Armenia",
+        highlights: ["Modern fitness center", "Hot tub & sauna", "Exceptional breakfast", "Spacious mountain-view suites"],
+        priceRange: "~$60–$95 / night",
+        phone: "+374 285 2-88-88",
+        url: "https://www.booking.com/searchresults.html?ss=Kapan",
     },
     {
-        name: "Karahunj Boutique Hotel",
+        name: "Imperial Hotel Kapan",
+        stars: 4,
+        rating: 9.0,
+        reviews: 142,
+        address: "5 Z. Andranik St, Kapan, Armenia",
+        highlights: ["Indoor swimming pool", "On-site restaurant & bar", "Close to Zipline Kapan", "Terrace with views"],
+        priceRange: "~$55–$85 / night",
+        phone: "+374 285 2-11-22",
+        url: "https://www.booking.com/searchresults.html?ss=Kapan",
+    },
+    {
+        name: "Grand House Hotel",
+        stars: 4,
+        rating: 9.2,
+        reviews: 98,
+        address: "Halidzor District, Kapan, Armenia",
+        highlights: ["Panoramic forest views", "Sauna & massage therapies", "Spacious luxury suites", "Hiking trails access"],
+        priceRange: "~$70–$110 / night",
+        phone: "+374 285 2-33-44",
+        url: "https://www.booking.com/searchresults.html?ss=Kapan",
+    },
+    {
+        name: "Cascade Guesthouse",
         stars: 4,
         rating: 9.1,
-        reviews: 187,
-        address: "Near Zorats Karer, Sisian, Armenia",
-        highlights: ["Panoramic highland views", "Stone terrace", "Local cuisine", "Private garden"],
-        priceRange: "~$70–$120 / night",
-        phone: "+374 285 2-21-10",
-        url: "https://www.booking.com/searchresults.html?ss=Sisian",
+        reviews: 104,
+        address: "18 Davit Bek St, Kapan, Armenia",
+        highlights: ["Quiet residential area", "Cozy shared lounge", "Home-cooked local meals", "Free Wi-Fi & parking"],
+        priceRange: "~$40–$65 / night",
+        phone: "+374 285 2-55-66",
+        url: "https://www.booking.com/searchresults.html?ss=Kapan",
     },
     {
-        name: "Vorotan Valley Resort",
-        stars: 5,
-        rating: 9.4,
-        reviews: 98,
-        address: "Vorotan River, Sisian, Armenia",
-        highlights: ["Riverside location", "Infinity pool", "Gourmet dining", "Hiking trails"],
-        priceRange: "~$110–$180 / night",
-        phone: "+374 285 2-55-00",
-        url: "https://www.booking.com/searchresults.html?ss=Sisian",
-    },
-    {
-        name: "Syunik Heritage Inn",
+        name: "Bekh Hilltop Camping & Cabins",
         stars: 4,
-        rating: 8.9,
-        reviews: 224,
-        address: "Central Sisian, Syunik, Armenia",
-        highlights: ["Historic building", "Breakfast included", "Tour desk", "Free Wi-Fi"],
-        priceRange: "~$45–$75 / night",
-        phone: "+374 285 2-10-88",
-        url: "https://www.booking.com/searchresults.html?ss=Sisian",
-    },
-    {
-        name: "Shaki Falls Lodge",
-        stars: 4,
-        rating: 8.7,
-        reviews: 143,
-        address: "Shaki Waterfall Road, Sisian, Armenia",
-        highlights: ["Waterfall proximity", "Eco-friendly", "Fireplace rooms", "Guided tours"],
-        priceRange: "~$60–$95 / night",
-        phone: "+374 285 2-67-44",
-        url: "https://www.booking.com/searchresults.html?ss=Sisian",
+        rating: 9.5,
+        reviews: 86,
+        address: "Bekh Village Hilltop, Kapan, Armenia",
+        highlights: ["Epic mountain panorama", "Cozy wooden A-frame cabins", "Campfire & stargazing area", "Eco-friendly retreat"],
+        priceRange: "~$45–$80 / night",
+        phone: "+374 285 2-77-88",
+        url: "https://www.booking.com/searchresults.html?ss=Kapan",
     },
 ];
 
@@ -76,13 +76,9 @@ function StarRow({ count }: { count: number }) {
 
     /**
      * 
-     * StarRow Component:
+     * Star Rating Component:
      * 
-     * @param count - The rating of the hotel.
-     * 
-     * @returns The rating of the hotel in the form of stars.
      */
-
 
     return (
         <div className="flex gap-0.5">
@@ -100,19 +96,20 @@ function StarRow({ count }: { count: number }) {
     );
 }
 
-export default function SisianHotels() {
+export default function KapanHotels() {
 
     /**
      * 
-     * SisianHotels Component:
+     * Kapan Hotels Component:
+     * This component displays the top 5 hotels in Kapan, Armenia.
      * 
-     * @returns The list of hotels in Sisian.
      */
 
 
     return (
         <section className="py-20 px-6 md:px-20 bg-linear-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-zinc-900">
             <div className="max-w-7xl mx-auto space-y-14">
+
 
                 <motion.div
                     className="text-center space-y-4"
@@ -125,14 +122,16 @@ export default function SisianHotels() {
                         🏨 Where to Stay
                     </span>
                     <h2 className="text-4xl md:text-5xl font-black uppercase text-zinc-900 dark:text-white">
-                        Top <span className="text-orange-500">5 Hotels</span> in Sisian
+                        Top <span className="text-orange-500">5 Hotels</span> in Kapan
                     </h2>
                     <p className="text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto text-lg">
-                        Handpicked accommodations with 4+ stars — comfort, views, and authentic Syunik hospitality.
+                        Highly recommended accommodations based on traveler feedback — luxury spas, forest hilltops, and warm Syunik hospitality.
                     </p>
                 </motion.div>
+
+
                 <div className="grid gap-6 md:gap-8">
-                    {sisianHotels.map((hotel, index) => (
+                    {kapanHotels.map((hotel, index) => (
                         <motion.div
                             key={hotel.name}
                             initial={{ opacity: 0, y: 40 }}
@@ -147,6 +146,7 @@ export default function SisianHotels() {
                             </div>
 
                             <div className="flex flex-col md:flex-row gap-0">
+
 
                                 <div className="md:w-48 shrink-0 bg-linear-to-br from-orange-500 to-orange-600 flex flex-col items-center justify-center p-8 text-white gap-2 rounded-t-[32px] md:rounded-l-[32px] md:rounded-tr-none">
                                     <span className="text-5xl font-black">{hotel.rating}</span>

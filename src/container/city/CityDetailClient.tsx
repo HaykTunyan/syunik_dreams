@@ -10,6 +10,11 @@ import dynamic from "next/dynamic";
 import CityStatsCard from "./CityStatsCard";
 import CityAttractionsCarousel from "@/components/CityAttractionsCarousel";
 import SisianHotels from "@/components/SisianHotels";
+import QajaranHotels from "@/components/QajaranHotels";
+import MeghriHotels from "@/components/MeghriHotels";
+import GorisHotels from "@/components/GorisHotels";
+import AgarakHotels from "@/components/AgarakHotels";
+import KapanHotels from "@/components/KapanHotels";
 
 const CityMap = dynamic(() => import("@/components/CityMap"), {
     ssr: false,
@@ -88,6 +93,11 @@ export default function CityDetailClient({ cityId }: Props) {
             <CityAttractionsCarousel cityId={city.id} attractions={city.attractions as any} />
 
             {city.id === "sisian" && <SisianHotels />}
+            {city.id === "qajaran" && <QajaranHotels />}
+            {city.id === "meghri" && <MeghriHotels />}
+            {city.id === "goris" && <GorisHotels />}
+            {city.id === "agarak" && <AgarakHotels />}
+            {city.id === "kapan" && <KapanHotels />}
 
             <section className="py-20 px-6 md:px-20">
                 <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
