@@ -59,7 +59,7 @@ export const cities = [
     image: "/images/agarak_city.png",
     attractions: [
       { id: "agarak_ancient_site", image: "/images/agarak/agarak_ancient_site_ai.png" },
-      { id: "agarak_cori-jrvezh", image: "/images/agarak/cori-jrvezh.jpg" },
+      { id: "agarak_cori-jrvezh", image: "/images/agarak/cori-jrvezh_ai.png" },
       { id: "agarak_old-tow", image: "/images/agarak/old-agarak.jpg" },
     ]
   },

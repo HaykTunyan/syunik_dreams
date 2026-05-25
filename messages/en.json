@@ -243,11 +243,9 @@
             "bestVisit": "April - September",
             "history": "Agarak is a southern town in Syunik, located on the left bank of the Araks River. Established in 1950 as a mining settlement, it has become a key industrial center for copper and molybdenum production. Its warm climate and strategic location near the Iranian border make it a unique crossroads of industry and nature.",
             "attractions": {
-                "0": "Araks River Valley - beautiful river views",
-                "1": "Copper-Molybdenum Plant - industrial landmark",
-                "2": "Border zone - unique geographical point",
-                "3": "Agarak Ancient Site - Bronze Age ruins and rock-cut structures",
-                "4": "Agarak City Park - featuring the iconic local monument and mountains"
+                "0": "Agarak Ancient Site - Bronze Age ruins and rock-cut structures",
+                "1": "Cori Waterfall - a stunning hidden waterfall surrounded by lush nature near Karchevan",
+                "2": "Old Agarak - historic abandoned settlement with authentic stone houses"
             },
             "links": [
                 {
