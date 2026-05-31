@@ -1,13 +1,21 @@
 "use client";
 
 import { useState } from 'react';
-import SyunikMap from '@/components/SyunikMap';
+import dynamic from 'next/dynamic';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { useTranslations } from 'next-intl';
 import { CardNavigation } from '../home/cardNavigation';
+import { Link } from '@/i18n/navigation';
 
-// ── Booking Modal ─────────────────────────────────────────────────────────────
+const SyunikMap = dynamic(() => import('@/components/SyunikMap'), {
+    ssr: false,
+    loading: () => (
+        <div className="h-[500px] w-full bg-zinc-100 dark:bg-zinc-800 animate-pulse rounded-2xl flex items-center justify-center text-zinc-500">
+            Loading map...
+        </div>
+    )
+});
 
 const MONTHS = [
     'January', 'February', 'March', 'April',
@@ -27,12 +35,18 @@ interface BookingModalProps {
 }
 
 function BookingModal({ city, cityLabel, onClose }: BookingModalProps) {
+
+    /**
+     * 
+     * Booking Modal functionality
+     */
+
     const [selectedMonth, setSelectedMonth] = useState<number | ''>('');
-    const [selectedDay, setSelectedDay]     = useState<number | ''>('');
-    const [confirmed, setConfirmed]         = useState(false);
+    const [selectedDay, setSelectedDay] = useState<number | ''>('');
+    const [confirmed, setConfirmed] = useState(false);
 
     const daysInMonth = selectedMonth !== '' ? getDaysInMonth(selectedMonth) : 31;
-    const isComplete  = selectedMonth !== '' && selectedDay !== '';
+    const isComplete = selectedMonth !== '' && selectedDay !== '';
 
     function handleConfirm() {
         if (!isComplete) return;
@@ -42,21 +56,16 @@ function BookingModal({ city, cityLabel, onClose }: BookingModalProps) {
     }
 
     return (
-        /* Backdrop */
         <div
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
             style={{ backdropFilter: 'blur(6px)', backgroundColor: 'rgba(0,0,0,0.60)' }}
             onClick={onClose}
         >
-            {/* Panel — stop propagation so clicking inside doesn't close */}
             <div
                 className="relative w-full max-w-md bg-zinc-900 border border-white/10 rounded-3xl shadow-2xl overflow-hidden animate-fade-in-up"
                 onClick={(e) => e.stopPropagation()}
             >
-                {/* Top accent bar */}
-                <div className="h-1 w-full bg-gradient-to-r from-orange-500 to-amber-400" />
-
-                {/* Close button */}
+                <div className="h-1 w-full bg-linear-to-r from-orange-500 to-amber-400" />
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors p-1"
@@ -68,9 +77,7 @@ function BookingModal({ city, cityLabel, onClose }: BookingModalProps) {
                 </button>
 
                 <div className="px-8 pt-7 pb-8 space-y-6">
-
                     {confirmed ? (
-                        /* ── Success state ── */
                         <div className="flex flex-col items-center py-6 text-center gap-4 animate-fade-in-up">
                             <div className="w-16 h-16 rounded-full bg-emerald-500/15 flex items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8 text-emerald-400">
@@ -87,9 +94,7 @@ function BookingModal({ city, cityLabel, onClose }: BookingModalProps) {
                             </p>
                         </div>
                     ) : (
-                        /* ── Form state ── */
                         <>
-                            {/* Header */}
                             <div>
                                 <span className="text-xs font-semibold tracking-[0.18em] uppercase text-orange-400">
                                     Book a Trip
@@ -102,8 +107,6 @@ function BookingModal({ city, cityLabel, onClose }: BookingModalProps) {
                                     Choose your preferred travel month and day.
                                 </p>
                             </div>
-
-                            {/* City badge */}
                             <div className="flex items-center gap-3 bg-zinc-800 border border-white/5 rounded-xl px-4 py-3">
                                 <span className="text-2xl">📍</span>
                                 <div>
@@ -111,8 +114,6 @@ function BookingModal({ city, cityLabel, onClose }: BookingModalProps) {
                                     <p className="text-white font-semibold">{cityLabel}</p>
                                 </div>
                             </div>
-
-                            {/* Month selector */}
                             <div className="space-y-2">
                                 <label className="text-xs font-semibold tracking-wider uppercase text-zinc-400">
                                     Month
@@ -122,7 +123,7 @@ function BookingModal({ city, cityLabel, onClose }: BookingModalProps) {
                                         value={selectedMonth}
                                         onChange={(e) => {
                                             setSelectedMonth(Number(e.target.value));
-                                            setSelectedDay(''); // reset day when month changes
+                                            setSelectedDay('');
                                         }}
                                         className="w-full appearance-none bg-zinc-800 border border-white/10 text-white rounded-xl px-4 py-3 pr-10 focus:outline-none focus:border-orange-500 transition-colors cursor-pointer"
                                     >
@@ -136,8 +137,6 @@ function BookingModal({ city, cityLabel, onClose }: BookingModalProps) {
                                     </svg>
                                 </div>
                             </div>
-
-                            {/* Day selector */}
                             <div className="space-y-2">
                                 <label className="text-xs font-semibold tracking-wider uppercase text-zinc-400">
                                     Day
@@ -163,13 +162,12 @@ function BookingModal({ city, cityLabel, onClose }: BookingModalProps) {
                                 </div>
                             </div>
 
-                            {/* Confirm button */}
                             <button
                                 onClick={handleConfirm}
                                 disabled={!isComplete}
                                 className={`w-full py-3.5 rounded-xl font-bold text-sm tracking-wide transition-all duration-300
                                     ${isComplete
-                                        ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:shadow-lg hover:shadow-orange-500/30 hover:scale-[1.02] active:scale-100'
+                                        ? 'bg-linear-to-r from-orange-500 to-amber-500 text-white hover:shadow-lg hover:shadow-orange-500/30 hover:scale-[1.02] active:scale-100'
                                         : 'bg-zinc-700 text-zinc-500 cursor-not-allowed'
                                     }`}
                             >
@@ -197,7 +195,7 @@ export default function TripsClient() {
 
     const t = useTranslations('trips');
     const [selectedCity, setSelectedCity] = useState<string | null>(null);
-    const [modalOpen, setModalOpen]       = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
 
     // Map city id → displayed label using translations
     const cityLabel = selectedCity ? t(selectedCity) : '';
@@ -211,12 +209,12 @@ export default function TripsClient() {
         <div className='min-h-screen bg-white dark:bg-zinc-950'>
             <Header />
 
-            
+
             <CardNavigation />
 
 
             <main className=" pt-24 pb-20 px-6  max-w-7xl mx-auto">
-                <section className="py-12 px-6 md:px-20 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-3xl overflow-hidden mb-12">
+                <section className="py-12 px-6 md:px-20 bg-linear-to-r from-orange-500 to-red-600 text-white rounded-3xl overflow-hidden mb-12">
                     <div className="max-w-6xl mx-auto">
                         <h1 className="text-2xl md:text-5xl font-bold mb-4">{t('title')}</h1>
                         <p className="text-lg opacity-90">{t('subtitle')}</p>
@@ -326,14 +324,24 @@ export default function TripsClient() {
                                 { id: 'khndzoresk', icon: '🌉' },
                                 { id: 'shake', icon: '🌊' },
                                 { id: 'khustup', icon: '🏔️' },
-                                { id: 'vorotnavank', icon: '🛕' },
-                                { id: 'goris_caves', icon: '🛖' },
+                                { id: 'old_goris', icon: '🛖' },
                                 { id: 'halidzor', icon: '🏰' },
-                                { id: 'vahanavank', icon: '⛪' }
+                                { id: 'vahanavank', icon: '⛪' },
+                                { id: 'khndzoresk_caves', icon: '🛖' },
+                                { id: 'meghri_viewpoint', icon: '☀️' },
+                                { id: 'devil_bridge', icon: '🌉' },
+                                { id: 'hermitage_tatev', icon: '🏛️' },
+                                { id: 'vorotnaberd_fortress', icon: '🏛️' },
+                                { id: 'vorotnaberd', icon: '🏛️' },
+                                { id: 'vorotnavanq', icon: '🏛️' },
+                                { id: 'melik_tangi_bridge', icon: '🌉' },
+
+
                             ].map((item) => (
-                                <div
+                                <Link
+                                    href={`/trips/${item.id}`}
                                     key={item.id}
-                                    className="group bg-zinc-50 dark:bg-zinc-900/50 p-8 rounded-[2.5rem] border border-transparent hover:border-orange-500/20 hover:bg-white dark:hover:bg-zinc-900 transition-all duration-500"
+                                    className="group bg-zinc-50 dark:bg-zinc-900/50 p-8 rounded-[2.5rem] border border-transparent hover:border-orange-500/20 hover:bg-white dark:hover:bg-zinc-900 transition-all duration-500 block"
                                 >
                                     <div className="text-4xl mb-6 bg-white dark:bg-zinc-800 w-16 h-16 flex items-center justify-center rounded-2xl shadow-sm group-hover:scale-110 transition-transform duration-500">
                                         {item.icon}
@@ -344,7 +352,7 @@ export default function TripsClient() {
                                     <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                                         {t(`attraction_${item.id}_desc`)}
                                     </p>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>

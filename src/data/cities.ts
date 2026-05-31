@@ -9,6 +9,12 @@ export const cities = [
     founding: "10-րդ դար",
     coords: [39.2075, 46.4058] as [number, number],
     image: "/images/kapan_city.png",
+    attractions: [
+      { id: "khustup", image: "/images/kapan/mountain_khustup.png" },
+      { id: "vahanavank", image: "/images/kapan/vahnavanq_kapan_ai.png" },
+      { id: "museum", image: "/images/kapan/baghaberd_fortress.png" },
+
+    ]
   },
   {
     id: "goris",
@@ -20,6 +26,11 @@ export const cities = [
     founding: "1870 թ.",
     coords: [39.5126, 46.3382] as [number, number],
     image: "/images/goris_city.png",
+    attractions: [
+      { id: "tatev", image: "/images/goris/goris_tatev_monastery_ai.png" },
+      { id: "rock_forest", image: "/images/goris/goris_rock_forest_ai.png" },
+      { id: "khndzoresk", image: "/images/goris/goris_khndzoresk_bridge_ai.png" },
+    ]
   },
   {
     id: "sisian",
@@ -31,6 +42,11 @@ export const cities = [
     founding: "մ.թ.ա. 8 դ.",
     coords: [39.5181, 46.0306] as [number, number],
     image: "/images/sisian_city.png",
+    attractions: [
+      { id: "shaki", image: "/images/sisian/shaki-waterfall-sisian.png" },
+      { id: "zorats", image: "/images/sisian/zaorats-karer.png" },
+      { id: "church", image: "/images/sisian/st-hovhannes-church-sisian.png" },
+    ]
   },
   {
     id: "agarak",
@@ -42,6 +58,11 @@ export const cities = [
     founding: "1950 թ.",
     coords: [38.880, 46.252] as [number, number],
     image: "/images/agarak_city.png",
+    attractions: [
+      { id: "agarak_ancient_site", image: "/images/agarak/agarak_ancient_site_ai.png" },
+      { id: "agarak_cori-jrvezh", image: "/images/agarak/cori-jrvezh_ai.png" },
+      { id: "agarak_old-tow", image: "/images/agarak/old_town_agarak.png" },
+    ]
   },
   {
     id: "meghri",
@@ -52,7 +73,12 @@ export const cities = [
     size: "3 կմ²",
     founding: "906 թ.",
     coords: [38.9029, 46.2446] as [number, number],
-    image: "/images/syunik_view.png",
+    image: "/images/meghri_city.png",
+    attractions: [
+      { id: "fortress", image: "/images/meghri/Meghri_Fortress-ai.jpg" },
+      { id: "viewpoint", image: "/images/meghri/meghri_viewpoint.png" },
+      { id: "alleyway", image: "/images/meghri/old-street-Meghri-ai.jpg" },
+    ]
   },
   {
     id: "qajaran",
@@ -63,6 +89,11 @@ export const cities = [
     size: "4.1 կմ²",
     founding: "1958 թ.",
     coords: [39.1441, 46.2553] as [number, number],
-    image: "/images/syunik_view.png",
+    image: "/images/qajaran_city.png",
+    attractions: [
+      { id: "bear", image: "/images/qajaran/qajaran_bear_ai.png" },
+      { id: "park", image: "/images/qajaran/qajaran_park_ai.png" },
+      { id: "lichk", image: "/images/qajaran/qajaran_lichk_ai.png" },
+    ]
   },
 ];

@@ -1,4 +1,4 @@
-// src/components/TripDetails.tsx
+
 'use client';
 
 import { useTranslations } from "next-intl";
@@ -9,13 +9,20 @@ interface TripDetailsProps {
 }
 
 export default function TripDetails({ tripId, cityId }: TripDetailsProps) {
+
+  /**
+   * 
+   * This function is used to display the details of the trip.
+   * 
+   */
+
   const t = useTranslations('trip_details');
   const tTrips = useTranslations('trips_data');
   const tCities = useTranslations('cities_data');
   const tCityDetails = useTranslations('cities_data_details');
 
   if (tripId) {
-    // Generate valid keys for activities mapping
+
     const activityIndices = [0, 1, 2, 3];
 
     return (
@@ -23,7 +30,7 @@ export default function TripDetails({ tripId, cityId }: TripDetailsProps) {
         <div>
           <div className="flex items-center gap-2 mb-2">
             <span className="text-2xl">
-              {/* Note: In a real app, type would be from data, for now inferring icon or using generic */}
+
               🧗
             </span>
             <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">

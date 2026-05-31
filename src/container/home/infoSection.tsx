@@ -42,7 +42,9 @@ export const HomeInfoSection: React.FC = () => {
                         </p>
                         <div className="pt-6">
                             <Link href="/history" className="inline-flex group bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-full transition-all duration-300 shadow-xl hover:shadow-orange-600/40 items-center gap-2">
-                                <span>{t('learn_more')}</span>
+                                <span className="font-bold">
+                                    {t('learn_more')}
+                                </span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                                 </svg>
@@ -57,10 +59,14 @@ export const HomeInfoSection: React.FC = () => {
                             fill
                             className="object-cover group-hover:scale-110 transition-transform duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
+                        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
                             <div>
-                                <span className="text-orange-400 text-sm font-bold uppercase tracking-widest">{t('image_label')}</span>
-                                <h3 className="text-white text-2xl font-bold mt-2">{t('image_caption')}</h3>
+                                <span className="text-orange-400 text-sm font-bold uppercase tracking-widest">
+                                    {t('image_label')}
+                                </span>
+                                <h3 className="text-white text-2xl font-bold mt-2">
+                                    {t('image_caption')}
+                                </h3>
                             </div>
                         </div>
                     </div>

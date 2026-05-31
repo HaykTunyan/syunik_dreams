@@ -8,6 +8,13 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import dynamic from "next/dynamic";
 import CityStatsCard from "./CityStatsCard";
+import CityAttractionsCarousel from "@/components/CityAttractionsCarousel";
+import SisianHotels from "@/components/SisianHotels";
+import QajaranHotels from "@/components/QajaranHotels";
+import MeghriHotels from "@/components/MeghriHotels";
+import GorisHotels from "@/components/GorisHotels";
+import AgarakHotels from "@/components/AgarakHotels";
+import KapanHotels from "@/components/KapanHotels";
 
 const CityMap = dynamic(() => import("@/components/CityMap"), {
     ssr: false,
@@ -36,7 +43,8 @@ export default function CityDetailClient({ cityId }: Props) {
 
     const heroSrc = city.image || '/images/syunik_landscape.png';
 
-    const attractionKeys = ['0', '1', '2'];
+    const attractionsRaw = tDetails.raw(`${city.id}.attractions`) as Record<string, string> | undefined;
+    const attractionKeys = attractionsRaw ? Object.keys(attractionsRaw) : ['0', '1', '2'];
 
     return (
         <main className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
@@ -50,7 +58,7 @@ export default function CityDetailClient({ cityId }: Props) {
                     className="object-cover brightness-50"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
+                <div className="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-black/80" />
 
                 <div className="relative z-10 text-center px-4 max-w-4xl">
                     <Link
@@ -81,6 +89,15 @@ export default function CityDetailClient({ cityId }: Props) {
                     </div>
                 </div>
             </section>
+
+            <CityAttractionsCarousel cityId={city.id} attractions={city.attractions as any} />
+
+            {city.id === "sisian" && <SisianHotels />}
+            {city.id === "qajaran" && <QajaranHotels />}
+            {city.id === "meghri" && <MeghriHotels />}
+            {city.id === "goris" && <GorisHotels />}
+            {city.id === "agarak" && <AgarakHotels />}
+            {city.id === "kapan" && <KapanHotels />}
 
             <section className="py-20 px-6 md:px-20">
                 <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
@@ -113,7 +130,7 @@ export default function CityDetailClient({ cityId }: Props) {
                     </div>
 
                     <div className="space-y-12">
-                        <div className="bg-orange-500 rounded-[2.5rem] p-10 text-white shadow-2xl shadow-orange-500/20 top-24">
+                        <div className="bg-orange-500 rounded-[2.5rem] p-5 lg:p-10 text-white shadow-2xl shadow-orange-500/20 top-24">
                             <h3 className="text-2xl font-black uppercase mb-6">{tTrip('best_visit')}</h3>
                             <p className="text-4xl font-bold mb-8">{tDetails(`${city.id}.bestVisit`)}</p>
                             <div className="h-px bg-white/20 mb-8"></div>
@@ -126,7 +143,9 @@ export default function CityDetailClient({ cityId }: Props) {
                         </div>
 
                         <div className="bg-white dark:bg-zinc-900 rounded-[2.5rem] p-10 border border-zinc-100 dark:border-zinc-800 shadow-xl">
-                            <h3 className="text-2xl font-black uppercase mb-6 text-zinc-900 dark:text-white">{t('learn_more')}</h3>
+                            <h3 className="text-2xl font-black uppercase mb-6 text-zinc-900 dark:text-white">
+                                {t('learn_more')}
+                            </h3>
                             <div className="space-y-4">
                                 {((tDetails.raw(`${city.id}.links`) as any[]) || []).map((link: any, index: number) => (
                                     <a
@@ -139,7 +158,7 @@ export default function CityDetailClient({ cityId }: Props) {
                                         <span className="font-bold text-zinc-700 dark:text-zinc-300 group-hover:text-orange-600 dark:group-hover:text-orange-400">
                                             {link.name}
                                         </span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-zinc-400 group-hover:text-orange-500 group-hover:translate-x-1 translate-y-[-1px] transition-all">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 text-zinc-400 group-hover:text-orange-500 group-hover:translate-x-1 -translate-y-px transition-all">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                                         </svg>
                                     </a>

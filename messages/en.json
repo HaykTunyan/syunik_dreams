@@ -91,7 +91,39 @@
         "attraction_halidzor": "Halidzor Fortress",
         "attraction_halidzor_desc": "The headquarters of Davit Bek's liberation movement and a symbol of military resilience.",
         "attraction_vahanavank": "Vahanavank Monastery",
-        "attraction_vahanavank_desc": "The 10th-century pantheon of the Syunik kings and princes."
+        "attraction_vahanavank_desc": "The 10th-century pantheon of the Syunik kings and princes.",
+        "attraction_khndzoresk_caves": "Khndzoresk Caves",
+        "attraction_khndzoresk_caves_desc": "Ancient cave dwellings in Khndzoresk, offering a glimpse into the region's history.",
+        "attraction_syunik_fortress": "Syunik Fortress",
+        "attraction_syunik_fortress_desc": "Fortress in Syunik, showcasing the region's medieval history.",
+        "attraction_halidzor_ditaket": "Halidzor Observation Deck",
+        "attraction_halidzor_ditaket_desc": "Observation deck in Halidzor, offering panoramic views of the region.",
+        "attraction_meghri_viewpoint": "Meghri Viewpoint",
+        "attraction_meghri_viewpoint_desc": "Viewpoint in Meghri, offering panoramic views of the region.",
+        "attraction_vorotnaberd": "Vorotnaberd Fortress",
+        "attraction_vorotnaberd_desc": "Fortress in Syunik, showcasing the region's medieval history.",
+        "attraction_melik_tangi_bridge": "Melik Tangi Bridge",
+        "attraction_melik_tangi_bridge_desc": "Bridge in Syunik, showcasing the region's medieval history.",
+        "attraction_sunrise_meghri": "Sunrise Meghri",
+        "attraction_sunrise_meghri_desc": "Sunrise Meghri, showcasing the region's medieval history.",
+        "attraction_great_hermitage_of_tatev": "Great Hermitage of Tatev",
+        "attraction_great_hermitage_of_tatev_desc": "Great Hermitage of Tatev, showcasing the region's medieval history.",
+        "attraction_old_goris": "Old Goris",
+        "attraction_old_goris_desc": "Old Goris, showcasing the region's medieval history.",
+        "attraction_devil_bridge": "Devil's Bridge",
+        "attraction_devil_bridge_desc": "Devil's Bridge, showcasing the region's medieval history.",
+        "attraction_hermitage_tatev": "Hermitage of Tatev",
+        "attraction_hermitage_tatev_desc": "Hermitage of Tatev, showcasing the region's medieval history.",
+        "attraction_vorotnaberd_fortress": "Vorotnaberd Fortress",
+        "attraction_vorotnaberd_fortress_desc": "Vorotnaberd Fortress, showcasing the region's medieval history.",
+        "attraction_vorotnaberd_hermitage": "Vorotnaberd Hermitage",
+        "attraction_vorotnaberd_hermitage_desc": "Vorotnaberd Hermitage, showcasing the region's medieval history.",
+        "attraction_vorotnavank_hermitage": "Vorotnavank Hermitage",
+        "attraction_vorotnavank_hermitage_desc": "Vorotnavank Hermitage, showcasing the region's medieval history.",
+        "attraction_vorotnavanq": "Vorotnavank",
+        "attraction_vorotnavanq_desc": "Vorotnavank, showcasing the region's medieval history.",
+        "attraction_vorotnbaberd ": "Vorotnaberd",
+        "attraction_vorotnbaberd_desc": "Vorotnaberd, showcasing the region's medieval history."
     },
     "city_page": {
         "title_prefix": "Syunik",
@@ -168,7 +200,7 @@
             "attractions": {
                 "0": "Khustup Mountain - the most famous peaks in Syunik Region",
                 "1": "Vahanavank Monastery - Historic monastery",
-                "2": "Kapan Mining Museum - famous mining history"
+                "2": "Baghaberd Fortress - Historic fortress"
             },
             "links": [
                 {
@@ -188,7 +220,8 @@
             "attractions": {
                 "0": "Tatev Monastery - 9th century famous monastery",
                 "1": "Basalt columns - natural sculpture",
-                "2": "Old town - traditional architecture"
+                "2": "Old town - traditional architecture",
+                "3": "Khndzoresk Swinging Bridge - Breathtaking bridge over a gorge"
             },
             "links": [
                 {
@@ -206,9 +239,9 @@
             "bestVisit": "April - May",
             "history": "Located on the border with Iran, Meghri is the warmest city in Armenia. It has a rich history dating back to the Urartian period. The city is famous for its narrow streets, 17th-century churches with unique frescoes, and the Meghri Fortress which defended the southern borders of Armenia. Meghri is often referred to as the 'Southern Gate' of the country.",
             "attractions": {
-                "0": "Meghri fortress - state palace",
-                "1": "Border views - view to Iran and Azerbaijan",
-                "2": "Nature reserve - natural conservation"
+                "0": "Meghri Fortress - ancient defensive structure",
+                "1": "The Sunset of Meghri - sunset view in border of Meghri",
+                "2": "Meghri Alleyway - authentic old town street"
             },
             "links": [
                 {
@@ -222,9 +255,9 @@
             "bestVisit": "April - November",
             "history": "Sisian is home to some of the most ancient sites in Armenia, including the 3,500-year-old Zorats Karer (Karahunj) observatory. The region has been inhabited since the Bronze Age. In medieval times, it was a significant cultural and religious center. The city sits on the Vorotan River and is surrounded by high mountains and volcanic landscapes.",
             "attractions": {
-                "0": "Zorats stones - famous archaeological complex",
-                "1": "Selim caravanserai - medieval road palace",
-                "2": "Ancient sites - historical places"
+                "0": "Shaki Waterfall - famous waterfall",
+                "1": "Zorats Karer - ancient observatory",
+                "2": "Saint Hovhannes Church - medieval church"
             },
             "links": [
                 {
@@ -242,9 +275,9 @@
             "bestVisit": "April - September",
             "history": "Agarak is a southern town in Syunik, located on the left bank of the Araks River. Established in 1950 as a mining settlement, it has become a key industrial center for copper and molybdenum production. Its warm climate and strategic location near the Iranian border make it a unique crossroads of industry and nature.",
             "attractions": {
-                "0": "Araks River Valley - beautiful river views",
-                "1": "Copper-Molybdenum Plant - industrial landmark",
-                "2": "Border zone - unique geographical point"
+                "0": "Agarak Ancient Site - Bronze Age ruins and rock-cut structures",
+                "1": "Cori Waterfall - a stunning hidden waterfall surrounded by lush nature near Karchevan",
+                "2": "Old Agarak - historic abandoned settlement with authentic stone houses"
             },
             "links": [
                 {
@@ -258,9 +291,9 @@
             "bestVisit": "May - October",
             "history": "Qajaran is one of the highest cities in Armenia, situated at an altitude of about 1900-2100 meters. Founded in 1958, it is essentially built around the massive Qajaran copper-molybdenum mine. The city is surrounded by the Zangezur mountains and is known for its pure mountain air and the Voghji River passing through it.",
             "attractions": {
-                "0": "Qajaran Mine - one of the largest in the world",
-                "1": "Zangezur Mountains - high peak hiking",
-                "2": "Voghji River - scenic mountain river"
+                "0": "Qajaran Bear Monument - symbol of the city",
+                "1": "Qajaran City Park - featuring the Statue of the Miner",
+                "2": "Lichk Waterfall - stunning natural beauty in the gorge"
             },
             "links": [
                 {
@@ -432,7 +465,7 @@
             "title_prefix": "Syunik's",
             "title_suffix": "Heroic Battle",
             "subtitle": "Garegin Nzhdeh and Immortal Spirit",
-            "p1": "In 1920-1921, when the existence of Armenia was in danger, <strong>Garegin Nzhdeh</strong> organized the self-defense of Mountainous Armenia in the mountains of Syunik. His iron will and strategic genius united the people of Syunik to wage a life-and-death struggle against the invaders.",
+            "p1": "In 1919-1921, when the existence of Armenia was in danger, <strong>Garegin Nzhdeh</strong> organized the self-defense of Mountainous Armenia in the mountains of Syunik. His iron will and strategic genius united the people of Syunik to wage a life-and-death struggle against the invaders.",
             "p2": "Under Nzhdeh's leadership, Syunik became an impregnable citadel. The Republic of Mountainous Armenia was proclaimed in Tatev Monastery, which played a decisive role in preserving Syunik within Armenia.",
             "p3": "“A people whose sons are not equal before the law and death will not have a victorious homeland.” With this ideology, Nzhdeh created one of the most glorious pages of Armenian history.",
             "quote": "“Syunik is our backbone, without which Armenia cannot exist.”",

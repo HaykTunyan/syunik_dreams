@@ -27,7 +27,7 @@ export default function CitiesClient() {
         <main className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
             <Header />
             <section className="relative h-[80vh] w-full flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/20" />
+                <div className="absolute inset-0 bg-linear-to-b from-black/70 to-black/20" />
                 <div className="relative z-10 text-center px-4">
                     <h1 className="text-6xl md:text-7xl font-black text-white uppercase">
                         {t('title_prefix')} <span className="text-orange-500">{t('title_suffix')}</span>
@@ -49,7 +49,7 @@ export default function CitiesClient() {
                                 <div className="z-10 h-full w-full relative">
                                     <CityMap coords={city.coords} name={tData(`${city.id}.name`)} />
                                 </div>
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-20 pointer-events-none" />
+                                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent z-20 pointer-events-none" />
                                 <div className="absolute bottom-6 left-8 text-white z-30 pointer-events-none">
                                     <span className="text-orange-500 uppercase text-sm font-bold">{t('city_label')}</span>
                                     <h2 className="text-3xl font-black uppercase">{tData(`${city.id}.name`)}</h2>
@@ -102,7 +102,6 @@ export default function CitiesClient() {
                     </div>
                 </div>
             </section>
-
             <Footer />
         </main>
     );

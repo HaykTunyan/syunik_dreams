@@ -20,6 +20,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col font-sans">
+      <Header />
 
       {/* Hero Section */}
       <HomeHeroSection />

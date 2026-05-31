@@ -58,6 +58,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function CityDetailPage({ params }: Props) {
+
+    /**
+     * 
+     * City Detail Page
+     * 
+     * This page is used to display the details of a specific city.
+     */
+
     const { locale, name: cityId } = await params;
     const city = cities.find((c) => c.id === cityId);
 
@@ -90,6 +98,11 @@ export default async function CityDetailPage({ params }: Props) {
             }
         }
     };
+
+    /**
+     * 
+     * Return the City Detail Page
+     */
 
     return (
         <>
