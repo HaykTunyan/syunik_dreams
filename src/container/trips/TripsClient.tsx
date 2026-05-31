@@ -324,10 +324,19 @@ export default function TripsClient() {
                                 { id: 'khndzoresk', icon: '🌉' },
                                 { id: 'shake', icon: '🌊' },
                                 { id: 'khustup', icon: '🏔️' },
-                                { id: 'vorotnavank', icon: '🛕' },
-                                { id: 'goris_caves', icon: '🛖' },
+                                { id: 'old_goris', icon: '🛖' },
                                 { id: 'halidzor', icon: '🏰' },
-                                { id: 'vahanavank', icon: '⛪' }
+                                { id: 'vahanavank', icon: '⛪' },
+                                { id: 'khndzoresk_caves', icon: '🛖' },
+                                { id: 'meghri_viewpoint', icon: '☀️' },
+                                { id: 'devil_bridge', icon: '🌉' },
+                                { id: 'hermitage_tatev', icon: '🏛️' },
+                                { id: 'vorotnaberd_fortress', icon: '🏛️' },
+                                { id: 'vorotnaberd', icon: '🏛️' },
+                                { id: 'vorotnavanq', icon: '🏛️' },
+                                { id: 'melik_tangi_bridge', icon: '🌉' },
+
+
                             ].map((item) => (
                                 <Link
                                     href={`/trips/${item.id}`}

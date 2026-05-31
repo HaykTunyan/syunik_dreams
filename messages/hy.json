@@ -91,7 +91,17 @@
         "attraction_halidzor": "Հալիձորի բերդ",
         "attraction_halidzor_desc": "Դավիթ Բեկի ազատագրական շարժման կենտրոնակայանը և ռազմական դիմակայության խորհրդանիշը։",
         "attraction_vahanavank": "Վահանավանք",
-        "attraction_vahanavank_desc": "10-րդ դարի հոգևոր կենտրոն, Սյունյաց թագավորների և իշխանների տոհմական դամբարանը։"
+        "attraction_vahanavank_desc": "10-րդ դարի հոգևոր կենտրոն, Սյունյաց թագավորների և իշխանների տոհմական դամբարանը։",
+        "attraction_vorotnavanq_hermitage": "Որոտնավանքի մենախցեր",
+        "attraction_vorotnavanq_hermitage_desc": "Միջնադարյան մենախցեր, որոնք ցուցադրում են մարտերից հետո մնացած հոգևոր կենտրոնը։",
+        "attraction_vorotnbaberd": "Որոտնաբերդ",
+        "attraction_vorotnbaberd_desc": "Միջնադարյան բերդ, որը ծառայել է որպես Սյունյաց իշխանների ռազմական կենտրոն։",
+        "attraction_halidzor_fortress": "Հալիձորի բերդ",
+        "attraction_halidzor_fortress_desc": "Հայտնի ամրոց, որը եղել է Դավիթ Բեկի ազատագրական շարժման հիմնական հենակետերից մեկը։",
+        "attraction_hermitage_tatev": "Տաթևի մենախցեր",
+        "attraction_hermitage_tatev_desc": "Միջնադարյան մենախցեր, որոնք ցուցադրում են մարտերից հետո մնացած հոգևոր կենտրոնը։",
+        "attraction_vorotnaberd_fortress": "Որոտնաբերդ",
+        "attraction_vorotnaberd_fortress_desc": "Միջնադարյան բերդ, որը ծառայել է որպես Սյունյաց իշխանների ռազմական կենտրոն։"
     },
     "city_page": {
         "title_prefix": "Սյունիքի",

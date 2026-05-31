@@ -10,9 +10,10 @@ export const cities = [
     coords: [39.2075, 46.4058] as [number, number],
     image: "/images/kapan_city.png",
     attractions: [
-      { id: "khustup", image: "/images/kapan/kapan_attraction_1.png" },
+      { id: "khustup", image: "/images/kapan/mountain_khustup.png" },
       { id: "vahanavank", image: "/images/kapan/vahnavanq_kapan_ai.png" },
       { id: "museum", image: "/images/kapan/baghaberd_fortress.png" },
+
     ]
   },
   {
@@ -60,7 +61,7 @@ export const cities = [
     attractions: [
       { id: "agarak_ancient_site", image: "/images/agarak/agarak_ancient_site_ai.png" },
       { id: "agarak_cori-jrvezh", image: "/images/agarak/cori-jrvezh_ai.png" },
-      { id: "agarak_old-tow", image: "/images/agarak/old-agarak.jpg" },
+      { id: "agarak_old-tow", image: "/images/agarak/old_town_agarak.png" },
     ]
   },
   {
@@ -75,7 +76,7 @@ export const cities = [
     image: "/images/meghri_city.png",
     attractions: [
       { id: "fortress", image: "/images/meghri/Meghri_Fortress-ai.jpg" },
-      { id: "bridge", image: "/images/meghri/old-bridge-metaqs-way-ai.png" },
+      { id: "viewpoint", image: "/images/meghri/meghri_viewpoint.png" },
       { id: "alleyway", image: "/images/meghri/old-street-Meghri-ai.jpg" },
     ]
   },

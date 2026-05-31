@@ -68,7 +68,7 @@ export default function CityAttractionsCarousel({ cityId, attractions }: Props) 
                     </p>
                 </div>
 
-                <div className="relative h-[500px] md:h-[650px] w-full rounded-[3rem] overflow-hidden shadow-2xl group">
+                <div className="relative  h-[600px] md:h-[950px] w-full rounded-[3rem] overflow-hidden shadow-2xl group">
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.div
                             key={currentIndex}
