@@ -3,7 +3,8 @@
         "home": "Home",
         "backToHome": "Back to Home",
         "history": "History",
-        "tourism": "Tourism"
+        "tourism": "Tourism",
+        "road": "Syunik Road"
     },
     "trips": {
         "title": "Syunik Trips",
@@ -386,7 +387,8 @@
         "contact": "Contact Us",
         "explore": "Explore",
         "support": "Support",
-        "stay_connected": "Stay Connected"
+        "stay_connected": "Stay Connected",
+        "road": "Syunik Road"
     },
     "trip_details": {
         "features": "Features",
@@ -573,5 +575,33 @@
         "delivery_info": "Estimated Delivery: 2-3 business days within Armenia.",
         "success_close": "Great!",
         "added_to_cart": "item added to your selection"
+    },
+    "about_road": {
+        "title_prefix": "THE ROAD TO",
+        "title_suffix": "SYUNIK",
+        "timeline_title": "Travel Timeline",
+        "timeline_title_sub": "The Route Breakdown",
+        "subtitle": "Embark on an epic journey along Armenia's most dramatic mountain passes and scenic gateways.",
+        "introduction": "The highway winding south through Syunik is more than just a route—it is a lifeline of history, statehood, and spectacular natural beauty. Rising from the Ararat plain, this highway cuts through deep river gorges, scaling towering mountain passes to connect Armenia to its southern gate.",
+        "section_gateway_title": "Syunik's Gate",
+        "section_gateway_desc": "Standing at the border of Vayots Dzor and Syunik, the monumental 'Gates of Syunik' welcome travelers. Comprising two massive stone arches that mimic historical fortress gates, this landmark marks your transition into the land of eternal mountains.",
+        "section_serpentine_title": "The Tatev Serpentine",
+        "section_serpentine_desc": "Descending deep into the Vorotan River canyon, the road transforms into a sequence of hair-raising hairpin loops. The Tatev Serpentine is a masterpiece of engineering, offering stunning, sheer panoramic drops and views of the ancient hermitage below.",
+        "section_passes_title": "The Mountain Passes",
+        "section_passes_title_sub": "Sisian, Tashtun & Meghri Passes",
+        "section_passes_desc": "Reaching altitudes of over 2,300 meters, the high passes of Syunik present dramatic landscapes. Driving through these passes feels like traveling through the clouds, where fog sweeps across green meadows in summer and snow blankets the volcanic peaks in winter.",
+        "tips_title": "Traveler's Guide & Safety",
+        "tips_sub": "Essential advice for your road trip",
+        "tip_1_title": "Check Weather Forecast",
+        "tip_1_desc": "Mountain passes can experience sudden fog or snow, even in spring or autumn.",
+        "tip_2_title": "Fuel Stations",
+        "tip_2_desc": "Fill up your tank in major cities like Sisian or Goris, as distances between stations can be long in remote regions.",
+        "tip_3_title": "Best Viewing Points",
+        "tip_3_desc": "Make sure to stop at the Syunik's Gate monument and the Tatev viewpoint for spectacular photography.",
+        "timeline_start": "Yerevan",
+        "timeline_sisian": "Sisian",
+        "timeline_tatev": "Tatev",
+        "timeline_kapan": "Kapan",
+        "timeline_meghri": "Meghri"
     }
 }
