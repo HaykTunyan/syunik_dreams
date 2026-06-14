@@ -62,6 +62,7 @@ export function Header() {
                         <div className="hidden md:flex items-center gap-8">
                             <Link href="/history" className="text-sm font-bold text-zinc-500 hover:text-orange-600 transition-colors uppercase tracking-widest">{t('history')}</Link>
                             <Link href="/trips" className="text-sm font-bold text-zinc-500 hover:text-orange-600 transition-colors uppercase tracking-widest">{t('tourism')}</Link>
+                            <Link href="/about-road" className="text-sm font-bold text-zinc-500 hover:text-orange-600 transition-colors uppercase tracking-widest">{t('road')}</Link>
                         </div>
                         <div className="relative" ref={dropdownRef}>
                             <button

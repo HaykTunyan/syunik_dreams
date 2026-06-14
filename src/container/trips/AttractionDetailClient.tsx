@@ -47,7 +47,7 @@ const ALL_TRAVEL_IMAGES = [
     '/images/for-travel/hermitage_tatev.png',
     '/images/for-travel/vorotnaberd_fortress.png',
     '/images/for-travel/vorotnaberd.png',
-    '/images/for-travel/melik_tangi_bridge.png',
+    "/images/for-travel/syuniks_gate.png",
 ];
 
 

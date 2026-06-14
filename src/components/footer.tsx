@@ -51,6 +51,9 @@ export function Footer() {
               <Link href="/city" className="text-zinc-400 hover:text-white transition-all duration-300 text-sm font-medium hover:translate-x-1 inline-block">
                 {t('cities')}
               </Link>
+              <Link href="/about-road" className="text-zinc-400 hover:text-white transition-all duration-300 text-sm font-medium hover:translate-x-1 inline-block">
+                {t('road')}
+              </Link>
             </nav>
           </div>
 
