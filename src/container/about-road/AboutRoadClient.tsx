@@ -27,7 +27,6 @@ export default function AboutRoadClient() {
         <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 flex flex-col font-sans selection:bg-orange-500 selection:text-white transition-colors duration-300">
 
             <Header />
-
             <main className="grow">
                 <section className="relative h-[80vh] min-h-[500px] flex items-center justify-center overflow-hidden">
                     <Image
@@ -52,7 +51,6 @@ export default function AboutRoadClient() {
                         </p>
                     </div>
                 </section>
-
                 <section className="py-20 px-6 max-w-5xl mx-auto">
                     <div className="bg-white dark:bg-zinc-900 rounded-[2.5rem] p-8 md:p-16 shadow-2xl border border-zinc-100 dark:border-white/5 relative overflow-hidden transition-all duration-300 hover:shadow-orange-500/5">
                         <div className="absolute top-0 left-0 w-2 h-full bg-linear-to-b from-orange-500 to-amber-500" />
@@ -61,12 +59,11 @@ export default function AboutRoadClient() {
                         </p>
                     </div>
                 </section>
-
                 <section className="py-12 px-6 max-w-6xl mx-auto space-y-24">
                     <div className="flex flex-col lg:flex-row gap-12 items-center">
                         <div className="flex-1 space-y-6">
                             <span className="text-xs font-bold tracking-[0.2em] uppercase text-orange-500">
-                                Landmark Monument
+                                {t("section_landmark")}
                             </span>
                             <h2 className="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white uppercase tracking-tight">
                                 {t("section_gateway_title")}
@@ -87,11 +84,10 @@ export default function AboutRoadClient() {
                             </div>
                         </div>
                     </div>
-
                     <div className="flex flex-col lg:flex-row-reverse gap-12 items-center">
                         <div className="flex-1 space-y-6">
                             <span className="text-xs font-bold tracking-[0.2em] uppercase text-orange-500">
-                                Engineering Masterpiece
+                                {t('section_engineering_title')}
                             </span>
                             <h2 className="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white uppercase tracking-tight">
                                 {t("section_serpentine_title")}

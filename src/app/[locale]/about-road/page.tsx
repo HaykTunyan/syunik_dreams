@@ -7,6 +7,14 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+
+    /**
+     * 
+     * generate Metadata for about road page
+     
+     */
+
+
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: "about_road" });
 
@@ -22,5 +30,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function AboutRoadPage() {
+
+    /**
+     * 
+     * About road page
+     */
+
     return <AboutRoadClient />;
 }
