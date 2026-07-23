@@ -11,6 +11,7 @@
     "test:run": "cypress run"
   },
   "dependencies": {
+    "@vapi-ai/web": "^2.5.2",
     "framer-motion": "^12.38.0",
     "leaflet": "^1.9.4",
     "next": "16.1.2",

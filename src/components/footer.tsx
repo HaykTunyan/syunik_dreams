@@ -63,6 +63,10 @@ export function Footer() {
               <Link href="/product" className="text-zinc-400 hover:text-white transition-all duration-300 text-sm font-medium hover:translate-x-1 inline-block">
                 {t('product')}
               </Link>
+              <Link href="/your-city" className="text-zinc-400 hover:text-white transition-all duration-300 text-sm font-medium hover:translate-x-1 inline-block">
+                {t('your_city')}
+              </Link>
+
               <Link href="/contact" className="text-zinc-400 hover:text-white transition-all duration-300 text-sm font-medium hover:translate-x-1 inline-block">
                 {t('contact')}
               </Link>
