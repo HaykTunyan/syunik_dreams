@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-import AgarakFC from "#/images/sport/agar.png";
-import GorisFC from "#/images/sport/goris.png";
-import KapanFC from "#/images/sport/kapan.png";
-import SisianFC from "#/images/sport/sisian.png";
-import MeghriFC from "#/images/sport/meghri.png";
-import KajaranFC from "#/images/sport/kajaran.png";
-import DastakertFC from "#/images/sport/dastakert.png";
+import AgarakFC from "#/images/sport/Agarak.png";
+import GorisFC from "#/images/sport/Goris.png";
+import KapanFC from "#/images/sport/Kapan.png";
+import SisianFC from "#/images/sport/Sisian.png";
+import MeghriFC from "#/images/sport/Meghri.png";
+import KajaranFC from "#/images/sport/Kajaran.png";
+import DastakertFC from "#/images/sport/Dastakert.png";
 
 const CLUBS = [
   {
