@@ -7,6 +7,8 @@ import { Footer } from "@/components/footer";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import dynamic from "next/dynamic";
+
+import { useMemo, useState } from "react";
 import CityStatsCard from "./CityStatsCard";
 import CityAttractionsCarousel from "@/components/CityAttractionsCarousel";
 import SisianHotels from "@/components/SisianHotels";
@@ -16,6 +18,9 @@ import GorisHotels from "@/components/GorisHotels";
 import AgarakHotels from "@/components/AgarakHotels";
 import KapanHotels from "@/components/KapanHotels";
 
+//
+import Vapi from "@vapi-ai/web";
+
 const CityMap = dynamic(() => import("@/components/CityMap"), {
     ssr: false,
 });
@@ -23,6 +28,12 @@ const CityMap = dynamic(() => import("@/components/CityMap"), {
 interface Props {
     cityId: string;
 }
+
+
+
+const ASSISTANT_ID = "40d80606-ff08-4358-b393-b538e9194716";
+const VAPI_PUBLIC_KEY = "3ee585d8-f714-46e2-ae49-27fae485c0ee";
+
 
 export default function CityDetailClient({ cityId }: Props) {
 
@@ -32,9 +43,46 @@ export default function CityDetailClient({ cityId }: Props) {
      * 
      */
 
+
+
     const city = cities.find((c) => c.id === cityId);
 
     if (!city) return null;
+
+    const [isCalling, setIsCalling] = useState(false);
+    const vapi = useMemo(() => {
+        return new Vapi(VAPI_PUBLIC_KEY);
+    }, []);
+
+    // 🎤 Start / Stop toggle
+    const toggleVoice = async () => {
+        try {
+            if (isCalling) {
+                vapi.stop();
+                setIsCalling(false);
+                return;
+            }
+
+            await vapi.start({
+                // 🔐 Pass authentication if you have an auth token
+                // authToken: "your-auth-token",
+
+                // 🤖 Select your assistan
+                //@ts-ignore
+                assistant: {
+                    id: ASSISTANT_ID,
+                },
+            });
+
+            setIsCalling(true);
+        } catch (err) {
+            console.error("Vapi error:", err);
+        }
+    };
+
+
+
+
 
     const t = useTranslations('city_page');
     const tData = useTranslations('cities_data');
@@ -137,10 +185,18 @@ export default function CityDetailClient({ cityId }: Props) {
                             <p className="text-orange-100 leading-relaxed mb-8">
                                 Discover the seasonal beauty of {tData(`${city.id}.name`)}. Each month brings a unique atmosphere to this historical city.
                             </p>
-                            <button className="w-full bg-white text-orange-500 font-bold py-4 rounded-2xl hover:bg-zinc-100 transition-colors">
-                                {tTrip('book_tour')}
+                            <button className="w-full bg-white text-orange-500 font-bold py-4 rounded-2xl hover:bg-zinc-100 transition-colors"
+                                onClick={toggleVoice}
+                            >
+                                {/* {tTrip('book_tour')} */}
+
+                                {isCalling ? "Stop Voice AI" : "Start Voice AI 🎤"}
                             </button>
+
+
+
                         </div>
+
 
                         <div className="bg-white dark:bg-zinc-900 rounded-[2.5rem] p-10 border border-zinc-100 dark:border-zinc-800 shadow-xl">
                             <h3 className="text-2xl font-black uppercase mb-6 text-zinc-900 dark:text-white">
