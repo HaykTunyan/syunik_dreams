@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-import AgarakFC from "#/images/Football/Agarak.png";
-import GorisFC from "#/images/Football/Goris.png";
-import KapanFC from "#/images/Football/Kapan.png";
-import SisianFC from "#/images/Football/Sisian.png";
-import MeghriFC from "#/images/Football/Meghri.png";
-import KajaranFC from "#/images/Football/Kajaran.png";
-import DastakertFC from "#/images/Football/Dastakert.png";
+import AgarakFC from "#/images/football/Agarak.png";
+import GorisFC from "#/images/football/Goris.png";
+import KapanFC from "#/images/football/Kapan.png";
+import SisianFC from "#/images/football/Sisian.png";
+import MeghriFC from "#/images/football/Meghri.png";
+import KajaranFC from "#/images/football/Kajaran.png";
+import DastakertFC from "#/images/football/Dastakert.png";
 
 const CLUBS = [
   {
@@ -136,8 +136,8 @@ export default function YourCityClient() {
               <div
                 key={club.id}
                 className={`group relative rounded-4xl p-1 transition-all duration-700 ease-out hover:-translate-y-2 ${isJoined
-                    ? 'bg-linear-to-br from-orange-500 via-orange-900 to-black shadow-[0_0_40px_rgba(249,115,22,0.2)]'
-                    : 'bg-linear-to-br from-white/10 to-transparent hover:from-white/20'
+                  ? 'bg-linear-to-br from-orange-500 via-orange-900 to-black shadow-[0_0_40px_rgba(249,115,22,0.2)]'
+                  : 'bg-linear-to-br from-white/10 to-transparent hover:from-white/20'
                   }`}
               >
                 <div className={`relative h-full w-full rounded-[1.8rem] overflow-hidden flex flex-col ${isJoined ? 'bg-[#0a0a0a]' : 'bg-[#0a0a0a]/90 backdrop-blur-3xl'
@@ -147,7 +147,7 @@ export default function YourCityClient() {
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-32 bg-orange-500/20 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
                   {/* Image Container */}
-                  <div className="relative w-full aspect-[4/3] flex items-center justify-center p-8 z-10">
+                  <div className="relative w-full aspect-4/3 flex items-center justify-center p-8 z-10">
                     <div className="absolute inset-0 bg-linear-to-b from-transparent to-[#0a0a0a] opacity-80 z-10" />
                     <div className="relative w-full h-full z-0 transition-transform duration-700 group-hover:scale-110">
                       {/* SVG Fallback */}
@@ -189,8 +189,8 @@ export default function YourCityClient() {
                         onClick={() => handleJoinClick(club.id)}
                         disabled={isJoined}
                         className={`relative w-full py-4 rounded-xl font-bold uppercase tracking-[0.2em] text-sm transition-all duration-500 overflow-hidden ${isJoined
-                            ? 'bg-orange-500/10 text-orange-400 border border-orange-500/30 cursor-default'
-                            : 'bg-white text-black hover:bg-zinc-200 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]'
+                          ? 'bg-orange-500/10 text-orange-400 border border-orange-500/30 cursor-default'
+                          : 'bg-white text-black hover:bg-zinc-200 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]'
                           }`}
                       >
                         <span className="relative z-10">

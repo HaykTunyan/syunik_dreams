@@ -43,7 +43,11 @@ export default function CityDetailClient({ cityId }: Props) {
      * 
      */
 
+
+
     const city = cities.find((c) => c.id === cityId);
+
+    if (!city) return null;
 
     const [isCalling, setIsCalling] = useState(false);
     const vapi = useMemo(() => {
@@ -78,7 +82,7 @@ export default function CityDetailClient({ cityId }: Props) {
 
 
 
-    if (!city) return null;
+
 
     const t = useTranslations('city_page');
     const tData = useTranslations('cities_data');
