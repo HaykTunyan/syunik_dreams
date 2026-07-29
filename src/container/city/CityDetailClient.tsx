@@ -18,8 +18,8 @@ import GorisHotels from "@/components/GorisHotels";
 import AgarakHotels from "@/components/AgarakHotels";
 import KapanHotels from "@/components/KapanHotels";
 
-//
-import Vapi from "@vapi-ai/web";
+import { useVapi } from "@/hooks/useVapi";
+import VoiceAssistantWidget from "@/components/VoiceAssistantWidget";
 
 const CityMap = dynamic(() => import("@/components/CityMap"), {
     ssr: false,
@@ -29,65 +29,34 @@ interface Props {
     cityId: string;
 }
 
-
-
-const ASSISTANT_ID = "40d80606-ff08-4358-b393-b538e9194716";
-const VAPI_PUBLIC_KEY = "3ee585d8-f714-46e2-ae49-27fae485c0ee";
-
-
 export default function CityDetailClient({ cityId }: Props) {
-
-    /**
-     * 
-     * City image is not visible
-     * 
-     */
-
-
-
     const city = cities.find((c) => c.id === cityId);
-
-    if (!city) return null;
-
-    const [isCalling, setIsCalling] = useState(false);
-    const vapi = useMemo(() => {
-        return new Vapi(VAPI_PUBLIC_KEY);
-    }, []);
-
-    // 🎤 Start / Stop toggle
-    const toggleVoice = async () => {
-        try {
-            if (isCalling) {
-                vapi.stop();
-                setIsCalling(false);
-                return;
-            }
-
-            await vapi.start({
-                // 🔐 Pass authentication if you have an auth token
-                // authToken: "your-auth-token",
-
-                // 🤖 Select your assistan
-                //@ts-ignore
-                assistant: {
-                    id: ASSISTANT_ID,
-                },
-            });
-
-            setIsCalling(true);
-        } catch (err) {
-            console.error("Vapi error:", err);
-        }
-    };
-
-
-
-
 
     const t = useTranslations('city_page');
     const tData = useTranslations('cities_data');
     const tDetails = useTranslations('cities_data_details');
     const tTrip = useTranslations('trip_details');
+
+    const cityName = city ? tData(`${city.id}.name`) : "";
+    const cityDescription = city ? tData(`${city.id}.description`) : "";
+
+    const {
+        callStatus,
+        isCalling,
+        isConnecting,
+        isSpeaking,
+        toggleCall,
+    } = useVapi();
+
+    if (!city) return null;
+
+    const handleToggleVoice = () => {
+        toggleCall({
+            cityName,
+            cityId: city.id,
+            cityDescription,
+        });
+    };
 
     const heroSrc = city.image || '/images/syunik_landscape.png';
 
@@ -185,12 +154,22 @@ export default function CityDetailClient({ cityId }: Props) {
                             <p className="text-orange-100 leading-relaxed mb-8">
                                 Discover the seasonal beauty of {tData(`${city.id}.name`)}. Each month brings a unique atmosphere to this historical city.
                             </p>
-                            <button className="w-full bg-white text-orange-500 font-bold py-4 rounded-2xl hover:bg-zinc-100 transition-colors"
-                                onClick={toggleVoice}
+                            <button
+                                className={`w-full font-bold py-4 rounded-2xl transition-all duration-300 shadow-lg ${
+                                    isCalling
+                                        ? "bg-red-600 hover:bg-red-700 text-white"
+                                        : "bg-white text-orange-500 hover:bg-zinc-100"
+                                }`}
+                                onClick={handleToggleVoice}
+                                disabled={isConnecting}
                             >
-                                {/* {tTrip('book_tour')} */}
-
-                                {isCalling ? "Stop Voice AI" : "Start Voice AI 🎤"}
+                                {isConnecting
+                                    ? "Connecting..."
+                                    : isCalling
+                                    ? isSpeaking
+                                        ? "AI Speaking... (Stop Voice 🎤)"
+                                        : "Listening... (Stop Voice 🎤)"
+                                    : "Start Voice AI 🎤"}
                             </button>
 
 
@@ -273,6 +252,7 @@ export default function CityDetailClient({ cityId }: Props) {
                 </div>
             </section>
 
+            <VoiceAssistantWidget cityName={cityName} />
             <Footer />
         </main>
     );
