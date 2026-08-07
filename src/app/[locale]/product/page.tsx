@@ -10,7 +10,7 @@ import TshirtBack from "#/images/Khustup_back.jpg";
 
 const PRODUCT = {
     id: "syunik-tee-001",
-    price: 12000,
+    price: 19.99,
     sizes: ["S", "M", "L", "XL"],
     images: [TshirtFront, TshirtBack]
 };
@@ -87,8 +87,9 @@ export default function ProductPage() {
 
                         <div className="flex items-baseline gap-2">
                             <span className="text-3xl font-bold text-zinc-900 dark:text-white">
-                                {PRODUCT.price.toLocaleString()} ֏
+                                {PRODUCT.price.toLocaleString()} USD
                             </span>
+
                             <span className="text-sm text-zinc-500 font-medium uppercase tracking-wide">
                                 {t('price_label')}
                             </span>

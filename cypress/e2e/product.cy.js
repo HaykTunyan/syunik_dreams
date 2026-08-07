@@ -10,7 +10,7 @@ describe('Product & Shopping Page - Syunik Dreams', () => {
             // Check title
             cy.contains('h1', 'Spirit of Mount Khustup').should('be.visible');
             // Check price
-            cy.contains('12,000 ֏').should('be.visible');
+            cy.contains('9,999 USD').should('be.visible');
         });
 
         it('should require selecting a size before enabling the order button', () => {
