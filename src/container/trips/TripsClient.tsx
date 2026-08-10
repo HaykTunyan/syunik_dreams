@@ -335,6 +335,7 @@ export default function TripsClient() {
                                 { id: 'vorotnaberd', icon: '🏛️' },
                                 { id: 'vorotnavanq', icon: '🏛️' },
                                 { id: 'melik_tangi_bridge', icon: '🌉' },
+                                { id: 'harsnadzor_watchtower', icon: '🗼' },
 
 
                             ].map((item) => (
