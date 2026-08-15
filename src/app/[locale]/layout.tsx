@@ -5,6 +5,7 @@ import "@/styles/globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from "next/navigation";
+import GlobalVoiceAssistant from "@/components/GlobalVoiceAssistant";
 
 const notoArmenian = Noto_Sans_Armenian({
   subsets: ["armenian"],
@@ -123,6 +124,7 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ErrorBoundary>
             <main>{children}</main>
+            <GlobalVoiceAssistant />
           </ErrorBoundary>
         </NextIntlClientProvider>
       </body>

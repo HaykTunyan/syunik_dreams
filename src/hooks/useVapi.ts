@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import Vapi from "@vapi-ai/web";
 import { VAPI_PUBLIC_KEY, ASSISTANT_ID } from "@/lib/vapi/config";
+import { useRouter } from '@/i18n/navigation';
 
 export type CallStatus = "idle" | "connecting" | "active" | "error";
 
@@ -18,6 +19,13 @@ export interface UseVapiOptions {
 }
 
 export function useVapi(options: UseVapiOptions = {}) {
+
+  /**
+   * 
+   * Voice AI helper functions.
+   */
+
+
   const activeAssistantId = options.assistantId || ASSISTANT_ID;
   const activePublicKey = options.publicKey || VAPI_PUBLIC_KEY;
 
@@ -30,6 +38,19 @@ export function useVapi(options: UseVapiOptions = {}) {
   const [error, setError] = useState<string | null>(null);
 
   const vapiRef = useRef<Vapi | null>(null);
+  const router = useRouter();
+
+  const routerRef = useRef(router);
+  routerRef.current = router;
+
+
+  // console.log("callStatus", callStatus);
+  // console.log("isSpeaking", isSpeaking);
+  // console.log("isUserSpeaking", isUserSpeaking);
+  // console.log("volumeLevel", volumeLevel);
+  // console.log("activeTranscript", activeTranscript);
+  console.log("messages", messages);
+  // console.log("error", error);
 
   useEffect(() => {
     if (typeof window === "undefined" || !activePublicKey) return;
@@ -78,7 +99,71 @@ export function useVapi(options: UseVapiOptions = {}) {
               },
             ]);
             setActiveTranscript("");
+
+            // Client-side fallback: check if user says navigation keywords
+            if (role === "user") {
+              const lowerText = text.toLowerCase();
+              const isNavigating = /(navigate|go|redirect|take me)/.test(lowerText);
+              
+              if (isNavigating) {
+                if (lowerText.includes("home") || lowerText.includes("main page")) {
+                  router.push(`/`);
+                } else if (lowerText.includes("trip") || lowerText.includes("tour")) {
+                  router.push(`/trips`);
+                } else if (lowerText.includes("history") || lowerText.includes("past")) {
+                  router.push(`/history`);
+                } else if (lowerText.includes("your city") || lowerText.includes("my city")) {
+                  router.push(`/your-city`);
+                } else if (lowerText.includes("cities") || lowerText.includes("all city")) {
+                  router.push(`/city`);
+                } else if (lowerText.includes("about")) {
+                  router.push(`/about-road`);
+                } else {
+                  // Check for specific cities
+                  const cities = ["kapan", "goris", "meghri", "sisian", "agarak", "qajaran"];
+                  for (const city of cities) {
+                    if (lowerText.includes(city)) {
+                      router.push(`/city/${city}`);
+                      break;
+                    }
+                  }
+                }
+              }
+            }
           }
+        }
+
+        // Handle function calls from the AI
+        if (message?.type === "function-call") {
+          const { name, parameters } = message.functionCall || {};
+
+
+          console.log("function call", name,);
+
+          if (name === "navigate_to_city" && parameters?.cityId) {
+            router.push(`/city/${parameters.cityId.toLowerCase()}`);
+          } else if (name === "navigate_about_us") {
+            router.push(`/about-road`);
+          } else if (name === "navigate_home") {
+            router.push(`/`);
+          } else if (name === "navigate_trips") {
+            router.push(`/trips`);
+          } else if (name === "navigate_history") {
+            router.push(`/history`);
+          } else if (name === "navigate_your_city") {
+            router.push(`/your-city`);
+          } else if (name === "navigate_cities") {
+            router.push(`/city`);
+          }
+
+          // Optionally, send a response back to the AI indicating the function was executed
+          vapi.send({
+            type: "add-message",
+            message: {
+              role: "system",
+              content: `System: Successfully executed ${name}`,
+            },
+          });
         }
       };
 
@@ -111,7 +196,7 @@ export function useVapi(options: UseVapiOptions = {}) {
       console.error("Failed to initialize Vapi:", err);
       setError(err?.message || "Vapi initialization error");
     }
-  }, [activePublicKey]);
+  }, [activePublicKey, router]);
 
   const startCall = useCallback(
     async (variableValues?: Record<string, any>) => {

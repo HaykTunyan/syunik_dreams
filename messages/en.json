@@ -279,9 +279,14 @@
             "bestVisit": "May - October",
             "history": "Kapan is one of the oldest settlements in Armenia, with roots dating back to the 5th century. It served as the capital of the Syunik Kingdom in the 10th century. Throughout history, it has been a vital defensive hub and a center for mining. The name 'Kapan' comes from the Armenian word 'kapel', meaning 'to lock', referring to its strategic position in the mountains.",
             "attractions": {
-                "0": "Khustup Mountain - the most famous peaks in Syunik Region",
-                "1": "Vahanavank Monastery - Historic monastery",
-                "2": "Baghaberd Fortress - Historic fortress"
+                "0": "Khustup Mountain — the iconic peak towering over Kapan",
+                "1": "Vahanavank Monastery — ancient spiritual sanctuary in the gorge",
+                "2": "Baghaberd Fortress — medieval stronghold defending Syunik",
+                "3": "Garegin Nzhdeh Statue — monument to Armenia's legendary hero",
+                "4": "Kapan Main Square — vibrant heart of the city",
+                "5": "City Center — the lively downtown district of Kapan",
+                "6": "Nzhdeh Street — the iconic boulevard named after the national hero",
+                "7": "Kapan City Street — charming streets of the mountain capital"
             },
             "links": [
                 {
