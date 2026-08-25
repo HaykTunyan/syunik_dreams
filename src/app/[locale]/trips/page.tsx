@@ -26,6 +26,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default function TripsPage() {
+
+  /**
+   * 
+   * Trips Page — server component wrapper that renders the TripsClient.
+   * 
+   */
+
   return (
     <div className="">
       <TripsClient />

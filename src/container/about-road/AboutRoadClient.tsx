@@ -12,7 +12,6 @@ export default function AboutRoadClient() {
      * About-road image is broken, add a new image for about-road section
      */
 
-
     const t = useTranslations("about_road");
 
     const timelineSteps = [

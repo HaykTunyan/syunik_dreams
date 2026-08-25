@@ -72,6 +72,13 @@ const CLUBS = [
 ];
 
 export default function YourCityClient() {
+
+  /**
+   * 
+   * Your city-selector page component
+   * 
+   */
+
   const t = useTranslations('footer');
   const [joinedClub, setJoinedClub] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);

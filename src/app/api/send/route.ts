@@ -2,6 +2,13 @@ import { NextResponse } from 'next/server';
 import { EmailService } from '@/services/emailService';
 
 export async function POST(request: Request) {
+
+  /**
+   * 
+   * This function is used to send an email to the admin.
+   * 
+   */
+
   try {
     const body = await request.json();
     const { data, error } = await EmailService.sendContactEmail(body);

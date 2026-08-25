@@ -49,7 +49,7 @@ export function useVapi(options: UseVapiOptions = {}) {
   // console.log("isUserSpeaking", isUserSpeaking);
   // console.log("volumeLevel", volumeLevel);
   // console.log("activeTranscript", activeTranscript);
-  console.log("messages", messages);
+  // console.log("messages", messages);
   // console.log("error", error);
 
   useEffect(() => {
@@ -104,7 +104,7 @@ export function useVapi(options: UseVapiOptions = {}) {
             if (role === "user") {
               const lowerText = text.toLowerCase();
               const isNavigating = /(navigate|go|redirect|take me)/.test(lowerText);
-              
+
               if (isNavigating) {
                 if (lowerText.includes("home") || lowerText.includes("main page")) {
                   router.push(`/`);
@@ -138,7 +138,7 @@ export function useVapi(options: UseVapiOptions = {}) {
           const { name, parameters } = message.functionCall || {};
 
 
-          console.log("function call", name,);
+          // console.log("function call", name,);
 
           if (name === "navigate_to_city" && parameters?.cityId) {
             router.push(`/city/${parameters.cityId.toLowerCase()}`);

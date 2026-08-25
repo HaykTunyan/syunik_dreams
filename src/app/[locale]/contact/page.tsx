@@ -5,26 +5,26 @@ import { useTranslations } from 'next-intl';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter , FaPinterest } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaPinterest } from "react-icons/fa";
 
 
 const socialLinks = [
-  {
-    icon: <FaFacebookF />,
-    url: "https://facebook.com",
-  },
-  {
-    icon: <FaInstagram />,
-    url: "https://instagram.com",
-  },
-  {
-    icon: <FaPinterest />,
-    url: "https://pinterest.com",
-  },
-  {
-    icon: <FaTwitter />,
-    url: "https://twitter.com",
-  },
+    {
+        icon: <FaFacebookF />,
+        url: "https://facebook.com",
+    },
+    {
+        icon: <FaInstagram />,
+        url: "https://instagram.com",
+    },
+    {
+        icon: <FaPinterest />,
+        url: "https://pinterest.com",
+    },
+    {
+        icon: <FaTwitter />,
+        url: "https://twitter.com",
+    },
 ];
 
 export default function ContactPage() {
@@ -225,20 +225,20 @@ export default function ContactPage() {
 
                                   
                                     </div> */}
-                                     <div className="flex gap-4">
-      {socialLinks.map((item, index) => (
-        <a
-          key={index}
-          href={item.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-12 h-12 bg-white dark:bg-zinc-800 rounded-xl flex items-center justify-center cursor-pointer 
+                                    <div className="flex gap-4">
+                                        {socialLinks.map((item, index) => (
+                                            <a
+                                                key={index}
+                                                href={item.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="w-12 h-12 bg-white dark:bg-zinc-800 rounded-xl flex items-center justify-center cursor-pointer 
                      hover:bg-orange-600 hover:text-white transition-all duration-300"
-        >
-          <span className="text-lg">{item.icon}</span>
-        </a>
-      ))}
-    </div>
+                                            >
+                                                <span className="text-lg">{item.icon}</span>
+                                            </a>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
