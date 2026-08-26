@@ -100,69 +100,65 @@ export function useVapi(options: UseVapiOptions = {}) {
             ]);
             setActiveTranscript("");
 
-            // Client-side fallback: check if user says navigation keywords
-            if (role === "user") {
-              const lowerText = text.toLowerCase();
-              const isNavigating = /(navigate|go|redirect|take me)/.test(lowerText);
-
-              if (isNavigating) {
-                if (lowerText.includes("home") || lowerText.includes("main page")) {
-                  router.push(`/`);
-                } else if (lowerText.includes("trip") || lowerText.includes("tour")) {
-                  router.push(`/trips`);
-                } else if (lowerText.includes("history") || lowerText.includes("past")) {
-                  router.push(`/history`);
-                } else if (lowerText.includes("your city") || lowerText.includes("my city")) {
-                  router.push(`/your-city`);
-                } else if (lowerText.includes("cities") || lowerText.includes("all city")) {
-                  router.push(`/city`);
-                } else if (lowerText.includes("about")) {
-                  router.push(`/about-road`);
-                } else {
-                  // Check for specific cities
-                  const cities = ["kapan", "goris", "meghri", "sisian", "agarak", "qajaran"];
-                  for (const city of cities) {
-                    if (lowerText.includes(city)) {
-                      router.push(`/city/${city}`);
-                      break;
-                    }
-                  }
-                }
-              }
-            }
+            // NOTE: Client-side keyword-based navigation fallback has been
+            // removed. Navigation is now handled entirely via the
+            // assistant's tool-calling (see the "tool-calls" handler below),
+            // which is far more reliable than regex matching on transcripts
+            // and avoids duplicate/conflicting navigation triggers.
           }
         }
 
-        // Handle function calls from the AI
-        if (message?.type === "function-call") {
-          const { name, parameters } = message.functionCall || {};
+        // Handle client-side tool calls from the AI (new Vapi format)
+        if (message?.type === "tool-calls") {
+          const toolCalls = message.toolCallList || [];
 
+          toolCalls.forEach((toolCall: any) => {
+            const name = toolCall.function?.name;
+            let parameters: Record<string, any> = {};
 
-          // console.log("function call", name,);
+            try {
+              const args = toolCall.function?.arguments;
+              if (typeof args === "string") {
+                parameters = JSON.parse(args || "{}");
+              } else if (typeof args === "object" && args !== null) {
+                parameters = args;
+              }
+            } catch (err) {
+              console.error("Failed to parse tool call arguments:", err);
+              return;
+            }
 
-          if (name === "navigate_to_city" && parameters?.cityId) {
-            router.push(`/city/${parameters.cityId.toLowerCase()}`);
-          } else if (name === "navigate_about_us") {
-            router.push(`/about-road`);
-          } else if (name === "navigate_home") {
-            router.push(`/`);
-          } else if (name === "navigate_trips") {
-            router.push(`/trips`);
-          } else if (name === "navigate_history") {
-            router.push(`/history`);
-          } else if (name === "navigate_your_city") {
-            router.push(`/your-city`);
-          } else if (name === "navigate_cities") {
-            router.push(`/city`);
-          }
-
-          // Optionally, send a response back to the AI indicating the function was executed
-          vapi.send({
-            type: "add-message",
-            message: {
-              role: "system",
-              content: `System: Successfully executed ${name}`,
-            },
+            switch (name) {
+              case "navigate_to_city":
+                if (parameters?.cityId) {
+                  routerRef.current.push(`/city/${parameters.cityId.toLowerCase()}`);
+                }
+                break;
+              case "navigate_about_us":
+              case "navigate_about-road":
+                routerRef.current.push(`/about-road`);
+                break;
+              case "navigate_home":
+                routerRef.current.push(`/`);
+                break;
+              case "navigate_trips":
+                routerRef.current.push(`/trips`);
+                break;
+              case "navigate_history":
+                routerRef.current.push(`/history`);
+                break;
+              case "navigate_your_city":
+                routerRef.current.push(`/your-city`);
+                break;
+              case "navigate_cities":
+                routerRef.current.push(`/city`);
+                break;
+              case "navigate_product":
+                routerRef.current.push(`/product`);
+                break;
+              default:
+                console.warn("Unhandled tool call:", name);
+            }
           });
         }
       };
@@ -196,7 +192,7 @@ export function useVapi(options: UseVapiOptions = {}) {
       console.error("Failed to initialize Vapi:", err);
       setError(err?.message || "Vapi initialization error");
     }
-  }, [activePublicKey, router]);
+  }, [activePublicKey]);
 
   const startCall = useCallback(
     async (variableValues?: Record<string, any>) => {
