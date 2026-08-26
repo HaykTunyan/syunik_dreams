@@ -10,10 +10,15 @@ export const cities = [
     coords: [39.2075, 46.4058] as [number, number],
     image: "/images/kapan_city.png",
     attractions: [
-      { id: "khustup", image: "/images/kapan/mountain_khustup.png" },
+      { id: "khustup", image: "/images/kapan/Khustup-Kapan.png" },
       { id: "vahanavank", image: "/images/kapan/vahnavanq_kapan_ai.png" },
-      { id: "museum", image: "/images/kapan/baghaberd_fortress.png" },
-
+      { id: "baghaberd", image: "/images/kapan/baghaberd_fortress.png" },
+      // { id: "nzhdeh_statue", image: "/images/kapan/garegin-nzhdeh-statue.png" },
+      // { id: "main_square", image: "/images/kapan/kapan-place.png" },
+      // { id: "city_center", image: "/images/kapan/center-of-kapan.png" },
+      // { id: "nzhdeh_street", image: "/images/kapan/nzhdeh-street.png" },
+      // { id: "city_street", image: "/images/kapan/kapan-city-street.png" },
+      // { id: "mashtots_church", image: "/images/kapan/charch-of-kapan.png" },
     ]
   },
   {

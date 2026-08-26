@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-
 import SyunikView from "#/images/syunik_view.png"
 
 import { useTranslations } from "next-intl";

@@ -21,7 +21,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
      * 
      */
 
-
     const [language, setLanguage] = useState<Language>('hy');
 
     useEffect(() => {

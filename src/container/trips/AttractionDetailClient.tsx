@@ -19,7 +19,7 @@ const IMAGE_MAP: Record<string, string> = {
     khustup: '/images/for-travel/khustup.png',
     vorotnavanq: '/images/for-travel/vorotnavanq.png',
     old_goris: '/images/for-travel/old_goris.png',
-    halidzor: '/images/for-travel/halidzor.png',
+    halidzor: '/images/for-travel/halidzor-fortress.png',
     vahanavank: '/images/for-travel/vahanavank.png',
     khndzoresk_caves: '/images/for-travel/khndzoresk_caves.png',
     meghri_viewpoint: '/images/for-travel/meghri_viewpoint.png',
@@ -38,7 +38,7 @@ const ALL_TRAVEL_IMAGES = [
     '/images/for-travel/khustup.png',
     '/images/for-travel/vorotnavanq.png',
     '/images/for-travel/old_goris.png',
-    '/images/for-travel/halidzor.png',
+    '/images/for-travel/halidzor-fortress.png',
     '/images/for-travel/vahanavank.png',
     '/images/for-travel/khndzoresk_caves.png',
     '/images/for-travel/meghri_viewpoint.png',
@@ -48,6 +48,7 @@ const ALL_TRAVEL_IMAGES = [
     '/images/for-travel/vorotnaberd_fortress.png',
     '/images/for-travel/vorotnaberd.png',
     "/images/for-travel/syuniks_gate.png",
+    "/images/for-travel/harsnadzor_watchtower.png",
 ];
 
 
@@ -66,8 +67,16 @@ export default function AttractionDetailClient({ attractionId }: Props) {
     const t = useTranslations('trips');
 
     // If attractionId is invalid, it would just show keys, but let's assume it's valid based on clicks.
-    const name = t(`attraction_${attractionId}`);
-    const desc = t(`attraction_${attractionId}_desc`);
+    const name = t(`attraction_${attractionId}` as any);
+    const desc = t(`attraction_${attractionId}_desc` as any);
+
+    const locationKey = `attraction_${attractionId}_location`;
+    const heightKey = `attraction_${attractionId}_height`;
+    const moreKey = `attraction_${attractionId}_more`;
+
+    const location = t.has(locationKey as any) ? t(locationKey as any) : null;
+    const height = t.has(heightKey as any) ? t(heightKey as any) : null;
+    const more = t.has(moreKey as any) ? t(moreKey as any) : null;
 
     const imageSrc = imageError ? '/images/syunik_landscape.png' : (IMAGE_MAP[attractionId] || `/images/for-travel/${attractionId}.png`);
 
@@ -99,9 +108,38 @@ export default function AttractionDetailClient({ attractionId }: Props) {
                                 {name}
                             </h1>
 
+                            <div className="flex flex-wrap gap-4 pt-2">
+                                {location && (
+                                    <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-orange-500">
+                                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                        </svg>
+                                        <span className="font-medium">{location}</span>
+                                    </div>
+                                )}
+                                {height && (
+                                    <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-orange-500">
+                                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
+                                        </svg>
+                                        <span className="font-medium">{height}</span>
+                                    </div>
+                                )}
+                            </div>
+
                             <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
                                 {desc}
                             </p>
+
+                            {more && (
+                                <div className="mt-6 p-6 bg-white dark:bg-zinc-950 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm">
+                                    <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2">More Information</h3>
+                                    <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                        {more}
+                                    </p>
+                                </div>
+                            )}
                         </div>
 
                         <div className="w-full md:w-1/3 shrink-0">

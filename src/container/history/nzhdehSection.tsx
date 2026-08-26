@@ -4,7 +4,6 @@ import Image from "next/image";
 import nzhdeh_syunik from "#/images/garegin_nzhdeh_syunik.png";
 import { useTranslations } from "next-intl";
 
-
 export const HistoryNzhdehSection: React.FC = () => {
 
     /**

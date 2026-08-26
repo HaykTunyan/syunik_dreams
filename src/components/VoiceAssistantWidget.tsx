@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useVapi } from "@/hooks/useVapi";
 import { FiMic, FiMicOff, FiX, FiVolume2, FiMessageSquare } from "react-icons/fi";
 
@@ -72,25 +72,24 @@ export default function VoiceAssistantWidget({
             </div>
           </div>
           <span
-            className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest ${
-              callStatus === "active"
+            className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest ${callStatus === "active"
                 ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
                 : callStatus === "connecting"
-                ? "bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse"
-                : callStatus === "error"
-                ? "bg-red-500/20 text-red-400 border border-red-500/30"
-                : "bg-zinc-800 text-zinc-400"
-            }`}
+                  ? "bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse"
+                  : callStatus === "error"
+                    ? "bg-red-500/20 text-red-400 border border-red-500/30"
+                    : "bg-zinc-800 text-zinc-400"
+              }`}
           >
             {callStatus === "active"
               ? isSpeaking
                 ? "AI Speaking..."
                 : "Listening..."
               : callStatus === "connecting"
-              ? "Connecting..."
-              : callStatus === "error"
-              ? "Error"
-              : "Ready"}
+                ? "Connecting..."
+                : callStatus === "error"
+                  ? "Error"
+                  : "Ready"}
           </span>
         </div>
 
@@ -142,11 +141,10 @@ export default function VoiceAssistantWidget({
         <button
           onClick={handleToggle}
           disabled={isConnecting}
-          className={`w-full py-4 rounded-2xl font-bold uppercase tracking-wider flex items-center justify-center gap-3 transition-all duration-300 shadow-lg ${
-            isCalling
+          className={`w-full py-4 rounded-2xl font-bold uppercase tracking-wider flex items-center justify-center gap-3 transition-all duration-300 shadow-lg ${isCalling
               ? "bg-red-600 hover:bg-red-700 text-white shadow-red-600/30"
               : "bg-orange-500 hover:bg-orange-600 text-white shadow-orange-500/30"
-          }`}
+            }`}
         >
           {isCalling ? (
             <>
@@ -189,15 +187,14 @@ export default function VoiceAssistantWidget({
           <div className="flex items-center justify-between text-xs">
             <span className="text-zinc-400">Status:</span>
             <span
-              className={`font-semibold uppercase tracking-wider ${
-                callStatus === "active"
+              className={`font-semibold uppercase tracking-wider ${callStatus === "active"
                   ? "text-emerald-400"
                   : callStatus === "connecting"
-                  ? "text-amber-400 animate-pulse"
-                  : callStatus === "error"
-                  ? "text-red-400"
-                  : "text-zinc-500"
-              }`}
+                    ? "text-amber-400 animate-pulse"
+                    : callStatus === "error"
+                      ? "text-red-400"
+                      : "text-zinc-500"
+                }`}
             >
               {callStatus === "active"
                 ? isSpeaking
@@ -256,11 +253,10 @@ export default function VoiceAssistantWidget({
           <button
             onClick={handleToggle}
             disabled={isConnecting}
-            className={`w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${
-              isCalling
+            className={`w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${isCalling
                 ? "bg-red-600 hover:bg-red-700 text-white"
                 : "bg-orange-500 hover:bg-orange-600 text-white shadow-lg shadow-orange-500/25"
-            }`}
+              }`}
           >
             {isCalling ? (
               <>
@@ -280,11 +276,10 @@ export default function VoiceAssistantWidget({
         onClick={() => {
           setIsOpen((prev) => !prev);
         }}
-        className={`relative group p-4 rounded-full shadow-2xl transition-all duration-300 flex items-center justify-center ${
-          isCalling
+        className={`relative group p-4 rounded-full shadow-2xl transition-all duration-300 flex items-center justify-center ${isCalling
             ? "bg-orange-500 text-white ring-4 ring-orange-500/30 scale-110"
             : "bg-zinc-900 hover:bg-orange-500 text-orange-400 hover:text-white border border-zinc-800 hover:border-orange-500"
-        }`}
+          }`}
         title="Syunik Voice AI Guide"
       >
         {isCalling && (

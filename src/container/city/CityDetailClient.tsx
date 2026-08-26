@@ -8,7 +8,6 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import dynamic from "next/dynamic";
 
-import { useMemo, useState } from "react";
 import CityStatsCard from "./CityStatsCard";
 import CityAttractionsCarousel from "@/components/CityAttractionsCarousel";
 import SisianHotels from "@/components/SisianHotels";
@@ -155,21 +154,20 @@ export default function CityDetailClient({ cityId }: Props) {
                                 Discover the seasonal beauty of {tData(`${city.id}.name`)}. Each month brings a unique atmosphere to this historical city.
                             </p>
                             <button
-                                className={`w-full font-bold py-4 rounded-2xl transition-all duration-300 shadow-lg ${
-                                    isCalling
+                                className={`w-full font-bold py-4 rounded-2xl transition-all duration-300 shadow-lg ${isCalling
                                         ? "bg-red-600 hover:bg-red-700 text-white"
                                         : "bg-white text-orange-500 hover:bg-zinc-100"
-                                }`}
+                                    }`}
                                 onClick={handleToggleVoice}
                                 disabled={isConnecting}
                             >
                                 {isConnecting
                                     ? "Connecting..."
                                     : isCalling
-                                    ? isSpeaking
-                                        ? "AI Speaking... (Stop Voice 🎤)"
-                                        : "Listening... (Stop Voice 🎤)"
-                                    : "Start Voice AI 🎤"}
+                                        ? isSpeaking
+                                            ? "AI Speaking... (Stop Voice 🎤)"
+                                            : "Listening... (Stop Voice 🎤)"
+                                        : "Start Voice AI 🎤"}
                             </button>
 
 

@@ -4,13 +4,15 @@ import MapLoader from "@/components/MapLoader";
 import { useTranslations } from "next-intl";
 
 export const HomeMapSection: React.FC = () => {
-    const t = useTranslations('home_page.map');
 
     /**
-     * 
-     * Section displaying the map of Syunik region
-     * 
-     */
+    * 
+    * Section displaying the map of Syunik region
+    * 
+    */
+
+    const t = useTranslations('home_page.map');
+
     return (
 
         <section className="py-20 px-6 md:px-20 bg-white dark:bg-zinc-950">

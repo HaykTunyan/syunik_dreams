@@ -9,7 +9,6 @@ export default function PrivacyPolicyPage() {
      * 
      * Privacy Policy Page 
      * 
-     * 
      */
 
     const t = useTranslations('privacy_policy');

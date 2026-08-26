@@ -5,6 +5,13 @@ import YourCityClient from '@/container/your-city/YourCityClient';
 
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+
+  /**
+   * 
+   *  generateMetadata function is used to generate the metadata for the your-city page.
+   * 
+   */
+
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'footer' });
 
@@ -20,5 +27,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default function YourCityPage() {
+
+  /**
+   * 
+   * YourCityPage is a client component that renders the YourCityClient.
+   * 
+   */
+
   return <YourCityClient />;
 }

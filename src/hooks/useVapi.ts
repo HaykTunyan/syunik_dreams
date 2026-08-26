@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import Vapi from "@vapi-ai/web";
 import { VAPI_PUBLIC_KEY, ASSISTANT_ID } from "@/lib/vapi/config";
+import { useRouter } from '@/i18n/navigation';
 
 export type CallStatus = "idle" | "connecting" | "active" | "error";
 
@@ -18,6 +19,13 @@ export interface UseVapiOptions {
 }
 
 export function useVapi(options: UseVapiOptions = {}) {
+
+  /**
+   * 
+   * Voice AI helper functions.
+   */
+
+
   const activeAssistantId = options.assistantId || ASSISTANT_ID;
   const activePublicKey = options.publicKey || VAPI_PUBLIC_KEY;
 
@@ -30,6 +38,19 @@ export function useVapi(options: UseVapiOptions = {}) {
   const [error, setError] = useState<string | null>(null);
 
   const vapiRef = useRef<Vapi | null>(null);
+  const router = useRouter();
+
+  const routerRef = useRef(router);
+  routerRef.current = router;
+
+
+  // console.log("callStatus", callStatus);
+  // console.log("isSpeaking", isSpeaking);
+  // console.log("isUserSpeaking", isUserSpeaking);
+  // console.log("volumeLevel", volumeLevel);
+  // console.log("activeTranscript", activeTranscript);
+  // console.log("messages", messages);
+  // console.log("error", error);
 
   useEffect(() => {
     if (typeof window === "undefined" || !activePublicKey) return;
@@ -78,7 +99,67 @@ export function useVapi(options: UseVapiOptions = {}) {
               },
             ]);
             setActiveTranscript("");
+
+            // NOTE: Client-side keyword-based navigation fallback has been
+            // removed. Navigation is now handled entirely via the
+            // assistant's tool-calling (see the "tool-calls" handler below),
+            // which is far more reliable than regex matching on transcripts
+            // and avoids duplicate/conflicting navigation triggers.
           }
+        }
+
+        // Handle client-side tool calls from the AI (new Vapi format)
+        if (message?.type === "tool-calls") {
+          const toolCalls = message.toolCallList || [];
+
+          toolCalls.forEach((toolCall: any) => {
+            const name = toolCall.function?.name;
+            let parameters: Record<string, any> = {};
+
+            try {
+              const args = toolCall.function?.arguments;
+              if (typeof args === "string") {
+                parameters = JSON.parse(args || "{}");
+              } else if (typeof args === "object" && args !== null) {
+                parameters = args;
+              }
+            } catch (err) {
+              console.error("Failed to parse tool call arguments:", err);
+              return;
+            }
+
+            switch (name) {
+              case "navigate_to_city":
+                if (parameters?.cityId) {
+                  routerRef.current.push(`/city/${parameters.cityId.toLowerCase()}`);
+                }
+                break;
+              case "navigate_about_us":
+              case "navigate_about-road":
+                routerRef.current.push(`/about-road`);
+                break;
+              case "navigate_home":
+                routerRef.current.push(`/`);
+                break;
+              case "navigate_trips":
+                routerRef.current.push(`/trips`);
+                break;
+              case "navigate_history":
+                routerRef.current.push(`/history`);
+                break;
+              case "navigate_your_city":
+                routerRef.current.push(`/your-city`);
+                break;
+              case "navigate_cities":
+                routerRef.current.push(`/city`);
+                break;
+              case "navigate_product":
+                routerRef.current.push(`/product`);
+                break;
+              default:
+                console.warn("Unhandled tool call:", name);
+            }
+          });
         }
       };
 
