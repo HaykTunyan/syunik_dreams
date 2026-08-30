@@ -112,8 +112,8 @@ export default function AttractionDetailClient({ attractionId }: Props) {
                                 {location && (
                                     <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-orange-500">
-                                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                         </svg>
                                         <span className="font-medium">{location}</span>
                                     </div>
@@ -121,7 +121,7 @@ export default function AttractionDetailClient({ attractionId }: Props) {
                                 {height && (
                                     <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-orange-500">
-                                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
                                         </svg>
                                         <span className="font-medium">{height}</span>
                                     </div>
@@ -165,12 +165,16 @@ export default function AttractionDetailClient({ attractionId }: Props) {
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                         {ALL_TRAVEL_IMAGES.map((src, index) => (
                             <div key={index} className="relative aspect-square rounded-2xl overflow-hidden shadow-lg border border-zinc-200 dark:border-white/10 group cursor-pointer">
-                                <Image
-                                    src={src}
-                                    alt={`Syunik Travel Image ${index + 1}`}
-                                    fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
+                                <Link
+                                    href={`/trips/${Object.keys(IMAGE_MAP).find(key => IMAGE_MAP[key] === src) || src.split('/').pop()?.split('.')[0]}`}
+                                >
+                                    <Image
+                                        src={src}
+                                        alt={`Syunik Travel Image ${index + 1}`}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                </Link>
                                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             </div>
                         ))}
