@@ -1,13 +1,13 @@
 // Kingdom Section for History Page
 'use client';
 
-import React from 'react';
+import { FC } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import syunik_kingdom from "#/images/syunik_kingdom.png";
 
-export const HistoryKingdomSection: React.FC = () => {
+export const HistoryKingdomSection: FC = () => {
 
     /**
      * 
@@ -15,8 +15,7 @@ export const HistoryKingdomSection: React.FC = () => {
      * Section showcasing the Syunik Kingdom with an image and description
      */
 
-    const t = useTranslations('history_page');
-
+    const t = useTranslations('history_page.kingdom');
 
     return (
 
@@ -25,21 +24,21 @@ export const HistoryKingdomSection: React.FC = () => {
                 <div className="space-y-8 order-2 md:order-1">
                     <div className="w-16 h-1 bg-orange-600 mb-8 rounded-full" />
                     <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white">
-                        {t('kingdom.title_prefix')} <span className="text-orange-600">{t('kingdom.title_suffix')}</span>
+                        {t('title_prefix')} <span className="text-orange-600">{t('title_suffix')}</span>
                     </h2>
                     <div className="space-y-6 text-lg text-zinc-600 dark:text-zinc-300 leading-loose">
                         <p>
-                            <strong className="text-orange-600">{t('kingdom.p1')}</strong>
+                            <strong className="text-orange-600">{t('p1')}</strong>
                         </p>
 
                         <p>
-                            {t.rich('kingdom.p2', {
+                            {t.rich('p2', {
                                 strong: (chunks) => <strong className="text-orange-600">{chunks}</strong>
                             })}
                         </p>
 
                         <p>
-                            {t.rich('kingdom.p3', {
+                            {t.rich('p3', {
                                 strong: (chunks) => <strong className="text-orange-600">{chunks}</strong>
                             })}
                         </p>

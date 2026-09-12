@@ -1,12 +1,13 @@
 // War Section for History Page
 
+import { FC } from "react";
 import Image from "next/image";
 import syunik_war from "#/images/syunik_war.png";
 import React from "react";
 import { useTranslations } from "next-intl";
 
 
-export const HistoryWarSection: React.FC = () => {
+export const HistoryWarSection: FC = () => {
 
     /**
      * 

@@ -1,12 +1,12 @@
 // Hero Section for History Page
 
-import React from 'react';
+import { FC } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import syunik_kingdom from "#/images/syunik_kingdom.png";
 
-export const HistoryHeroSection: React.FC = () => {
+export const HistoryHeroSection: FC = () => {
 
     /**
       * 

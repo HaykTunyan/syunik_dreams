@@ -1,8 +1,8 @@
 // Culture Section for History Page
-import React from 'react';
+import { FC } from 'react';
 import { useTranslations } from 'next-intl';
 
-export const HistoryCultoreSection: React.FC = () => {
+export const HistoryCultoreSection: FC = () => {
 
     /**
      * 

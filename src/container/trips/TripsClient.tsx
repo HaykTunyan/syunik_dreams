@@ -1,15 +1,17 @@
 "use client";
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation';
+
+// Dynamically import the 3D map so it only loads on the client side without SSR issues
+const City3DMap = dynamic(() => import('@/components/City3DMap'), { ssr: false });
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { useTranslations } from 'next-intl';
 import { CardNavigation } from '../home/cardNavigation';
 import { Link } from '@/i18n/navigation';
-import DateRangePicker from '@/components/DateRangePicker';
 import Image from 'next/image';
-
-import CityBookingFlow from '@/components/booking/CityBookingFlow';
 
 // ── Main Component ────────────────────────────────────────────────────────────
 
@@ -24,15 +26,12 @@ export default function TripsClient() {
      */
 
     const t = useTranslations('trips');
+    const router = useRouter();
     const [selectedCity, setSelectedCity] = useState<string | null>(null);
-    const [modalOpen, setModalOpen] = useState(false);
 
-    // Map city id → displayed label using translations
-    const cityLabel = selectedCity ? t(selectedCity) : '';
-
-    function openBookingModal() {
+    function openBookingPage() {
         if (!selectedCity) return;
-        setModalOpen(true);
+        router.push(`/trips/book/${selectedCity}`);
     }
 
     return (
@@ -71,27 +70,26 @@ export default function TripsClient() {
                                             <div className="flex flex-col grow px-2 pb-2">
                                                 <h3 className="font-bold text-lg text-zinc-900 dark:text-white mb-2">{t('tatev_monastery')}</h3>
                                                 <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-3 mb-4">{t('tatev_monastery_desc')}</p>
-                                                
+
                                                 <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-white/10 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400 font-medium">
                                                     <span className="bg-zinc-100 dark:bg-white/10 px-2.5 py-1 rounded-md">UNESCO</span>
                                                     <span>4h</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        {/* Meghri Church */}
+                                        {/* Old Khndzoresk */}
                                         <div className="group flex flex-col bg-white dark:bg-zinc-800/30 p-4 rounded-3xl border border-zinc-200 dark:border-white/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 min-h-[360px]">
                                             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 shrink-0 bg-zinc-200 dark:bg-zinc-800">
-                                                {/* TODO: verify image /images/places/meghri-church.jpg */}
-                                                <Image src="/images/for-travel/vahanavank.png" alt="Meghri Mother Church" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                                                <Image src="/images/for-travel/khndzoresk.png" alt="Old Khndzoresk" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                                                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent"></div>
                                             </div>
                                             <div className="flex flex-col grow px-2 pb-2">
-                                                <h3 className="font-bold text-lg text-zinc-900 dark:text-white mb-2">{t('meghri_church')}</h3>
-                                                <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-3 mb-4">{t('meghri_church_desc')}</p>
-                                                
+                                                <h3 className="font-bold text-lg text-zinc-900 dark:text-white mb-2">{t('old_khndzoresk')}</h3>
+                                                <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-3 mb-4">{t('old_khndzoresk_desc')}</p>
+
                                                 <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-white/10 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400 font-medium">
-                                                    <span className="bg-zinc-100 dark:bg-white/10 px-2.5 py-1 rounded-md">Church</span>
-                                                    <span>1h</span>
+                                                    <span className="bg-zinc-100 dark:bg-white/10 px-2.5 py-1 rounded-md">Cave Village</span>
+                                                    <span>2h</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -105,30 +103,49 @@ export default function TripsClient() {
                                             <div className="flex flex-col grow px-2 pb-2">
                                                 <h3 className="font-bold text-lg text-zinc-900 dark:text-white mb-2">{t('zorats_karer')}</h3>
                                                 <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-3 mb-4">{t('zorats_karer_desc')}</p>
-                                                
+
                                                 <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-white/10 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400 font-medium">
                                                     <span className="bg-zinc-100 dark:bg-white/10 px-2.5 py-1 rounded-md">Archaeological</span>
                                                     <span>2h</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        {/* Meghri Fortress */}
+                                        {/* Khndzoresk Caves */}
                                         <div className="group flex flex-col bg-white dark:bg-zinc-800/30 p-4 rounded-3xl border border-zinc-200 dark:border-white/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 min-h-[360px]">
                                             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 shrink-0 bg-zinc-200 dark:bg-zinc-800">
-                                                {/* TODO: verify image /images/places/meghri-fortress.jpg */}
-                                                <Image src="/images/for-travel/halidzor-fortress.png" alt="Meghri Fortress" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                                                <Image src="/images/for-travel/khndzoresk_caves.png" alt="Khndzoresk Caves" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                                                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent"></div>
                                             </div>
                                             <div className="flex flex-col grow px-2 pb-2">
-                                                <h3 className="font-bold text-lg text-zinc-900 dark:text-white mb-2">{t('meghri_fortress')}</h3>
-                                                <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-3 mb-4">{t('meghri_fortress_desc')}</p>
-                                                
+                                                <h3 className="font-bold text-lg text-zinc-900 dark:text-white mb-2">{t('khndzoresk_caves')}</h3>
+                                                <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-3 mb-4">{t('trips.khndzoresk_caves')}</p>
+
                                                 <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-white/10 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400 font-medium">
-                                                    <span className="bg-zinc-100 dark:bg-white/10 px-2.5 py-1 rounded-md">Fortress</span>
-                                                    <span>2h</span>
+                                                    <span className="bg-zinc-100 dark:bg-white/10 px-2.5 py-1 rounded-md">Caves</span>
+                                                    <span>3h</span>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+
+                                {/* ── 3D Interactive Map Section ── */}
+                                <div className="mb-24">
+                                    <div className="flex items-center gap-4 mb-8">
+                                        <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-500/20 rounded-2xl flex items-center justify-center shrink-0">
+                                            <span className="text-2xl">🌍</span>
+                                        </div>
+                                        <div>
+                                            <h2 className="text-3xl font-black text-zinc-900 dark:text-white leading-tight">
+                                                Interactive 3D Map
+                                            </h2>
+                                            <p className="text-zinc-500 dark:text-zinc-400 font-medium">
+                                                Explore Syunik's heritage in 3D
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="w-full h-[600px]">
+                                        <City3DMap />
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +156,7 @@ export default function TripsClient() {
                                     <div className="bg-white dark:bg-zinc-900 rounded-3xl shadow-xl p-8 border border-zinc-100 dark:border-zinc-800/50">
                                         <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">{t('trip_info_title')}</h3>
                                         <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-6">{t('select_city_msg')}</p>
-                                        
+
                                         <div className="space-y-2">
                                             {['kapan', 'goris', 'meghri', 'sisian', 'agarak', 'kajaran'].map((city) => (
                                                 <button
@@ -155,7 +172,7 @@ export default function TripsClient() {
                                         {/* Booking Container */}
                                         <div className="mt-6 p-4 bg-zinc-50 dark:bg-zinc-800/40 rounded-2xl border border-zinc-100 dark:border-white/5">
                                             <button
-                                                onClick={openBookingModal}
+                                                onClick={openBookingPage}
                                                 disabled={!selectedCity}
                                                 className={`w-full font-semibold py-3.5 px-4 rounded-xl transition-all duration-300
                                                     ${selectedCity
@@ -165,7 +182,7 @@ export default function TripsClient() {
                                             >
                                                 {selectedCity ? `🗓 ${t('book_now')} — ${t(selectedCity)}` : t('book_now')}
                                             </button>
-                                            
+
                                             <p className={`text-center text-sm mt-3 font-medium transition-colors duration-300 ${selectedCity ? 'text-orange-600 dark:text-orange-400' : 'text-zinc-500 dark:text-zinc-500'}`}>
                                                 {selectedCity ? `Booking available for ${t(selectedCity)}` : 'Select a city to activate booking'}
                                             </p>
@@ -213,11 +230,11 @@ export default function TripsClient() {
                                     key={item.id}
                                     className="relative group rounded-[2.5rem] overflow-hidden aspect-[4/5] block shadow-lg border border-white/10 dark:border-white/5 shrink-0 w-[75vw] md:w-auto snap-center"
                                 >
-                                    <Image 
-                                        src={item.image} 
-                                        alt={t(`attraction_${item.id}`)} 
-                                        fill 
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                                    <Image
+                                        src={item.image}
+                                        alt={t(`attraction_${item.id}`)}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-900/40 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
                                     <div className="absolute inset-0 p-8 flex flex-col justify-end translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
@@ -238,15 +255,6 @@ export default function TripsClient() {
                 </section>
             </main>
             <Footer />
-
-            {/* Booking Modal */}
-            {modalOpen && selectedCity && (
-                <CityBookingFlow
-                    city={selectedCity}
-                    cityLabel={cityLabel}
-                    onClose={() => { setModalOpen(false); setSelectedCity(null); }}
-                />
-            )}
         </div>
     );
 }

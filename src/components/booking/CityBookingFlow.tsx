@@ -17,8 +17,18 @@ interface CityBookingFlowProps {
 }
 
 export default function CityBookingFlow({ city, cityLabel, onClose }: CityBookingFlowProps) {
+
+
+    /**
+     * 
+     * City Booking Flow Component
+     * 
+     * @returns {JSX.Element}
+     * 
+     */
+
     const [step, setStep] = useState(1);
-    
+
     // Step 2 state
     const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([null, null]);
     const [startDate, endDate] = dateRange;
@@ -52,15 +62,15 @@ export default function CityBookingFlow({ city, cityLabel, onClose }: CityBookin
     }
 
     return (
-        <div 
+        <div
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in"
             onClick={onClose}
         >
-            <div 
+            <div
                 className="relative w-full max-w-5xl h-[90vh] flex flex-col bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-white/10 rounded-3xl shadow-2xl overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
             >
-                
+
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-zinc-200 dark:border-white/10 shrink-0">
                     <div>
@@ -99,7 +109,7 @@ export default function CityBookingFlow({ city, cityLabel, onClose }: CityBookin
                         <div className="animate-fade-in-up max-w-xl mx-auto py-10">
                             <h3 className="text-3xl font-black mb-2 text-zinc-900 dark:text-white">When are you going?</h3>
                             <p className="text-zinc-500 dark:text-zinc-400 mb-8">Select your check-in and check-out dates for {cityLabel}.</p>
-                            
+
                             <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-3xl p-6 shadow-xl">
                                 <DateRangePicker
                                     startDate={startDate}
@@ -114,25 +124,25 @@ export default function CityBookingFlow({ city, cityLabel, onClose }: CityBookin
                         <div className="animate-fade-in-up max-w-xl mx-auto py-10">
                             <h3 className="text-3xl font-black mb-2 text-zinc-900 dark:text-white">Guest Details</h3>
                             <p className="text-zinc-500 dark:text-zinc-400 mb-8">Please enter your information to secure the booking.</p>
-                            
+
                             <div className="space-y-4 bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-xl">
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-2">First Name</label>
-                                        <input 
-                                            type="text" 
+                                        <input
+                                            type="text"
                                             value={formData.name}
-                                            onChange={e => setFormData({...formData, name: e.target.value})}
+                                            onChange={e => setFormData({ ...formData, name: e.target.value })}
                                             className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-white/10 rounded-xl px-4 py-3 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                                             placeholder="John"
                                         />
                                     </div>
                                     <div>
                                         <label className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-2">Last Name</label>
-                                        <input 
-                                            type="text" 
+                                        <input
+                                            type="text"
                                             value={formData.surname}
-                                            onChange={e => setFormData({...formData, surname: e.target.value})}
+                                            onChange={e => setFormData({ ...formData, surname: e.target.value })}
                                             className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-white/10 rounded-xl px-4 py-3 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                                             placeholder="Doe"
                                         />
@@ -140,20 +150,20 @@ export default function CityBookingFlow({ city, cityLabel, onClose }: CityBookin
                                 </div>
                                 <div>
                                     <label className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-2">Email Address</label>
-                                    <input 
-                                        type="email" 
+                                    <input
+                                        type="email"
                                         value={formData.email}
-                                        onChange={e => setFormData({...formData, email: e.target.value})}
+                                        onChange={e => setFormData({ ...formData, email: e.target.value })}
                                         className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-white/10 rounded-xl px-4 py-3 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                                         placeholder="john@example.com"
                                     />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-2">Phone Number</label>
-                                    <input 
-                                        type="tel" 
+                                    <input
+                                        type="tel"
                                         value={formData.phone}
-                                        onChange={e => setFormData({...formData, phone: e.target.value})}
+                                        onChange={e => setFormData({ ...formData, phone: e.target.value })}
                                         className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-white/10 rounded-xl px-4 py-3 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
                                         placeholder="+374 XX XXX XXX"
                                     />
@@ -184,7 +194,7 @@ export default function CityBookingFlow({ city, cityLabel, onClose }: CityBookin
                 {step < 4 && (
                     <div className="p-6 border-t border-zinc-200 dark:border-white/10 bg-white dark:bg-zinc-900 shrink-0 flex items-center justify-between shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.1)]">
                         {step > 1 ? (
-                            <button 
+                            <button
                                 onClick={() => setStep(step - 1)}
                                 className="px-6 py-3 font-semibold text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors"
                             >
@@ -193,7 +203,7 @@ export default function CityBookingFlow({ city, cityLabel, onClose }: CityBookin
                         ) : <div></div>}
 
                         {step === 1 && (
-                            <button 
+                            <button
                                 onClick={() => setStep(2)}
                                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-md shadow-orange-500/20 hover:-translate-y-0.5"
                             >
@@ -201,7 +211,7 @@ export default function CityBookingFlow({ city, cityLabel, onClose }: CityBookin
                             </button>
                         )}
                         {step === 2 && (
-                            <button 
+                            <button
                                 onClick={() => setStep(3)}
                                 disabled={!isComplete}
                                 className={`px-8 py-3 rounded-xl font-bold transition-all ${isComplete ? 'bg-orange-500 hover:bg-orange-600 text-white shadow-md shadow-orange-500/20 hover:-translate-y-0.5' : 'bg-zinc-200 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-600 cursor-not-allowed'}`}
@@ -210,7 +220,7 @@ export default function CityBookingFlow({ city, cityLabel, onClose }: CityBookin
                             </button>
                         )}
                         {step === 3 && (
-                            <button 
+                            <button
                                 onClick={() => setStep(4)}
                                 disabled={!isFormComplete}
                                 className={`px-8 py-3 rounded-xl font-bold transition-all ${isFormComplete ? 'bg-orange-500 hover:bg-orange-600 text-white shadow-md shadow-orange-500/20 hover:-translate-y-0.5' : 'bg-zinc-200 dark:bg-zinc-800 text-zinc-400 dark:text-zinc-600 cursor-not-allowed'}`}

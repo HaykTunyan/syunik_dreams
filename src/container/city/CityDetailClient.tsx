@@ -29,6 +29,12 @@ interface Props {
 }
 
 export default function CityDetailClient({ cityId }: Props) {
+
+    /**
+     * 
+     * City Detail Client Component 
+     */
+
     const city = cities.find((c) => c.id === cityId);
 
     const t = useTranslations('city_page');
@@ -40,7 +46,6 @@ export default function CityDetailClient({ cityId }: Props) {
     const cityDescription = city ? tData(`${city.id}.description`) : "";
 
     const {
-        callStatus,
         isCalling,
         isConnecting,
         isSpeaking,
@@ -155,8 +160,8 @@ export default function CityDetailClient({ cityId }: Props) {
                             </p>
                             <button
                                 className={`w-full font-bold py-4 rounded-2xl transition-all duration-300 shadow-lg ${isCalling
-                                        ? "bg-red-600 hover:bg-red-700 text-white"
-                                        : "bg-white text-orange-500 hover:bg-zinc-100"
+                                    ? "bg-red-600 hover:bg-red-700 text-white"
+                                    : "bg-white text-orange-500 hover:bg-zinc-100"
                                     }`}
                                 onClick={handleToggleVoice}
                                 disabled={isConnecting}
