@@ -6,6 +6,17 @@ import { useRouter } from 'next/navigation';
 
 // Dynamically import the 3D map so it only loads on the client side without SSR issues
 const City3DMap = dynamic(() => import('@/components/City3DMap'), { ssr: false });
+
+import City2DMap from '@/components/CityMap';
+
+
+/**
+ * 
+ * City 3D Map Component
+ 
+ */
+
+
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { useTranslations } from 'next-intl';
@@ -144,8 +155,10 @@ export default function TripsClient() {
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="w-full h-[600px]">
-                                        <City3DMap />
+                                    <div className="w-full h-[600px] brd">
+                                        {/* <City3DMap /> */}
+
+                                        <City2DMap />
                                     </div>
                                 </div>
                             </div>
