@@ -129,7 +129,7 @@ export default function TripsClient() {
                                             </div>
                                             <div className="flex flex-col grow px-2 pb-2">
                                                 <h3 className="font-bold text-lg text-zinc-900 dark:text-white mb-2">{t('khndzoresk_caves')}</h3>
-                                                <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-3 mb-4">{t('trips.khndzoresk_caves')}</p>
+                                                <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-3 mb-4">{t('khndzoresk_caves')}</p>
 
                                                 <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-white/10 flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400 font-medium">
                                                     <span className="bg-zinc-100 dark:bg-white/10 px-2.5 py-1 rounded-md">Caves</span>
@@ -148,14 +148,14 @@ export default function TripsClient() {
                                         </div>
                                         <div>
                                             <h2 className="text-3xl font-black text-zinc-900 dark:text-white leading-tight">
-                                                Interactive 3D Map
+                                                Interactive  Map
                                             </h2>
                                             <p className="text-zinc-500 dark:text-zinc-400 font-medium">
-                                                Explore Syunik's heritage in 3D
+                                                Explore Syunik's heritage
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="w-full h-[600px] brd">
+                                    <div className="w-full h-[600px] ">
                                         {/* <City3DMap /> */}
 
                                         <City2DMap />
