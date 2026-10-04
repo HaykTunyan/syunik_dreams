@@ -1,676 +1,791 @@
 {
-    "header": {
-        "home": "Գլխավոր",
-        "backToHome": "Վերադառնալ Գլխավոր",
-        "history": "Պատմություն",
-        "tourism": "Տուրիզմ",
-        "road": "Սյունիքի ճանապարհ"
+  "header": {
+    "home": "Գլխավոր",
+    "backToHome": "Վերադառնալ Գլխավոր",
+    "history": "Պատմություն",
+    "tourism": "Տուրիզմ",
+    "road": "Սյունիքի ճանապարհ"
+  },
+  "trips": {
+    "title": "Սյունիքի ճամփորդություններ",
+    "subtitle": "Ընկերացեք Սյունիքի լեռների, տաճարների և բնության հետ",
+    "cities_title": "Սյունիքի քաղաքներ և վայրեր",
+    "historical_title": "Պատմական ճամփորդության վայրեր",
+    "visit_city_kapan": "Այցելել Կապան",
+    "visit_city_goris": "Այցելել Գորիս",
+    "visit_city_meghri": "Այցելել Մեղրի",
+    "visit_city_sisian": "Այցելել Սիսիան",
+    "visit_city_agarak": "Այցելել Ագարակ",
+    "visit_city_kajaran": "Այցելել Քաջարան",
+    "tatev_monastery": "Տաթևի վանք",
+    "tatev_monastery_desc": "9-րդ դարի հայտնի վանք Գորիսի մոտ, Յունեսկոյի հաշվառման մեջ",
+    "meghri_church": "Մեղրի Մայր Եկեղեցի",
+    "meghri_church_desc": "Հարավային Հայաստանի հայտնի եկեղեցի, պահպանված պատմական հուշարձան 17-րդ դարի:",
+    "zorats_karer": "Զորաց քարերը",
+    "zorats_karer_desc": "Հնագիտական համալիր Սիսիանում, 3500 տարեկան պահարան",
+    "meghri_fortress": "Մեղրի ամրոց",
+    "meghri_fortress_desc": "Պետական պալատ Մեղրիում, հայ ճարտարապետության գլուխ",
+    "shikahogh": "Շիկահողի արգելոց",
+    "shikahogh_desc": "Արգելոցը գտնվում է Հայաստանի ամենահարավային մասում՝ Սյունիքի մարզի Կապանի շրջանում, զբաղեցնում է 29,505.845 հա",
+    "shake_waterfall": "Շաքեի ջրվեժ",
+    "shake_waterfall_desc": "Շաքեի ջրվեժը Սիսիանի մոտ է և հայտնի իր գեղեցիկ բնական տեսարանով և հանգստի վայրերով:",
+    "nature_title": "Բնության Հրաշքներ և Արկածներ",
+    "wings_of_tatev": "Տաթևի ճոպանուղի",
+    "wings_of_tatev_desc": "Աշխարհի ամենաերկար հետադարձելի ճոպանուղին (5.7 կմ), որը տանում է դեպի Տաթևի վանք։",
+    "khndzoresk_bridge": "Խնձորեսկի ճոճվող կամուրջ",
+    "khndzoresk_bridge_desc": "160 մետր երկարությամբ կամուրջ, որը կապում է Հին և Նոր Խնձորեսկները՝ անցնելով ձորի վրայով։",
+    "devils_bridge": "Սատանի կամուրջ",
+    "devils_bridge_desc": "Բնական կամուրջ Որոտան գետի վրա՝ տաք հանքային աղբյուրներով։",
+    "ughtasar": "Ուղտասար",
+    "ughtasar_desc": "3300մ բարձրության վրա գտնվող լեռ՝ հազարավոր ժայռապատկերներով (պետրոգլիֆներ)։",
+    "sport_title": "Սպորտային Կյանք",
+    "syunik_fc": "Սյունիք ՖԱ (Syunik FC)",
+    "syunik_fc_desc": "Սյունիքի մարզը ներկայացնող ֆուտբոլային ակումբ, որը հանդես է գալիս Հայաստանի Առաջին խմբում։ Ակումբը վերականգնում է Սյունիքի ֆուտբոլային ավանդույթները։",
+    "home_stadium_label": "Տնային մարզադաշտ՝",
+    "stadiums_in_syunik": "Մարզադաշտեր Սյունիքում",
+    "stadium_kapan_name": "Գանձասար Մարզադաշտ",
+    "stadium_kapan_info": "Տարողություն՝ 3,500 | Գտնվելու վայրը՝ ք. Կապան, կենտրոն",
+    "stadium_goris_name": "Գորիսի Քաղաքային Մարզադաշտ",
+    "stadium_goris_info": "Տարողություն՝ ~3,500 | Գտնվելու վայրը՝ ք. Գորիս",
+    "stadium_sisian_name": "Սիսիանի Ֆուտբոլի Դպրոցի Մարզադաշտ",
+    "stadium_sisian_info": "Տարողություն՝ 500+ | Գտնվելու վայրը՝ ք. Սիսիան, հարավային մաս",
+    "stadium_agarak_name": "Ագարակի Մարզահամալիր",
+    "stadium_agarak_info": "Տարողություն՝ 3,000 | Գտնվելու վայրը՝ ք. Ագարակ",
+    "useful_info_title": "Օգտակար Տեղեկություններ Զբոսաշրջիկի Համար",
+    "weather": "Եղանակ",
+    "weather_desc": "Սյունիքը ունի բազմազան կլիմա։ Մեղրին շատ տաք է (նման է մերձարևադարձայինին), իսկ Սիսիանը և Գորիսը՝ ավելի զով և խոնավ։",
+    "transport": "Տրանսպորտ",
+    "transport_desc": "Երևանից Սյունիք (Կապան) հեռավորությունը մոտ 300 կմ է (4-5 ժամ մեքենայով)։ Գործում են նաև կանոնավոր երթուղային տաքսիներ դեպի բոլոր խոշոր քաղաքներ։",
+    "cuisine": "Խոհանոց",
+    "cuisine_desc": "Անպայման փորձեք Սյունիքի ավանդական ուտեստները՝ լոբով ճաշերը, քյալագյոշը, կուրկուտը և թթի օղին։",
+    "trip_info_title": "Ճամփորդության տեղեկություններ",
+    "select_city_msg": "Քարտեզից ընտրեք քաղաք կամ վայր ավելի շատ տեղեկության համար",
+    "kapan": "Կապան",
+    "goris": "Գորիս",
+    "meghri": "Մեղրի",
+    "sisian": "Սիսիան",
+    "agarak": "Ագարակ",
+    "kajaran": "Քաջարան",
+    "tour_info": "Տուրի տեղեկություններ",
+    "feature_historical": "Պահպանված պատմական վայրեր",
+    "feature_guides": "Պրոֆեսիոնալ ուղեղներ",
+    "feature_transport": "Տրանսպորտ ներառված",
+    "feature_food": "Կերակուր տրամադրված",
+    "feature_insurance": "Ապահովագրում ներառված",
+    "book_now": "Գրանցել Այժմ",
+    "most_visited_title": "Ամենաշատ այցելվող վայրերը",
+    "most_visited_subtitle": "Սյունիքի ամենանշանավոր և գեղատեսիլ վայրերը, որոնք պետք է տեսնել",
+    "attraction_tatev": "Տաթևի վանք",
+    "attraction_tatev_desc": "Ճարտարապետական գլուխգործոց և հոգևոր կենտրոն՝ աշխարհի ամենաերկար ճոպանուղով։",
+    "attraction_tatev_height": "1500մ",
+    "attraction_tatev_location": "Տաթև գյուղ, Սյունիք",
+    "attraction_tatev_more": "Տաթևի վանքը 9-րդ դարի հայ առաքելական վանական համալիր է։",
+    "attraction_karahunj": "Քարահունջ (Զորաց քարեր)",
+    "attraction_karahunj_desc": "Հնագույն աստղադիտարան, որը հաճախ անվանում են «Հայկական Սթոունհենջ»։",
+    "attraction_karahunj_height": "1770մ",
+    "attraction_karahunj_location": "Սիսիան, Սյունիք",
+    "attraction_karahunj_more": "Հաճախ անվանվում է Հայկական Սթոունհենջ, բաղկացած է հարյուրավոր ուղղահայաց կանգնեցված քարերից։",
+    "attraction_khndzoresk": "Խնձորեսկի ճոճվող կամուրջ",
+    "attraction_khndzoresk_desc": "Շունչ կտրող կամուրջ ձորի վրայով, որը տանում է դեպի հին քարանձավային գյուղ։",
+    "attraction_khndzoresk_height": "1580մ",
+    "attraction_khndzoresk_location": "Խնձորեսկ, Սյունիք",
+    "attraction_khndzoresk_more": "Հայտնի է իր ճոճվող կամրջով և հին քարանձավային գյուղով։",
+    "attraction_shake": "Շաքիի ջրվեժ",
+    "attraction_shake_desc": "Հայաստանի ամենագեղեցիկ ջրվեժը, որը գտնվում է Որոտանի կիրճում։",
+    "attraction_shake_height": "1700մ",
+    "attraction_shake_location": "Սիսիան, Սյունիք",
+    "attraction_shake_more": "18 մետր բարձրությամբ Շաքին Հայաստանի ամենագեղեցիկ ջրվեժներից մեկն է։",
+    "attraction_khustup": "Խուստուփ լեռ",
+    "attraction_khustup_desc": "Սյունիքի սուրբ լեռը, ազատության և ուժի խորհրդանիշը։",
+    "attraction_khustup_height": "3201մ",
+    "attraction_khustup_location": "Կապան, Սյունիք",
+    "attraction_khustup_more": "Խուստուփ լեռը Զանգեզուրի լեռնաշղթայի հայտնի գագաթ է՝ կապված Գարեգին Նժդեհի անվան հետ։",
+    "attraction_vorotnavank": "Որոտնավանք",
+    "attraction_vorotnavank_desc": "Միջնադարյան նշանավոր վանական համալիր՝ Որոտան գետի կիրճի վերևում։",
+    "attraction_vorotnavank_height": "1400մ",
+    "attraction_vorotnavank_location": "Վաղատին, Սյունիք",
+    "attraction_vorotnavank_more": "Վանական համալիր՝ կառուցված 1000 թվականին Շահանդուխտ թագուհու կողմից։",
+    "attraction_goris_caves": "Հին Գորիսի քարանձավներ",
+    "attraction_goris_caves_desc": "Հրաբխային ապարների մեջ փորված հնագույն կացարաններ, որոնք ցուցադրում են կյանքի յուրահատուկ ձևը։",
+    "attraction_goris_caves_height": "1370մ",
+    "attraction_goris_caves_location": "Հին Գորիս, Սյունիք",
+    "attraction_goris_caves_more": "Բնական և արհեստական քարանձավների ցանց, որոնք դարեր շարունակ օգտագործվել են որպես կացարաններ։",
+    "attraction_halidzor": "Հալիձորի բերդ",
+    "attraction_halidzor_desc": "Դավիթ Բեկի ազատագրական շարժման կենտրոնակայանը և ռազմական դիմակայության խորհրդանիշը։",
+    "attraction_halidzor_height": "1600մ",
+    "attraction_halidzor_location": "Կապան, Սյունիք",
+    "attraction_halidzor_more": "Հալիձորի բերդը առանցքային պաշտպանական դեր է ունեցել 18-րդ դարի սկզբին։",
+    "attraction_vahanavank": "Վահանավանք",
+    "attraction_vahanavank_desc": "10-րդ դարի հոգևոր կենտրոն, Սյունյաց թագավորների և իշխանների տոհմական դամբարանը։",
+    "attraction_vahanavank_height": "1000մ",
+    "attraction_vahanavank_location": "Կապան, Սյունիք",
+    "attraction_vahanavank_more": "Հիմնադրվել է 10-րդ դարում, եղել է Սյունիքի թագավորների կրոնական կենտրոնը։",
+    "attraction_vorotnavanq_hermitage": "Որոտնավանքի մենախցեր",
+    "attraction_vorotnavanq_hermitage_desc": "Միջնադարյան մենախցեր, որոնք ցուցադրում են մարտերից հետո մնացած հոգևոր կենտրոնը։",
+    "attraction_vorotnavanq_hermitage_height": "Անհայտ",
+    "attraction_vorotnavanq_hermitage_location": "Սյունիքի մարզ",
+    "attraction_vorotnavanq_hermitage_more": "Լրացուցիչ տեղեկությունները շուտով:",
+    "attraction_vorotnbaberd": "Որոտնաբերդ",
+    "attraction_vorotnbaberd_desc": "Միջնադարյան բերդ, որը ծառայել է որպես Սյունյաց իշխանների ռազմական կենտրոն։",
+    "attraction_vorotnbaberd_height": "Անհայտ",
+    "attraction_vorotnbaberd_location": "Սյունիքի մարզ",
+    "attraction_vorotnbaberd_more": "Լրացուցիչ տեղեկությունները շուտով:",
+    "attraction_halidzor_fortress": "Հալիձորի բերդ",
+    "attraction_halidzor_fortress_desc": "Հայտնի ամրոց, որը եղել է Դավիթ Բեկի ազատագրական շարժման հիմնական հենակետերից մեկը։",
+    "attraction_halidzor_fortress_height": "Անհայտ",
+    "attraction_halidzor_fortress_location": "Սյունիքի մարզ",
+    "attraction_halidzor_fortress_more": "Լրացուցիչ տեղեկությունները շուտով:",
+    "attraction_hermitage_tatev": "Տաթևի մենախցեր",
+    "attraction_hermitage_tatev_desc": "Միջնադարյան մենախցեր, որոնք ցուցադրում են մարտերից հետո մնացած հոգևոր կենտրոնը։",
+    "attraction_hermitage_tatev_height": "Անհայտ",
+    "attraction_hermitage_tatev_location": "Սյունիքի մարզ",
+    "attraction_hermitage_tatev_more": "Լրացուցիչ տեղեկությունները շուտով:",
+    "attraction_vorotnaberd_fortress": "Որոտնաբերդ",
+    "attraction_vorotnaberd_fortress_desc": "Միջնադարյան բերդ, որը ծառայել է որպես Սյունյաց իշխանների ռազմական կենտրոն։",
+    "attraction_vorotnaberd_fortress_height": "Անհայտ",
+    "attraction_vorotnaberd_fortress_location": "Սյունիքի մարզ",
+    "attraction_vorotnaberd_fortress_more": "Լրացուցիչ տեղեկությունները շուտով:",
+    "attraction_harsnadzor_watchtower": "Հարսնաձորի Դիտակետ",
+    "attraction_harsnadzor_watchtower_desc": "Հին դիտակետ, որը բացում է հիասքանչ տեսարան դեպի Որոտանի կիրճ։",
+    "attraction_harsnadzor_watchtower_height": "1500մ",
+    "attraction_harsnadzor_watchtower_location": "Հալիձոր, Սյունիք",
+    "attraction_harsnadzor_watchtower_more": "Հարսնաձորը եղել է լեգենդար դիտակետ և պաշտպանական հենակետ Որոտան գետի կիրճի երկայնքով: Ըստ ավանդության՝ մի հարսնացու թշնամուն գերի ընկնելու փոխարեն իրեն նետել է ձորը, ինչի պատճառով վայրը ստացել է «Հարսնաձոր» անվանումը:",
+    "khndzoresk_caves": "Khndzoresk Caves",
+    "khndzoresk_caves_desc": "Hundreds of natural and man-made caves used as dwellings for centuries, connected by the famous swinging bridge.",
+    "old_khndzoresk": "Old Khndzoresk",
+    "old_khndzoresk_desc": "Ancient cave village carved into cliff faces, abandoned in the 1950s — a stunning ghost town in the gorge.",
+    "attraction_khndzoresk_caves": "Khndzoresk Caves",
+    "attraction_khndzoresk_caves_desc": "Ancient cave dwellings in Khndzoresk, offering a glimpse into the region's history.",
+    "attraction_khndzoresk_caves_height": "Unknown",
+    "attraction_khndzoresk_caves_location": "Syunik Region",
+    "attraction_khndzoresk_caves_more": "More details coming soon.",
+    "attraction_syunik_fortress": "Syunik Fortress",
+    "attraction_syunik_fortress_desc": "Fortress in Syunik, showcasing the region's medieval history.",
+    "attraction_syunik_fortress_height": "Unknown",
+    "attraction_syunik_fortress_location": "Syunik Region",
+    "attraction_syunik_fortress_more": "More details coming soon.",
+    "attraction_halidzor_ditaket": "Halidzor Observation Deck",
+    "attraction_halidzor_ditaket_desc": "Observation deck in Halidzor, offering panoramic views of the region.",
+    "attraction_halidzor_ditaket_height": "Unknown",
+    "attraction_halidzor_ditaket_location": "Syunik Region",
+    "attraction_halidzor_ditaket_more": "More details coming soon.",
+    "attraction_meghri_viewpoint": "Meghri Viewpoint",
+    "attraction_meghri_viewpoint_desc": "Viewpoint in Meghri, offering panoramic views of the region.",
+    "attraction_meghri_viewpoint_height": "1500m",
+    "attraction_meghri_viewpoint_location": "Meghri, Syunik",
+    "attraction_meghri_viewpoint_more": "Offers stunning panoramic views of the city of Meghri and the Araks River valley.",
+    "attraction_vorotnaberd": "Vorotnaberd Fortress",
+    "attraction_vorotnaberd_desc": "Fortress in Syunik, showcasing the region's medieval history.",
+    "attraction_vorotnaberd_height": "Unknown",
+    "attraction_vorotnaberd_location": "Syunik Region",
+    "attraction_vorotnaberd_more": "More details coming soon.",
+    "attraction_melik_tangi_bridge": "Melik Tangi Bridge",
+    "attraction_melik_tangi_bridge_desc": "Bridge in Syunik, showcasing the region's medieval history.",
+    "attraction_melik_tangi_bridge_height": "1400m",
+    "attraction_melik_tangi_bridge_location": "Vorotan River, Syunik",
+    "attraction_melik_tangi_bridge_more": "A historic stone bridge built in 1853 by Melik Tangi.",
+    "attraction_sunrise_meghri": "Sunrise Meghri",
+    "attraction_sunrise_meghri_desc": "Sunrise Meghri, showcasing the region's medieval history.",
+    "attraction_sunrise_meghri_height": "Unknown",
+    "attraction_sunrise_meghri_location": "Syunik Region",
+    "attraction_sunrise_meghri_more": "More details coming soon.",
+    "attraction_great_hermitage_of_tatev": "Great Hermitage of Tatev",
+    "attraction_great_hermitage_of_tatev_desc": "Great Hermitage of Tatev, showcasing the region's medieval history.",
+    "attraction_great_hermitage_of_tatev_height": "Unknown",
+    "attraction_great_hermitage_of_tatev_location": "Syunik Region",
+    "attraction_great_hermitage_of_tatev_more": "More details coming soon.",
+    "attraction_old_goris": "Old Goris",
+    "attraction_old_goris_desc": "Old Goris, showcasing the region's medieval history.",
+    "attraction_old_goris_height": "Unknown",
+    "attraction_old_goris_location": "Syunik Region",
+    "attraction_old_goris_more": "More details coming soon.",
+    "attraction_devil_bridge": "Devil's Bridge",
+    "attraction_devil_bridge_desc": "Devil's Bridge, showcasing the region's medieval history.",
+    "attraction_devil_bridge_height": "1000m",
+    "attraction_devil_bridge_location": "Vorotan Gorge, Syunik",
+    "attraction_devil_bridge_more": "A natural travertine bridge over the Vorotan River, featuring warm mineral springs.",
+    "attraction_vorotnaberd_hermitage": "Vorotnaberd Hermitage",
+    "attraction_vorotnaberd_hermitage_desc": "Vorotnaberd Hermitage, showcasing the region's medieval history.",
+    "attraction_vorotnaberd_hermitage_height": "Unknown",
+    "attraction_vorotnaberd_hermitage_location": "Syunik Region",
+    "attraction_vorotnaberd_hermitage_more": "More details coming soon.",
+    "attraction_vorotnavank_hermitage": "Vorotnavank Hermitage",
+    "attraction_vorotnavank_hermitage_desc": "Vorotnavank Hermitage, showcasing the region's medieval history.",
+    "attraction_vorotnavank_hermitage_height": "Unknown",
+    "attraction_vorotnavank_hermitage_location": "Syunik Region",
+    "attraction_vorotnavank_hermitage_more": "More details coming soon.",
+    "attraction_vorotnavanq": "Vorotnavank",
+    "attraction_vorotnavanq_desc": "Vorotnavank, showcasing the region's medieval history.",
+    "attraction_vorotnavanq_height": "Unknown",
+    "attraction_vorotnavanq_location": "Syunik Region",
+    "attraction_vorotnavanq_more": "More details coming soon.",
+    "attraction_vorotnbaberd ": "Vorotnaberd"
+  },
+  "city_page": {
+    "title_prefix": "Սյունիքի",
+    "title_suffix": "Քաղաքները",
+    "subtitle": "Հայաստանի հարավային դարպասը",
+    "city_label": "Քաղաք",
+    "area": "Տարածք",
+    "founding": "Հիմնադրում",
+    "population": "Բնակչություն",
+    "more": "Ավելին →",
+    "history_title": "Պատմություն և Ժառանգություն",
+    "back_to_cities": "Վերադառնալ Քաղաքներ",
+    "learn_more": "Իմացեք Ավելին",
+    "history_cta_title": "Ցանկանու՞մ եք ավելին իմանալ Սյունիքի հարուստ անցյալի մասին:",
+    "history_cta_description": "Սյունյաց թագավորությունից մինչև անկախության համար մղված հերոսական մարտերը, բացահայտեք այն ոգին, որը կերտել է այս քաղաքները:",
+    "history_cta_button": "Բացահայտել Պատմությունը"
+  },
+  "cities_data": {
+    "kapan": {
+      "name": "Կապան",
+      "description": "Սյունիքի մարզկենտրոնը, որը գտնվում է Խուստուփ լեռան ստորոտին։",
+      "founding": "10-րդ դար",
+      "size": "36 կմ²",
+      "population": "~42,000"
     },
-    "trips": {
-        "title": "Սյունիքի ճամփորդություններ",
-        "subtitle": "Ընկերացեք Սյունիքի լեռների, տաճարների և բնության հետ",
-        "cities_title": "Սյունիքի քաղաքներ և վայրեր",
-        "historical_title": "Պատմական ճամփորդության վայրեր",
-        "visit_city_kapan": "Այցելել Կապան",
-        "visit_city_goris": "Այցելել Գորիս",
-        "visit_city_meghri": "Այցելել Մեղրի",
-        "visit_city_sisian": "Այցելել Սիսիան",
-        "visit_city_agarak": "Այցելել Ագարակ",
-        "visit_city_kajaran": "Այցելել Քաջարան",
-        "tatev_monastery": "Տաթևի վանք",
-        "tatev_monastery_desc": "9-րդ դարի հայտնի վանք Գորիսի մոտ, Յունեսկոյի հաշվառման մեջ",
-        "meghri_church": "Մեղրի Մայր Եկեղեցի",
-        "meghri_church_desc": "Հարավային Հայաստանի հայտնի եկեղեցի, պահպանված պատմական հուշարձան 17-րդ դարի:",
-        "zorats_karer": "Զորաց քարերը",
-        "zorats_karer_desc": "Հնագիտական համալիր Սիսիանում, 3500 տարեկան պահարան",
-        "meghri_fortress": "Մեղրի ամրոց",
-        "meghri_fortress_desc": "Պետական պալատ Մեղրիում, հայ ճարտարապետության գլուխ",
-        "shikahogh": "Շիկահողի արգելոց",
-        "shikahogh_desc": "Արգելոցը գտնվում է Հայաստանի ամենահարավային մասում՝ Սյունիքի մարզի Կապանի շրջանում, զբաղեցնում է 29,505.845 հա",
-        "shake_waterfall": "Շաքեի ջրվեժ",
-        "shake_waterfall_desc": "Շաքեի ջրվեժը Սիսիանի մոտ է և հայտնի իր գեղեցիկ բնական տեսարանով և հանգստի վայրերով:",
-        "nature_title": "Բնության Հրաշքներ և Արկածներ",
-        "wings_of_tatev": "Տաթևի ճոպանուղի",
-        "wings_of_tatev_desc": "Աշխարհի ամենաերկար հետադարձելի ճոպանուղին (5.7 կմ), որը տանում է դեպի Տաթևի վանք։",
-        "khndzoresk_bridge": "Խնձորեսկի ճոճվող կամուրջ",
-        "khndzoresk_bridge_desc": "160 մետր երկարությամբ կամուրջ, որը կապում է Հին և Նոր Խնձորեսկները՝ անցնելով ձորի վրայով։",
-        "devils_bridge": "Սատանի կամուրջ",
-        "devils_bridge_desc": "Բնական կամուրջ Որոտան գետի վրա՝ տաք հանքային աղբյուրներով։",
-        "ughtasar": "Ուղտասար",
-        "ughtasar_desc": "3300մ բարձրության վրա գտնվող լեռ՝ հազարավոր ժայռապատկերներով (պետրոգլիֆներ)։",
-        "sport_title": "Սպորտային Կյանք",
-        "syunik_fc": "Սյունիք ՖԱ (Syunik FC)",
-        "syunik_fc_desc": "Սյունիքի մարզը ներկայացնող ֆուտբոլային ակումբ, որը հանդես է գալիս Հայաստանի Առաջին խմբում։ Ակումբը վերականգնում է Սյունիքի ֆուտբոլային ավանդույթները։",
-        "home_stadium_label": "Տնային մարզադաշտ՝",
-        "stadiums_in_syunik": "Մարզադաշտեր Սյունիքում",
-        "stadium_kapan_name": "Գանձասար Մարզադաշտ",
-        "stadium_kapan_info": "Տարողություն՝ 3,500 | Գտնվելու վայրը՝ ք. Կապան, կենտրոն",
-        "stadium_goris_name": "Գորիսի Քաղաքային Մարզադաշտ",
-        "stadium_goris_info": "Տարողություն՝ ~3,500 | Գտնվելու վայրը՝ ք. Գորիս",
-        "stadium_sisian_name": "Սիսիանի Ֆուտբոլի Դպրոցի Մարզադաշտ",
-        "stadium_sisian_info": "Տարողություն՝ 500+ | Գտնվելու վայրը՝ ք. Սիսիան, հարավային մաս",
-        "stadium_agarak_name": "Ագարակի Մարզահամալիր",
-        "stadium_agarak_info": "Տարողություն՝ 3,000 | Գտնվելու վայրը՝ ք. Ագարակ",
-        "useful_info_title": "Օգտակար Տեղեկություններ Զբոսաշրջիկի Համար",
-        "weather": "Եղանակ",
-        "weather_desc": "Սյունիքը ունի բազմազան կլիմա։ Մեղրին շատ տաք է (նման է մերձարևադարձայինին), իսկ Սիսիանը և Գորիսը՝ ավելի զով և խոնավ։",
-        "transport": "Տրանսպորտ",
-        "transport_desc": "Երևանից Սյունիք (Կապան) հեռավորությունը մոտ 300 կմ է (4-5 ժամ մեքենայով)։ Գործում են նաև կանոնավոր երթուղային տաքսիներ դեպի բոլոր խոշոր քաղաքներ։",
-        "cuisine": "Խոհանոց",
-        "cuisine_desc": "Անպայման փորձեք Սյունիքի ավանդական ուտեստները՝ լոբով ճաշերը, քյալագյոշը, կուրկուտը և թթի օղին։",
-        "trip_info_title": "Ճամփորդության տեղեկություններ",
-        "select_city_msg": "Քարտեզից ընտրեք քաղաք կամ վայր ավելի շատ տեղեկության համար",
-        "kapan": "Կապան",
-        "goris": "Գորիս",
-        "meghri": "Մեղրի",
-        "sisian": "Սիսիան",
-        "agarak": "Ագարակ",
-        "kajaran": "Քաջարան",
-        "tour_info": "Տուրի տեղեկություններ",
-        "feature_historical": "Պահպանված պատմական վայրեր",
-        "feature_guides": "Պրոֆեսիոնալ ուղեղներ",
-        "feature_transport": "Տրանսպորտ ներառված",
-        "feature_food": "Կերակուր տրամադրված",
-        "feature_insurance": "Ապահովագրում ներառված",
-        "book_now": "Գրանցել Այժմ",
-        "most_visited_title": "Ամենաշատ այցելվող վայրերը",
-        "most_visited_subtitle": "Սյունիքի ամենանշանավոր և գեղատեսիլ վայրերը, որոնք պետք է տեսնել",
-        "attraction_tatev": "Տաթևի վանք",
-        "attraction_tatev_desc": "Ճարտարապետական գլուխգործոց և հոգևոր կենտրոն՝ աշխարհի ամենաերկար ճոպանուղով։",
-        "attraction_tatev_height": "1500մ",
-        "attraction_tatev_location": "Տաթև գյուղ, Սյունիք",
-        "attraction_tatev_more": "Տաթևի վանքը 9-րդ դարի հայ առաքելական վանական համալիր է։",
-        "attraction_karahunj": "Քարահունջ (Զորաց քարեր)",
-        "attraction_karahunj_desc": "Հնագույն աստղադիտարան, որը հաճախ անվանում են «Հայկական Սթոունհենջ»։",
-        "attraction_karahunj_height": "1770մ",
-        "attraction_karahunj_location": "Սիսիան, Սյունիք",
-        "attraction_karahunj_more": "Հաճախ անվանվում է Հայկական Սթոունհենջ, բաղկացած է հարյուրավոր ուղղահայաց կանգնեցված քարերից։",
-        "attraction_khndzoresk": "Խնձորեսկի ճոճվող կամուրջ",
-        "attraction_khndzoresk_desc": "Շունչ կտրող կամուրջ ձորի վրայով, որը տանում է դեպի հին քարանձավային գյուղ։",
-        "attraction_khndzoresk_height": "1580մ",
-        "attraction_khndzoresk_location": "Խնձորեսկ, Սյունիք",
-        "attraction_khndzoresk_more": "Հայտնի է իր ճոճվող կամրջով և հին քարանձավային գյուղով։",
-        "attraction_shake": "Շաքիի ջրվեժ",
-        "attraction_shake_desc": "Հայաստանի ամենագեղեցիկ ջրվեժը, որը գտնվում է Որոտանի կիրճում։",
-        "attraction_shake_height": "1700մ",
-        "attraction_shake_location": "Սիսիան, Սյունիք",
-        "attraction_shake_more": "18 մետր բարձրությամբ Շաքին Հայաստանի ամենագեղեցիկ ջրվեժներից մեկն է։",
-        "attraction_khustup": "Խուստուփ լեռ",
-        "attraction_khustup_desc": "Սյունիքի սուրբ լեռը, ազատության և ուժի խորհրդանիշը։",
-        "attraction_khustup_height": "3201մ",
-        "attraction_khustup_location": "Կապան, Սյունիք",
-        "attraction_khustup_more": "Խուստուփ լեռը Զանգեզուրի լեռնաշղթայի հայտնի գագաթ է՝ կապված Գարեգին Նժդեհի անվան հետ։",
-        "attraction_vorotnavank": "Որոտնավանք",
-        "attraction_vorotnavank_desc": "Միջնադարյան նշանավոր վանական համալիր՝ Որոտան գետի կիրճի վերևում։",
-        "attraction_vorotnavank_height": "1400մ",
-        "attraction_vorotnavank_location": "Վաղատին, Սյունիք",
-        "attraction_vorotnavank_more": "Վանական համալիր՝ կառուցված 1000 թվականին Շահանդուխտ թագուհու կողմից։",
-        "attraction_goris_caves": "Հին Գորիսի քարանձավներ",
-        "attraction_goris_caves_desc": "Հրաբխային ապարների մեջ փորված հնագույն կացարաններ, որոնք ցուցադրում են կյանքի յուրահատուկ ձևը։",
-        "attraction_goris_caves_height": "1370մ",
-        "attraction_goris_caves_location": "Հին Գորիս, Սյունիք",
-        "attraction_goris_caves_more": "Բնական և արհեստական քարանձավների ցանց, որոնք դարեր շարունակ օգտագործվել են որպես կացարաններ։",
-        "attraction_halidzor": "Հալիձորի բերդ",
-        "attraction_halidzor_desc": "Դավիթ Բեկի ազատագրական շարժման կենտրոնակայանը և ռազմական դիմակայության խորհրդանիշը։",
-        "attraction_halidzor_height": "1600մ",
-        "attraction_halidzor_location": "Կապան, Սյունիք",
-        "attraction_halidzor_more": "Հալիձորի բերդը առանցքային պաշտպանական դեր է ունեցել 18-րդ դարի սկզբին։",
-        "attraction_vahanavank": "Վահանավանք",
-        "attraction_vahanavank_desc": "10-րդ դարի հոգևոր կենտրոն, Սյունյաց թագավորների և իշխանների տոհմական դամբարանը։",
-        "attraction_vahanavank_height": "1000մ",
-        "attraction_vahanavank_location": "Կապան, Սյունիք",
-        "attraction_vahanavank_more": "Հիմնադրվել է 10-րդ դարում, եղել է Սյունիքի թագավորների կրոնական կենտրոնը։",
-        "attraction_vorotnavanq_hermitage": "Որոտնավանքի մենախցեր",
-        "attraction_vorotnavanq_hermitage_desc": "Միջնադարյան մենախցեր, որոնք ցուցադրում են մարտերից հետո մնացած հոգևոր կենտրոնը։",
-        "attraction_vorotnavanq_hermitage_height": "Անհայտ",
-        "attraction_vorotnavanq_hermitage_location": "Սյունիքի մարզ",
-        "attraction_vorotnavanq_hermitage_more": "Լրացուցիչ տեղեկությունները շուտով:",
-        "attraction_vorotnbaberd": "Որոտնաբերդ",
-        "attraction_vorotnbaberd_desc": "Միջնադարյան բերդ, որը ծառայել է որպես Սյունյաց իշխանների ռազմական կենտրոն։",
-        "attraction_vorotnbaberd_height": "Անհայտ",
-        "attraction_vorotnbaberd_location": "Սյունիքի մարզ",
-        "attraction_vorotnbaberd_more": "Լրացուցիչ տեղեկությունները շուտով:",
-        "attraction_halidzor_fortress": "Հալիձորի բերդ",
-        "attraction_halidzor_fortress_desc": "Հայտնի ամրոց, որը եղել է Դավիթ Բեկի ազատագրական շարժման հիմնական հենակետերից մեկը։",
-        "attraction_halidzor_fortress_height": "Անհայտ",
-        "attraction_halidzor_fortress_location": "Սյունիքի մարզ",
-        "attraction_halidzor_fortress_more": "Լրացուցիչ տեղեկությունները շուտով:",
-        "attraction_hermitage_tatev": "Տաթևի մենախցեր",
-        "attraction_hermitage_tatev_desc": "Միջնադարյան մենախցեր, որոնք ցուցադրում են մարտերից հետո մնացած հոգևոր կենտրոնը։",
-        "attraction_hermitage_tatev_height": "Անհայտ",
-        "attraction_hermitage_tatev_location": "Սյունիքի մարզ",
-        "attraction_hermitage_tatev_more": "Լրացուցիչ տեղեկությունները շուտով:",
-        "attraction_vorotnaberd_fortress": "Որոտնաբերդ",
-        "attraction_vorotnaberd_fortress_desc": "Միջնադարյան բերդ, որը ծառայել է որպես Սյունյաց իշխանների ռազմական կենտրոն։",
-        "attraction_vorotnaberd_fortress_height": "Անհայտ",
-        "attraction_vorotnaberd_fortress_location": "Սյունիքի մարզ",
-        "attraction_vorotnaberd_fortress_more": "Լրացուցիչ տեղեկությունները շուտով:",
-        "attraction_harsnadzor_watchtower": "Հարսնաձորի Դիտակետ",
-        "attraction_harsnadzor_watchtower_desc": "Հին դիտակետ, որը բացում է հիասքանչ տեսարան դեպի Որոտանի կիրճ։",
-        "attraction_harsnadzor_watchtower_height": "1500մ",
-        "attraction_harsnadzor_watchtower_location": "Հալիձոր, Սյունիք",
-        "attraction_harsnadzor_watchtower_more": "Հարսնաձորը եղել է լեգենդար դիտակետ և պաշտպանական հենակետ Որոտան գետի կիրճի երկայնքով: Ըստ ավանդության՝ մի հարսնացու թշնամուն գերի ընկնելու փոխարեն իրեն նետել է ձորը, ինչի պատճառով վայրը ստացել է «Հարսնաձոր» անվանումը:"
+    "goris": {
+      "name": "Գորիս",
+      "description": "Ճարտարապետական եզակի ոճ ունեցող քաղաք, հայտնի քարանձավներով։",
+      "founding": "1870 թ.",
+      "size": "5.03 կմ²",
+      "population": "~20,000"
     },
-    "city_page": {
-        "title_prefix": "Սյունիքի",
-        "title_suffix": "Քաղաքները",
-        "subtitle": "Հայաստանի հարավային դարպասը",
-        "city_label": "Քաղաք",
-        "area": "Տարածք",
-        "founding": "Հիմնադրում",
-        "population": "Բնակչություն",
-        "more": "Ավելին →",
-        "history_title": "Պատմություն և Ժառանգություն",
-        "back_to_cities": "Վերադառնալ Քաղաքներ",
-        "learn_more": "Իմացեք Ավելին",
-        "history_cta_title": "Ցանկանու՞մ եք ավելին իմանալ Սյունիքի հարուստ անցյալի մասին:",
-        "history_cta_description": "Սյունյաց թագավորությունից մինչև անկախության համար մղված հերոսական մարտերը, բացահայտեք այն ոգին, որը կերտել է այս քաղաքները:",
-        "history_cta_button": "Բացահայտել Պատմությունը"
+    "sisian": {
+      "name": "Սիսիան",
+      "description": "Գտնվում է Որոտան գետի ափին, հարուստ պատմությամբ։",
+      "founding": "մ.թ.ա. 8 դ.",
+      "size": "9 կմ²",
+      "population": "~15,000"
     },
-    "cities_data": {
-        "kapan": {
-            "name": "Կապան",
-            "description": "Սյունիքի մարզկենտրոնը, որը գտնվում է Խուստուփ լեռան ստորոտին։",
-            "founding": "10-րդ դար",
-            "size": "36 կմ²",
-            "population": "~42,000"
-        },
-        "goris": {
-            "name": "Գորիս",
-            "description": "Ճարտարապետական եզակի ոճ ունեցող քաղաք, հայտնի քարանձավներով։",
-            "founding": "1870 թ.",
-            "size": "5.03 կմ²",
-            "population": "~20,000"
-        },
-        "sisian": {
-            "name": "Սիսիան",
-            "description": "Գտնվում է Որոտան գետի ափին, հարուստ պատմությամբ։",
-            "founding": "մ.թ.ա. 8 դ.",
-            "size": "9 կմ²",
-            "population": "~15,000"
-        },
-        "agarak": {
-            "name": "Ագարակ",
-            "description": "Սյունիքի հանքային քաղաք, հայտնի է մոլիբդեն և պղինձ հանքերով։",
-            "founding": "1950 թ.",
-            "size": "2.5 կմ²",
-            "population": "~7,500"
-        },
-        "meghri": {
-            "name": "Մեղրի",
-            "description": "Հայաստանի ամենահարավային քաղաքը՝ մեղմ կլիմայով։",
-            "founding": "906 թ.",
-            "size": "3 կմ²",
-            "population": "~4,500"
-        },
-        "qajaran": {
-            "name": "Քաջարան",
-            "description": "Արևելյան Սյունիքի արդյունաբերական քաղաք, հանքարդյունաբերությամբ հայտնի։",
-            "founding": "1958 թ.",
-            "size": "4.1 կմ²",
-            "population": "~8,000"
-        },
-        "vayk": {
-            "name": "Վայք",
-            "description": "Փոքր լեռնային բնակավայր, հայտնի Բաբա Դաղի համար",
-            "population": "5,000",
-            "climate": "Չափավոր լեռնային",
-            "bestVisit": "Մայիս - Սեպտեմբեր"
-        }
+    "agarak": {
+      "name": "Ագարակ",
+      "description": "Սյունիքի հանքային քաղաք, հայտնի է մոլիբդեն և պղինձ հանքերով։",
+      "founding": "1950 թ.",
+      "size": "2.5 կմ²",
+      "population": "~7,500"
     },
-    "cities_data_details": {
-        "kapan": {
-            "climate": "Չափավոր մեղմ",
-            "bestVisit": "Մայիս - Հոկտեմբեր",
-            "history": "Կապանը Հայաստանի հնագույն բնակավայրերից է, որի արմատները հասնում են մինչև 5-րդ դար։ 10-րդ դարում այն հանդիսացել է Սյունյաց թագավորության մայրաքաղաքը։ Պատմության ընթացքում Կապանը եղել է կարևորագույն պաշտպանական հենակետ և հանքարդյունաբերական կենտրոն։ Քաղաքի անվանումը ծագում է «կապել» բառից՝ մատնանշելով նրա ռազմավարական դիրքը լեռների մեջ։",
-            "attractions": {
-                "0": "Խուստուփ լեռ — Կապանի վրա հառնող խորհրդանշական գագաթ",
-                "1": "Վահանավանք — կիրճում հնագույն հոգևոր ապաստարան",
-                "2": "Բաղաբերդ — Սյունիքը պաշտպանող միջնադարյան ամրոց",
-                "3": "Գարեգին Նժդեհի արձան — ազգային հերոսի հուշարձան",
-                "4": "Կապանի Գլխավոր հրապարակ — քաղաքի կենսագործուն սիրտ",
-                "5": "Քաղաքի կենտրոն — Կապանի կենդանի կենտրոնական թաղամասը",
-                "6": "Նժդեհի փողոց — ազգային հերոսի անվամբ հայտնի պողոտա",
-                "7": "Կապանի փողոց — լեռնային մայրաքաղաքի հմայիչ փողոցները"
-            },
-            "links": [
-                {
-                    "name": "Վիքիպեդիա - Կապան",
-                    "url": "https://hy.wikipedia.org/wiki/%D4%BF%D5%A1%D5%BA%D5%A1%D5%B6"
-                },
-                {
-                    "name": "Սյունիքի մարզպետարան",
-                    "url": "http://syunik.mtad.am/"
-                }
-            ]
-        },
-        "goris": {
-            "climate": "Լեռնային",
-            "bestVisit": "Հունիս - Սեպտեմբեր",
-            "history": "Գորիսը համարվում է Հայաստանի ամենագեղեցիկ քաղաքներից մեկը՝ հայտնի իր 19-րդ դարի ինքնատիպ ճարտարապետությամբ և քարանձավային բնակավայրերով։ Քաղաքը նախագծվել է գերմանացի ճարտարապետների կողմից և ունի յուրահատուկ ուղղանկյուն հատակագիծ։ Պատմականորեն Գորիսը եղել է առևտրային և մշակութային կարևոր կենտրոն՝ Զանգեզուրի լեռների սրտում։ Հին Գորիսի քարանձավային քաղաքը վկայում է դարեր շարունակ ժայռերի մեջ ապրող մարդկանց կենցաղի մասին։",
-            "attractions": {
-                "0": "Tatev Monastery - 9-րդ դարի հայտնի վանք",
-                "1": "Old town - ավանդական ճարտարապետություն",
-                "2": "Khndzoresk swinging bridge - Շունչ կտրող կամուրջ կիրճի վրա"
-            },
-            "links": [
-                {
-                    "name": "Վիքիպեդիա - Գորիս",
-                    "url": "https://hy.wikipedia.org/wiki/%D4%B3%D5%B8%D6%80%D5%AB%D5%BD"
-                }
-            ]
-        },
-        "meghri": {
-            "climate": "Տաք և չոր",
-            "bestVisit": "Ապրիլ - Մայ",
-            "history": "Իրանի սահմանին գտնվող Մեղրին Հայաստանի ամենատաք քաղաքն է։ Այն ունի հարուստ պատմություն, որը սկսվում է դեռևս ուրարտական շրջանից։ Քաղաքը հայտնի է իր նեղ փողոցներով, 17-րդ դարի եզակի որմնանկարներով եկեղեցիներով և Մեղրիի բերդով, որը պաշտպանել է Հայաստանի հարավային սահմանները։ Մեղրին հաճախ անվանում են երկրի «Հարավային դարպաս»։",
-            "attractions": {
-                "0": "Մեղրու բերդ - հնագույն պաշտպանական կառույց",
-                "1": "Հին քաղաքի կամուրջ - պատմական Մետաքսի ճանապարհի հատված",
-                "2": "Մեղրու նրբանցք - հին քաղաքի ավանդական փողոց"
-            },
-            "links": [
-                {
-                    "name": "Վիքիպեդիա - Մեղրի",
-                    "url": "https://hy.wikipedia.org/wiki/%D5%84%D5%A5%D5%B2%D6%80%D5%AB"
-                }
-            ]
-        },
-        "sisian": {
-            "climate": "Չափավոր",
-            "bestVisit": "Ապրիլ - Նոյեմբեր",
-            "history": "Սիսիանը հանդիսանում է Հայաստանի հնագույն բնակավայրերից մեկը, որտեղ գտնվում է 3500-ամյա Զորաց քարեր (Քարահունջ) աստղադիտարանը։ Տարածաշրջանը բնակեցված է եղել դեռևս բրոնզե դարից։ Միջնադարում այն եղել է նշանակալի մշակութային և հոգևոր կենտրոն։ Քաղաքը գտնվում է Որոտան գետի ափին և շրջապատված է բարձր լեռներով ու հրաբխային լանդշաֆտներով։",
-            "attractions": {
-                "0": "Zorats stones - հայտնի հնագիտական կամուրջ",
-                "1": "Selim caravanserai - միջեւ ճանապարհի պալատ",
-                "2": "Ancient sites - պատմական վայրեր"
-            },
-            "links": [
-                {
-                    "name": "Վիքիպեդիա - Սիսիան",
-                    "url": "https://hy.wikipedia.org/wiki/%D5%8D%D5%AB%D5%BD%D5%AB%D5%A1%D5%B6"
-                }
-            ]
-        },
-        "agarak": {
-            "climate": "Տաք և չոր",
-            "bestVisit": "Ապրիլ - Սեպտեմբեր",
-            "history": "Ագարակը Սյունիքի հարավային քաղաքն է, որը գտնվում է Արաքս գետի ձախ ափին։ Հիմնադրվել է 1950 թվականին որպես հանքարդյունաբերական բնակավայր և դարձել է պղնձի ու մոլիբդենի արտադրության կարևորագույն կենտրոն։ Տաք կլիման և Իրանի հետ սահմանին գտնվելը այն դարձնում են արդյունաբերության և բնության յուրահատուկ խաչմերուկ։",
-            "attractions": {
-                "0": "Ագարակի հնավայր - Բրոնզե դարի ժայռափոր համալիր և դամբարաններ",
-                "1": "Ծորի ջրվեժ - Կարճևանի մոտ գտնվող հիասքանչ ջրվեժ՝ շրջապատված գեղեցիկ բնությամբ",
-                "2": "Հին Ագարակ - պատմական լքված բնակավայր՝ ավանդական քարե տներով"
-            },
-            "links": [
-                {
-                    "name": "Վիքիպեդիա - Ագարակ",
-                    "url": "https://hy.wikipedia.org/wiki/%D4%B1%D5%A3%D5%A1%D6%80%D5%A1%D5%AF_(%D5%8D%D5%B5%D5%B8%D6%82%D5%B6%D5%AB%D6%84%D5%AB_%D5%B4%D5%A1%D6%80%D5%A6)"
-                }
-            ]
-        },
-        "qajaran": {
-            "climate": "Լեռնային",
-            "bestVisit": "Մայիս - Հոկտեմբեր",
-            "history": "Քաջարանը Հայաստանի ամենաբարձրադիր քաղաքներից է՝ տեղակայված մոտ 1900-2100 մետր բարձրության վրա։ Հիմնադրվել է 1958 թվականին և կառուցվել է հսկայական հանքավայրի շուրջ։ Քաղաքը շրջապատված է Զանգեզուրի լեռներով և հայտնի է իր մաքուր լեռնային օդով և միջով անցնող Ողջի գետով։",
-            "attractions": {
-                "0": "Քաջարանի Արջի հուշարձան - քաղաքի խորհրդանիշը",
-                "1": "Քաջարանի քաղաքային զբոսայգի - Մարտիկի հուշարձանով",
-                "2": "Լիճքի ջրվեժ - հիասքանչ բնական գեղեցկություն կիրճում"
-            },
-            "links": [
-                {
-                    "name": "Վիքիպեդիա - Քաջարան",
-                    "url": "https://hy.wikipedia.org/wiki/%D5%94%D5%A1%D5%BD%D5%A1%D6%80%D5%A1%D5%B6"
-                }
-            ]
-        }
+    "meghri": {
+      "name": "Մեղրի",
+      "description": "Հայաստանի ամենահարավային քաղաքը՝ մեղմ կլիմայով։",
+      "founding": "906 թ.",
+      "size": "3 կմ²",
+      "population": "~4,500"
     },
-    "trips_data": {
-        "tatev-center": {
-            "name": "Tatev Adventure Center",
-            "city": "Goris",
-            "description": "Պատմական Թաղեղի մոտ գտնվող արկածային կենտրոն",
-            "duration": "3-5 hours",
-            "difficulty": "Medium",
-            "price": "₽ 25,000",
-            "activities": {
-                "0": "Zipline (2km)",
-                "1": "Monastery visits",
-                "2": "Hiking tours",
-                "3": "Photography"
-            }
-        },
-        "kapan-hiking": {
-            "name": "Kapan Hiking Base",
-            "city": "Kapan",
-            "description": "Կապանի գոգավորի շուրջ հիացմունքային բնասիր ամբիոն",
-            "duration": "4-6 hours",
-            "difficulty": "Medium to Hard",
-            "price": "₽ 20,000",
-            "activities": {
-                "0": "Mountain trails",
-                "1": "Gorge exploration",
-                "2": "Local guides",
-                "3": "Picnics"
-            }
-        },
-        "goris-cultural": {
-            "name": "Goris Cultural Center",
-            "city": "Goris",
-            "description": "Գորիսի մշակութային հարստության կենտրոն",
-            "duration": "3-4 hours",
-            "difficulty": "Easy",
-            "price": "₽ 15,000",
-            "activities": {
-                "0": "Museum tours",
-                "1": "Basalt columns",
-                "2": "Traditional crafts",
-                "3": "Local art"
-            }
-        },
-        "meghri-border": {
-            "name": "Meghri Border Tours",
-            "city": "Meghri",
-            "description": "Սահմանային տեսարժան վայրերի դիտում",
-            "duration": "5-7 hours",
-            "difficulty": "Hard",
-            "price": "₽ 30,000",
-            "activities": {
-                "0": "Border views",
-                "1": "Fortress exploration",
-                "2": "Nature reserve",
-                "3": "Photography"
-            }
-        },
-        "sisian-exploration": {
-            "name": "Sisian Exploration Hub",
-            "city": "Sisian",
-            "description": "Հնագիտական այցերի միջեւ կենտրոն",
-            "duration": "6-8 hours",
-            "difficulty": "Medium",
-            "price": "₽ 28,000",
-            "activities": {
-                "0": "Zorats stones",
-                "1": "Ancient sites",
-                "2": "Caravanserai",
-                "3": "Historical tours"
-            }
-        }
+    "qajaran": {
+      "name": "Քաջարան",
+      "description": "Արևելյան Սյունիքի արդյունաբերական քաղաք, հանքարդյունաբերությամբ հայտնի։",
+      "founding": "1958 թ.",
+      "size": "4.1 կմ²",
+      "population": "~8,000"
     },
-    "footer": {
-        "rights": "© 2026 Բոլոր իրավունքները պաշտպանված են",
-        "history": "Պատմություն",
-        "culture": "Մշակույթ",
-        "tourism": "Տուրիզմ",
-        "cities": "Քաղաքները",
-        "product": "Քո Շապիկը",
-        "privacy_policy": "Գաղտնիություն",
-        "contact": "Կապ",
-        "explore": "Բացահայտեք",
-        "support": "Աջակցություն",
-        "your_city": "Քո Քաղաք",
-        "stay_connected": "Մնացեք կապի մեջ",
-        "road": "Սյունիքի ճանապարհ",
-        "about": "Մեր Մասին"
-    },
-    "trip_details": {
-        "features": "Գործառույթներ",
-        "duration": "Տևողություն",
-        "difficulty": "Դժվարություն",
-        "price": "Գինը",
-        "book_now": "Գրանցել Այժմ",
-        "population": "Բնակչություն",
-        "attractions": "Հայտնի վայրեր",
-        "climate": "Կլիմա",
-        "best_visit": "Լավագույն այցի ժամանակ",
-        "book_tour": "Պատկերել Տուր"
-    },
-    "home_page": {
-        "hero": {
-            "title": "ՍՅՈՒՆԻՔ",
-            "subtitle": "Հավերժական լեռների և աննվաճ ոգու աշխարհ"
-        },
-        "info": {
-            "title": "Բացահայտեք Սյունիքը",
-            "description_1": "Սյունիքի մարզը Հայաստանի Հանրապետության հարավային դարպասն է՝ հայտնի իր բազմադարյա պատմությամբ, հզոր բերդերով և շունչ կտրող բնությամբ։ Այն հանդիսանում է հայոց պետականության և ոգու ամրոցը։",
-            "description_two": "Այստեղ է գտնվում աշխարհահռչակ <span>Տաթևի վանքը</span> և «Տաթևեր» ճոպանուղին։ Սյունիքը հարուստ է նաև բնական հրաշալիքներով՝ Շաքիի ջրվեժից մինչև Խնձորեսկի ճոճվող կամուրջը և Որոտանի կիրճը։",
-            "learn_more": "Բացահայտել Ավելին",
-            "image_label": "Բնություն",
-            "image_caption": "Զանգեզուրի լեռներ"
-        },
-        "map": {
-            "title": "Տեղադրությունը Քարտեզի Վրա",
-            "subtitle": "Բացահայտեք Սյունիքի գանձերը",
-            "loading": "Քարտեզի բեռնում..."
-        },
-        "card_navigation": {
-            "label": "Բացահայտեք",
-            "title": "Բացահայտեք Սյունիքի Ամեն Ինչը",
-            "subtitle": "Հնագույն թագավորություններից մինչև մաքուր բնություն — ուսումնասիրեք պատմությունը, ծրագրեք ձեր ճամփորդությունը և բերեք Սյունիքի մի կտոր տուն։",
-            "explore": "Բացահայտել",
-            "history_title": "Սյունիքի Պատմությունը",
-            "history_desc": "Ուղևորություն դարերի միջով՝ հայոց պետականության, լեգենդար թագավորների և Սյունիքի ոգին ձևավորած հերոսամարտերի:",
-            "history_badge": "Ժառանգություն",
-            "trips_title": "Ճամփորդություն և Արկածներ",
-            "trips_desc": "Բացահայտեք ուղեկցորդ էքսկուրսիաներ, արշավուղիներ, հին վանքեր և Սյունիքի շունչ կտրող բնական հրաշքները:",
-            "trips_badge": "Տուրիզմ",
-            "cities_title": "Սյունիքի Քաղաքները",
-            "cities_desc": "Ուսումնասիրեք Կապանը, Գորիսը, Մեղրին, Սիսիանը — յուրաքանչյուր քաղաք ունի իր բնավորությունը, պատմությունն ու բնությունը:",
-            "cities_badge": "Վայրեր",
-            "product_title": "Խուստուփ Լեռան Ոգին",
-            "product_desc": "Ձեզ հետ կրեք Սյունիքի մի կտոր: Բացառիկ, ձեռքով ստեղծված շապիկ՝ ոգեշնչված լեգենդար Խուստուփ լեռից:",
-            "product_badge": "Խանութ",
-            "contact_title": "Կապ Մեզ Հետ",
-            "contact_desc": "Հարց ունե՞ք, ցանկանո՞ւմ եք ամրագրել տուր, կամ պարզապես ողջունե՞ք: Մենք ուրախ կլինենք լսել ձեզ:",
-            "contact_badge": "Աջակցություն"
-        }
-    },
-    "history_page": {
-        "hero": {
-            "title_prefix": "ՍՅՈՒՆԻՔԻ",
-            "title_suffix": "ՊԱՏՄՈՒԹՅՈՒՆԸ",
-            "kingdom": {
-                "title_prefix": "Սյունյաց",
-                "title_suffix": "Թագավորություն",
-                "p1": "Սյունյաց աշխարհը դարեր շարունակ եղել է հայոց պետականության ամուր հենասյուներից մեկը։ Իր ռազմավարական դիրքի և հոգևոր-մշակութային ներուժի շնորհիվ Սյունիքը կարևոր դեր է կատարել հայկական ինքնության և պետական մտածողության ձևավորման գործընթացում։",
-                "p2": "10-րդ դարի երկրորդ կեսին այստեղ ձևավորվեց  <strong>Սյունիքի Թագավորությունը</strong> (հայտնի նաև որպես Կապանի Թագավորություն)՝ որպես անկախ և ինքնիշխան հայկական պետություն։ Թագավորությունը գոյություն է ունեցել մինչև 1170 թվականը՝ դառնալով տարածաշրջանի քաղաքական, վարչական և մշակութային նշանակալի կենտրոն։",
-                "p3": "Թագավորության մայրաքաղաքը՝ <strong>Կապան բերդաքաղաքը</strong>, ծառայել է ոչ միայն որպես պաշտպանական հզոր ամրոց, այլև որպես պետական կառավարման և մշակութային կյանքի կենտրոն։ Սյունիքի Թագավորությունը իր պատմական առաքելությամբ կարևոր դեր է ունեցել հայկական պետականության պահպանման և տարածաշրջանի կայունության ապահովման գործում։"
-            },
-            "war": {
-                "label": "Պայքար և Հաղթանակ",
-                "title_prefix": "Ազատագրական",
-                "title_suffix": "Պայքարը",
-                "p1": "Սյունիքի պատմությունը լի է հերոսական դրվագներով։ 18-րդ դարի սկզբին <strong>Դավիթ Բեկի</strong>  գլխավորությամբ սկսված ազատագրական պայքարը ապացուցեց, որ միասնականության դեպքում հնարավոր է դիմակայել անգամ ամենահզոր թշնամուն։",
-                "p2": "Հալիձորի ճակատամարտը և Գարեգին Նժդեհի ղեկավարած Լեռնահայաստանի հերոսամարտերը ոչ միայն պաշտպանեցին Սյունիքը, այլև ապահովեցին նրա հայկական մնալը՝ դառնալով հայրենասիրության և ռազմական տաղանդի վառ օրինակներ։"
-            },
-            "nzhdeh": {
-                "label": "ԼԵՌՆԱՀԱՅԱՍՏԱՆ",
-                "title_prefix": "Սյունիքի",
-                "title_suffix": "Հերոսամարտը",
-                "subtitle": "Գարեգին Նժդեհ և Անմահ Ոգի",
-                "p1": "1919-1921 թվականներին, երբ Հայաստանի գոյությունը վտանգված էր, <strong>Գարեգին Նժդեհը</strong> Սյունիքի լեռներում կազմակերպեց Լեռնահայաստանի ինքնապաշտպանությունը։ Նրա երկաթյա կամքն ու ռազմավարական հանճարը համախմբեցին սյունեցիներին՝ մղելու կենաց-մահու պայքար ընդդեմ զավթիչների։",
-                "p2": "Նժդեհի առաջնորդությամբ Սյունիքը դարձավ անառիկ միջնաբերդ։ Տաթևի վանքում հռչակվեց Լեռնահայաստանի Հանրապետությունը, որը վճռորոշ դեր խաղաց Սյունիքը Հայաստանի կազմում պահպանելու գործում։",
-                "p3": "«Մի ժողովուրդ, որի որդիները հավասար չեն օրենքի և մահվան առջև՝ հաղթական հայրենիք չի ունենա»։ Այս գաղափարախոսությամբ Նժդեհը կերտեց հայոց պատմության ամենափառահեղ էջերից մեկը։",
-                "quote": "«Սյունիքը մեր ողնաշարն է, առանց որի Հայաստանը չի կարող գոյություն ունենալ։»",
-                "image_caption": "Լեռնահայաստան • 1921"
-            },
-            "culture": {
-                "title_prefix": "Մշակութային",
-                "title_suffix": "Ժառանգություն",
-                "description": "Սյունիքը հայտնի է ոչ միայն իր բերդերով, այլև հոգևոր կենտրոններով։ Տաթևի վանքը և տարածաշրջանի մյուս վանական համալիրները դարեր շարունակ եղել են գիտության, հավատքի և մշակույթի կարևոր օջախներ։",
-                "tatev": "Տաթևի Վանք",
-                "tatev_desc": "9-րդ դարի ճարտարապետական գլուխգործոց և Սյունիքի հոգևոր կենտրոն",
-                "vahanavank": "Վահանավանք",
-                "vahanavank_desc": "Սյունիքի միջնադարյան կարևորագույն վանական համալիրներից մեկը",
-                "zorats": "Զորաց Քարեր",
-                "zorats_desc": "Հնագույն աստղադիտարան և եզակի մշակութային հուշարձան"
-            }
-        },
-        "map_popups": {
-            "kapan": {
-                "name": "Կապան",
-                "desc": "Սյունիքի մարզկենտրոնը"
-            },
-            "goris": {
-                "name": "Գորիս",
-                "desc": "Քարանձավային քաղաք"
-            },
-            "tatev": {
-                "name": "Տաթևի վանք",
-                "desc": "Հոգևոր կենտրոն"
-            },
-            "meghri": {
-                "name": "Մեղրի",
-                "desc": "Հայաստանի հարավային դարպաս"
-            },
-            "sisian": {
-                "name": "Սիսիան",
-                "desc": "Հնագիտական վայր"
-            },
-            "qajaran": {
-                "name": "Քաջարան",
-                "desc": "Արդյունաբերական քաղաք"
-            },
-            "agarak": {
-                "name": "Ագարակ",
-                "desc": "Հարավային բնակավայր"
-            }
-        },
-        "privacy_policy": {
-            "title": "Գաղտնիության Քաղաքականություն",
-            "last_updated": "Վերջին թարմացումը՝ Հունվար 2026",
-            "introduction": "Սույն Գաղտնիության քաղաքականությունը նկարագրում է, թե ինչպես է Syunik Dreams-ը հավաքում, օգտագործում և պաշտպանում Ձեր տեղեկությունները մեր կայքից օգտվելիս:",
-            "collection_title": "1. Տեղեկությունների հավաքագրում",
-            "collection_text": "Մենք հավաքում ենք տեղեկություններ, որոնք Դուք ուղղակիորեն տրամադրում եք մեզ, օրինակ՝ տուր ամրագրելիս, ապրանք գնելիս կամ մեզ հետ կապ հաստատելիս: Դրանք կարող են ներառել Ձեր անունը, էլ. փոստը, հեռախոսահամարը և վճարային տվյալները:",
-            "usage_title": "2. Տեղեկությունների օգտագործում",
-            "usage_text": "Մենք օգտագործում ենք հավաքագրված տեղեկությունները մեր ծառայությունները մատուցելու և բարելավելու, գործարքները մշակելու, Ձեզ հետ հաղորդակցվելու և հարթակի անվտանգությունն ապահովելու համար:",
-            "security_title": "3. Տվյալների անվտանգություն",
-            "security_text": "Մենք կիրառում ենք համապատասխան տեխնիկական և կազմակերպչական միջոցներ՝ Ձեր անձնական տեղեկությունները չարտոնված մուտքից, փոփոխումից կամ ոչնչացումից պաշտպանելու համար:",
-            "cookies_title": "4. Քուքիներ",
-            "cookies_text": "Մենք օգտագործում ենք քուքիներ և նմանատիպ տեխնոլոգիաներ՝ Ձեր փորձը բարելավելու, կայքի տրաֆիկը վերլուծելու և օգտատերերի վարքագիծը հասկանալու համար:",
-            "contact_info": "Եթե ունեք հարցեր այս Գաղտնիության քաղաքականության վերաբերյալ, խնդրում ենք կապվել մեզ հետ info@syunikdreams.am էլ. հասցեով:"
-        },
-        "contact": {
-            "title": "Կապ Մեզ Հետ",
-            "subtitle": "Մենք սիրով կլսենք Ձեզ: Ուղարկեք մեզ հաղորդագրություն, և մենք կպատասխանենք Ձեզ հնարավորինս շուտ:",
-            "form": {
-                "name": "Անուն Ազգանուն",
-                "email": "Էլ. Հասցե",
-                "message": "Հաղորդագրություն",
-                "placeholder_name": "Հայկ Պողոսյան",
-                "placeholder_email": "hayk@example.com",
-                "placeholder_message": "Ինչպե՞ս կարող ենք օգնել...",
-                "submit": "Ուղարկել",
-                "success": "Շնորհակալություն: Ձեր հաղորդագրությունն ուղարկված է:"
-            },
-            "info": {
-                "title": "Կոնտակտային Տվյալներ",
-                "address_label": "Հասցե",
-                "address_value": "Սյունիքի մարզ, Հայաստան",
-                "email_label": "Էլ. Փոստ",
-                "email_value": "syunikdreams@gmail.com",
-                "phone_label": "Հեռախոս",
-                "phone_value": "+374 99 990797",
-                "social_title": "Հետևեք Մեզ"
-            }
-        },
-        "product": {
-            "title": "Խուստուփ լեռան ոգին",
-            "subtitle": "Սյունիքի երազանքների հավաքածու",
-            "description": "Զգացեք Խուստուփ լեռան վեհաշուք ոգին։ Այս բացառիկ շապիկը լեգենդար գագաթի ձեռքով նկարազարդում է, որը ստեղծվել է նրանց համար, ովքեր իրենց սրտում են կրում Սյունիքը։ Պատրաստված է 100% բարձրորակ բամբակից՝ առավելագույն հարմարավետության և դիմացկունության համար։",
-            "madeBy": "Նախագծված և պատրաստված է սեփականատիրոջ կողմից Սյունիքում",
-            "price_label": "AMD / Կտոր",
-            "select_size": "Ընտրեք չափը",
-            "select_size_alert": "Խնդրում ենք նախ ընտրել չափսը:",
-            "size_chart": "Չափերի աղյուսակ",
-            "size_note": "*Մենք ունենք բոլոր չափսերը ձեզ համար։",
-            "order_now": "Պատվիրել Հիմա",
-            "shipping_note": "Անվտանգ վճարում և արագ առաքում ամբողջ Հայաստանում",
-            "details_title": "Ապրանքի մանրամասներ",
-            "bullet_1": "100% բարձրորակ բամբակ՝ հարմարավետության և ամրության համար",
-            "bullet_2": "Ձեռքով նկարված Խուստուփ լեռան բացառիկ պատկերազարդում",
-            "bullet_3": "Հասանելի չափսեր՝ S, M, L, XL",
-            "bullet_4": "Լվացվում է մեքենայով և հեշտ է խնամել",
-            "bullet_5": "Կատարյալ նվեր բնության և արկածների սիրահարների համար",
-            "success_modal_title": "Պատվերը հաջողությամբ ընդունված է:",
-            "delivery_info": "Առաքման ժամկետը՝ 2-3 աշխատանքային օր Հայաստանի ողջ տարածքում:",
-            "success_close": "Հիանալի է",
-            "added_to_cart": "ապրանքը ավելացված է ձեր ընտրությանը"
-        },
-        "about_road": {
-            "title_prefix": "ՃԱՆԱՊԱՐՀ ԴԵՊԻ",
-            "title_suffix": "ՍՅՈՒՆԻՔ",
-            "timeline_title": "ՃԱՄՓՈՐԴՈՒԹՅԱՆ ՕՐԱՑՈՒՅՑ",
-            "timeline_title_sub": "Ճանապարհի Բացահայտումը",
-            "subtitle": "Ճամփորդություն Հայաստանի ամենատպավորիչ լեռնանցքներով և գեղատեսիլ դարպասներով:",
-            "introduction": "Սյունիքով դեպի հարավ ձգվող մայրուղին ավելին է, քան պարզապես ճանապարհ. այն պատմության, պետականության և բնության հրաշալի կյանքի զարկերակն է: Սկսվելով Արարատյան դաշտավայրից՝ այն անցնում է խորը գետակիրճերով և բարձրանում ամպերից վեր գտնվող լեռնանցքներով՝ կապելով Հայաստանն իր հարավային դարպասին:",
-            "section_gateway_title": "Սյունյաց Դարպասներ",
-            "section_engineering_title": "Ճարտարապետական Հուշարձան",
-            "section_landmark": "Հուշարձան",
-            "section_gateway_desc": "Վայոց Ձորի և Սյունիքի սահմանին կանգնած հուշարձանը ողջունում է ճանապարհորդներին: Այն բաղկացած է երկու հսկայական քարե կամարներից, որոնք խորհրդանշում են պատմական բերդերի դարպասները և ազդարարում մուտքը դեպի լեռների աշխարհ:",
-            "section_serpentine_title": "Տաթևի Ոլորաններ",
-            "section_serpentine_desc": "Իջնելով դեպի Որոտան գետի կիրճը՝ ճանապարհը վերածվում է կտրուկ ոլորանների հաջորդականության: Տաթևի ոլորանները ճարտարագիտական գլուխգործոց են, որտեղից բացվում են շունչ կտրող տեսարաններ դեպի անդունդն ու հին անապատը:",
-            "section_passes_title": "Լեռնանցքներ",
-            "section_passes_title_sub": "Սիսիանի, Տաշտունի և Մեղրիի Լեռնանցքներ",
-            "section_passes_desc": "Ավելի քան 2300 մետր բարձրության վրա գտնվող Սյունիքի լեռնանցքները ներկայացնում են դրամատիկ լանդշաֆտներ: Այս լեռնանցքներով անցնելիս թվում է, թե ճանապարհորդում եք ամպերի միջով, որտեղ ամռանը մշուշն է ծածկում կանաչ մարգագետինները, իսկ ձմռանը՝ ձյունը:",
-            "tips_title": "Ուղեցույց և Անվտանգություն",
-            "tips_sub": "Կարևոր խորհուրդներ ճանապարհորդության համար",
-            "tip_1_title": "Ստուգեք Եղանակը",
-            "tip_1_desc": "Լեռնանցքներում եղանակը կարող է կտրուկ փոխվել՝ առաջացնելով մշուշ կամ ձյուն, նույնիսկ գարնանը կամ աշնանը:",
-            "tip_2_title": "Լիցքավորման Կայաններ",
-            "tip_2_desc": "Լիցքավորեք վառելիքը խոշոր քաղաքներում (Սիսիան կամ Գորիս), քանի որ հեռավորությունները կայանների միջև կարող են երկար լինել:",
-            "tip_3_title": "Լավագույն Դիտակետերը",
-            "tip_3_desc": "Անպայման կանգնեք «Սյունյաց դարպասներ» հուշարձանի մոտ և Տաթևի դիտակետում՝ գեղեցիկ լուսանկարներ անելու համար:",
-            "timeline_start": "Երևան",
-            "timeline_sisian": "Սիսիան",
-            "timeline_tatev": "Տաթև",
-            "timeline_kapan": "Կապան",
-            "timeline_meghri": "Մեղրի"
-        },
-        "about": {
-            "page_title": "Մեր Մասին",
-            "hero_label": "Մեր Պատմությունը",
-            "hero_title": "Սյունիքի Երազանքներ",
-            "hero_subtitle": "Մենք նվիրված թիմ ենք, որը նվիրված է Սյունիքի մարզի անհավասար գեղեցկությունը, հարուստ պատմությունն ու վառք մշակույթը աշխարհին ներկայացնելու:",
-            "stat_1_value": "6",
-            "stat_1_label": "Քաղաքներ ընդգրկված",
-            "stat_2_value": "50+",
-            "stat_2_label": "Տեսարժան վայրեր",
-            "stat_3_value": "3000+",
-            "stat_3_label": "Տարիների պատմություն",
-            "stat_4_value": "2",
-            "stat_4_label": "Աջակցված լեզուներ",
-            "story_label": "Ովքեր Ենք",
-            "story_title": "Ծնվել Սյունիքի Սիրությունից",
-            "story_p1": "Սյունիքի Երազանքները ստեղծվել է միակ նպատակով՝ Սյունիքի չպատմված պատմություններն ու թաքնված հրաշքները համաշխարհային հանդիսատեսին ներկայացնելու։ Հայաստանի հարավային հատվածում գտնվող Սյունիքը բարձր լեռների, հին վանքերի ու անկոտոր ժողովրդի երկիր է:",
-            "story_p2": "Մեր թիմը միավորում է տեղի պատմաբաններ, ճամորդության սիրահարներ ու տեխնոլոգներ, որոնք միասին ստեղծում են մի թվային հարթակ՝ Տաթևի լեգենդար վանքից մինչև Զորատս Կարերի խորհրդավոր աստղադիտարան ու Կապանի, Գորիսի ու Մեղրիի ջերմ հյուրասիրությունը:",
-            "mission_vision_label": "Նպատակ ու Ուղղություն",
-            "mission_vision_title": "Առաքելություն ու Տեսլական",
-            "mission_title": "Մեր Առաքելությունը",
-            "mission_desc": "Պահպանել, տարածել ու կիսել Սյունիքի մշակույթային ժառանգությունն ու բնական գեղեցկությունը նորարար թվային պատմումների միջոցով՝ այն մատչելի դարձնելով ճամորդների, պատմաբանների ու արկածամտների համար:",
-            "vision_title": "Մեր Տեսլականը",
-            "vision_desc": "Դառնալ Սյունիքի զբոսաշրջության ու մշակույթային բացահայտման ամենավստահելի ու համապարփակ թվային հարթակը՝ զորացնելով տեղի համայնքներին ու միացնելով համաշխարհային հանդիսատեսին Հայաստանի լեռնային սրտի իսկական ոգին:",
-            "values_label": "Ինչին Հավատամք Ենք",
-            "values_title": "Մեր Արժեքները",
-            "value_1_title": "Մշակույթային Պահպանում",
-            "value_1_desc": "Սյունիքի հարուստ պատմության, ավանդույթների ու ժառանգության պահպանումն ապագա սերունդների համար:",
-            "value_2_title": "Իսկական Փորձառություն",
-            "value_2_desc": "Տեղի կյանքի մշակույթի, խոհանոցի ու ավանդույթների ցուցադրումը, ոչ թե տուրիստական կլիշեների:",
-            "value_3_title": "Նորարարություն",
-            "value_3_desc": "Ժամանակակից տեխնոլոգիաների օգտագործումը՝ հնագույն պատմությունները կյանքի կոչելու համար:",
-            "value_4_title": "Համայնքային Ազդեցություն",
-            "value_4_desc": "Տեղի համայնքների աջակցումը՝ պատասխանատու զբոսաշրջության ու տնտեսական աճը տարածաշրջան խթանելով:",
-            "offer_label": "Մեր Հարթակը",
-            "offer_title": "Ինչ Առաջարկում է Սյունիքի Երազանքները",
-            "offer_p1": "Մեր կայքը ձեր համապարփակ դարպասն է Սյունիքի մարզի բացահայտման համար։ Անկախ ձեր պլանավորել ճամբորդություն՝ թե պարզապես հետաքրքրվել Հայաստանի այս զարմանալի անկյունով, մենք տրամադրում ենք ամեն անհրաժեշտը:",
-            "offer_bullet_1": "Ինտերակտիվ քարտեզներ ու մանրամասն քաղաքային ուղեցույցներ Սյունիքի բոլոր 6 քաղաքների համար",
-            "offer_bullet_2": "Մշակված ճամբորդական երթուղարներ պատմական վայրերի, բնության վայրերի ու տեղի ռեստորանների հետ",
-            "offer_bullet_3": "Խորընդհանուր պատմություն՝ հին Սյունիքի թագավորությունից մինչև ժամանակակից դարաշրջան",
-            "offer_bullet_4": "Բազմալեզու աջակցում հայերենով ու անգլերենով՝ ձայնային ուղեցորդման հնարավորությամբ",
-            "cta_title": "Պատրաստ՞ Եք Բացահայտել Սյունիքը:",
-            "cta_desc": "Սկսեք ձեր ճամբորդությունը Հայաստանի ամենագեղեցիկ տարածաշրջաններից մեկով։ Թող լեռները կանչեն ձեզ:",
-            "cta_explore": "Բացահայտել Ճամբորդությունները",
-            "cta_contact": "Կապ Հաստատեք"
-        }
+    "vayk": {
+      "name": "Վայք",
+      "description": "Փոքր լեռնային բնակավայր, հայտնի Բաբա Դաղի համար",
+      "population": "5,000",
+      "climate": "Չափավոր լեռնային",
+      "bestVisit": "Մայիս - Սեպտեմբեր"
     }
+  },
+  "cities_data_details": {
+    "kapan": {
+      "climate": "Չափավոր մեղմ",
+      "bestVisit": "Մայիս - Հոկտեմբեր",
+      "history": "Կապանը Հայաստանի հնագույն բնակավայրերից է, որի արմատները հասնում են մինչև 5-րդ դար։ 10-րդ դարում այն հանդիսացել է Սյունյաց թագավորության մայրաքաղաքը։ Պատմության ընթացքում Կապանը եղել է կարևորագույն պաշտպանական հենակետ և հանքարդյունաբերական կենտրոն։ Քաղաքի անվանումը ծագում է «կապել» բառից՝ մատնանշելով նրա ռազմավարական դիրքը լեռների մեջ։",
+      "attractions": {
+        "0": "Խուստուփ լեռ — Կապանի վրա հառնող խորհրդանշական գագաթ",
+        "1": "Վահանավանք — կիրճում հնագույն հոգևոր ապաստարան",
+        "2": "Բաղաբերդ — Սյունիքը պաշտպանող միջնադարյան ամրոց",
+        "3": "Գարեգին Նժդեհի արձան — ազգային հերոսի հուշարձան",
+        "4": "Կապանի Գլխավոր հրապարակ — քաղաքի կենսագործուն սիրտ",
+        "5": "Քաղաքի կենտրոն — Կապանի կենդանի կենտրոնական թաղամասը",
+        "6": "Նժդեհի փողոց — ազգային հերոսի անվամբ հայտնի պողոտա",
+        "7": "Կապանի փողոց — լեռնային մայրաքաղաքի հմայիչ փողոցները"
+      },
+      "links": [
+        {
+          "name": "Վիքիպեդիա - Կապան",
+          "url": "https://hy.wikipedia.org/wiki/%D4%BF%D5%A1%D5%BA%D5%A1%D5%B6"
+        },
+        {
+          "name": "Սյունիքի մարզպետարան",
+          "url": "http://syunik.mtad.am/"
+        }
+      ]
+    },
+    "goris": {
+      "climate": "Լեռնային",
+      "bestVisit": "Հունիս - Սեպտեմբեր",
+      "history": "Գորիսը համարվում է Հայաստանի ամենագեղեցիկ քաղաքներից մեկը՝ հայտնի իր 19-րդ դարի ինքնատիպ ճարտարապետությամբ և քարանձավային բնակավայրերով։ Քաղաքը նախագծվել է գերմանացի ճարտարապետների կողմից և ունի յուրահատուկ ուղղանկյուն հատակագիծ։ Պատմականորեն Գորիսը եղել է առևտրային և մշակութային կարևոր կենտրոն՝ Զանգեզուրի լեռների սրտում։ Հին Գորիսի քարանձավային քաղաքը վկայում է դարեր շարունակ ժայռերի մեջ ապրող մարդկանց կենցաղի մասին։",
+      "attractions": {
+        "0": "Tatev Monastery - 9-րդ դարի հայտնի վանք",
+        "1": "Old town - ավանդական ճարտարապետություն",
+        "2": "Khndzoresk swinging bridge - Շունչ կտրող կամուրջ կիրճի վրա"
+      },
+      "links": [
+        {
+          "name": "Վիքիպեդիա - Գորիս",
+          "url": "https://hy.wikipedia.org/wiki/%D4%B3%D5%B8%D6%80%D5%AB%D5%BD"
+        },
+        {
+          "name": "Visit Armenia - Goris",
+          "url": "https://armenia.travel/en/destination/goris"
+        }
+      ]
+    },
+    "meghri": {
+      "climate": "Տաք և չոր",
+      "bestVisit": "Ապրիլ - Մայ",
+      "history": "Իրանի սահմանին գտնվող Մեղրին Հայաստանի ամենատաք քաղաքն է։ Այն ունի հարուստ պատմություն, որը սկսվում է դեռևս ուրարտական շրջանից։ Քաղաքը հայտնի է իր նեղ փողոցներով, 17-րդ դարի եզակի որմնանկարներով եկեղեցիներով և Մեղրիի բերդով, որը պաշտպանել է Հայաստանի հարավային սահմանները։ Մեղրին հաճախ անվանում են երկրի «Հարավային դարպաս»։",
+      "attractions": {
+        "0": "Մեղրու բերդ - հնագույն պաշտպանական կառույց",
+        "1": "Հին քաղաքի կամուրջ - պատմական Մետաքսի ճանապարհի հատված",
+        "2": "Մեղրու նրբանցք - հին քաղաքի ավանդական փողոց"
+      },
+      "links": [
+        {
+          "name": "Վիքիպեդիա - Մեղրի",
+          "url": "https://hy.wikipedia.org/wiki/%D5%84%D5%A5%D5%B2%D6%80%D5%AB"
+        }
+      ]
+    },
+    "sisian": {
+      "climate": "Չափավոր",
+      "bestVisit": "Ապրիլ - Նոյեմբեր",
+      "history": "Սիսիանը հանդիսանում է Հայաստանի հնագույն բնակավայրերից մեկը, որտեղ գտնվում է 3500-ամյա Զորաց քարեր (Քարահունջ) աստղադիտարանը։ Տարածաշրջանը բնակեցված է եղել դեռևս բրոնզե դարից։ Միջնադարում այն եղել է նշանակալի մշակութային և հոգևոր կենտրոն։ Քաղաքը գտնվում է Որոտան գետի ափին և շրջապատված է բարձր լեռներով ու հրաբխային լանդշաֆտներով։",
+      "attractions": {
+        "0": "Zorats stones - հայտնի հնագիտական կամուրջ",
+        "1": "Selim caravanserai - միջեւ ճանապարհի պալատ",
+        "2": "Ancient sites - պատմական վայրեր"
+      },
+      "links": [
+        {
+          "name": "Վիքիպեդիա - Սիսիան",
+          "url": "https://hy.wikipedia.org/wiki/%D5%8D%D5%AB%D5%BD%D5%AB%D5%A1%D5%B6"
+        },
+        {
+          "name": "Karahunj Observatory",
+          "url": "http://www.karahunj.com/"
+        }
+      ]
+    },
+    "agarak": {
+      "climate": "Տաք և չոր",
+      "bestVisit": "Ապրիլ - Սեպտեմբեր",
+      "history": "Ագարակը Սյունիքի հարավային քաղաքն է, որը գտնվում է Արաքս գետի ձախ ափին։ Հիմնադրվել է 1950 թվականին որպես հանքարդյունաբերական բնակավայր և դարձել է պղնձի ու մոլիբդենի արտադրության կարևորագույն կենտրոն։ Տաք կլիման և Իրանի հետ սահմանին գտնվելը այն դարձնում են արդյունաբերության և բնության յուրահատուկ խաչմերուկ։",
+      "attractions": {
+        "0": "Ագարակի հնավայր - Բրոնզե դարի ժայռափոր համալիր և դամբարաններ",
+        "1": "Ծորի ջրվեժ - Կարճևանի մոտ գտնվող հիասքանչ ջրվեժ՝ շրջապատված գեղեցիկ բնությամբ",
+        "2": "Հին Ագարակ - պատմական լքված բնակավայր՝ ավանդական քարե տներով"
+      },
+      "links": [
+        {
+          "name": "Վիքիպեդիա - Ագարակ",
+          "url": "https://hy.wikipedia.org/wiki/%D4%B1%D5%A3%D5%A1%D6%80%D5%A1%D5%AF_(%D5%8D%D5%B5%D5%B8%D6%82%D5%B6%D5%AB%D6%84%D5%AB_%D5%B4%D5%A1%D6%80%D5%A6)"
+        }
+      ]
+    },
+    "qajaran": {
+      "climate": "Լեռնային",
+      "bestVisit": "Մայիս - Հոկտեմբեր",
+      "history": "Քաջարանը Հայաստանի ամենաբարձրադիր քաղաքներից է՝ տեղակայված մոտ 1900-2100 մետր բարձրության վրա։ Հիմնադրվել է 1958 թվականին և կառուցվել է հսկայական հանքավայրի շուրջ։ Քաղաքը շրջապատված է Զանգեզուրի լեռներով և հայտնի է իր մաքուր լեռնային օդով և միջով անցնող Ողջի գետով։",
+      "attractions": {
+        "0": "Քաջարանի Արջի հուշարձան - քաղաքի խորհրդանիշը",
+        "1": "Քաջարանի քաղաքային զբոսայգի - Մարտիկի հուշարձանով",
+        "2": "Լիճքի ջրվեժ - հիասքանչ բնական գեղեցկություն կիրճում"
+      },
+      "links": [
+        {
+          "name": "Վիքիպեդիա - Քաջարան",
+          "url": "https://hy.wikipedia.org/wiki/%D5%94%D5%A1%D5%BD%D5%A1%D6%80%D5%A1%D5%B6"
+        }
+      ]
+    }
+  },
+  "trips_data": {
+    "tatev-center": {
+      "name": "Tatev Adventure Center",
+      "city": "Goris",
+      "description": "Պատմական Թաղեղի մոտ գտնվող արկածային կենտրոն",
+      "duration": "3-5 hours",
+      "difficulty": "Medium",
+      "price": "₽ 25,000",
+      "activities": {
+        "0": "Zipline (2km)",
+        "1": "Monastery visits",
+        "2": "Hiking tours",
+        "3": "Photography"
+      }
+    },
+    "kapan-hiking": {
+      "name": "Kapan Hiking Base",
+      "city": "Kapan",
+      "description": "Կապանի գոգավորի շուրջ հիացմունքային բնասիր ամբիոն",
+      "duration": "4-6 hours",
+      "difficulty": "Medium to Hard",
+      "price": "₽ 20,000",
+      "activities": {
+        "0": "Mountain trails",
+        "1": "Gorge exploration",
+        "2": "Local guides",
+        "3": "Picnics"
+      }
+    },
+    "goris-cultural": {
+      "name": "Goris Cultural Center",
+      "city": "Goris",
+      "description": "Գորիսի մշակութային հարստության կենտրոն",
+      "duration": "3-4 hours",
+      "difficulty": "Easy",
+      "price": "₽ 15,000",
+      "activities": {
+        "0": "Museum tours",
+        "1": "Basalt columns",
+        "2": "Traditional crafts",
+        "3": "Local art"
+      }
+    },
+    "meghri-border": {
+      "name": "Meghri Border Tours",
+      "city": "Meghri",
+      "description": "Սահմանային տեսարժան վայրերի դիտում",
+      "duration": "5-7 hours",
+      "difficulty": "Hard",
+      "price": "₽ 30,000",
+      "activities": {
+        "0": "Border views",
+        "1": "Fortress exploration",
+        "2": "Nature reserve",
+        "3": "Photography"
+      }
+    },
+    "sisian-exploration": {
+      "name": "Sisian Exploration Hub",
+      "city": "Sisian",
+      "description": "Հնագիտական այցերի միջեւ կենտրոն",
+      "duration": "6-8 hours",
+      "difficulty": "Medium",
+      "price": "₽ 28,000",
+      "activities": {
+        "0": "Zorats stones",
+        "1": "Ancient sites",
+        "2": "Caravanserai",
+        "3": "Historical tours"
+      }
+    }
+  },
+  "footer": {
+    "rights": "© 2026 Բոլոր իրավունքները պաշտպանված են",
+    "history": "Պատմություն",
+    "culture": "Մշակույթ",
+    "tourism": "Տուրիզմ",
+    "cities": "Քաղաքները",
+    "product": "Քո Շապիկը",
+    "privacy_policy": "Գաղտնիություն",
+    "contact": "Կապ",
+    "explore": "Բացահայտեք",
+    "support": "Աջակցություն",
+    "your_city": "Քո Քաղաք",
+    "stay_connected": "Մնացեք կապի մեջ",
+    "road": "Սյունիքի ճանապարհ",
+    "about": "Մեր Մասին"
+  },
+  "trip_details": {
+    "features": "Գործառույթներ",
+    "duration": "Տևողություն",
+    "difficulty": "Դժվարություն",
+    "price": "Գինը",
+    "book_now": "Գրանցել Այժմ",
+    "population": "Բնակչություն",
+    "attractions": "Հայտնի վայրեր",
+    "climate": "Կլիմա",
+    "best_visit": "Լավագույն այցի ժամանակ",
+    "book_tour": "Պատկերել Տուր"
+  },
+  "home_page": {
+    "hero": {
+      "title": "ՍՅՈՒՆԻՔ",
+      "subtitle": "Հավերժական լեռների և աննվաճ ոգու աշխարհ"
+    },
+    "info": {
+      "title": "Բացահայտեք Սյունիքը",
+      "description_1": "Սյունիքի մարզը Հայաստանի Հանրապետության հարավային դարպասն է՝ հայտնի իր բազմադարյա պատմությամբ, հզոր բերդերով և շունչ կտրող բնությամբ։ Այն հանդիսանում է հայոց պետականության և ոգու ամրոցը։",
+      "description_two": "Այստեղ է գտնվում աշխարհահռչակ <span>Տաթևի վանքը</span> և «Տաթևեր» ճոպանուղին։ Սյունիքը հարուստ է նաև բնական հրաշալիքներով՝ Շաքիի ջրվեժից մինչև Խնձորեսկի ճոճվող կամուրջը և Որոտանի կիրճը։",
+      "learn_more": "Բացահայտել Ավելին",
+      "image_label": "Բնություն",
+      "image_caption": "Զանգեզուրի լեռներ"
+    },
+    "map": {
+      "title": "Տեղադրությունը Քարտեզի Վրա",
+      "subtitle": "Բացահայտեք Սյունիքի գանձերը",
+      "loading": "Քարտեզի բեռնում..."
+    },
+    "card_navigation": {
+      "label": "Բացահայտեք",
+      "title": "Բացահայտեք Սյունիքի Ամեն Ինչը",
+      "subtitle": "Հնագույն թագավորություններից մինչև մաքուր բնություն — ուսումնասիրեք պատմությունը, ծրագրեք ձեր ճամփորդությունը և բերեք Սյունիքի մի կտոր տուն։",
+      "explore": "Բացահայտել",
+      "history_title": "Սյունիքի Պատմությունը",
+      "history_desc": "Ուղևորություն դարերի միջով՝ հայոց պետականության, լեգենդար թագավորների և Սյունիքի ոգին ձևավորած հերոսամարտերի:",
+      "history_badge": "Ժառանգություն",
+      "trips_title": "Ճամփորդություն և Արկածներ",
+      "trips_desc": "Բացահայտեք ուղեկցորդ էքսկուրսիաներ, արշավուղիներ, հին վանքեր և Սյունիքի շունչ կտրող բնական հրաշքները:",
+      "trips_badge": "Տուրիզմ",
+      "cities_title": "Սյունիքի Քաղաքները",
+      "cities_desc": "Ուսումնասիրեք Կապանը, Գորիսը, Մեղրին, Սիսիանը — յուրաքանչյուր քաղաք ունի իր բնավորությունը, պատմությունն ու բնությունը:",
+      "cities_badge": "Վայրեր",
+      "product_title": "Խուստուփ Լեռան Ոգին",
+      "product_desc": "Ձեզ հետ կրեք Սյունիքի մի կտոր: Բացառիկ, ձեռքով ստեղծված շապիկ՝ ոգեշնչված լեգենդար Խուստուփ լեռից:",
+      "product_badge": "Խանութ",
+      "contact_title": "Կապ Մեզ Հետ",
+      "contact_desc": "Հարց ունե՞ք, ցանկանո՞ւմ եք ամրագրել տուր, կամ պարզապես ողջունե՞ք: Մենք ուրախ կլինենք լսել ձեզ:",
+      "contact_badge": "Աջակցություն"
+    }
+  },
+  "history_page": {
+    "hero": {
+      "title_prefix": "ՍՅՈՒՆԻՔԻ",
+      "title_suffix": "ՊԱՏՄՈՒԹՅՈՒՆԸ",
+      "kingdom": {
+        "title_prefix": "Սյունյաց",
+        "title_suffix": "Թագավորություն",
+        "p1": "Սյունյաց աշխարհը դարեր շարունակ եղել է հայոց պետականության ամուր հենասյուներից մեկը։ Իր ռազմավարական դիրքի և հոգևոր-մշակութային ներուժի շնորհիվ Սյունիքը կարևոր դեր է կատարել հայկական ինքնության և պետական մտածողության ձևավորման գործընթացում։",
+        "p2": "10-րդ դարի երկրորդ կեսին այստեղ ձևավորվեց  <strong>Սյունիքի Թագավորությունը</strong> (հայտնի նաև որպես Կապանի Թագավորություն)՝ որպես անկախ և ինքնիշխան հայկական պետություն։ Թագավորությունը գոյություն է ունեցել մինչև 1170 թվականը՝ դառնալով տարածաշրջանի քաղաքական, վարչական և մշակութային նշանակալի կենտրոն։",
+        "p3": "Թագավորության մայրաքաղաքը՝ <strong>Կապան բերդաքաղաքը</strong>, ծառայել է ոչ միայն որպես պաշտպանական հզոր ամրոց, այլև որպես պետական կառավարման և մշակութային կյանքի կենտրոն։ Սյունիքի Թագավորությունը իր պատմական առաքելությամբ կարևոր դեր է ունեցել հայկական պետականության պահպանման և տարածաշրջանի կայունության ապահովման գործում։"
+      },
+      "war": {
+        "label": "Պայքար և Հաղթանակ",
+        "title_prefix": "Ազատագրական",
+        "title_suffix": "Պայքարը",
+        "p1": "Սյունիքի պատմությունը լի է հերոսական դրվագներով։ 18-րդ դարի սկզբին <strong>Դավիթ Բեկի</strong>  գլխավորությամբ սկսված ազատագրական պայքարը ապացուցեց, որ միասնականության դեպքում հնարավոր է դիմակայել անգամ ամենահզոր թշնամուն։",
+        "p2": "Հալիձորի ճակատամարտը և Գարեգին Նժդեհի ղեկավարած Լեռնահայաստանի հերոսամարտերը ոչ միայն պաշտպանեցին Սյունիքը, այլև ապահովեցին նրա հայկական մնալը՝ դառնալով հայրենասիրության և ռազմական տաղանդի վառ օրինակներ։"
+      },
+      "nzhdeh": {
+        "label": "ԼԵՌՆԱՀԱՅԱՍՏԱՆ",
+        "title_prefix": "Սյունիքի",
+        "title_suffix": "Հերոսամարտը",
+        "subtitle": "Գարեգին Նժդեհ և Անմահ Ոգի",
+        "p1": "1919-1921 թվականներին, երբ Հայաստանի գոյությունը վտանգված էր, <strong>Գարեգին Նժդեհը</strong> Սյունիքի լեռներում կազմակերպեց Լեռնահայաստանի ինքնապաշտպանությունը։ Նրա երկաթյա կամքն ու ռազմավարական հանճարը համախմբեցին սյունեցիներին՝ մղելու կենաց-մահու պայքար ընդդեմ զավթիչների։",
+        "p2": "Նժդեհի առաջնորդությամբ Սյունիքը դարձավ անառիկ միջնաբերդ։ Տաթևի վանքում հռչակվեց Լեռնահայաստանի Հանրապետությունը, որը վճռորոշ դեր խաղաց Սյունիքը Հայաստանի կազմում պահպանելու գործում։",
+        "p3": "«Մի ժողովուրդ, որի որդիները հավասար չեն օրենքի և մահվան առջև՝ հաղթական հայրենիք չի ունենա»։ Այս գաղափարախոսությամբ Նժդեհը կերտեց հայոց պատմության ամենափառահեղ էջերից մեկը։",
+        "quote": "«Սյունիքը մեր ողնաշարն է, առանց որի Հայաստանը չի կարող գոյություն ունենալ։»",
+        "image_caption": "Լեռնահայաստան • 1921"
+      },
+      "culture": {
+        "title_prefix": "Մշակութային",
+        "title_suffix": "Ժառանգություն",
+        "description": "Սյունիքը հայտնի է ոչ միայն իր բերդերով, այլև հոգևոր կենտրոններով։ Տաթևի վանքը և տարածաշրջանի մյուս վանական համալիրները դարեր շարունակ եղել են գիտության, հավատքի և մշակույթի կարևոր օջախներ։",
+        "tatev": "Տաթևի Վանք",
+        "tatev_desc": "9-րդ դարի ճարտարապետական գլուխգործոց և Սյունիքի հոգևոր կենտրոն",
+        "vahanavank": "Վահանավանք",
+        "vahanavank_desc": "Սյունիքի միջնադարյան կարևորագույն վանական համալիրներից մեկը",
+        "zorats": "Զորաց Քարեր",
+        "zorats_desc": "Հնագույն աստղադիտարան և եզակի մշակութային հուշարձան"
+      },
+      "subtitle": "A heroic path coming from the depths of centuries, recorded on the mountains"
+    },
+    "kingdom": {
+      "title_prefix": "Kingdom of",
+      "title_suffix": "Syunik",
+      "p1": "The world of Syunik has been one of the strong pillars of Armenian statehood for centuries. Due to its strategic position and spiritual-cultural potential, Syunik played an important role in the formation of Armenian identity and state thinking.",
+      "p2": "In the second half of the 10th century, the <strong>Kingdom of Syunik</strong> (also known as the Kingdom of Kapan) was formed here as an independent and sovereign Armenian state. The kingdom existed until 1170, becoming a significant political, administrative, and cultural center of the region.",
+      "p3": "The capital of the kingdom, <strong>Kapan fortress city</strong>, served not only as a powerful defensive fortress but also as a center of state administration and cultural life. With its historical mission, the Kingdom of Syunik played an important role in preserving Armenian statehood and ensuring regional stability."
+    },
+    "war": {
+      "label": "Struggle and Victory",
+      "title_prefix": "Liberation",
+      "title_suffix": "Struggle",
+      "p1": "The history of Syunik is full of heroic episodes. The liberation struggle started in the early 18th century under the leadership of <strong>Davit Bek</strong> proved that in case of unity, it is possible to resist even the most powerful enemy.",
+      "p2": "The Battle of Halidzor and the heroic battles of Mountainous Armenia led by Garegin Nzhdeh not only defended Syunik but also ensured its remaining Armenian, becoming bright examples of patriotism and military talent."
+    },
+    "nzhdeh": {
+      "label": "MOUNTAINOUS ARMENIA",
+      "title_prefix": "Syunik's",
+      "title_suffix": "Heroic Battle",
+      "subtitle": "Garegin Nzhdeh and Immortal Spirit",
+      "p1": "In 1919-1921, when the existence of Armenia was in danger, <strong>Garegin Nzhdeh</strong> organized the self-defense of Mountainous Armenia in the mountains of Syunik. His iron will and strategic genius united the people of Syunik to wage a life-and-death struggle against the invaders.",
+      "p2": "Under Nzhdeh's leadership, Syunik became an impregnable citadel. The Republic of Mountainous Armenia was proclaimed in Tatev Monastery, which played a decisive role in preserving Syunik within Armenia.",
+      "p3": "“A people whose sons are not equal before the law and death will not have a victorious homeland.” With this ideology, Nzhdeh created one of the most glorious pages of Armenian history.",
+      "quote": "“Syunik is our backbone, without which Armenia cannot exist.”",
+      "image_caption": "Mountainous Armenia • 1921"
+    },
+    "culture": {
+      "title_prefix": "Cultural",
+      "title_suffix": "Heritage",
+      "description": "Syunik is known not only for its fortresses but also for its spiritual centers. Tatev Monastery and other monastic complexes of the region have been important centers of science, faith, and culture for centuries.",
+      "tatev": "Tatev Monastery",
+      "tatev_desc": "9th-century architectural masterpiece and spiritual center of Syunik",
+      "vahanavank": "Vahanavank",
+      "vahanavank_desc": "One of the most important medieval monastic complexes of Syunik",
+      "zorats": "Zorats Karer",
+      "zorats_desc": "Ancient observatory and unique cultural monument"
+    }
+  },
+  "map_popups": {
+    "kapan": {
+      "name": "Կապան",
+      "desc": "Սյունիքի մարզկենտրոնը"
+    },
+    "goris": {
+      "name": "Գորիս",
+      "desc": "Քարանձավային քաղաք"
+    },
+    "tatev": {
+      "name": "Տաթևի վանք",
+      "desc": "Հոգևոր կենտրոն"
+    },
+    "meghri": {
+      "name": "Մեղրի",
+      "desc": "Հայաստանի հարավային դարպաս"
+    },
+    "sisian": {
+      "name": "Սիսիան",
+      "desc": "Հնագիտական վայր"
+    },
+    "qajaran": {
+      "name": "Քաջարան",
+      "desc": "Արդյունաբերական քաղաք"
+    },
+    "agarak": {
+      "name": "Ագարակ",
+      "desc": "Հարավային բնակավայր"
+    }
+  },
+  "privacy_policy": {
+    "title": "Գաղտնիության Քաղաքականություն",
+    "last_updated": "Վերջին թարմացումը՝ Հունվար 2026",
+    "introduction": "Սույն Գաղտնիության քաղաքականությունը նկարագրում է, թե ինչպես է Syunik Dreams-ը հավաքում, օգտագործում և պաշտպանում Ձեր տեղեկությունները մեր կայքից օգտվելիս:",
+    "collection_title": "1. Տեղեկությունների հավաքագրում",
+    "collection_text": "Մենք հավաքում ենք տեղեկություններ, որոնք Դուք ուղղակիորեն տրամադրում եք մեզ, օրինակ՝ տուր ամրագրելիս, ապրանք գնելիս կամ մեզ հետ կապ հաստատելիս: Դրանք կարող են ներառել Ձեր անունը, էլ. փոստը, հեռախոսահամարը և վճարային տվյալները:",
+    "usage_title": "2. Տեղեկությունների օգտագործում",
+    "usage_text": "Մենք օգտագործում ենք հավաքագրված տեղեկությունները մեր ծառայությունները մատուցելու և բարելավելու, գործարքները մշակելու, Ձեզ հետ հաղորդակցվելու և հարթակի անվտանգությունն ապահովելու համար:",
+    "security_title": "3. Տվյալների անվտանգություն",
+    "security_text": "Մենք կիրառում ենք համապատասխան տեխնիկական և կազմակերպչական միջոցներ՝ Ձեր անձնական տեղեկությունները չարտոնված մուտքից, փոփոխումից կամ ոչնչացումից պաշտպանելու համար:",
+    "cookies_title": "4. Քուքիներ",
+    "cookies_text": "Մենք օգտագործում ենք քուքիներ և նմանատիպ տեխնոլոգիաներ՝ Ձեր փորձը բարելավելու, կայքի տրաֆիկը վերլուծելու և օգտատերերի վարքագիծը հասկանալու համար:",
+    "contact_info": "Եթե ունեք հարցեր այս Գաղտնիության քաղաքականության վերաբերյալ, խնդրում ենք կապվել մեզ հետ info@syunikdreams.am էլ. հասցեով:"
+  },
+  "contact": {
+    "title": "Կապ Մեզ Հետ",
+    "subtitle": "Մենք սիրով կլսենք Ձեզ: Ուղարկեք մեզ հաղորդագրություն, և մենք կպատասխանենք Ձեզ հնարավորինս շուտ:",
+    "form": {
+      "name": "Անուն Ազգանուն",
+      "email": "Էլ. Հասցե",
+      "message": "Հաղորդագրություն",
+      "placeholder_name": "Հայկ Պողոսյան",
+      "placeholder_email": "hayk@example.com",
+      "placeholder_message": "Ինչպե՞ս կարող ենք օգնել...",
+      "submit": "Ուղարկել",
+      "success": "Շնորհակալություն: Ձեր հաղորդագրությունն ուղարկված է:"
+    },
+    "info": {
+      "title": "Կոնտակտային Տվյալներ",
+      "address_label": "Հասցե",
+      "address_value": "Սյունիքի մարզ, Հայաստան",
+      "email_label": "Էլ. Փոստ",
+      "email_value": "syunikdreams@gmail.com",
+      "phone_label": "Հեռախոս",
+      "phone_value": "+374 99 990797",
+      "social_title": "Հետևեք Մեզ"
+    }
+  },
+  "product": {
+    "title": "Խուստուփ լեռան ոգին",
+    "subtitle": "Սյունիքի երազանքների հավաքածու",
+    "description": "Զգացեք Խուստուփ լեռան վեհաշուք ոգին։ Այս բացառիկ շապիկը լեգենդար գագաթի ձեռքով նկարազարդում է, որը ստեղծվել է նրանց համար, ովքեր իրենց սրտում են կրում Սյունիքը։ Պատրաստված է 100% բարձրորակ բամբակից՝ առավելագույն հարմարավետության և դիմացկունության համար։",
+    "madeBy": "Նախագծված և պատրաստված է սեփականատիրոջ կողմից Սյունիքում",
+    "price_label": "AMD / Կտոր",
+    "select_size": "Ընտրեք չափը",
+    "select_size_alert": "Խնդրում ենք նախ ընտրել չափսը:",
+    "size_chart": "Չափերի աղյուսակ",
+    "size_note": "*Մենք ունենք բոլոր չափսերը ձեզ համար։",
+    "order_now": "Պատվիրել Հիմա",
+    "shipping_note": "Անվտանգ վճարում և արագ առաքում ամբողջ Հայաստանում",
+    "details_title": "Ապրանքի մանրամասներ",
+    "bullet_1": "100% բարձրորակ բամբակ՝ հարմարավետության և ամրության համար",
+    "bullet_2": "Ձեռքով նկարված Խուստուփ լեռան բացառիկ պատկերազարդում",
+    "bullet_3": "Հասանելի չափսեր՝ S, M, L, XL",
+    "bullet_4": "Լվացվում է մեքենայով և հեշտ է խնամել",
+    "bullet_5": "Կատարյալ նվեր բնության և արկածների սիրահարների համար",
+    "success_modal_title": "Պատվերը հաջողությամբ ընդունված է:",
+    "delivery_info": "Առաքման ժամկետը՝ 2-3 աշխատանքային օր Հայաստանի ողջ տարածքում:",
+    "success_close": "Հիանալի է",
+    "added_to_cart": "ապրանքը ավելացված է ձեր ընտրությանը"
+  },
+  "about_road": {
+    "title_prefix": "ՃԱՆԱՊԱՐՀ ԴԵՊԻ",
+    "title_suffix": "ՍՅՈՒՆԻՔ",
+    "timeline_title": "ՃԱՄՓՈՐԴՈՒԹՅԱՆ ՕՐԱՑՈՒՅՑ",
+    "timeline_title_sub": "Ճանապարհի Բացահայտումը",
+    "subtitle": "Ճամփորդություն Հայաստանի ամենատպավորիչ լեռնանցքներով և գեղատեսիլ դարպասներով:",
+    "introduction": "Սյունիքով դեպի հարավ ձգվող մայրուղին ավելին է, քան պարզապես ճանապարհ. այն պատմության, պետականության և բնության հրաշալի կյանքի զարկերակն է: Սկսվելով Արարատյան դաշտավայրից՝ այն անցնում է խորը գետակիրճերով և բարձրանում ամպերից վեր գտնվող լեռնանցքներով՝ կապելով Հայաստանն իր հարավային դարպասին:",
+    "section_gateway_title": "Սյունյաց Դարպասներ",
+    "section_engineering_title": "Ճարտարապետական Հուշարձան",
+    "section_landmark": "Հուշարձան",
+    "section_gateway_desc": "Վայոց Ձորի և Սյունիքի սահմանին կանգնած հուշարձանը ողջունում է ճանապարհորդներին: Այն բաղկացած է երկու հսկայական քարե կամարներից, որոնք խորհրդանշում են պատմական բերդերի դարպասները և ազդարարում մուտքը դեպի լեռների աշխարհ:",
+    "section_serpentine_title": "Տաթևի Ոլորաններ",
+    "section_serpentine_desc": "Իջնելով դեպի Որոտան գետի կիրճը՝ ճանապարհը վերածվում է կտրուկ ոլորանների հաջորդականության: Տաթևի ոլորանները ճարտարագիտական գլուխգործոց են, որտեղից բացվում են շունչ կտրող տեսարաններ դեպի անդունդն ու հին անապատը:",
+    "section_passes_title": "Լեռնանցքներ",
+    "section_passes_title_sub": "Սիսիանի, Տաշտունի և Մեղրիի Լեռնանցքներ",
+    "section_passes_desc": "Ավելի քան 2300 մետր բարձրության վրա գտնվող Սյունիքի լեռնանցքները ներկայացնում են դրամատիկ լանդշաֆտներ: Այս լեռնանցքներով անցնելիս թվում է, թե ճանապարհորդում եք ամպերի միջով, որտեղ ամռանը մշուշն է ծածկում կանաչ մարգագետինները, իսկ ձմռանը՝ ձյունը:",
+    "tips_title": "Ուղեցույց և Անվտանգություն",
+    "tips_sub": "Կարևոր խորհուրդներ ճանապարհորդության համար",
+    "tip_1_title": "Ստուգեք Եղանակը",
+    "tip_1_desc": "Լեռնանցքներում եղանակը կարող է կտրուկ փոխվել՝ առաջացնելով մշուշ կամ ձյուն, նույնիսկ գարնանը կամ աշնանը:",
+    "tip_2_title": "Լիցքավորման Կայաններ",
+    "tip_2_desc": "Լիցքավորեք վառելիքը խոշոր քաղաքներում (Սիսիան կամ Գորիս), քանի որ հեռավորությունները կայանների միջև կարող են երկար լինել:",
+    "tip_3_title": "Լավագույն Դիտակետերը",
+    "tip_3_desc": "Անպայման կանգնեք «Սյունյաց դարպասներ» հուշարձանի մոտ և Տաթևի դիտակետում՝ գեղեցիկ լուսանկարներ անելու համար:",
+    "timeline_start": "Երևան",
+    "timeline_sisian": "Սիսիան",
+    "timeline_tatev": "Տաթև",
+    "timeline_kapan": "Կապան",
+    "timeline_meghri": "Մեղրի"
+  },
+  "about": {
+    "page_title": "Մեր Մասին",
+    "hero_label": "Մեր Պատմությունը",
+    "hero_title": "Սյունիքի Երազանքներ",
+    "hero_subtitle": "Մենք նվիրված թիմ ենք, որը նվիրված է Սյունիքի մարզի անհավասար գեղեցկությունը, հարուստ պատմությունն ու վառք մշակույթը աշխարհին ներկայացնելու:",
+    "stat_1_value": "6",
+    "stat_1_label": "Քաղաքներ ընդգրկված",
+    "stat_2_value": "50+",
+    "stat_2_label": "Տեսարժան վայրեր",
+    "stat_3_value": "3000+",
+    "stat_3_label": "Տարիների պատմություն",
+    "stat_4_value": "2",
+    "stat_4_label": "Աջակցված լեզուներ",
+    "story_label": "Ովքեր Ենք",
+    "story_title": "Ծնվել Սյունիքի Սիրությունից",
+    "story_p1": "Սյունիքի Երազանքները ստեղծվել է միակ նպատակով՝ Սյունիքի չպատմված պատմություններն ու թաքնված հրաշքները համաշխարհային հանդիսատեսին ներկայացնելու։ Հայաստանի հարավային հատվածում գտնվող Սյունիքը բարձր լեռների, հին վանքերի ու անկոտոր ժողովրդի երկիր է:",
+    "story_p2": "Մեր թիմը միավորում է տեղի պատմաբաններ, ճամորդության սիրահարներ ու տեխնոլոգներ, որոնք միասին ստեղծում են մի թվային հարթակ՝ Տաթևի լեգենդար վանքից մինչև Զորատս Կարերի խորհրդավոր աստղադիտարան ու Կապանի, Գորիսի ու Մեղրիի ջերմ հյուրասիրությունը:",
+    "mission_vision_label": "Նպատակ ու Ուղղություն",
+    "mission_vision_title": "Առաքելություն ու Տեսլական",
+    "mission_title": "Մեր Առաքելությունը",
+    "mission_desc": "Պահպանել, տարածել ու կիսել Սյունիքի մշակույթային ժառանգությունն ու բնական գեղեցկությունը նորարար թվային պատմումների միջոցով՝ այն մատչելի դարձնելով ճամորդների, պատմաբանների ու արկածամտների համար:",
+    "vision_title": "Մեր Տեսլականը",
+    "vision_desc": "Դառնալ Սյունիքի զբոսաշրջության ու մշակույթային բացահայտման ամենավստահելի ու համապարփակ թվային հարթակը՝ զորացնելով տեղի համայնքներին ու միացնելով համաշխարհային հանդիսատեսին Հայաստանի լեռնային սրտի իսկական ոգին:",
+    "values_label": "Ինչին Հավատամք Ենք",
+    "values_title": "Մեր Արժեքները",
+    "value_1_title": "Մշակույթային Պահպանում",
+    "value_1_desc": "Սյունիքի հարուստ պատմության, ավանդույթների ու ժառանգության պահպանումն ապագա սերունդների համար:",
+    "value_2_title": "Իսկական Փորձառություն",
+    "value_2_desc": "Տեղի կյանքի մշակույթի, խոհանոցի ու ավանդույթների ցուցադրումը, ոչ թե տուրիստական կլիշեների:",
+    "value_3_title": "Նորարարություն",
+    "value_3_desc": "Ժամանակակից տեխնոլոգիաների օգտագործումը՝ հնագույն պատմությունները կյանքի կոչելու համար:",
+    "value_4_title": "Համայնքային Ազդեցություն",
+    "value_4_desc": "Տեղի համայնքների աջակցումը՝ պատասխանատու զբոսաշրջության ու տնտեսական աճը տարածաշրջան խթանելով:",
+    "offer_label": "Մեր Հարթակը",
+    "offer_title": "Ինչ Առաջարկում է Սյունիքի Երազանքները",
+    "offer_p1": "Մեր կայքը ձեր համապարփակ դարպասն է Սյունիքի մարզի բացահայտման համար։ Անկախ ձեր պլանավորել ճամբորդություն՝ թե պարզապես հետաքրքրվել Հայաստանի այս զարմանալի անկյունով, մենք տրամադրում ենք ամեն անհրաժեշտը:",
+    "offer_bullet_1": "Ինտերակտիվ քարտեզներ ու մանրամասն քաղաքային ուղեցույցներ Սյունիքի բոլոր 6 քաղաքների համար",
+    "offer_bullet_2": "Մշակված ճամբորդական երթուղարներ պատմական վայրերի, բնության վայրերի ու տեղի ռեստորանների հետ",
+    "offer_bullet_3": "Խորընդհանուր պատմություն՝ հին Սյունիքի թագավորությունից մինչև ժամանակակից դարաշրջան",
+    "offer_bullet_4": "Բազմալեզու աջակցում հայերենով ու անգլերենով՝ ձայնային ուղեցորդման հնարավորությամբ",
+    "cta_title": "Պատրաստ՞ Եք Բացահայտել Սյունիքը:",
+    "cta_desc": "Սկսեք ձեր ճամբորդությունը Հայաստանի ամենագեղեցիկ տարածաշրջաններից մեկով։ Թող լեռները կանչեն ձեզ:",
+    "cta_explore": "Բացահայտել Ճամբորդությունները",
+    "cta_contact": "Կապ Հաստատեք"
+  }
 }
