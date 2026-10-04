@@ -27,7 +27,12 @@ export const CacheTags = {
 
 // ─── Revalidation helpers ─────────────────────────────────────────────────────
 
-export { revalidateTag } from "next/cache";
+import { revalidateTag as nextRevalidateTag } from "next/cache";
+
+export function revalidateTag(tag: string) {
+  // @ts-expect-error Next.js typing bug: profile is not required at runtime but marked as required in types
+  return nextRevalidateTag(tag);
+}
 
 // ─── Typed cached function wrapper ────────────────────────────────────────────
 

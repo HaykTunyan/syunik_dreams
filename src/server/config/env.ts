@@ -43,6 +43,15 @@ type Env = z.infer<typeof envSchema>;
 
 function validateEnv(): Env {
   // In Next.js, process.env is available at module evaluation time
+  // Skip validation during the build process to avoid failing when env vars aren't present
+  if (
+    process.env.SKIP_ENV_VALIDATION === "1" ||
+    process.env.SKIP_ENV_VALIDATION === "true" ||
+    process.env.npm_lifecycle_event === "build"
+  ) {
+    return process.env as unknown as Env;
+  }
+
   const result = envSchema.safeParse(process.env);
   if (!result.success) {
     const missing = result.error.issues

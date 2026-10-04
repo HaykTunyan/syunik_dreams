@@ -11,7 +11,7 @@ export const createOrderSchema = z.object({
     street:  z.string().optional(),
     city:    z.string().optional(),
     country: z.string().default("AM"),
-  }).default({}),
+  }).default({ country: "AM" }),
   items: z.array(z.object({
     variantId: z.string(),
     quantity:  z.number().int().positive().max(100),

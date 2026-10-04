@@ -18,12 +18,15 @@ type RouteHandler = (
 export function withHandler(handler: RouteHandler) {
   return async (
     req: NextRequest,
-    { params }: { params: Record<string, string> }
+    context: any
   ): Promise<NextResponse> => {
     const requestId = crypto.randomUUID();
     const start = Date.now();
 
     const log = logger.child({ requestId });
+
+    // Handle both Next.js 14 (object) and Next.js 15 (Promise) params
+    const params = context?.params ? await Promise.resolve(context.params) : {};
 
     log.info(
       {
