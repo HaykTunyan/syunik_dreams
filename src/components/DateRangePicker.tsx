@@ -2,7 +2,6 @@
 
 import { useState, useMemo, useCallback } from "react";
 
-/* ── Helpers ─────────────────────────────────────────────────────────── */
 
 const MONTH_NAMES = [
   "January", "February", "March", "April",
@@ -32,7 +31,6 @@ function startOfDay(d: Date) {
   return new Date(d.getFullYear(), d.getMonth(), d.getDate());
 }
 
-/* ── Types ───────────────────────────────────────────────────────────── */
 
 export interface DateRangePickerProps {
   /** Currently selected start date */
@@ -43,7 +41,6 @@ export interface DateRangePickerProps {
   onChange: (range: [Date | null, Date | null]) => void;
 }
 
-/* ── Component ───────────────────────────────────────────────────────── */
 
 export default function DateRangePicker({
   startDate,

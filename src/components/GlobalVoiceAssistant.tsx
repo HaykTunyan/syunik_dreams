@@ -6,6 +6,14 @@ import { cities } from "@/data/cities";
 import { useTranslations } from "next-intl";
 
 export default function GlobalVoiceAssistant() {
+
+  /**
+   * 
+   * Global Voice Assistant component, which is used to display the voice assistant widget on all pages except the home page
+   
+   */
+
+
   const pathname = usePathname();
   const tData = useTranslations('cities_data');
 

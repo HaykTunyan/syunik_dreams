@@ -93,11 +93,10 @@ export default function CityAttractionsCarousel({ cityId, attractions }: Props) 
                         Explore the City
                     </p>
                     <h2 className="text-4xl md:text-5xl font-black uppercase text-zinc-900 dark:text-white leading-tight">
-                        Must-Visit{" "}
-                        <span className="text-orange-500">Places</span>
+                        {t(`${cityId}.places_to_visit`)}
                     </h2>
                     <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-base">
-                        Top landmarks, streets, and hidden gems — as experienced by travellers
+                        {t(`${cityId}.places_to_visit_desc`)}
                     </p>
                 </div>
 
