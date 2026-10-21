@@ -20,7 +20,7 @@ import KapanHotels from "@/components/KapanHotels";
 import { useVapi } from "@/hooks/useVapi";
 import VoiceAssistantWidget from "@/components/VoiceAssistantWidget";
 
-const CityMap = dynamic(() => import("@/components/CityMap"), {
+const CityFocusMap = dynamic(() => import("@/components/CityFocusMap"), {
     ssr: false,
 });
 
@@ -29,6 +29,12 @@ interface Props {
 }
 
 export default function CityDetailClient({ cityId }: Props) {
+
+    /**
+     * 
+     * City Detail Client Component 
+     */
+
     const city = cities.find((c) => c.id === cityId);
 
     const t = useTranslations('city_page');
@@ -40,7 +46,6 @@ export default function CityDetailClient({ cityId }: Props) {
     const cityDescription = city ? tData(`${city.id}.description`) : "";
 
     const {
-        callStatus,
         isCalling,
         isConnecting,
         isSpeaking,
@@ -155,8 +160,8 @@ export default function CityDetailClient({ cityId }: Props) {
                             </p>
                             <button
                                 className={`w-full font-bold py-4 rounded-2xl transition-all duration-300 shadow-lg ${isCalling
-                                        ? "bg-red-600 hover:bg-red-700 text-white"
-                                        : "bg-white text-orange-500 hover:bg-zinc-100"
+                                    ? "bg-red-600 hover:bg-red-700 text-white"
+                                    : "bg-white text-orange-500 hover:bg-zinc-100"
                                     }`}
                                 onClick={handleToggleVoice}
                                 disabled={isConnecting}
@@ -242,10 +247,14 @@ export default function CityDetailClient({ cityId }: Props) {
                 <div className="max-w-7xl mx-auto space-y-10">
                     <div className="text-center space-y-4">
                         <h2 className="text-4xl font-black uppercase">{tData(`${city.id}.name`)} on Map</h2>
-                        <p className="text-zinc-500">Explore the location and surroundings</p>
+                        <p className="text-zinc-500">Explore the location and key attractions</p>
                     </div>
-                    <div className="h-[500px] w-full rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white dark:border-zinc-800">
-                        <CityMap coords={city.coords} name={tData(`${city.id}.name`)} />
+                    <div className="h-[520px] w-full rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white dark:border-zinc-800">
+                        <CityFocusMap
+                            cityId={city.id}
+                            cityName={tData(`${city.id}.name`)}
+                            coords={city.coords}
+                        />
                     </div>
                 </div>
             </section>

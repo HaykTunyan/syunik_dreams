@@ -3,6 +3,7 @@
 "use client";
 
 import { Component, ReactNode } from "react";
+import { useTranslations } from "next-intl";
 
 type ErrorBoundaryProps = {
   children: ReactNode;
@@ -13,6 +14,28 @@ type ErrorBoundaryState = {
   hasError: boolean;
   error: Error | null;
 };
+
+/**
+ * Standalone functional component for the fallback UI.
+ * Extracted here because class components cannot call React hooks.
+ */
+function ErrorFallback() {
+  const t = useTranslations("error_boundary");
+  return (
+    <div className="flex items-center justify-center h-screen bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 p-6">
+      <div className="text-center">
+        <h1 className="text-3xl font-bold mb-4">{t("title")}</h1>
+        <p className="mb-4">{t("description")}</p>
+        <button
+          onClick={() => location.reload()}
+          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+        >
+          {t("reload")}
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export class ErrorBoundary extends Component<
   ErrorBoundaryProps,
@@ -42,22 +65,7 @@ export class ErrorBoundary extends Component<
 
   render() {
     if (this.state.hasError) {
-      return (
-        this.props.fallback || (
-          <div className="flex items-center justify-center h-screen bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 p-6">
-            <div className="text-center">
-              <h1 className="text-3xl font-bold mb-4">Something went wrong</h1>
-              <p className="mb-4">Please refresh the page or contact support.</p>
-              <button
-                onClick={() => location.reload()}
-                className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
-              >
-                Reload
-              </button>
-            </div>
-          </div>
-        )
-      );
+      return this.props.fallback || <ErrorFallback />;
     }
     return this.props.children;
   }

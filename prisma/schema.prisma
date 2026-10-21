@@ -1,0 +1,507 @@
+// prisma/schema.prisma
+// Syunik Dreams — production schema
+// Translation strategy: JSONB per entity (translations column)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ───────────────────────────────────────────────────────────────────
+
+enum PlaceCategory {
+  MONASTERY
+  NATURE
+  FORTRESS
+  MUSEUM
+  FOOD
+  STAY
+  ACTIVITY
+  BRIDGE
+  WATERFALL
+  TOWN
+}
+
+enum TripDifficulty {
+  EASY
+  MEDIUM
+  HARD
+  EXPERT
+}
+
+enum Season {
+  SPRING
+  SUMMER
+  AUTUMN
+  WINTER
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+  REFUNDED
+}
+
+enum PaymentProvider {
+  MOCK
+  STRIPE
+  IDRAM
+  AMERIABANK
+}
+
+enum InquiryStatus {
+  NEW
+  IN_REVIEW
+  CONFIRMED
+  CANCELLED
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+}
+
+enum MediaProvider {
+  VERCEL_BLOB
+  CLOUDINARY
+  LOCAL
+}
+
+// ─── Content Entities ────────────────────────────────────────────────────────
+
+model City {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  lat          Float
+  lng          Float
+  heroImage    String?
+  gallery      String[] @default([])
+  population   Int?
+  altitude     Int?
+  published    Boolean  @default(false)
+  translations Json     @default("{}")
+  // { en: { name, description, history, climate, bestVisit, founding, size }, hy: {...}, ru: {...} }
+
+  places       Place[]
+  bookings     BookingInquiry[]
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([slug])
+}
+
+model Place {
+  id           String        @id @default(cuid())
+  slug         String        @unique
+  cityId       String?
+  city         City?         @relation(fields: [cityId], references: [id], onDelete: SetNull)
+  category     PlaceCategory
+  lat          Float
+  lng          Float
+  images       String[]      @default([])
+  openingHours String?
+  ticketPrice  Int?          // in AMD
+  published    Boolean       @default(false)
+  translations Json          @default("{}")
+  // { en: { name, description, shortDesc }, hy: {...}, ru: {...} }
+
+  tripPlaces   TripPlace[]
+  roadStops    RoadStop[]
+  historyEvents HistoryEventPlace[]
+
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([slug])
+  @@index([cityId])
+  @@index([category])
+  @@index([lat, lng])
+}
+
+model Trip {
+  id           String         @id @default(cuid())
+  slug         String         @unique
+  difficulty   TripDifficulty @default(MEDIUM)
+  durationDays Int            @default(1)
+  priceAmd     Int            @default(0)
+  seasons      Season[]       @default([])
+  itinerary    Json           @default("[]")
+  // [{ day: 1, title: "...", description: "...", placeIds: [] }]
+  gallery      String[]       @default([])
+  published    Boolean        @default(false)
+  translations Json           @default("{}")
+  // { en: { name, description, shortDesc, activities: string[] }, hy: {...}, ru: {...} }
+
+  places       TripPlace[]
+  bookings     BookingInquiry[]
+
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  @@index([slug])
+  @@index([difficulty])
+}
+
+model TripPlace {
+  tripId  String
+  placeId String
+  order   Int    @default(0)
+
+  trip    Trip   @relation(fields: [tripId], references: [id], onDelete: Cascade)
+  place   Place  @relation(fields: [placeId], references: [id], onDelete: Cascade)
+
+  @@id([tripId, placeId])
+  @@index([tripId])
+}
+
+model HistoryEra {
+  id           String         @id @default(cuid())
+  order        Int
+  yearStart    Int?
+  yearEnd      Int?
+  published    Boolean        @default(false)
+  translations Json           @default("{}")
+  // { en: { title, subtitle, body }, hy: {...}, ru: {...} }
+
+  events       HistoryEvent[]
+
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  @@index([order])
+}
+
+model HistoryEvent {
+  id           String               @id @default(cuid())
+  eraId        String
+  era          HistoryEra           @relation(fields: [eraId], references: [id], onDelete: Cascade)
+  order        Int
+  year         Int?
+  published    Boolean              @default(false)
+  translations Json                 @default("{}")
+  // { en: { title, description }, hy: {...}, ru: {...} }
+
+  places       HistoryEventPlace[]
+
+  createdAt    DateTime             @default(now())
+  updatedAt    DateTime             @updatedAt
+
+  @@index([eraId, order])
+}
+
+model HistoryEventPlace {
+  eventId String
+  placeId String
+
+  event   HistoryEvent @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  place   Place        @relation(fields: [placeId], references: [id], onDelete: Cascade)
+
+  @@id([eventId, placeId])
+}
+
+model RoadRoute {
+  id           String     @id @default(cuid())
+  slug         String     @unique
+  distanceKm   Float?
+  published    Boolean    @default(false)
+  translations Json       @default("{}")
+  // { en: { title, description, introduction }, hy: {...}, ru: {...} }
+
+  stops        RoadStop[]
+
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model RoadStop {
+  id          String    @id @default(cuid())
+  routeId     String
+  route       RoadRoute @relation(fields: [routeId], references: [id], onDelete: Cascade)
+  placeId     String?
+  place       Place?    @relation(fields: [placeId], references: [id], onDelete: SetNull)
+  order       Int
+  distanceKm  Float?
+  notes       String?
+
+  @@index([routeId, order])
+}
+
+// ─── Commerce ────────────────────────────────────────────────────────────────
+
+model Product {
+  id           String          @id @default(cuid())
+  slug         String          @unique
+  basePriceAmd Int             @default(0)
+  currency     String          @default("AMD")
+  status       ProductStatus   @default(DRAFT)
+  images       String[]        @default([])
+  translations Json            @default("{}")
+  // { en: { name, description, shortDesc, details: string[] }, hy: {...}, ru: {...} }
+
+  variants     ProductVariant[]
+
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+
+  @@index([slug])
+  @@index([status])
+}
+
+model ProductVariant {
+  id        String      @id @default(cuid())
+  productId String
+  product   Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+  size      String?     // S, M, L, XL, etc.
+  color     String?
+  sku       String      @unique
+  priceAmd  Int?        // override; null = use product.basePriceAmd
+
+  inventory Inventory?
+  orderItems OrderItem[]
+
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@index([productId])
+  @@index([sku])
+}
+
+model Inventory {
+  id        String         @id @default(cuid())
+  variantId String         @unique
+  variant   ProductVariant @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  quantity  Int            @default(0)
+
+  updatedAt DateTime       @updatedAt
+}
+
+model Order {
+  id               String      @id @default(cuid())
+  orderNumber      String      @unique @default(cuid())
+  status           OrderStatus @default(PENDING)
+  customerEmail    String
+  customerName     String
+  customerPhone    String?
+  totalAmd         Int
+  shippingAddress  Json        @default("{}")
+  locale           String      @default("en")
+  notes            String?
+
+  items            OrderItem[]
+  payment          Payment?
+
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  @@index([status])
+  @@index([customerEmail])
+  @@index([orderNumber])
+}
+
+model OrderItem {
+  id           String         @id @default(cuid())
+  orderId      String
+  order        Order          @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  variantId    String
+  variant      ProductVariant @relation(fields: [variantId], references: [id])
+  quantity     Int
+  unitPriceAmd Int
+
+  @@index([orderId])
+}
+
+model Payment {
+  id           String          @id @default(cuid())
+  orderId      String          @unique
+  order        Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  provider     PaymentProvider @default(MOCK)
+  externalId   String?
+  status       PaymentStatus   @default(PENDING)
+  amount       Int
+  currency     String          @default("AMD")
+  metadata     Json            @default("{}")
+
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+
+  @@index([status])
+  @@index([externalId])
+}
+
+// ─── Engagement ──────────────────────────────────────────────────────────────
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  status    String   @default("NEW") // NEW | READ | REPLIED
+  locale    String   @default("en")
+  honeypot  String?  // must be empty
+
+  createdAt DateTime @default(now())
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model BookingInquiry {
+  id          String        @id @default(cuid())
+  tripId      String?
+  trip        Trip?         @relation(fields: [tripId], references: [id], onDelete: SetNull)
+  cityId      String?
+  city        City?         @relation(fields: [cityId], references: [id], onDelete: SetNull)
+  date        DateTime?
+  groupSize   Int           @default(1)
+  name        String
+  email       String
+  phone       String?
+  notes       String?
+  status      InquiryStatus @default(NEW)
+  locale      String        @default("en")
+
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([status])
+  @@index([email])
+}
+
+model NewsletterSubscriber {
+  id          String    @id @default(cuid())
+  email       String    @unique
+  locale      String    @default("en")
+  token       String    @unique @default(cuid())
+  confirmedAt DateTime?
+  unsubscribedAt DateTime?
+
+  createdAt   DateTime  @default(now())
+
+  @@index([email])
+  @@index([token])
+}
+
+// ─── Infrastructure ──────────────────────────────────────────────────────────
+
+model MediaAsset {
+  id          String        @id @default(cuid())
+  url         String
+  provider    MediaProvider @default(VERCEL_BLOB)
+  mimeType    String?
+  sizeBytes   Int?
+  altText     String?
+  entityType  String?
+  entityId    String?
+  uploadedById String?
+  uploadedBy  User?         @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+
+  createdAt   DateTime      @default(now())
+
+  @@index([entityType, entityId])
+}
+
+model User {
+  id             String      @id @default(cuid())
+  email          String      @unique
+  name           String?
+  role           UserRole    @default(EDITOR)
+  hashedPassword String?
+  // Auth.js / NextAuth fields:
+  emailVerified  DateTime?
+  image          String?
+
+  mediaAssets    MediaAsset[]
+  auditLogs      AuditLog[]
+  accounts       Account[]
+  sessions       Session[]
+
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  @@index([email])
+  @@index([role])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action     String   // CREATE | UPDATE | DELETE | PUBLISH | UNPUBLISH
+  entityType String
+  entityId   String
+  before     Json?
+  after      Json?
+  ipAddress  String?
+  userAgent  String?
+
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, entityId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+// ─── Auth.js adapter tables ──────────────────────────────────────────────────
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}

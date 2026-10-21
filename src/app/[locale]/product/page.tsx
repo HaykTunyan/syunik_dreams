@@ -10,7 +10,7 @@ import TshirtBack from "#/images/Khustup_back.jpg";
 
 const PRODUCT = {
     id: "syunik-tee-001",
-    price: 19.99,
+    price: 16.99,
     sizes: ["S", "M", "L", "XL"],
     images: [TshirtFront, TshirtBack]
 };
