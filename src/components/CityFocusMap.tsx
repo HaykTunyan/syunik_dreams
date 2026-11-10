@@ -27,7 +27,10 @@ type LandmarkCategory =
   | "park"
   | "viewpoint"
   | "church"
-  | "attraction";
+  | "attraction"
+  ;
+
+type LandmarkProximity = "in-city" | "near-city";
 
 type Landmark = {
   id: string;
@@ -35,6 +38,10 @@ type Landmark = {
   coords: [number, number];
   category: LandmarkCategory;
   description?: string;
+  /** Geographic proximity to the parent city center.
+   *  "in-city"   — physically within the city limits.
+   *  "near-city" — in the surrounding area / municipality, discoverable from the city page. */
+  proximity?: LandmarkProximity;
 };
 
 type Props = {
@@ -48,66 +55,299 @@ type Props = {
 
 const CITY_LANDMARKS: Record<string, Landmark[]> = {
   kapan: [
-    { id: "vahanavank", name: "Vahanavank Monastery", coords: [39.2214, 46.4067], category: "monastery", description: "10th–11th c. monastery above Kapan" },
-    { id: "khustup", name: "Khustup Peak", coords: [39.185, 46.435], category: "nature", description: "Iconic 3206 m summit overlooking Kapan" },
-    { id: "baghaberd", name: "Baghaberd Fortress", coords: [39.178, 46.432], category: "fortress", description: "Medieval fortress ruins south of Kapan" },
-    { id: "kapan-museum", name: "Kapan History Museum", coords: [39.2075, 46.413], category: "museum", description: "Regional history and archaeology museum" },
-    { id: "kapan-park", name: "City Park", coords: [39.208, 46.406], category: "park", description: "Green park along the Voghji river" },
+    {
+      id: "nzhdeh-statue",
+      name: "Garegin Nzhdeh Statue",
+      coords: [39.19592, 46.39473],
+      category: "attraction",
+      proximity: "in-city",
+      description: "Monument to Garegin Nzhdeh overlooking Kapan"
+    },
+
+    {
+      id: "kapan-museum",
+      name: "Kapan History Museum",
+      coords: [39.20746, 46.40279],
+      category: "museum",
+      proximity: "in-city",
+      description: "Museum showcasing the history, archaeology, and culture of the Kapan region"
+    },
+
+    {
+      id: "kapan-zipline",
+      name: "Zipline Kapan",
+      coords: [39.2083, 46.4140],
+      category: "attraction",
+      proximity: "in-city",
+      description: "Adventure zipline above the Voghji River gorge"
+    },
+
+    {
+      id: "voghji-gorge",
+      name: "Voghji River Gorge",
+      coords: [39.2080, 46.4120],
+      category: "nature",
+      proximity: "in-city",
+      description: "Scenic gorge shaped by the Voghji River near Kapan"
+    },
+    {
+      id: "vahanavank",
+      name: "Vahanavank Monastery",
+      coords: [39.21778, 46.33194],
+      category: "monastery",
+      proximity: "near-city",
+      description: "Historic 10th–11th century Armenian monastery near Kapan"
+    },
+
+    {
+      id: "baghaberd",
+      name: "Baghaberd Fortress",
+      coords: [39.21485, 46.27761],
+      category: "fortress",
+      proximity: "near-city",
+      description: "Ancient fortress overlooking the Voghji valley near Kapan"
+    },
+
+    {
+      id: "halidzor",
+      name: "Halidzor Fortress",
+      coords: [39.2192, 46.3533],
+      category: "fortress",
+      proximity: "near-city",
+      description: "Historic fortress overlooking the Voghji River near Kapan"
+    },
+
+    {
+      id: "khustup",
+      name: "Khustup Mountain",
+      coords: [39.13556, 46.33139],
+      category: "nature",
+      proximity: "near-city",
+      description: "3,206-meter mountain in the Zangezur range south of Kapan"
+    },
   ],
   goris: [
-    { id: "tatev", name: "Tatev Monastery", coords: [39.3778, 46.2506], category: "monastery", description: "9th c. monastery, one of Armenia's most iconic" },
-    { id: "wings-of-tatev", name: "Wings of Tatev Cable Car", coords: [39.3903, 46.2331], category: "attraction", description: "World's longest reversible cable car" },
-    { id: "khndzoresk", name: "Old Khndzoresk Caves", coords: [39.4497, 46.2892], category: "nature", description: "Ancient cave village in spectacular gorge" },
-    { id: "devils-bridge", name: "Khndzoresk Swing Bridge", coords: [39.4453, 46.2939], category: "bridge", description: "Thrilling suspension bridge over the gorge" },
-    { id: "rock-forest", name: "Goris Rock Forest", coords: [39.505, 46.358], category: "nature", description: "Surreal rock spires outside of town" },
-    { id: "goris-museum", name: "Goris Museum", coords: [39.512, 46.338], category: "museum", description: "Local history and cultural exhibits" },
+    // ── Goris / Tatev area ────────────────────────────────────────────────
+    {
+      id: "tatev",
+      name: "Tatev Monastery",
+      coords: [39.3796, 46.2481],
+      category: "monastery",
+      description: "Historic 9th-century Armenian monastery and one of Armenia's most iconic landmarks"
+    },
+
+    {
+      id: "wings-of-tatev",
+      name: "Wings of Tatev Cable Car",
+      coords: [39.3887, 46.2337],
+      category: "attraction",
+      description: "Aerial tramway connecting Halidzor with Tatev Monastery"
+    },
+
+    {
+      id: "khndzoresk",
+      name: "Old Khndzoresk Caves",
+      coords: [39.4453, 46.2928],
+      category: "nature",
+      description: "Historic cave settlement spread across the dramatic Khndzoresk gorge"
+    },
+
+    {
+      id: "khndzoresk-swing-bridge",
+      name: "Khndzoresk Swing Bridge",
+      coords: [39.4450, 46.2941],
+      category: "bridge",
+      description: "Suspension bridge crossing the Khndzoresk gorge near the old cave settlement"
+    },
+
+    {
+      id: "goris-rock-forest",
+      name: "Goris Rock Forest",
+      coords: [39.5050, 46.3580],
+      category: "nature",
+      description: "Dramatic natural rock formations surrounding Goris"
+    },
+
+    {
+      id: "goris-museum",
+      name: "Goris Museum",
+      coords: [39.5120, 46.3380],
+      category: "museum",
+      description: "Museum showcasing the history and culture of Goris and the surrounding region"
+    },
   ],
   sisian: [
-    { id: "zorats-karer", name: "Zorats Karer (Karahunj)", coords: [39.5636, 46.0272], category: "attraction", description: "Ancient megalithic observatory, 7500 years old" },
-    { id: "shaki-waterfall", name: "Shaki Waterfall", coords: [39.4986, 46.2872], category: "waterfall", description: "Stunning 18 m basalt waterfall" },
-    { id: "vorotnavank", name: "Vorotnavank Monastery", coords: [39.5019, 46.1361], category: "monastery", description: "12th c. monastery on a cliff ledge" },
-    { id: "st-hovhannes", name: "St. Hovhannes Church", coords: [39.524, 46.031], category: "church", description: "7th c. church in central Sisian" },
-    { id: "ughtasar", name: "Ughtasar Petroglyphs", coords: [39.6167, 46.0167], category: "nature", description: "Thousands of ancient rock carvings" },
+    // ── Sisian / Southern Syunik ──────────────────────────────────────────
+    {
+      id: "zorats-karer",
+      name: "Zorats Karer (Karahunj)",
+      coords: [39.5529, 46.0287],
+      category: "attraction",
+      description: "Ancient megalithic monument known for its prehistoric stone formations"
+    },
+
+    {
+      id: "shaki-waterfall",
+      name: "Shaki Waterfall",
+      coords: [39.5528, 46.3578],
+      category: "waterfall",
+      description: "Spectacular 18-meter waterfall on the Shaki River near Sisian"
+    },
+
+    {
+      id: "vorotnavank",
+      name: "Vorotnavank Monastery",
+      coords: [39.4978, 46.1374],
+      category: "monastery",
+      description: "Historic Armenian monastery complex overlooking the Vorotan gorge"
+    },
+
+    {
+      id: "st-hovhannes",
+      name: "St. Hovhannes Church",
+      coords: [39.5206, 46.0337],
+      category: "church",
+      description: "Historic church in Sisian surrounded by the region's cultural heritage"
+    },
+
+    // {
+    //   id: "ughtasar",
+    //   name: "Ughtasar Petroglyphs",
+    //   coords: [39.6530, 46.0030],
+    //   category: "",
+    //   description: "Ancient rock carvings scattered around Mount Ughtasar"
+    // },
   ],
   agarak: [
-    { id: "agarak-mine", name: "Agarak Mine Viewpoint", coords: [38.875, 46.245], category: "attraction", description: "One of Armenia's largest open-pit mines" },
-    { id: "cori-jrvezh", name: "Cori Jrvezh Waterfall", coords: [38.883, 46.256], category: "waterfall", description: "Scenic waterfall near Agarak" },
-    { id: "old-town", name: "Old Town Quarter", coords: [38.880, 46.252], category: "nature", description: "Soviet-era architecture and local life" },
-    { id: "arax-river", name: "Arax Riverbank", coords: [38.870, 46.260], category: "viewpoint", description: "Panoramic view toward Iran across the Arax river" },
+    // ── Agarak / Southern Syunik ──────────────────────────────────────────
+    {
+      id: "agarak-mine",
+      name: "Agarak Mine Viewpoint",
+      coords: [38.8928, 46.2519],
+      category: "viewpoint",
+      description: "Viewpoint overlooking the Agarak open-pit copper and molybdenum mine"
+    },
+
+    {
+      id: "cori-jrvezh",
+      name: "Cori Jrvezh Waterfall",
+      coords: [38.8830, 46.2560],
+      category: "waterfall",
+      description: "Scenic waterfall in the mountainous area near Agarak"
+    },
+
+    {
+      id: "old-town",
+      name: "Agarak Old Town",
+      coords: [38.8798, 46.2520],
+      category: "attraction",
+      description: "Agarak's urban area with Soviet-era architecture and local atmosphere"
+    },
+
+    {
+      id: "arax-river",
+      name: "Arax Riverbank",
+      coords: [38.8700, 46.2600],
+      category: "viewpoint",
+      description: "Scenic views of the Arax River and the landscape along the Armenia–Iran border"
+    },
   ],
   meghri: [
-    { id: "meghri-fortress", name: "Meghri Fortress", coords: [38.907, 46.252], category: "fortress", description: "18th c. fortress ruins above the town" },
-    { id: "meghri-viewpoint", name: "Meghri Viewpoint", coords: [38.905, 46.248], category: "viewpoint", description: "Stunning panoramic view over the valley" },
-    { id: "old-street", name: "Old Meghri Alleyways", coords: [38.901, 46.244], category: "attraction", description: "Traditional Armenian architecture and vineyards" },
-    { id: "surb-hovhannes", name: "Surb Hovhannes Church", coords: [38.903, 46.242], category: "church", description: "17th c. church in the heart of old Meghri" },
-    { id: "meghri-pomegranate", name: "Pomegranate Orchards", coords: [38.895, 46.255], category: "nature", description: "Famous pomegranate groves in subtropical climate" },
+    // ── Meghri / Southern Syunik ──────────────────────────────────────────
+    {
+      id: "meghri-fortress",
+      name: "Meghri Fortress",
+      coords: [38.9047, 46.2446],
+      category: "fortress",
+      description: "Historic fortress ruins overlooking Meghri and the surrounding valley"
+    },
+
+    {
+      id: "meghri-viewpoint",
+      name: "Meghri Viewpoint",
+      coords: [38.9060, 46.2475],
+      category: "viewpoint",
+      description: "Scenic viewpoint overlooking Meghri and the surrounding Araks valley"
+    },
+
+    {
+      id: "old-street",
+      name: "Old Meghri Alleyways",
+      coords: [38.9020, 46.2440],
+      category: "attraction",
+      description: "Historic streets featuring traditional Meghri architecture and local character"
+    },
+
+    {
+      id: "surb-hovhannes",
+      name: "Surb Hovhannes Church",
+      coords: [38.9018, 46.2418],
+      category: "church",
+      description: "Historic Armenian church in the old quarter of Meghri"
+    },
+
+    {
+      id: "meghri-pomegranate",
+      name: "Pomegranate Orchards",
+      coords: [38.8950, 46.2550],
+      category: "nature",
+      description: "Pomegranate orchards characteristic of Meghri's warm subtropical climate"
+    },
   ],
   qajaran: [
-    { id: "qajaran-bear", name: "Bear Monument", coords: [39.148, 46.258], category: "attraction", description: "Iconic city landmark and symbol of Qajaran" },
-    { id: "qajaran-park", name: "Qajaran Central Park", coords: [39.144, 46.255], category: "park", description: "City park with mountain views" },
-    { id: "lichk", name: "Lichk Village", coords: [39.165, 46.270], category: "nature", description: "Traditional mountain village above Qajaran" },
-    { id: "qajaran-mine", name: "Zangezur Copper-Molybdenum Mine", coords: [39.135, 46.250], category: "attraction", description: "One of the world's largest molybdenum mines" },
+    // ── Qajaran / Central Syunik ──────────────────────────────────────────
+    {
+      id: "qajaran-bear",
+      name: "Bear Monument",
+      coords: [39.1480, 46.2580],
+      category: "attraction",
+      description: "Distinctive landmark in Qajaran"
+    },
+
+    {
+      id: "qajaran-park",
+      name: "Qajaran Central Park",
+      coords: [39.1440, 46.2550],
+      category: "park",
+      description: "Central green space with views of the surrounding Zangezur mountains"
+    },
+
+    {
+      id: "lichk",
+      name: "Lichk Village",
+      coords: [39.1650, 46.2700],
+      category: "nature",
+      description: "Mountain village in the landscape surrounding Qajaran"
+    },
+
+    {
+      id: "qajaran-mine",
+      name: "Zangezur Copper-Molybdenum Mine",
+      coords: [39.1350, 46.2500],
+      category: "attraction",
+      description: "Major copper and molybdenum mining complex near Qajaran"
+    },
   ],
 };
 
 // ---------- OSM Relation IDs for city boundaries ----------
 
 const CITY_OSM_RELATIONS: Record<string, number> = {
-  kapan:   172021,
-  goris:   170800,
-  sisian:  173089,
-  agarak:  1657432,
-  meghri:  1737196,
+  kapan: 172021,
+  goris: 170800,
+  sisian: 173089,
+  agarak: 1657432,
+  meghri: 1737196,
   qajaran: 1737197,
 };
 
 // Approximate bounding boxes for each city [sw, ne]
 const CITY_BOUNDS: Record<string, [[number, number], [number, number]]> = {
-  kapan:   [[39.16, 46.38], [39.25, 46.46]],
-  goris:   [[39.36, 46.22], [39.55, 46.39]],
-  sisian:  [[39.49, 45.97], [39.58, 46.09]],
-  agarak:  [[38.85, 46.21], [38.91, 46.30]],
-  meghri:  [[38.88, 46.21], [38.93, 46.27]],
+  kapan: [[39.16, 46.38], [39.25, 46.46]],
+  goris: [[39.36, 46.22], [39.55, 46.39]],
+  sisian: [[39.49, 45.97], [39.58, 46.09]],
+  agarak: [[38.85, 46.21], [38.91, 46.30]],
+  meghri: [[38.88, 46.21], [38.93, 46.27]],
   qajaran: [[39.12, 46.22], [39.17, 46.30]],
 };
 
@@ -117,16 +357,16 @@ const CATEGORY_STYLES: Record<
   LandmarkCategory,
   { color: string; emoji: string; label: string }
 > = {
-  monastery:  { color: "#8b1e1e", emoji: "⛪", label: "Monastery" },
-  waterfall:  { color: "#1f6fb2", emoji: "💧", label: "Waterfall" },
-  museum:     { color: "#6a4baf", emoji: "🏛", label: "Museum" },
-  nature:     { color: "#3f7d3f", emoji: "🌲", label: "Nature" },
-  bridge:     { color: "#555555", emoji: "🌉", label: "Bridge" },
-  hotel:      { color: "#1f6fb2", emoji: "🏨", label: "Hotel" },
-  fortress:   { color: "#7a4f1f", emoji: "🏰", label: "Fortress" },
-  park:       { color: "#2d8c4e", emoji: "🌳", label: "Park" },
-  viewpoint:  { color: "#c97a1f", emoji: "🔭", label: "Viewpoint" },
-  church:     { color: "#9b2c2c", emoji: "✝", label: "Church" },
+  monastery: { color: "#8b1e1e", emoji: "⛪", label: "Monastery" },
+  waterfall: { color: "#1f6fb2", emoji: "💧", label: "Waterfall" },
+  museum: { color: "#6a4baf", emoji: "🏛", label: "Museum" },
+  nature: { color: "#3f7d3f", emoji: "🌲", label: "Nature" },
+  bridge: { color: "#555555", emoji: "🌉", label: "Bridge" },
+  hotel: { color: "#1f6fb2", emoji: "🏨", label: "Hotel" },
+  fortress: { color: "#7a4f1f", emoji: "🏰", label: "Fortress" },
+  park: { color: "#2d8c4e", emoji: "🌳", label: "Park" },
+  viewpoint: { color: "#c97a1f", emoji: "🔭", label: "Viewpoint" },
+  church: { color: "#9b2c2c", emoji: "✝", label: "Church" },
   attraction: { color: "#c0392b", emoji: "⭐", label: "Attraction" },
 };
 
@@ -307,19 +547,35 @@ export default function CityFocusMap({ cityId, cityName, coords, zoom = 13 }: Pr
                     {lm.name}
                   </span>
                 </div>
-                <div style={{
-                  display: "inline-block",
-                  fontSize: "10px",
-                  fontWeight: 700,
-                  letterSpacing: "0.05em",
-                  textTransform: "uppercase",
-                  background: CATEGORY_STYLES[lm.category].color,
-                  color: "white",
-                  padding: "2px 8px",
-                  borderRadius: "99px",
-                  marginBottom: "6px",
-                }}>
-                  {CATEGORY_STYLES[lm.category].label}
+                <div style={{ display: "flex", alignItems: "center", gap: "5px", flexWrap: "wrap", marginBottom: "6px" }}>
+                  <div style={{
+                    display: "inline-block",
+                    fontSize: "10px",
+                    fontWeight: 700,
+                    letterSpacing: "0.05em",
+                    textTransform: "uppercase",
+                    background: CATEGORY_STYLES[lm.category].color,
+                    color: "white",
+                    padding: "2px 8px",
+                    borderRadius: "99px",
+                  }}>
+                    {CATEGORY_STYLES[lm.category].label}
+                  </div>
+                  {lm.proximity && (
+                    <div style={{
+                      display: "inline-block",
+                      fontSize: "10px",
+                      fontWeight: 700,
+                      letterSpacing: "0.04em",
+                      textTransform: "uppercase",
+                      background: lm.proximity === "in-city" ? "#16a34a" : "#9333ea",
+                      color: "white",
+                      padding: "2px 8px",
+                      borderRadius: "99px",
+                    }}>
+                      {lm.proximity === "in-city" ? "📍 In Kapan" : "🗺️ Near Kapan"}
+                    </div>
+                  )}
                 </div>
                 {lm.description && (
                   <p style={{ fontSize: "12px", color: "#555", lineHeight: 1.5, margin: 0 }}>

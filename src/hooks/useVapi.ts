@@ -43,15 +43,6 @@ export function useVapi(options: UseVapiOptions = {}) {
   const routerRef = useRef(router);
   routerRef.current = router;
 
-
-  // console.log("callStatus", callStatus);
-  // console.log("isSpeaking", isSpeaking);
-  // console.log("isUserSpeaking", isUserSpeaking);
-  // console.log("volumeLevel", volumeLevel);
-  // console.log("activeTranscript", activeTranscript);
-  // console.log("messages", messages);
-  // console.log("error", error);
-
   useEffect(() => {
     if (typeof window === "undefined" || !activePublicKey) return;
 

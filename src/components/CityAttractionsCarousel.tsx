@@ -17,31 +17,64 @@ interface Props {
 }
 
 /** Map attraction IDs to a category badge label */
+
 const CATEGORY_MAP: Record<string, string> = {
+    // ── Specific landmarks / places ────────────────────────────────────
     khustup: "🏔️ Nature",
     vahanavank: "⛪ Heritage",
     baghaberd: "🏯 Fortress",
-    nzhdeh_statue: "🗿 Landmark",
-    main_square: "🏙️ City Life",
-    city_center: "🏙️ City Life",
-    nzhdeh_street: "🛤️ Streets",
-    city_street: "🛤️ Streets",
-    // fallbacks for other cities
+    "nzhdeh-statue": "🗿 Landmark",
+    halidzor: "🏯 Fortress",
+
+    "main-square": "🏙️ City Life",
+    "city-center": "🏙️ City Life",
+    "nzhdeh-street": "🛤️ Streets",
+    "city-street": "🛤️ Streets",
+
     tatev: "⛪ Heritage",
-    rock_forest: "🌲 Nature",
-    khndzoresk: "🌉 Adventure",
-    shaki: "💧 Nature",
-    zorats: "🪨 Historic",
+    "wings-of-tatev": "🚡 Adventure",
+    khndzoresk: "🏘️ Historic",
+    "khndzoresk-swing-bridge": "🌉 Adventure",
+    "goris-rock-forest": "🪨 Nature",
+    "goris-museum": "🏛️ Museum",
+
+    "zorats-karer": "🪨 Historic",
+    "shaki-waterfall": "💧 Waterfall",
+    vorotnavank: "⛪ Heritage",
+    "st-hovhannes": "⛪ Heritage",
+    ughtasar: "🪨 Historic",
+
+    "agarak-mine": "⛏️ Industry",
+    "cori-jrvezh": "💧 Waterfall",
+    "old-town": "🏘️ Old Town",
+    "arax-river": "🌊 Nature",
+
+    "meghri-fortress": "🏯 Fortress",
+    "meghri-viewpoint": "🌅 Viewpoint",
+    "old-street": "🛤️ Streets",
+    "surb-hovhannes": "⛪ Heritage",
+    "meghri-pomegranate": "🌳 Nature",
+
+    "qajaran-bear": "🐻 Landmark",
+    "qajaran-park": "🌳 Park",
+    lichk: "🏞️ Landscape",
+    "qajaran-mine": "⛏️ Industry",
+    archaeology: "🏺 Archaeology",
+
+    attraction: "📍 Attraction",
+    monastery: "⛪ Heritage",
+    museum: "🏛️ Museum",
     church: "⛪ Heritage",
     fortress: "🏯 Fortress",
+    nature: "🌿 Nature",
+    waterfall: "💧 Waterfall",
+    archaeological: "🏺 Archaeology",
+    bridge: "🌉 Bridge",
     viewpoint: "🌅 Viewpoint",
+    park: "🌳 Park",
     alleyway: "🛤️ Streets",
-    bear: "🐻 Wildlife",
-    park: "🌳 Nature",
-    lichk: "🏞️ Landscape",
-    agarak_ancient_site: "🏺 Historic",
-    "agarak_cori-jrvezh": "💧 Nature",
-    "agarak_old-tow": "🏘️ Old Town",
+    landscape: "🏞️ Landscape",
+    industry: "⛏️ Industry",
 };
 
 export default function CityAttractionsCarousel({ cityId, attractions }: Props) {
