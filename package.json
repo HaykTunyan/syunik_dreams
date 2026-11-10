@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test:open": "cypress open",
-    "test:run": "cypress run"
+    "test:run": "cypress run",
+    "rag:index": "tsx --env-file=.env.local scripts/build-rag-index.ts"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.8",
