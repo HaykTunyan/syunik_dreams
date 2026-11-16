@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "test:open": "cypress open",
-    "test:run": "cypress run"
+    "test:run": "cypress run",
+    "rag:index": "tsx --env-file=.env.local scripts/build-rag-index.ts",
+    "knowledge:build": "tsx scripts/build-knowledge.ts"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.8",
@@ -53,6 +55,7 @@
     "prisma": "^6.19.3",
     "supertest": "^7.3.0",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5",
     "vitest": "^2.1.9"
   }

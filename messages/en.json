@@ -286,8 +286,8 @@
         "0": "Khustup Mountain — the iconic peak towering over Kapan",
         "1": "Vahanavank Monastery — ancient spiritual sanctuary in the gorge",
         "2": "Baghaberd Fortress — medieval stronghold defending Syunik",
-        "3": "Garegin Nzhdeh Statue — monument to Armenia's legendary hero",
-        "4": "Kapan Main Square — vibrant heart of the city",
+        "3": "Garegin Nzhdeh Statue — monument to Armenia's legendary national hero",
+        "4": "Halidzor Fortress — 13th century citadel with panoramic valley views",
         "5": "City Center — the lively downtown district of Kapan",
         "6": "Nzhdeh Street — the iconic boulevard named after the national hero",
         "7": "Kapan City Street — charming streets of the mountain capital"
@@ -301,7 +301,9 @@
           "name": "Syunik Regional Administration",
           "url": "http://syunik.mtad.am/en/"
         }
-      ]
+      ],
+      "places_to_visit": "Places to Visit in Kapan",
+      "places_to_visit_desc": "From ancient monasteries and medieval fortresses to dramatic peaks and adventure activities — Kapan rewards every kind of traveller."
     },
     "goris": {
       "climate": "Mountainous",

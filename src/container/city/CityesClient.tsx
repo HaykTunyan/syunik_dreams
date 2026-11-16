@@ -49,10 +49,9 @@ export default function CitiesClient() {
                                 <div className="z-10 h-full w-full relative">
                                     <CityMap coords={city.coords} name={tData(`${city.id}.name`)} />
                                 </div>
-                                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent z-20 pointer-events-none" />
-                                <div className="absolute bottom-6 left-8 text-white z-30 pointer-events-none">
-                                    <span className="text-orange-500 uppercase text-sm font-bold">{t('city_label')}</span>
-                                    <h2 className="text-3xl font-black uppercase">{tData(`${city.id}.name`)}</h2>
+                                <div className="absolute bottom-4 left-6 text-white z-30 pointer-events-none bg-black/70 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/10 shadow-lg">
+                                    <span className="text-orange-400 uppercase text-xs font-bold block">{t('city_label')}</span>
+                                    <h2 className="text-2xl font-black uppercase tracking-tight">{tData(`${city.id}.name`)}</h2>
                                 </div>
                             </div>
 
