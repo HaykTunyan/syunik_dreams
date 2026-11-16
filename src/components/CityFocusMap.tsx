@@ -102,10 +102,10 @@ const CITY_LANDMARKS: Record<string, Landmark[]> = {
     {
       id: "baghaberd",
       name: "Baghaberd Fortress",
-      coords: [39.21485, 46.27761],
+      coords: [39.214849, 46.277611],
       category: "fortress",
       proximity: "near-city",
-      description: "Ancient fortress overlooking the Voghji valley near Kapan"
+      description: "Historic fortress west of Kapan guarding the Voghji valley"
     },
 
     {
@@ -119,11 +119,11 @@ const CITY_LANDMARKS: Record<string, Landmark[]> = {
 
     {
       id: "khustup",
-      name: "Khustup Mountain",
+      name: "Khustup Peak",
       coords: [39.13556, 46.33139],
       category: "nature",
       proximity: "near-city",
-      description: "3,206-meter mountain in the Zangezur range south of Kapan"
+      description: "Major 3,206 m mountain south of Kapan and an important hiking/nature destination"
     },
   ],
   goris: [
@@ -471,7 +471,7 @@ export default function CityFocusMap({ cityId, cityName, coords, zoom = 13 }: Pr
   }, [landmarks]);
 
   return (
-    <div className="relative h-full w-full rounded-3xl overflow-hidden">
+    <div className="relative isolate h-full w-full rounded-3xl overflow-hidden">
       {/* City name badge */}
       <div className="absolute top-4 left-1/2 -translate-x-1/2 z-[1000] flex items-center gap-2 bg-black/80 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm font-bold tracking-widest uppercase border border-white/10 shadow-xl">
         <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>

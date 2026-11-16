@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   MapContainer,
   TileLayer,
@@ -85,14 +85,6 @@ const SYUNIK_BOUNDS: [[number, number], [number, number]] = [
   [39.77, 46.62],
 ];
 
-const WORLD_RING: [number, number][] = [
-  [-90, -180],
-  [-90, 180],
-  [90, 180],
-  [90, -180],
-  [-90, -180],
-];
-
 // ---------- Helpers ----------
 
 function pinIcon(category: LandmarkCategory) {
@@ -175,31 +167,8 @@ export default function CityMap({
     };
   }, []);
 
-  // World rectangle with the province punched out as a hole — dims
-  // everything outside Syunik, giving the "spotlighted region" look.
-  const maskFeature: Feature<Geometry> | null = useMemo(() => {
-    if (!boundary) return null;
-    const holes = boundary.features.flatMap((f) => {
-      const g = f.geometry;
-      if (g.type === "Polygon") return g.coordinates;
-      if (g.type === "MultiPolygon") return g.coordinates.flat();
-      return [];
-    });
-    return {
-      type: "Feature",
-      properties: {},
-      geometry: {
-        type: "Polygon",
-        coordinates: [
-          WORLD_RING.map(([lat, lon]) => [lon, lat]),
-          ...holes.map((ring) => ring.map(([lon, lat]) => [lon, lat])),
-        ],
-      },
-    };
-  }, [boundary]);
-
   return (
-    <div className="relative h-full w-full rounded-3xl overflow-hidden border border-black/10 shadow-lg">
+    <div className="relative isolate h-full w-full rounded-3xl overflow-hidden border border-black/10 shadow-lg">
       <div className="absolute top-4 left-1/2 -translate-x-1/2 z-[1000] bg-black/70 text-white px-5 py-1.5 rounded-lg text-lg font-bold tracking-wide">
         {name}
       </div>
@@ -217,18 +186,17 @@ export default function CityMap({
 
         <FitToBounds bounds={SYUNIK_BOUNDS} />
 
-        {maskFeature && (
-          <GeoJSON
-            data={maskFeature as any}
-            style={{ fillColor: "#0b0b0b", fillOpacity: 0.45, stroke: false }}
-            interactive={false}
-          />
-        )}
-
         {boundary && (
           <GeoJSON
             data={boundary as any}
-            style={{ color: "#c0392b", weight: 3, fillOpacity: 0, dashArray: "6 4" }}
+            style={{
+              color: "#c0392b",
+              weight: 3,
+              opacity: 0.9,
+              fill: false,
+              fillOpacity: 0,
+              dashArray: "6 4",
+            }}
           />
         )}
 
@@ -242,11 +210,11 @@ export default function CityMap({
         ))}
       </MapContainer>
 
-      <div className="absolute bottom-4 left-4 z-[1000] bg-white/90 rounded-xl shadow-md px-3 py-2 text-xs space-y-1">
+      <div className="absolute bottom-4 left-4 z-[1000] bg-white/95 backdrop-blur-sm rounded-xl shadow-md border border-black/10 px-3 py-2 text-xs space-y-1">
         {Object.entries(CATEGORY_STYLES).map(([key, style]) => (
           <div key={key} className="flex items-center gap-2">
-            <span className="inline-block w-3 h-3 rounded-full" style={{ background: style.color }} />
-            <span style={{ color: "black" }} >{style.label}</span>
+            <span className="inline-block w-2.5 h-2.5 rounded-full shrink-0" style={{ background: style.color }} />
+            <span className="text-zinc-800 font-medium text-[11px] leading-tight">{style.label}</span>
           </div>
         ))}
       </div>
